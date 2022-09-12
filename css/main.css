@@ -925,7 +925,7 @@ pre .javascript .function {
 }
 @media (min-width: 1200px) {
   .main-inner {
-    width: 1260px;
+    width: 1060px;
   }
 }
 @media (min-width: 1600px) {
@@ -943,11 +943,11 @@ pre .javascript .function {
 }
 .header-inner {
   margin: 0 auto;
-  width: 1260px;
+  width: 1060px;
 }
 @media (min-width: 1200px) {
   .header-inner {
-    width: 1260px;
+    width: 1060px;
   }
 }
 @media (min-width: 1600px) {
@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #d0a3ff;
+  background: #4930f4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1341,7 +1341,7 @@ pre .javascript .function {
 }
 @media (min-width: 1200px) {
   .footer-inner {
-    width: 1260px;
+    width: 1060px;
   }
 }
 @media (min-width: 1600px) {
@@ -1510,6 +1510,15 @@ pre .javascript .function {
 }
 .use-motion .collection-header {
   opacity: 0;
+}
+.post-body a:not(.btn) {
+  color: #002fa7;
+  border-bottom: none;
+}
+.post-body a:not(.btn):hover {
+  color: #002fa7;
+  font-weight: bold;
+  text-decoration: underline;
 }
 .posts-collapse {
   margin-left: 35px;
