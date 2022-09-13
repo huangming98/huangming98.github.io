@@ -155,19 +155,6 @@ table th:nth-of-type(2) {
 ]]></content>
   </entry>
   <entry>
-    <title>期刊论文</title>
-    <url>/publications/index.html</url>
-    <content><![CDATA[<h3 id="工作论文"><a href="#工作论文" class="headerlink" title="工作论文"></a>工作论文</h3><ol>
-<li><p><strong>Huang, M.</strong>, Du, B. G., &amp; Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. (European Journal of Operational Research, Under Review ) </p>
-</li>
-<li><p><strong>黄铭</strong>, 杜百岗*，郭钧,等. (2022). 考虑软时间窗限制和模糊旅途时间的生产配送集成调度优化. (计算机集成制造系统，在投论文)</p>
-</li>
-</ol>
-<h3 id="发表论文"><a href="#发表论文" class="headerlink" title="发表论文"></a>发表论文</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>
-
-<h3 id="会议论文"><a href="#会议论文" class="headerlink" title="会议论文"></a>会议论文</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>]]></content>
-  </entry>
-  <entry>
     <title>领域学者</title>
     <url>/link/index.html</url>
     <content><![CDATA[<h3 id="运筹优化"><a href="#运筹优化" class="headerlink" title="运筹优化"></a><p align="center"><font face="黑体" size="5" color="black">运筹优化</font></p></h3><h5 id="车间调度领域"><a href="#车间调度领域" class="headerlink" title="车间调度领域"></a>车间调度领域</h5><ul>
@@ -206,6 +193,19 @@ table th:nth-of-type(2) {
 <li><strong>邓发珩</strong> (车辆路径问题 <a href="https://github.com/dengfaheng">VRP，TSP</a> <code>java</code>)</li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>期刊论文</title>
+    <url>/publications/index.html</url>
+    <content><![CDATA[<h3 id="工作论文"><a href="#工作论文" class="headerlink" title="工作论文"></a>工作论文</h3><ol>
+<li><p><strong>Huang, M.</strong>, Du, B. G., &amp; Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. (European Journal of Operational Research, Under Review ) </p>
+</li>
+<li><p><strong>黄铭</strong>, 杜百岗*，郭钧,等. (2022). 考虑软时间窗限制和模糊旅途时间的生产配送集成调度优化. (计算机集成制造系统，在投论文)</p>
+</li>
+</ol>
+<h3 id="发表论文"><a href="#发表论文" class="headerlink" title="发表论文"></a>发表论文</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>
+
+<h3 id="会议论文"><a href="#会议论文" class="headerlink" title="会议论文"></a>会议论文</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>]]></content>
   </entry>
   <entry>
     <title>数据集和算法代码</title>
