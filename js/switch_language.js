@@ -4,7 +4,7 @@ window.onload = function () {
     var switchLang = document.getElementsByClassName("menu-item menu-item-switch-to-english")[0];
     switchLang.onclick = function () {
         var href = window.location.href;
-        var includesKeywords = href.includes("/cn/homepage/") || href.includes("/cn/home/")|| href.includes("/cn/publications/") || href.includes("/cn/resources/")|| href.includes("/cn/link/")|| href.includes("/cn/archives/");
+        var includesKeywords = href.includes("/homepage/") || href.includes("/home/")|| href.includes("/publications/") || href.includes("/resources/")|| href.includes("/link/")|| href.includes("/archives/");
         if (includesKeywords) {
             window.location.href = href.replace('.io/', '.io/cn/');
         }
