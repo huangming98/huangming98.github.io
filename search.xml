@@ -78,46 +78,6 @@ table th:nth-of-type(2) {
 ]]></content>
   </entry>
   <entry>
-    <title>领域学者</title>
-    <url>/link/index.html</url>
-    <content><![CDATA[<h3 id="运筹优化"><a href="#运筹优化" class="headerlink" title="运筹优化"></a><p align="center"><font face="黑体" size="5" color="black">运筹优化</font></p></h3><h5 id="车间调度领域"><a href="#车间调度领域" class="headerlink" title="车间调度领域"></a>车间调度领域</h5><ul>
-<li><a href="https://www.au.tsinghua.edu.cn/info/1107/1558.htm"><strong>王凌</strong></a>（清华大学-自动化学院）</li>
-<li><a href="http://mse.hust.edu.cn/info/1143/1387.htm"><strong>高亮</strong></a>（华中科技大学-机械学院）</li>
-<li><a href="http://sa.whut.edu.cn/yjspy/dsdw/201902/t20190225_353630.shtml"><strong>雷德明</strong></a>（武汉理工大学-自动化学院）</li>
-<li><a href="http://ischedulings.com/project.html"><strong>李俊青</strong></a>（聊城大学-计算机学院）</li>
-</ul>
-<h5 id="集成调度与车辆路径领域"><a href="#集成调度与车辆路径领域" class="headerlink" title="集成调度与车辆路径领域"></a>集成调度与车辆路径领域</h5><ul>
-<li><a href="http://ems.whu.edu.cn/info/1718/10649.htm"><strong>王恺</strong></a>（武汉大学-经济与管理学院）</li>
-<li><a href="http://cm.hust.edu.cn/info/1745/24587.htm"><strong>秦虎</strong></a>（华中科技大学-管理学院）</li>
-<li><a href="http://cm.hust.edu.cn/info/1746/24605.htm"><strong>李昆鹏</strong></a>（华中科技大学-管理学院）</li>
-<li><a href="https://gr.xjtu.edu.cn/web/ya.liu/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><strong>刘雅</strong></a>（西安交通大学-管理学院）</li>
-<li><a href="http://faculty.hfut.edu.cn/~ZNBjIb/zh_CN/index.htm"><strong>程八一</strong></a>（合肥工业大学-管理学院）</li>
-<li><a href="http://bs.scu.edu.cn/gongye/201904/5203.html"><strong>郭钊侠</strong></a>（四川大学-商学院）</li>
-</ul>
-<h5 id="资源、项目调度"><a href="#资源、项目调度" class="headerlink" title="资源、项目调度"></a>资源、项目调度</h5><ul>
-<li><a href="http://202.118.1.237/sxliu/index.html"><strong>刘士新</strong></a>（东北大学-信息科学与工程学院）</li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>杜百岗</strong></a>（武汉理工大学-机电工程学院）</li>
-</ul>
-<h5 id="拆卸线平衡、装配线调度"><a href="#拆卸线平衡、装配线调度" class="headerlink" title="拆卸线平衡、装配线调度"></a>拆卸线平衡、装配线调度</h5><ul>
-<li><a href="https://faculty.swjtu.edu.cn/zhangzeqiang/zh_CN/index/97881/list/index.htm"><strong>张则强</strong></a>（西南交通大学-机械工程学院）</li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>郭钧</strong></a>（武汉理工大学-机电工程学院）</li>
-</ul>
-<h5 id="数字孪生"><a href="#数字孪生" class="headerlink" title="数字孪生"></a>数字孪生</h5><ul>
-<li><a href="https://shi.buaa.edu.cn/taofei/zh_CN/index.htm"><strong>陶飞</strong></a>（北京航空航天大学-科学技术研究院）</li>
-</ul>
-<h3 id="进化计算"><a href="#进化计算" class="headerlink" title="进化计算"></a><p align="center"><font face="黑体" size="5" color="black">进化计算</font></p></h3><ul>
-<li><a href="https://www.egr.msu.edu/~kdeb/index.shtml"><strong>Kalyanmoy Deb</strong></a>（<a href="https://www.egr.msu.edu/~kdeb/codes.shtml">NSGA-II</a>）</li>
-<li><a href="https://www.cs.cityu.edu.hk/~qzhan7/index.html"><strong>张青富</strong></a>（MOEA/D 香港城市大学-计算机科学系）</li>
-<li><a href="http://wky.ahu.edu.cn/2022/0301/c13481a280306/page.htm"><strong>田野</strong></a>（<a href="https://github.com/BIMK/PlatEMO">platEMO</a> 安徽大学）</li>
-<li><strong>王晗丁</strong>（西安电子科技大学）</li>
-</ul>
-<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a><p align="center"><font face="黑体" size="5" color="black">相关链接</font></p></h3><ul>
-<li><a href="https://cuglirui.github.io/index.html"><strong>李瑞</strong></a> (柔性作业车间调度 <a href="https://cuglirui.github.io/downloads.htm">FJSP</a> <code>matlab</code>)</li>
-<li><strong>邓发珩</strong> (车辆路径问题 <a href="https://github.com/dengfaheng">VRP，TSP</a> <code>java</code>)</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>欢迎来到我的个人主页</title>
     <url>/index.html</url>
     <content><![CDATA[<h1 id="最新消息-sparkles"><a href="#最新消息-sparkles" class="headerlink" title="最新消息(:sparkles:)"></a>最新消息(<span class="github-emoji"><span>✨</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>)</h1><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>
@@ -177,6 +137,64 @@ table th:nth-of-type(2) {
 ]]></content>
   </entry>
   <entry>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>领域学者</title>
+    <url>/link/index.html</url>
+    <content><![CDATA[<h3 id="运筹优化"><a href="#运筹优化" class="headerlink" title="运筹优化"></a><p align="center"><font face="黑体" size="5" color="black">运筹优化</font></p></h3><h5 id="车间调度领域"><a href="#车间调度领域" class="headerlink" title="车间调度领域"></a>车间调度领域</h5><ul>
+<li><a href="https://www.au.tsinghua.edu.cn/info/1107/1558.htm"><strong>王凌</strong></a>（清华大学-自动化学院）</li>
+<li><a href="http://mse.hust.edu.cn/info/1143/1387.htm"><strong>高亮</strong></a>（华中科技大学-机械学院）</li>
+<li><a href="http://sa.whut.edu.cn/yjspy/dsdw/201902/t20190225_353630.shtml"><strong>雷德明</strong></a>（武汉理工大学-自动化学院）</li>
+<li><a href="http://ischedulings.com/project.html"><strong>李俊青</strong></a>（聊城大学-计算机学院）</li>
+</ul>
+<h5 id="集成调度与车辆路径领域"><a href="#集成调度与车辆路径领域" class="headerlink" title="集成调度与车辆路径领域"></a>集成调度与车辆路径领域</h5><ul>
+<li><a href="http://ems.whu.edu.cn/info/1718/10649.htm"><strong>王恺</strong></a>（武汉大学-经济与管理学院）</li>
+<li><a href="http://cm.hust.edu.cn/info/1745/24587.htm"><strong>秦虎</strong></a>（华中科技大学-管理学院）</li>
+<li><a href="http://cm.hust.edu.cn/info/1746/24605.htm"><strong>李昆鹏</strong></a>（华中科技大学-管理学院）</li>
+<li><a href="https://gr.xjtu.edu.cn/web/ya.liu/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><strong>刘雅</strong></a>（西安交通大学-管理学院）</li>
+<li><a href="http://faculty.hfut.edu.cn/~ZNBjIb/zh_CN/index.htm"><strong>程八一</strong></a>（合肥工业大学-管理学院）</li>
+<li><a href="http://bs.scu.edu.cn/gongye/201904/5203.html"><strong>郭钊侠</strong></a>（四川大学-商学院）</li>
+</ul>
+<h5 id="资源、项目调度"><a href="#资源、项目调度" class="headerlink" title="资源、项目调度"></a>资源、项目调度</h5><ul>
+<li><a href="http://202.118.1.237/sxliu/index.html"><strong>刘士新</strong></a>（东北大学-信息科学与工程学院）</li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>杜百岗</strong></a>（武汉理工大学-机电工程学院）</li>
+</ul>
+<h5 id="拆卸线平衡、装配线调度"><a href="#拆卸线平衡、装配线调度" class="headerlink" title="拆卸线平衡、装配线调度"></a>拆卸线平衡、装配线调度</h5><ul>
+<li><a href="https://faculty.swjtu.edu.cn/zhangzeqiang/zh_CN/index/97881/list/index.htm"><strong>张则强</strong></a>（西南交通大学-机械工程学院）</li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>郭钧</strong></a>（武汉理工大学-机电工程学院）</li>
+</ul>
+<h5 id="数字孪生"><a href="#数字孪生" class="headerlink" title="数字孪生"></a>数字孪生</h5><ul>
+<li><a href="https://shi.buaa.edu.cn/taofei/zh_CN/index.htm"><strong>陶飞</strong></a>（北京航空航天大学-科学技术研究院）</li>
+</ul>
+<h3 id="进化计算"><a href="#进化计算" class="headerlink" title="进化计算"></a><p align="center"><font face="黑体" size="5" color="black">进化计算</font></p></h3><ul>
+<li><a href="https://www.egr.msu.edu/~kdeb/index.shtml"><strong>Kalyanmoy Deb</strong></a>（<a href="https://www.egr.msu.edu/~kdeb/codes.shtml">NSGA-II</a>）</li>
+<li><a href="https://www.cs.cityu.edu.hk/~qzhan7/index.html"><strong>张青富</strong></a>（MOEA/D 香港城市大学-计算机科学系）</li>
+<li><a href="http://wky.ahu.edu.cn/2022/0301/c13481a280306/page.htm"><strong>田野</strong></a>（<a href="https://github.com/BIMK/PlatEMO">platEMO</a> 安徽大学）</li>
+<li><strong>王晗丁</strong>（西安电子科技大学）</li>
+</ul>
+<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a><p align="center"><font face="黑体" size="5" color="black">相关链接</font></p></h3><ul>
+<li><a href="https://cuglirui.github.io/index.html"><strong>李瑞</strong></a> (柔性作业车间调度 <a href="https://cuglirui.github.io/downloads.htm">FJSP</a> <code>matlab</code>)</li>
+<li><strong>邓发珩</strong> (车辆路径问题 <a href="https://github.com/dengfaheng">VRP，TSP</a> <code>java</code>)</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>数据集和算法代码</title>
     <url>/resources/index.html</url>
     <content><![CDATA[<h1 id="Datesets"><a href="#Datesets" class="headerlink" title="Datesets"></a>Datesets</h1><h3 id="1-集成调度数据集（integrated-production-and-distribution-scheduling-problem-IPDS）"><a href="#1-集成调度数据集（integrated-production-and-distribution-scheduling-problem-IPDS）" class="headerlink" title="1. 集成调度数据集（integrated production and distribution scheduling problem, IPDS）"></a>1. 集成调度数据集（integrated production and distribution scheduling problem, IPDS）</h3><p>引言：集成调度涉及生产和配送两个阶段的优化。单独来说，生产调度或配送调度的科学研究比较丰富，有丰富的基准案例数据集以及优秀的求解算法。<strong>可是生产与配送集成调度的研究却在基准案例数据集这方面显得十分匮乏</strong>。出于对该问题的复杂性和特殊性的考虑，大部分研究采用随机生成（或部分随即生成）测试实例的方式进行数值实验，但很少有研究将其测试数据集公布出来以供大家使用和验证。为了给相同或者相近的研究提供统一评价对比和度量的基准，推动领域的研究进一步发展。我们将所使用的数据集进行公布，以供大家使用和进行数值实验对比。</p>
@@ -211,24 +229,6 @@ table th:nth-of-type(2) {
 <li>[ <strong>NSGA-II-AVNS</strong> ] <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br>该算法出自于 <del><a href="link">文章</a></del><br>注：文章见刊后将会更新</li>
 </ol>
 <hr>
-]]></content>
-  </entry>
-  <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>

@@ -6,11 +6,11 @@ window.onload = function () {
         var href = window.location.href;
         var includesKeywords = href.includes("/homepage/") || href.includes("/home/")|| href.includes("/publications/") || href.includes("/resources/")|| href.includes("/link/")|| href.includes("/archives/")|| href.includes("/Switch to Chinese/");
         if (includesKeywords) {
-            window.location.href = href.replace('github.io/', 'github.io/cn/');
+            window.location.href = href.replace('.io/', '.io/cn/');
 
         }
         else {
-            window.location.href = "https://huangming98.github.io/cn/";
+            window.location.href = "https://huangming98.github.io/link/";
         }
         if (typeof (_prevOnload) === 'function') {
             _prevOnload();
