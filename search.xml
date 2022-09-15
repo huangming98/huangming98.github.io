@@ -19,21 +19,61 @@
 ]]></content>
   </entry>
   <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+    <title>Welcome To My Personal Homepage</title>
+    <url>/home/index.html</url>
+    <content><![CDATA[<h1 id="News-boom"><a href="#News-boom" class="headerlink" title="News(:boom:)"></a>News(<span class="github-emoji"><span>💥</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>)</h1><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="Biography"><a href="#Biography" class="headerlink" title="Biography"></a>Biography</h1><p>Ming Huang was born in Xingtai, Hebei Province, China in 1999. Currently, I am pursuing a Master’s degree in Industrial Engineering at Wuhan University of Technology. I will be graduating from my Masters in 2023 and am currently in the PhD application stage, deciding to pursue a PhD.</p>
+<p>If you have any further questions, please feel free to contact me.<br>My E-mail（ <span class="github-emoji"><span>✉</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> ）： <a href="mailto:huangming98@163.com">huangming98@163.com</a> .<br>Address：School of Mechanical and Electrical Engineering, Wuhan University of Technology, Wuhan 430070,China</p>
+<!-- 让表格居中显示的风格 -->
+<style>
+.center 
+{
+  display: table;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+table th:first-of-type {
+    width: 460pt;
+}
+table th:nth-of-type(2) {
+    width: 600pt;
+}
+</style>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+<div class="center">
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+<table>
+<thead>
+<tr>
+<th align="left"><span class="github-emoji"><span>🔍</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Interests</th>
+<th align="left"><span class="github-emoji"><span>🎓</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Education</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><li><strong>Integrated Production and Distribution Scheduling（IPDS）</strong></li><li>Complex system modeling and optimization</li><li>Operations Optimisation Algorithms</li><li> Multi-objective Optimization Algorithms</li><li>Vehicle Routing Problem（VRP）</li><li>Multi-stage collaborative optimization</li></td>
+<td align="left"><li><strong>2020.9 - now M.E in Industrial Engineering–Wuhan University of Technology</strong></li><li>2016.9 - 2020.7 B. Eng.Mgt in Quality Management Engineering–He Bei University </li><li>2013.9 - 2016.7 Student in the first senior high school of Xingtai City, Hebei</li></td>
+</tr>
+</tbody></table>
+</div>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h1 id="Supervisor"><a href="#Supervisor" class="headerlink" title="Supervisor"></a>Supervisor</h1><ul>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>Baigang Du</strong></a> associate professor（My master’s supervisor） <br></li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>Jun Guo</strong></a> associate professor（My associate master’s supervisor）</li>
+</ul>
+<h1 id="Contest-Awards"><a href="#Contest-Awards" class="headerlink" title="Contest Awards"></a>Contest Awards</h1><ul>
+<li>2022.06 The 12th Wuhan University of Technology Post-graduate Mathematical Contest  — <strong>First Prize</strong><br>Modeling topic: Research on resource-constrained vehicle routing problem<br></li>
+<li>2021.12 “Huawei Cup” The 18th China Post-granduate Mathematical Contest — <strong>Third Prize</strong><br>Modeling topic: airline crew optimization scheduling problem<br></li>
+<li>2021.01 “Cloud Talk New Technology” Popular Science Contest— <strong>Third Prize</strong><br>Entry: OpenCV-based smart power plant inspection trolley</li>
+</ul>
+<h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h3 id="Fund"><a href="#Fund" class="headerlink" title="Fund"></a>Fund</h3><ol>
+<li>Independent Innovation Foundation of Wuhan University of Technology —— Postgraduate Personal Exploration Project :<br>Research on Integrated  Production and Distribution Scheduling with Flexible Batching and Soft Time Windows 2022.1-2022.12（<strong>Project Principals</strong>）<br></li>
+<li>National Natural Science Foundation of China (Youth Fund) ：<br>A game method of supply and demand allocation of complex product system manufacturing services for social collaboration 2018.1-2020.12 （<strong>Project Participants</strong>）</li>
+</ol>
+<h2 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h2><h4 id="—-2021-7-2022-7-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）"><a href="#—-2021-7-2022-7-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）" class="headerlink" title="— 2021.7-2022.7 Tuoxing Zhiwang Technology Co., Ltd.  Wuhan （Java Back End Development）"></a>— <font color="blue">2021.7-2022.7</font> <a href="http://www.tonshinet.com/">Tuoxing Zhiwang Technology Co., Ltd.  Wuhan</a> （Java Back End Development）</h4><ol>
+<li><strong>2021.7-2021.12</strong> Development of Wind Plant Operation and Maintenance Application Platform<br></li>
+<li><strong>2022.1-2022.7</strong> Tangshan Sinoma Heavy Machinery PMS Improvement Project-Development of External Supplier Price Comparison Management Platform</li>
+</ol>
 ]]></content>
   </entry>
   <entry>
@@ -85,8 +125,8 @@ table th:nth-of-type(2) {
 <li>2021.01 “Cloud Talk New Technology” Popular Science Contest— <strong>Third Prize</strong><br>Entry: OpenCV-based smart power plant inspection trolley</li>
 </ul>
 <h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h3 id="Fund"><a href="#Fund" class="headerlink" title="Fund"></a>Fund</h3><ol>
-<li>Independent Innovation Foundation of Wuhan University of Technology —— Postgraduate Personal Exploration Project<br>Research on Integrated  Production and Distribution Scheduling with Flexible Batching and Soft Time Windows 2022.1-2022.12（<strong>Project Principals</strong>）<br></li>
-<li>National Natural Science Foundation of China（Youth Fund）：<br>A game method of supply and demand allocation of complex product system manufacturing services for social collaboration 2018.1-2020.12 （<strong>Project Participants</strong>）</li>
+<li>Independent Innovation Foundation of Wuhan University of Technology —— Postgraduate Personal Exploration Project :<br>Research on Integrated  Production and Distribution Scheduling with Flexible Batching and Soft Time Windows 2022.1-2022.12（<strong>Project Principals</strong>）<br></li>
+<li>National Natural Science Foundation of China (Youth Fund) ：<br>A game method of supply and demand allocation of complex product system manufacturing services for social collaboration 2018.1-2020.12 （<strong>Project Participants</strong>）</li>
 </ol>
 <h2 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h2><h4 id="—-2021-7-2022-7-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）"><a href="#—-2021-7-2022-7-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）" class="headerlink" title="— 2021.7-2022.7 Tuoxing Zhiwang Technology Co., Ltd.  Wuhan （Java Back End Development）"></a>— <font color="blue">2021.7-2022.7</font> <a href="http://www.tonshinet.com/">Tuoxing Zhiwang Technology Co., Ltd.  Wuhan</a> （Java Back End Development）</h4><ol>
 <li><strong>2021.7-2021.12</strong> Development of Wind Plant Operation and Maintenance Application Platform<br></li>
@@ -95,150 +135,111 @@ table th:nth-of-type(2) {
 ]]></content>
   </entry>
   <entry>
-    <title>欢迎来到我的个人主页</title>
-    <url>/home/index.html</url>
-    <content><![CDATA[<h1 id="最新消息-sparkles"><a href="#最新消息-sparkles" class="headerlink" title="最新消息(:sparkles:)"></a>最新消息(<span class="github-emoji"><span>✨</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>)</h1><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>黄铭</strong>，男，1999年出生于河北省邢台市。目前在武汉理工大学-工业工程专业攻读硕士学位。将于2023年硕士毕业，目前正处于博士申请阶段，准备攻读博士学位。<br>如有任何问题，可以与我联系 E-mail（ <span class="github-emoji"><span>✉</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> ）： <a href="mailto:huangming98@163.com">huangming98@163.com</a> .<br>地址：湖北省武汉市珞狮路 122号 武汉理工大学 430070.</p>
-<!-- 让表格居中显示的风格 -->
-<style>
-.center 
-{
-  width: auto;
-  display: table;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-table th:first-of-type {
-    width: 500pt;
-}
-table th:nth-of-type(2) {
-    width: 500pt;
-}
-</style>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
 
-<div class="center">
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
 
-<table>
-<thead>
-<tr>
-<th align="left"><span class="github-emoji"><span>🔍</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   研究兴趣</th>
-<th align="left"><span class="github-emoji"><span>🎓</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   教育背景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><li><strong>生产与配送集成调度（IPDS）</strong></li><li>复杂系统建模优化</li><li>运筹优化算法(多目标优化算法)</li><li>车辆路径问题（VRP）</li><li>多阶段协同优化</li></td>
-<td align="left"><li><strong>2020.9 - 至今 武汉理工大学 工业工程 工学硕士学位</strong></li><li>2016.9 - 2020.7 河北大学 质量管理工程 管理学学士学位</li><li>2013.9 - 2016.7 河北省邢台市第一中学 高中  </li></td>
-</tr>
-</tbody></table>
-</div>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
 
-<h1 id="我的导师"><a href="#我的导师" class="headerlink" title="我的导师"></a>我的导师</h1><ul>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>杜百岗</strong></a> 副教授（我的硕士导师） <br></li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>郭钧</strong></a> 副教授（我的硕士第二导师）</li>
-</ul>
-<h1 id="竞赛获奖"><a href="#竞赛获奖" class="headerlink" title="竞赛获奖"></a>竞赛获奖</h1><ul>
-<li>2022 年 6 月 第十二届武汉理工大学研究生数学建模竞赛 <strong>一等奖</strong>  建模题目：基于资源受限的车辆路径问题研究</li>
-<li>2021 年 12 月 “华为杯”第十八届中国研究生数学建模竞赛 <strong>三等奖</strong>  建模题目：航空公司机组优化排班问题</li>
-<li>2021 年 1 月 “云说新科技”科普大赛 <strong>三等奖</strong> 参赛作品：基于 OpenCV 的智能电厂巡检小车</li>
-</ul>
-<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><h2 id="基金项目"><a href="#基金项目" class="headerlink" title="基金项目"></a>基金项目</h2><ol>
-<li>武汉理工大学自主创新基金-研究生自由探索项目（个人）：<br>基于柔性分批和软时间窗约束的生产与配送集成调度研究 2022.1-2022.12 （<strong>主持</strong>）<br></li>
-<li>国家自然科学基金（青年基金）：<br>面向社会化协同的复杂产品系统制造服务供需配置博弈方法 2018.1-2020.12 （<strong>参与</strong>）</li>
-</ol>
-<h2 id="横向项目"><a href="#横向项目" class="headerlink" title="横向项目"></a>横向项目</h2><h4 id="—-2021-7-2022-7-武汉拓行智网科技有限公司-实习（后端开发Java）"><a href="#—-2021-7-2022-7-武汉拓行智网科技有限公司-实习（后端开发Java）" class="headerlink" title="— 2021.7-2022.7 武汉拓行智网科技有限公司 实习（后端开发Java）"></a>— <font color="blue">2021.7-2022.7</font> <a href="http://www.tonshinet.com/">武汉拓行智网科技有限公司</a> 实习（后端开发Java）</h4><ol>
-<li>2021.1-2022.6 基于 Open CV 的烟叶病害识别与诊断系统开发  （<strong>仅负责项目论文书写</strong>）<br></li>
-<li>2021.7-2021.12 风机运维数字化应用平台开发（<strong>核心成员</strong>）<br></li>
-<li>2022.1-2022.7 唐山中材重机 PMS 改进项目-外网询价管理平台开发  （<strong>核心成员</strong>）</li>
-</ol>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
-    <title>领域学者</title>
+    <title>Scholars Link</title>
     <url>/link/index.html</url>
-    <content><![CDATA[<h3 id="运筹优化"><a href="#运筹优化" class="headerlink" title="运筹优化"></a><p align="center"><font face="黑体" size="5" color="black">运筹优化</font></p></h3><h5 id="车间调度领域"><a href="#车间调度领域" class="headerlink" title="车间调度领域"></a>车间调度领域</h5><ul>
-<li><a href="https://www.au.tsinghua.edu.cn/info/1107/1558.htm"><strong>王凌</strong></a>（清华大学-自动化学院）</li>
-<li><a href="http://mse.hust.edu.cn/info/1143/1387.htm"><strong>高亮</strong></a>（华中科技大学-机械学院）</li>
-<li><a href="http://sa.whut.edu.cn/yjspy/dsdw/201902/t20190225_353630.shtml"><strong>雷德明</strong></a>（武汉理工大学-自动化学院）</li>
-<li><a href="http://ischedulings.com/project.html"><strong>李俊青</strong></a>（聊城大学-计算机学院）</li>
+    <content><![CDATA[<h3 id="Operations-Research-amp-Optimization"><a href="#Operations-Research-amp-Optimization" class="headerlink" title="Operations Research &amp; Optimization"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Operations Research &amp; Optimization</font></p></h3><h5 id="Shop-Scheduling"><a href="#Shop-Scheduling" class="headerlink" title="Shop Scheduling"></a>Shop Scheduling</h5><ul>
+<li><a href="https://www.au.tsinghua.edu.cn/info/1107/1558.htm"><strong>Ling Wang</strong></a>（Tsinghua University-Department of Automation）</li>
+<li><a href="http://mse.hust.edu.cn/info/1143/1387.htm"><strong>Liang Gao</strong></a>（Huazhong University of Science and Technology - School of Mechanical Science &amp; Engineering）</li>
+<li><a href="http://sa.whut.edu.cn/yjspy/dsdw/201902/t20190225_353630.shtml"><strong>Deming Lei</strong></a>（Wuhan University of Technology-School of Automation）</li>
+<li><a href="http://ischedulings.com/project.html"><strong>Junqing Li</strong></a>（Liaocheng University-School of Computer Science）</li>
 </ul>
-<h5 id="集成调度与车辆路径领域"><a href="#集成调度与车辆路径领域" class="headerlink" title="集成调度与车辆路径领域"></a>集成调度与车辆路径领域</h5><ul>
-<li><a href="http://ems.whu.edu.cn/info/1718/10649.htm"><strong>王恺</strong></a>（武汉大学-经济与管理学院）</li>
-<li><a href="http://cm.hust.edu.cn/info/1745/24587.htm"><strong>秦虎</strong></a>（华中科技大学-管理学院）</li>
-<li><a href="http://cm.hust.edu.cn/info/1746/24605.htm"><strong>李昆鹏</strong></a>（华中科技大学-管理学院）</li>
-<li><a href="https://gr.xjtu.edu.cn/web/ya.liu/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><strong>刘雅</strong></a>（西安交通大学-管理学院）</li>
-<li><a href="http://faculty.hfut.edu.cn/~ZNBjIb/zh_CN/index.htm"><strong>程八一</strong></a>（合肥工业大学-管理学院）</li>
-<li><a href="http://bs.scu.edu.cn/gongye/201904/5203.html"><strong>郭钊侠</strong></a>（四川大学-商学院）</li>
+<h5 id="Integrated-Scheduling-amp-Vehicle-Routing"><a href="#Integrated-Scheduling-amp-Vehicle-Routing" class="headerlink" title="Integrated Scheduling &amp; Vehicle Routing"></a>Integrated Scheduling &amp; Vehicle Routing</h5><ul>
+<li><a href="http://ems.whu.edu.cn/info/1718/10649.htm"><strong>Kai Wang</strong></a>（Wuhan University-School of Economics and Management）</li>
+<li><a href="http://cm.hust.edu.cn/info/1745/24587.htm"><strong>Hu Qin</strong></a>（Huazhong University of Science and Technology-School of Management）</li>
+<li><a href="http://cm.hust.edu.cn/info/1746/24605.htm"><strong>Kunpeng Li</strong></a>（Huazhong University of Science and Technology-School of Management）</li>
+<li><a href="https://gr.xjtu.edu.cn/web/ya.liu/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><strong>Ya Liu</strong></a>（Xi’an Jiaotong University-School of Management）</li>
+<li><a href="http://faculty.hfut.edu.cn/~ZNBjIb/zh_CN/index.htm"><strong>Bayi Cheng</strong></a>（Hefei University of Technology-School of Management）</li>
+<li><a href="http://bs.scu.edu.cn/gongye/201904/5203.html"><strong>Zhaoxia Guo</strong></a>（Sichuan University - School of Business）</li>
 </ul>
-<h5 id="资源、项目调度"><a href="#资源、项目调度" class="headerlink" title="资源、项目调度"></a>资源、项目调度</h5><ul>
-<li><a href="http://202.118.1.237/sxliu/index.html"><strong>刘士新</strong></a>（东北大学-信息科学与工程学院）</li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>杜百岗</strong></a>（武汉理工大学-机电工程学院）</li>
+<h5 id="Resource-and-Project-Scheduling"><a href="#Resource-and-Project-Scheduling" class="headerlink" title="Resource and Project Scheduling"></a>Resource and Project Scheduling</h5><ul>
+<li><a href="http://202.118.1.237/sxliu/index.html"><strong>Shixin Liu</strong></a>（Northeastern University - School of Information Science and Engineering）</li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>Baigang Du</strong></a>（Wuhan University of Technology - School of Mechanical and Electrical Engineering）</li>
 </ul>
-<h5 id="拆卸线平衡、装配线调度"><a href="#拆卸线平衡、装配线调度" class="headerlink" title="拆卸线平衡、装配线调度"></a>拆卸线平衡、装配线调度</h5><ul>
-<li><a href="https://faculty.swjtu.edu.cn/zhangzeqiang/zh_CN/index/97881/list/index.htm"><strong>张则强</strong></a>（西南交通大学-机械工程学院）</li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>郭钧</strong></a>（武汉理工大学-机电工程学院）</li>
+<h5 id="Disassembly-Line-Balancing-Assembly-Line-Scheduling"><a href="#Disassembly-Line-Balancing-Assembly-Line-Scheduling" class="headerlink" title="Disassembly Line Balancing, Assembly Line Scheduling"></a>Disassembly Line Balancing, Assembly Line Scheduling</h5><ul>
+<li><a href="https://faculty.swjtu.edu.cn/zhangzeqiang/zh_CN/index/97881/list/index.htm"><strong>Zeqiang Zhang</strong></a>（Southwest Jiaotong University-School of Mechanical Engineering）</li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>Jun Guo</strong></a>（Wuhan University of Technology - School of Mechanical and Electrical Engineering）</li>
 </ul>
-<h5 id="数字孪生"><a href="#数字孪生" class="headerlink" title="数字孪生"></a>数字孪生</h5><ul>
-<li><a href="https://shi.buaa.edu.cn/taofei/zh_CN/index.htm"><strong>陶飞</strong></a>（北京航空航天大学-科学技术研究院）</li>
+<h5 id="Digital-Twin"><a href="#Digital-Twin" class="headerlink" title="Digital Twin"></a>Digital Twin</h5><ul>
+<li><a href="https://shi.buaa.edu.cn/taofei/zh_CN/index.htm"><strong>Fei Tao</strong></a>（Beihang University-Institute of Science and Technology）</li>
 </ul>
-<h3 id="进化计算"><a href="#进化计算" class="headerlink" title="进化计算"></a><p align="center"><font face="黑体" size="5" color="black">进化计算</font></p></h3><ul>
+<h3 id="Evolutionary-Computation"><a href="#Evolutionary-Computation" class="headerlink" title="Evolutionary Computation"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Evolutionary Computation</font></p></h3><ul>
 <li><a href="https://www.egr.msu.edu/~kdeb/index.shtml"><strong>Kalyanmoy Deb</strong></a>（<a href="https://www.egr.msu.edu/~kdeb/codes.shtml">NSGA-II</a>）</li>
-<li><a href="https://www.cs.cityu.edu.hk/~qzhan7/index.html"><strong>张青富</strong></a>（MOEA/D 香港城市大学-计算机科学系）</li>
-<li><a href="http://wky.ahu.edu.cn/2022/0301/c13481a280306/page.htm"><strong>田野</strong></a>（<a href="https://github.com/BIMK/PlatEMO">platEMO</a> 安徽大学）</li>
-<li><strong>王晗丁</strong>（西安电子科技大学）</li>
+<li><a href="https://www.cs.cityu.edu.hk/~qzhan7/index.html"><strong>Qingfu Zhang</strong></a>（MOEA/D City University of Hong Kong - Department of Computer Science）</li>
+<li><a href="http://wky.ahu.edu.cn/2022/0301/c13481a280306/page.htm"><strong>Ye Tian</strong></a>（<a href="https://github.com/BIMK/PlatEMO">platEMO</a> Anhui University）</li>
+<li><strong>Handing Wang</strong>（Xidian University）</li>
 </ul>
-<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a><p align="center"><font face="黑体" size="5" color="black">相关链接</font></p></h3><ul>
-<li><a href="https://cuglirui.github.io/index.html"><strong>李瑞</strong></a> (柔性作业车间调度 <a href="https://cuglirui.github.io/downloads.htm">FJSP</a> <code>matlab</code>)</li>
-<li><strong>邓发珩</strong> (车辆路径问题 <a href="https://github.com/dengfaheng">VRP，TSP</a> <code>java</code>)</li>
+<h3 id="Related-Academic-Links"><a href="#Related-Academic-Links" class="headerlink" title="Related Academic Links"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Related Academic Links</font></p></h3><ul>
+<li><a href="https://cuglirui.github.io/index.html"><strong>Rui Li</strong></a> (Flexible job shop scheduling <a href="https://cuglirui.github.io/downloads.htm">FJSP</a> <code>matlab</code>)</li>
+<li><a href="https://github.com/dengfaheng"><strong>Faheng Deng</strong></a> (Vehicle routing problem <a href="https://github.com/dengfaheng">VRP，TSP</a> <code>java</code>)</li>
 </ul>
 ]]></content>
   </entry>
   <entry>
-    <title>期刊论文</title>
+    <title>Journal Publications</title>
     <url>/publications/index.html</url>
-    <content><![CDATA[<h3 id="工作论文"><a href="#工作论文" class="headerlink" title="工作论文"></a>工作论文</h3><ol>
-<li><p><strong>Huang, M.</strong>, Du, B. G., &amp; Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. (European Journal of Operational Research, Under Review ) </p>
+    <content><![CDATA[<h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol>
+<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. <em>European Journal of Operational Research</em>, Under Review .</p>
 </li>
-<li><p><strong>黄铭</strong>, 杜百岗*，郭钧,等. (2022). 考虑软时间窗限制和模糊旅途时间的生产配送集成调度优化. (计算机集成制造系统，在投论文)</p>
+<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Computer Integrated Manufacturing Systems</em> Under Review .</p>
 </li>
 </ol>
-<h3 id="发表论文"><a href="#发表论文" class="headerlink" title="发表论文"></a>发表论文</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>
+<h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>
 
-<h3 id="会议论文"><a href="#会议论文" class="headerlink" title="会议论文"></a>会议论文</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>]]></content>
+<h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>]]></content>
   </entry>
   <entry>
-    <title>数据集和算法代码</title>
+    <title>Datasets and Algorithm Codes</title>
     <url>/resources/index.html</url>
-    <content><![CDATA[<h1 id="Datesets"><a href="#Datesets" class="headerlink" title="Datesets"></a>Datesets</h1><h3 id="1-集成调度数据集（integrated-production-and-distribution-scheduling-problem-IPDS）"><a href="#1-集成调度数据集（integrated-production-and-distribution-scheduling-problem-IPDS）" class="headerlink" title="1. 集成调度数据集（integrated production and distribution scheduling problem, IPDS）"></a>1. 集成调度数据集（integrated production and distribution scheduling problem, IPDS）</h3><p>引言：集成调度涉及生产和配送两个阶段的优化。单独来说，生产调度或配送调度的科学研究比较丰富，有丰富的基准案例数据集以及优秀的求解算法。<strong>可是生产与配送集成调度的研究却在基准案例数据集这方面显得十分匮乏</strong>。出于对该问题的复杂性和特殊性的考虑，大部分研究采用随机生成（或部分随即生成）测试实例的方式进行数值实验，但很少有研究将其测试数据集公布出来以供大家使用和验证。为了给相同或者相近的研究提供统一评价对比和度量的基准，推动领域的研究进一步发展。我们将所使用的数据集进行公布，以供大家使用和进行数值实验对比。</p>
-<blockquote>
-</blockquote>
-<hr>
-<ol>
-<li><p><strong>HCF-IPDS Dateset（<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>（Beat Production Lines &amp; Vehicle Routing Problem with Soft Time Window and Heterogeneous vehicles）<br>数据集：<a href="link">HCF-IPDS Dateset</a><br>提出该数据集的 <a href="link">文章链接</a>.</p>
+    <content><![CDATA[<h1 id="Datesets"><a href="#Datesets" class="headerlink" title="Datesets"></a>Datesets</h1><h3 id="1-Integrated-Production-and-Distribution-Scheduling-Problem-IPDS"><a href="#1-Integrated-Production-and-Distribution-Scheduling-Problem-IPDS" class="headerlink" title="1. Integrated Production and Distribution Scheduling Problem(IPDS)"></a>1. Integrated Production and Distribution Scheduling Problem(IPDS)</h3><ol>
+<li><p><strong>HCF-IPDS Dateset（<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>（Beat Production Lines &amp; Vehicle Routing Problem with Soft Time Window and Heterogeneous vehicles）<br>DataSet：<a href="link">HCF-IPDS Dateset</a><br><a href="link">The article</a> proposing this dataset<br><a href="link">A blog</a> introducing the formation process of this dataset</p>
 </li>
-<li><p><strong>Fuzzy-IPDS Dateset（<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>  （Beat Production Lines &amp; Vehicle Routing Problem with Soft Time Window and Heterogeneous vehicles &amp; Fuzzy Travel time）<br>数据集：<a href="link">Fuzzy-IPDS Dateset</a><br>提出该数据集的 <a href="link">文章链接</a>.</p>
+<li><p><strong>Fuzzy-IPDS Dateset（<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>  （Beat Production Lines &amp; Vehicle Routing Problem with Soft Time Window and Heterogeneous vehicles &amp; Fuzzy Travel time）<br>DataSet：<a href="link">Fuzzy-IPDS Dateset</a><br><a href="link">The article</a> proposing this dataset<br><a href="link">A blog</a> introducing the formation process of this dataset</p>
 </li>
 </ol>
-<hr>
 <blockquote>
-<p>简介：生产与配送集成调度是近些年来热门的研究领域。大多数学者认为 <a href="https://sci-hub.wf/10.1287/opre.28.6.1436">(Potts, 1980)</a>是该领域的开篇之作。随着该领域专家学者的不断拓展和深入，集成调度的相关研究得到了空前的发展。各方面的理论和方法也不断被提出，可参照综述文献 <a href="https://sci-hub.wf/10.1287/opre.1080.0688">(Chen, 2010)</a>,<a href="https://sci-hub.wf/10.1016/j.cie.2016.12.010">(Moons et al., 2017)</a>, <a href="https://sci-hub.wf/10.1080/00207543.2020.1762019">(Kumar et al., 2020)</a>进行系统的梳理。<br>根据问题特征我们对如下数据集进行简要描述：</p>
+<p><strong>Original Intention</strong>: IPDS involves the optimization of production scheduling and distribution scheduling. Individually, production scheduling or distribution scheduling has been studied for a long time and has rich benchmark datasets and excellent solution algorithms. <strong>However, there is a paucity of benchmark datasets in IPDS studies.</strong> Due to the complexity and specificity of the problem, most studies have adopted randomly generated (or partially randomly generated) datasets for computational experiments, but few studies have published their test datasets for use and validation by other researchers. In order to provide a uniform benchmark for evaluating and measuring the performance of algorithms for the same and similar studies, we publish the used datasets and algorithms to facilitate the computational experiments of other researchers.</p>
+</blockquote>
+<p> 放到blog 中)<br> 简介：生产与配送集成调度是近些年来热门的研究领域。大多数学者认为 <a href="https://sci-hub.wf/10.1287/opre.28.6.1436">(Potts, 1980)</a>是该领域的开篇之作。随着该领域专家学者的不断拓展和深入，集成调度的相关研究得到了空前的发展。各方面的理论和方法也不断被提出，可参照综述文献 <a href="https://sci-hub.wf/10.1287/opre.1080.0688">(Chen, 2010)</a>,<a href="https://sci-hub.wf/10.1016/j.cie.2016.12.010">(Moons et al., 2017)</a>, <a href="https://sci-hub.wf/10.1080/00207543.2020.1762019">(Kumar et al., 2020)</a>进行系统的梳理。</p>
+<blockquote>
+<p>根据问题特征我们对如下数据集进行简要描述：</p>
 <ul>
 <li>生产调度：(作业车间调度、流水车间调度（流水线、置换、混流）、分布式车间调度、柔性调度、模糊调度、动态调度 等)</li>
 <li>配送调度：(运输问题、车辆路径问题（容量限制、时间窗约束、多行程等））<br>我们所提出的数据集所应用的模型涉及：<br><strong>流水线生产 &amp; 车辆路径问题（考虑容量限制、时间窗约束、多行程）&amp;模糊旅途时间</strong></li>
 </ul>
 </blockquote>
-<h3 id="2-相关领域数据集"><a href="#2-相关领域数据集" class="headerlink" title="2. 相关领域数据集"></a>2. 相关领域数据集</h3><ul>
-<li><p>VRPTW数据集: <strong><a href="https://www.sintef.no/projectweb/top/vrptw/">Solomon-Benchmark</a></strong></p>
+<hr>
+<h3 id="2-Datasets-of-other-researchers"><a href="#2-Datasets-of-other-researchers" class="headerlink" title="2. Datasets of other researchers"></a>2. Datasets of other researchers</h3><ul>
+<li><p>VRPTW Datesets: <strong><a href="https://www.sintef.no/projectweb/top/vrptw/">Solomon-Benchmark</a></strong></p>
 </li>
-<li><p>VRP数据集: <strong><a href="https://neo.lcc.uma.es/vrp/vrp-instances/">Vrp-Instances</a></strong></p>
+<li><p>VRP Datesets: <strong><a href="https://neo.lcc.uma.es/vrp/vrp-instances/">Vrp-Instances</a></strong></p>
 </li>
-<li><p>基于问题实例的测试数据集: <strong><a href="http://people.brunel.ac.uk/~mastjjb/jeb/info.html">OR-Library by J E Beasley</a></strong></p>
+<li><p>Test datasets based on problem instances: <strong><a href="http://people.brunel.ac.uk/~mastjjb/jeb/info.html">OR-Library by J E Beasley</a></strong></p>
 </li>
 </ul>
 <hr>
 <h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><ol>
-<li>[ <strong>HCF-IMOEA</strong> ] <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br>该算法出自于    <del><a href="link">文章</a></del><br>注：文章见刊后将会更新</li>
-<li>[ <strong>NSGA-II-AVNS</strong> ] <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br>该算法出自于 <del><a href="link">文章</a></del><br>注：文章见刊后将会更新</li>
+<li><p><a href="link"> HCF-IMOEA </a> <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br><del><a href="link">The article</a> proposing this algorithm</del><br>Note: The algorithm code will be updated after the article is published</p>
+</li>
+<li><p><a href="link"> NSGA-II-AVNS </a> <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br><del><a href="link">The article</a> proposing this algorithm</del><br>Note: The algorithm code will be updated after the article is published</p>
+</li>
 </ol>
 <hr>
 ]]></content>
