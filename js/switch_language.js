@@ -10,7 +10,7 @@ window.onload = function () {
 
         }
         else {
-            window.location.href = "https://huangming98.github.io";
+            window.location.href = "https://huangming98.github.io/link";
         }
         if (typeof (_prevOnload) === 'function') {
             _prevOnload();
