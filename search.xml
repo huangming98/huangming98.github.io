@@ -193,6 +193,19 @@ table th:nth-of-type(2) {
 ]]></content>
   </entry>
   <entry>
+    <title>Journal Publications</title>
+    <url>/publications/index.html</url>
+    <content><![CDATA[<h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol>
+<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. <em>European Journal of Operational Research</em>, Under Review .</p>
+</li>
+<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Computer Integrated Manufacturing Systems</em> Under Review .</p>
+</li>
+</ol>
+<h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>
+
+<h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>]]></content>
+  </entry>
+  <entry>
     <title>Datasets and Algorithm Codes</title>
     <url>/resources/index.html</url>
     <content><![CDATA[<h1 id="Datesets"><a href="#Datesets" class="headerlink" title="Datesets"></a>Datesets</h1><h3 id="1-Integrated-Production-and-Distribution-Scheduling-Problem-IPDS"><a href="#1-Integrated-Production-and-Distribution-Scheduling-Problem-IPDS" class="headerlink" title="1. Integrated Production and Distribution Scheduling Problem(IPDS)"></a>1. Integrated Production and Distribution Scheduling Problem(IPDS)</h3><ol>
@@ -230,18 +243,5 @@ table th:nth-of-type(2) {
 </ol>
 <hr>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Journal Publications</title>
-    <url>/publications/index.html</url>
-    <content><![CDATA[<h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol>
-<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. <em>European Journal of Operational Research</em>, Under Review .</p>
-</li>
-<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Computer Integrated Manufacturing Systems</em> Under Review .</p>
-</li>
-</ol>
-<h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>
-
-<h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="6" color="blue"></font></p><li><font face="黑体" size="6" color="blue">None </font></li><p></p>]]></content>
   </entry>
 </search>
