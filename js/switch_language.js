@@ -10,7 +10,7 @@ window.onload = function () {
 
         }
         else {
-            window.location.href = "https://www,huangm.cn/cn";
+            window.location.href = "https://www.huangm.cn/cn";
         }
         if (typeof (_prevOnload) === 'function') {
             _prevOnload();
