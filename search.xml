@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>blog1</title>
-    <url>/2022/09/16/blog1/</url>
-    <content><![CDATA[<p>放到blog 中)<br> 简介：生产与配送集成调度是近些年来热门的研究领域。大多数学者认为 <a href="https://sci-hub.wf/10.1287/opre.28.6.1436">(Potts, 1980)</a>是该领域的开篇之作。随着该领域专家学者的不断拓展和深入，集成调度的相关研究得到了空前的发展。各方面的理论和方法也不断被提出，可参照综述文献 <a href="https://sci-hub.wf/10.1287/opre.1080.0688">(Chen, 2010)</a>,<a href="https://sci-hub.wf/10.1016/j.cie.2016.12.010">(Moons et al., 2017)</a>, <a href="https://sci-hub.wf/10.1080/00207543.2020.1762019">(Kumar et al., 2020)</a>进行系统的梳理。</p>
-<blockquote>
-<p>根据问题特征我们对如下数据集进行简要描述：</p>
-<ul>
-<li>生产调度：(作业车间调度、流水车间调度（流水线、置换、混流）、分布式车间调度、柔性调度、模糊调度、动态调度 等)</li>
-<li>配送调度：(运输问题、车辆路径问题（容量限制、时间窗约束、多行程等））<br>我们所提出的数据集所应用的模型涉及：<br><strong>流水线生产 &amp; 车辆路径问题（考虑容量限制、时间窗约束、多行程）&amp;模糊旅途时间</strong></li>
-</ul>
-</blockquote>
-<hr>
-]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2022/08/31/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -30,6 +16,20 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>blog1</title>
+    <url>/2022/09/16/blog1/</url>
+    <content><![CDATA[<p>放到blog 中)<br> 简介：生产与配送集成调度是近些年来热门的研究领域。大多数学者认为 <a href="https://sci-hub.wf/10.1287/opre.28.6.1436">(Potts, 1980)</a>是该领域的开篇之作。随着该领域专家学者的不断拓展和深入，集成调度的相关研究得到了空前的发展。各方面的理论和方法也不断被提出，可参照综述文献 <a href="https://sci-hub.wf/10.1287/opre.1080.0688">(Chen, 2010)</a>,<a href="https://sci-hub.wf/10.1016/j.cie.2016.12.010">(Moons et al., 2017)</a>, <a href="https://sci-hub.wf/10.1080/00207543.2020.1762019">(Kumar et al., 2020)</a>进行系统的梳理。</p>
+<blockquote>
+<p>根据问题特征我们对如下数据集进行简要描述：</p>
+<ul>
+<li>生产调度：(作业车间调度、流水车间调度（流水线、置换、混流）、分布式车间调度、柔性调度、模糊调度、动态调度 等)</li>
+<li>配送调度：(运输问题、车辆路径问题（容量限制、时间窗约束、多行程等））<br>我们所提出的数据集所应用的模型涉及：<br><strong>流水线生产 &amp; 车辆路径问题（考虑容量限制、时间窗约束、多行程）&amp;模糊旅途时间</strong></li>
+</ul>
+</blockquote>
+<hr>
 ]]></content>
   </entry>
   <entry>
@@ -122,48 +122,8 @@ table th:nth-of-type(2) {
             <h4 id="—-2021-7-2022-7-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）"><a href="#—-2021-7-2022-7-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）" class="headerlink" title="— 2021.7-2022.7 Tuoxing Zhiwang Technology Co., Ltd.  Wuhan （Java Back End Development）"></a>— 2021.7-2022.7 <a href="http://www.tonshinet.com/">Tuoxing Zhiwang Technology Co., Ltd.  Wuhan</a> （Java Back End Development）</h4><ol><li><p><font color="blue">2021.7-2021.12 </font> Development of Wind Plant Operation and Maintenance Application Platform</p></li><li><p><font color="blue">2022.1-2022.7 </font> Tangshan Sinoma Heavy Machinery PMS Improvement Project<br>  -Development of External Supplier Price Comparison Management Platform</p></li></ol>
           </div>
 
-<p><a href="https://clustrmaps.com/site/1bqbj"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=b6-cOzsyxmN07VPEXlJO1PaWKRLFhE6feh1y5oiN1Hw&amp;co=ffffff&amp;ct=555555"></a></p>
+<p><a href="https://clustrmaps.com/site/1bqdf" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=lPGunm_IA1w4rADFSr_XZ_r1KQCj0GoM-18qXvbMs1E&amp;co=ffffff&amp;ct=555555"></a></p>
 </div>]]></content>
-  </entry>
-  <entry>
-    <title>Scholars Link</title>
-    <url>/link/index.html</url>
-    <content><![CDATA[<h3 id="Operations-Research-amp-Optimization"><a href="#Operations-Research-amp-Optimization" class="headerlink" title="Operations Research &amp; Optimization"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Operations Research &amp; Optimization</font></p></h3><h5 id="Shop-Scheduling"><a href="#Shop-Scheduling" class="headerlink" title="Shop Scheduling"></a>Shop Scheduling</h5><ul>
-<li><a href="https://www.au.tsinghua.edu.cn/info/1107/1558.htm"><strong>Ling Wang</strong></a>（Tsinghua University-Department of Automation）</li>
-<li><a href="http://mse.hust.edu.cn/info/1143/1387.htm"><strong>Liang Gao</strong></a>（Huazhong University of Science and Technology - School of Mechanical Science &amp; Engineering）</li>
-<li><a href="http://sa.whut.edu.cn/yjspy/dsdw/201902/t20190225_353630.shtml"><strong>Deming Lei</strong></a>（Wuhan University of Technology-School of Automation）</li>
-<li><a href="http://ischedulings.com/project.html"><strong>Junqing Li</strong></a>（Liaocheng University-School of Computer Science）</li>
-</ul>
-<h5 id="Integrated-Scheduling-amp-Vehicle-Routing"><a href="#Integrated-Scheduling-amp-Vehicle-Routing" class="headerlink" title="Integrated Scheduling &amp; Vehicle Routing"></a>Integrated Scheduling &amp; Vehicle Routing</h5><ul>
-<li><a href="http://ems.whu.edu.cn/info/1718/10649.htm"><strong>Kai Wang</strong></a>（Wuhan University-School of Economics and Management）</li>
-<li><a href="http://cm.hust.edu.cn/info/1745/24587.htm"><strong>Hu Qin</strong></a>（Huazhong University of Science and Technology-School of Management）</li>
-<li><a href="http://cm.hust.edu.cn/info/1746/24605.htm"><strong>Kunpeng Li</strong></a>（Huazhong University of Science and Technology-School of Management）</li>
-<li><a href="https://gr.xjtu.edu.cn/web/ya.liu/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><strong>Ya Liu</strong></a>（Xi’an Jiaotong University-School of Management）</li>
-<li><a href="http://faculty.hfut.edu.cn/~ZNBjIb/zh_CN/index.htm"><strong>Bayi Cheng</strong></a>（Hefei University of Technology-School of Management）</li>
-<li><a href="http://bs.scu.edu.cn/gongye/201904/5203.html"><strong>Zhaoxia Guo</strong></a>（Sichuan University - School of Business）</li>
-</ul>
-<h5 id="Resource-and-Project-Scheduling"><a href="#Resource-and-Project-Scheduling" class="headerlink" title="Resource and Project Scheduling"></a>Resource and Project Scheduling</h5><ul>
-<li><a href="http://202.118.1.237/sxliu/index.html"><strong>Shixin Liu</strong></a>（Northeastern University - School of Information Science and Engineering）</li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>Baigang Du</strong></a>（Wuhan University of Technology - School of Mechanical and Electrical Engineering）</li>
-</ul>
-<h5 id="Disassembly-Line-Balancing-Assembly-Line-Scheduling"><a href="#Disassembly-Line-Balancing-Assembly-Line-Scheduling" class="headerlink" title="Disassembly Line Balancing, Assembly Line Scheduling"></a>Disassembly Line Balancing, Assembly Line Scheduling</h5><ul>
-<li><a href="https://faculty.swjtu.edu.cn/zhangzeqiang/zh_CN/index/97881/list/index.htm"><strong>Zeqiang Zhang</strong></a>（Southwest Jiaotong University-School of Mechanical Engineering）</li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>Jun Guo</strong></a>（Wuhan University of Technology - School of Mechanical and Electrical Engineering）</li>
-</ul>
-<h5 id="Digital-Twin"><a href="#Digital-Twin" class="headerlink" title="Digital Twin"></a>Digital Twin</h5><ul>
-<li><a href="https://shi.buaa.edu.cn/taofei/zh_CN/index.htm"><strong>Fei Tao</strong></a>（Beihang University-Institute of Science and Technology）</li>
-</ul>
-<h3 id="Evolutionary-Computation"><a href="#Evolutionary-Computation" class="headerlink" title="Evolutionary Computation"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Evolutionary Computation</font></p></h3><ul>
-<li><a href="https://www.egr.msu.edu/~kdeb/index.shtml"><strong>Kalyanmoy Deb</strong></a>（<a href="https://www.egr.msu.edu/~kdeb/codes.shtml">NSGA-II</a>）</li>
-<li><a href="https://www.cs.cityu.edu.hk/~qzhan7/index.html"><strong>Qingfu Zhang</strong></a>（MOEA/D City University of Hong Kong - Department of Computer Science）</li>
-<li><a href="http://wky.ahu.edu.cn/2022/0301/c13481a280306/page.htm"><strong>Ye Tian</strong></a>（<a href="https://github.com/BIMK/PlatEMO">platEMO</a> Anhui University）</li>
-<li><strong>Handing Wang</strong>（Xidian University）</li>
-</ul>
-<h3 id="Related-Academic-Links"><a href="#Related-Academic-Links" class="headerlink" title="Related Academic Links"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Related Academic Links</font></p></h3><ul>
-<li><a href="https://cuglirui.github.io/index.html"><strong>Rui Li</strong></a> (Flexible job shop scheduling <a href="https://cuglirui.github.io/downloads.htm">FJSP</a> <code>matlab</code>)</li>
-<li><a href="https://github.com/dengfaheng"><strong>Faheng Deng</strong></a> (Vehicle routing problem <a href="https://github.com/dengfaheng">VRP，TSP</a> <code>java</code>)</li>
-</ul>
-]]></content>
   </entry>
   <entry>
     <title>Welcome To My Academic Homepage</title>
@@ -237,21 +197,48 @@ table th:nth-of-type(2) {
             <h4 id="—-2021-7-2022-7-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）"><a href="#—-2021-7-2022-7-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）" class="headerlink" title="— 2021.7-2022.7 Tuoxing Zhiwang Technology Co., Ltd.  Wuhan （Java Back End Development）"></a>— 2021.7-2022.7 <a href="http://www.tonshinet.com/">Tuoxing Zhiwang Technology Co., Ltd.  Wuhan</a> （Java Back End Development）</h4><ul><li><p><font color="blue">2021.7-2021.12 </font> Development of Wind Plant Operation and Maintenance Application Platform</p></li><li><p><font color="blue">2022.1-2022.7 </font> Tangshan Sinoma Heavy Machinery PMS Improvement Project<br>  -Development of External Supplier Price Comparison Management Platform</p></li></ul>
           </div>
 
-<p><a href="https://clustrmaps.com/site/1bqbj"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=b6-cOzsyxmN07VPEXlJO1PaWKRLFhE6feh1y5oiN1Hw&amp;co=ffffff&amp;ct=555555"></a></p>
+<p><a href="https://clustrmaps.com/site/1bqdf" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=lPGunm_IA1w4rADFSr_XZ_r1KQCj0GoM-18qXvbMs1E&amp;co=ffffff&amp;ct=555555"></a></p>
 </div>]]></content>
   </entry>
   <entry>
-    <title>Journal Publications</title>
-    <url>/publications/index.html</url>
-    <content><![CDATA[<h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol>
-<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. <em>European Journal of Operational Research</em>, Under Review .</p>
-</li>
-<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Computer Integrated Manufacturing Systems</em> Under Review .</p>
-</li>
-</ol>
-<h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
-
-<h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>]]></content>
+    <title>Scholars Link</title>
+    <url>/link/index.html</url>
+    <content><![CDATA[<h3 id="Operations-Research-amp-Optimization"><a href="#Operations-Research-amp-Optimization" class="headerlink" title="Operations Research &amp; Optimization"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Operations Research &amp; Optimization</font></p></h3><h5 id="Shop-Scheduling"><a href="#Shop-Scheduling" class="headerlink" title="Shop Scheduling"></a>Shop Scheduling</h5><ul>
+<li><a href="https://www.au.tsinghua.edu.cn/info/1107/1558.htm"><strong>Ling Wang</strong></a>（Tsinghua University-Department of Automation）</li>
+<li><a href="http://mse.hust.edu.cn/info/1143/1387.htm"><strong>Liang Gao</strong></a>（Huazhong University of Science and Technology - School of Mechanical Science &amp; Engineering）</li>
+<li><a href="http://sa.whut.edu.cn/yjspy/dsdw/201902/t20190225_353630.shtml"><strong>Deming Lei</strong></a>（Wuhan University of Technology-School of Automation）</li>
+<li><a href="http://ischedulings.com/project.html"><strong>Junqing Li</strong></a>（Liaocheng University-School of Computer Science）</li>
+</ul>
+<h5 id="Integrated-Scheduling-amp-Vehicle-Routing"><a href="#Integrated-Scheduling-amp-Vehicle-Routing" class="headerlink" title="Integrated Scheduling &amp; Vehicle Routing"></a>Integrated Scheduling &amp; Vehicle Routing</h5><ul>
+<li><a href="http://ems.whu.edu.cn/info/1718/10649.htm"><strong>Kai Wang</strong></a>（Wuhan University-School of Economics and Management）</li>
+<li><a href="http://cm.hust.edu.cn/info/1745/24587.htm"><strong>Hu Qin</strong></a>（Huazhong University of Science and Technology-School of Management）</li>
+<li><a href="http://cm.hust.edu.cn/info/1746/24605.htm"><strong>Kunpeng Li</strong></a>（Huazhong University of Science and Technology-School of Management）</li>
+<li><a href="https://gr.xjtu.edu.cn/web/ya.liu/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><strong>Ya Liu</strong></a>（Xi’an Jiaotong University-School of Management）</li>
+<li><a href="http://faculty.hfut.edu.cn/~ZNBjIb/zh_CN/index.htm"><strong>Bayi Cheng</strong></a>（Hefei University of Technology-School of Management）</li>
+<li><a href="http://bs.scu.edu.cn/gongye/201904/5203.html"><strong>Zhaoxia Guo</strong></a>（Sichuan University - School of Business）</li>
+</ul>
+<h5 id="Resource-and-Project-Scheduling"><a href="#Resource-and-Project-Scheduling" class="headerlink" title="Resource and Project Scheduling"></a>Resource and Project Scheduling</h5><ul>
+<li><a href="http://202.118.1.237/sxliu/index.html"><strong>Shixin Liu</strong></a>（Northeastern University - School of Information Science and Engineering）</li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>Baigang Du</strong></a>（Wuhan University of Technology - School of Mechanical and Electrical Engineering）</li>
+</ul>
+<h5 id="Disassembly-Line-Balancing-Assembly-Line-Scheduling"><a href="#Disassembly-Line-Balancing-Assembly-Line-Scheduling" class="headerlink" title="Disassembly Line Balancing, Assembly Line Scheduling"></a>Disassembly Line Balancing, Assembly Line Scheduling</h5><ul>
+<li><a href="https://faculty.swjtu.edu.cn/zhangzeqiang/zh_CN/index/97881/list/index.htm"><strong>Zeqiang Zhang</strong></a>（Southwest Jiaotong University-School of Mechanical Engineering）</li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>Jun Guo</strong></a>（Wuhan University of Technology - School of Mechanical and Electrical Engineering）</li>
+</ul>
+<h5 id="Digital-Twin"><a href="#Digital-Twin" class="headerlink" title="Digital Twin"></a>Digital Twin</h5><ul>
+<li><a href="https://shi.buaa.edu.cn/taofei/zh_CN/index.htm"><strong>Fei Tao</strong></a>（Beihang University-Institute of Science and Technology）</li>
+</ul>
+<h3 id="Evolutionary-Computation"><a href="#Evolutionary-Computation" class="headerlink" title="Evolutionary Computation"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Evolutionary Computation</font></p></h3><ul>
+<li><a href="https://www.egr.msu.edu/~kdeb/index.shtml"><strong>Kalyanmoy Deb</strong></a>（<a href="https://www.egr.msu.edu/~kdeb/codes.shtml">NSGA-II</a>）</li>
+<li><a href="https://www.cs.cityu.edu.hk/~qzhan7/index.html"><strong>Qingfu Zhang</strong></a>（MOEA/D City University of Hong Kong - Department of Computer Science）</li>
+<li><a href="http://wky.ahu.edu.cn/2022/0301/c13481a280306/page.htm"><strong>Ye Tian</strong></a>（<a href="https://github.com/BIMK/PlatEMO">platEMO</a> Anhui University）</li>
+<li><strong>Handing Wang</strong>（Xidian University）</li>
+</ul>
+<h3 id="Related-Academic-Links"><a href="#Related-Academic-Links" class="headerlink" title="Related Academic Links"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Related Academic Links</font></p></h3><ul>
+<li><a href="https://cuglirui.github.io/index.html"><strong>Rui Li</strong></a> (Flexible job shop scheduling <a href="https://cuglirui.github.io/downloads.htm">FJSP</a> <code>matlab</code>)</li>
+<li><a href="https://github.com/dengfaheng"><strong>Faheng Deng</strong></a> (Vehicle routing problem <a href="https://github.com/dengfaheng">VRP，TSP</a> <code>java</code>)</li>
+</ul>
+]]></content>
   </entry>
   <entry>
     <title>Datasets and Algorithm Codes</title>
@@ -264,10 +251,7 @@ table th:nth-of-type(2) {
             <ul><li><strong>Fuzzy-IPDS Dateset（<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>（Beat Production Lines &amp; Vehicle Routing Problem with Soft Time Window and Heterogeneous vehicles &amp; Fuzzy Travel time）<br>DataSet：<a href="link">Fuzzy-IPDS Dateset</a><br><a href="link">The article</a> proposing this dataset<br><a href="link">A blog</a> introducing the formation process of this dataset</li></ul>
           </div>
 
-
-<blockquote>
-<p><strong>Original Intention</strong>: IPDS involves the optimization of production scheduling and distribution scheduling. Individually, production scheduling or distribution scheduling has been studied for a long time and has rich benchmark datasets and excellent solution algorithms. <strong>However, there is a paucity of benchmark datasets in IPDS studies.</strong> Due to the complexity and specificity of the problem, most studies have adopted randomly generated (or partially randomly generated) datasets for computational experiments, but few studies have published their test datasets for use and validation by other researchers. In order to provide a uniform benchmark for evaluating and measuring the performance of algorithms for the same and similar studies, we publish the used datasets and algorithms to facilitate the computational experiments of other researchers.</p>
-</blockquote>
+<p><font color="#428BCA" size="5"><strong>Original Intention</strong></font>:<br>IPDS involves the optimization of production scheduling and distribution scheduling. Individually, production scheduling or distribution scheduling has been studied for a long time and has rich benchmark datasets and excellent solution algorithms. <strong>However, there is a paucity of benchmark datasets in IPDS studies.</strong> Due to the complexity and specificity of the problem, most studies have adopted randomly generated (or partially randomly generated) datasets for computational experiments, but few studies have published their test datasets for use and validation by other researchers. In order to provide a uniform benchmark for evaluating and measuring the performance of algorithms for the same and similar studies, we publish the used datasets and algorithms to facilitate the computational experiments of other researchers.</p>
 <h4 id="2-Datasets-of-other-researchers"><a href="#2-Datasets-of-other-researchers" class="headerlink" title="2. Datasets of other researchers"></a>2. Datasets of other researchers</h4><ul>
 <li><p>VRPTW Datesets: <strong><a href="https://www.sintef.no/projectweb/top/vrptw/">Solomon-Benchmark</a></strong></p>
 </li>
@@ -287,5 +271,18 @@ table th:nth-of-type(2) {
 
 <hr>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Journal Publications</title>
+    <url>/publications/index.html</url>
+    <content><![CDATA[<h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol>
+<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. <em>European Journal of Operational Research</em>, Under Review .</p>
+</li>
+<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Computer Integrated Manufacturing Systems</em> Under Review .</p>
+</li>
+</ol>
+<h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
+
+<h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>]]></content>
   </entry>
 </search>
