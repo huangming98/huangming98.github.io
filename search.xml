@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/31/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>blog1</title>
     <url>/2022/09/16/blog1/</url>
     <content><![CDATA[<p>放到blog 中)<br> 简介：生产与配送集成调度是近些年来热门的研究领域。大多数学者认为 <a href="https://sci-hub.wf/10.1287/opre.28.6.1436">(Potts, 1980)</a>是该领域的开篇之作。随着该领域专家学者的不断拓展和深入，集成调度的相关研究得到了空前的发展。各方面的理论和方法也不断被提出，可参照综述文献 <a href="https://sci-hub.wf/10.1287/opre.1080.0688">(Chen, 2010)</a>,<a href="https://sci-hub.wf/10.1016/j.cie.2016.12.010">(Moons et al., 2017)</a>, <a href="https://sci-hub.wf/10.1080/00207543.2020.1762019">(Kumar et al., 2020)</a>进行系统的梳理。</p>
@@ -33,8 +15,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
+    <title>Hello World</title>
+    <url>/2022/08/31/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
 
@@ -124,6 +106,24 @@ table th:nth-of-type(2) {
 
 <p><a href="https://clustrmaps.com/site/1bqdf" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=lPGunm_IA1w4rADFSr_XZ_r1KQCj0GoM-18qXvbMs1E&amp;co=ffffff&amp;ct=555555"></a></p>
 </div>]]></content>
+  </entry>
+  <entry>
+    <title>about</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>Welcome To My Academic Homepage</title>
@@ -276,9 +276,9 @@ table th:nth-of-type(2) {
     <title>Journal Publications</title>
     <url>/publications/index.html</url>
     <content><![CDATA[<h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol>
-<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. <em>European Journal of Operational Research</em>, Under Review .</p>
+<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. <em>European Journal of Operational Research</em>, Under Review .<br><strong><a href="link"> (HCF-IMOEA) </a> <code>Matlab code</code> ;</strong> <strong><a href="link">(HCF-IPDS Dateset)</a></strong><br><em>Note: The algorithm code and Dateset will be updated after the article is published</em></p>
 </li>
-<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Computer Integrated Manufacturing Systems</em> Under Review .</p>
+<li><p><strong>Huang, M.</strong>, Du, B. G*., Guo, J. (2022). Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Computer Integrated Manufacturing Systems</em> Under Review .<br><strong><a href="link"> (NSGA-II-AVNS) </a> <code>Matlab code</code> ;</strong> <strong><a href="link">(Fuzzy-IPDS Dateset)</a></strong><br><em>Note: The algorithm code and Dateset will be updated after the article is published</em></p>
 </li>
 </ol>
 <h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
