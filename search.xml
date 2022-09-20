@@ -201,19 +201,6 @@ table th:nth-of-type(2) {
 </div>]]></content>
   </entry>
   <entry>
-    <title>Journal Publications</title>
-    <url>/publications/index.html</url>
-    <content><![CDATA[<h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol>
-<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. <em>European Journal of Operational Research</em>, Under Review .<br><strong><a href="link"> (HCF-IMOEA) </a> <code>Matlab code</code> ;</strong> <strong><a href="link">(HCF-IPDS Dateset)</a></strong><br><em>Note: The algorithm code and Dateset will be updated after the article is published</em></p>
-</li>
-<li><p><strong>Huang, M.</strong>, Du, B. G*., Guo, J. (2022). Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Computer Integrated Manufacturing Systems</em> Under Review .<br><strong><a href="link"> (NSGA-II-AVNS) </a> <code>Matlab code</code> ;</strong> <strong><a href="link">(Fuzzy-IPDS Dateset)</a></strong><br><em>Note: The algorithm code and Dateset will be updated after the article is published</em></p>
-</li>
-</ol>
-<h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
-
-<h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>]]></content>
-  </entry>
-  <entry>
     <title>Scholars Link</title>
     <url>/link/index.html</url>
     <content><![CDATA[<h3 id="Operations-Research-amp-Optimization"><a href="#Operations-Research-amp-Optimization" class="headerlink" title="Operations Research &amp; Optimization"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Operations Research &amp; Optimization</font></p></h3><h5 id="Shop-Scheduling"><a href="#Shop-Scheduling" class="headerlink" title="Shop Scheduling"></a>Shop Scheduling</h5><ul>
@@ -252,6 +239,19 @@ table th:nth-of-type(2) {
 <li><a href="https://github.com/dengfaheng"><strong>Faheng Deng</strong></a> (Vehicle routing problem <a href="https://github.com/dengfaheng">VRP，TSP</a> <code>java</code>)</li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Journal Publications</title>
+    <url>/publications/index.html</url>
+    <content><![CDATA[<h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol>
+<li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. (2022). A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with flexible batch manufacturing and soft time windows. <em>European Journal of Operational Research</em>, Under Review .<br><strong><a href="link"> (HCF-IMOEA) </a> <code>Matlab code</code> ;</strong> <strong><a href="link">(HCF-IPDS Dateset)</a></strong><br><em>Note: The algorithm code and Dateset will be updated after the article is published</em></p>
+</li>
+<li><p><strong>Huang, M.</strong>, Du, B. G*., Guo, J. (2022). Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Computer Integrated Manufacturing Systems</em> Under Review .<br><strong><a href="link"> (NSGA-II-AVNS) </a> <code>Matlab code</code> ;</strong> <strong><a href="link">(Fuzzy-IPDS Dateset)</a></strong><br><em>Note: The algorithm code and Dateset will be updated after the article is published</em></p>
+</li>
+</ol>
+<h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
+
+<h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>]]></content>
   </entry>
   <entry>
     <title>Datasets and Algorithm Codes</title>
