@@ -15,6 +15,118 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Welcome To My Academic Homepage</title>
+    <url>/index.html</url>
+    <content><![CDATA[<h1 id="News-boom"><a href="#News-boom" class="headerlink" title="News(:boom:)"></a>News(<span class="github-emoji"><span>💥</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>)</h1><div class="note danger">
+            <ul><li><font color="blue">2023. 11</font> “Huawei Cup” The 20th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Research on Optimization of Evaluation Plans for Large scale Innovation Competitions</li></ul>
+          </div>
+
+<div class="note danger">
+            <ul><li><font color="blue">2023. 10</font> — My paper has been published by CTA（chinese）.<br><font size="3"><strong>Paper cite</strong>: Huang, M., Du, B. G*., Guo, J., Li, Y.B., 2023. Integrated production and distribution scheduling optimization considering soft time windows and fuzzy travel times. Control Theory &amp; Applications, 40(x): 1–10. DOI: 10.7641/CTA.2023.20920 （EI index，IF:2.781）<br><a href="../pdf/%E8%80%83%E8%99%91%E8%BD%AF%E6%97%B6%E9%97%B4%E7%AA%97%E9%99%90%E5%88%B6%E5%92%8C%E6%A8%A1%E7%B3%8A%E6%97%85%E9%80%94%E6%97%B6%E9%97%B4%E7%9A%84%E7%94%9F%E4%BA%A7%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90%E8%B0%83%E5%BA%A6%E4%BC%98%E5%8C%96_%E9%BB%84%E9%93%AD.pdf"> (Paper) </a> <strong><code>(PDF)</code></strong><a href="../zip/NSGA-II-AVNS-Code.zip"> (Code) </a> <strong><code>(Matlab)</code></strong><a href="../zip/Fuzzy-IPDS-Dateset.zip"> (Dateset) </a> <strong><code>(.zip)</code></strong></font></li></ul>
+          </div>
+
+<div class="note danger">
+            <ul><li><font color="blue">2023. 07</font> — My paper has been published by COR.<br><font size="3"><strong>Paper cite</strong>: Huang, M., Du, B. G., Guo, J*., 2023. A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with batch manufacturing and soft time windows. Computers &amp; Operations Research, 159, 106346. <a href="https://doi.org/10.1016/j.cor.2023.106346">https://doi.org/10.1016/j.cor.2023.106346</a> （SCI Q1 , IF 4.6, ABS-3）<br><a href="../pdf/A%20hybrid%20collaborative%20framework%20for%20integrated%20production%20scheduling%20and%20vehicle%20routing%20problem%20with%20batch%20manufacturing%20and%20soft%20time%20windows.pdf"> (Paper) </a> <strong><code>(PDF)</code></strong></font></li></ul>
+          </div>
+
+<div class="note danger">
+            <ul><li><font color="blue">2023. 06</font> — Outstanding graduate of Wuhan University of Technology</li></ul>
+          </div>
+
+<div class="note danger">
+            <ul><li><font color="blue">2023. 06</font> — My master’s thesis was finished and passed.<br><font size="3" color="black"><strong>Master’s thesis cite</strong>: Huang, M. 2023. Research on integrated production and distribution scheduling for fast moving consumer goods manufacturing enterprise. Wuhan University of Technology.<a href="../pdf/(Thesis)%20%E5%BF%AB%E9%80%9F%E6%B6%88%E8%B4%B9%E5%93%81%E5%88%B6%E9%80%A0%E4%BC%81%E4%B8%9A%E7%94%9F%E4%BA%A7-%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90%E8%B0%83%E5%BA%A6%E7%A0%94%E7%A9%B6.pdf"> (Paper) </a> <strong><code>PDF</code></strong>;</font></li></ul><font size="3" color="black">
+          </font></div><font size="3" color="black">
+
+<hr>
+<h1 id="Biography"><a href="#Biography" class="headerlink" title="Biography"></a>Biography</h1><p>Ming Huang was born in Xingtai, Hebei Province, China in 1999. Currently, I am pursuing a doctoral degree in Mechanical Engineering at Beijing Institute of Technology.</p>
+<p>If you have any further questions, please feel free to contact me.<br>My E-mail（ <span class="github-emoji"><span>✉</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> ）： <a href="mailto:huangming@bit.edu.cn">huangming@bit.edu.cn</a>.(or <a href="mailto:huangming98@163.com">huangming98@163.com</a>)<br>Address：School of Mechanical Engineering, Beijing Institute of Technology, Beijing  100081, China </p>
+<!-- 让表格居中显示的风格 -->
+<style>
+.center 
+{
+  display: table;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+table th:first-of-type {
+    width: 420pt;
+}
+table th:nth-of-type(2) {
+    width: 640pt;
+}
+</style>
+
+<div class="center">
+
+<table>
+<thead>
+<tr>
+<th align="left"><span class="github-emoji"><span>🔍</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Interests</th>
+<th align="left"><span class="github-emoji"><span>🎓</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Education</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><li><strong>Digital Twin Driven</strong></li><li><strong>Reconfiguration Decision and Optimization</strong></li><li><strong>Human-Robot Collaboration Optimization</strong></li><li>Integrated Production and Distribution Scheduling</li><li> Complex System Modeling and Optimization </li><li>Multi-objective Optimization</li></td>
+<td align="left"><li><strong>2023. 09 - 2027. 07 D.Eng in Mechanical Engineering– Beijing Institute of Technology</strong></li><li>2020. 09 - 2023. 07 M.Eng. in Industrial Engineering– Wuhan University of Technology</li><li>2016. 09 - 2020. 07 B.Eng. in Quality Management Engineering– He Bei University </li><li>2013. 09 - 2016. 07 Student in the first senior high school of Xingtai City, Hebei</li></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<div class="tabs" id="yearlist"><ul class="nav-tabs"><li class="tab"><a href="#yearlist-1">2023 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li><li class="tab active"><a href="#yearlist-2">2024 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li></ul><div class="tab-content"><div class="tab-pane" id="yearlist-1"><p><strong>2023 To Do list <span class="github-emoji"><span>🎯</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong><br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Going to pass the PhD application examination<br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Getting a Master’s Degree:<br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Acceptance of three papers or more（Progress: 2/3）<br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go to improve English listening skills<br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> To control the weight between 55-60kg, a strong body is the basis of scientific research.<br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go save up money because maybe try hair transplants to fight hair loss.<br><em><strong>Words I Wanted To Say：There are many things worth doing in one’s life, and the most significant is to do it right now.<span class="github-emoji"><span>🏃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong></em></p></div><div class="tab-pane active" id="yearlist-2"><p><strong>2024 To Do list <span class="github-emoji"><span>🎯</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong><br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Acceptance of three papers or more（Progress: 0/3）<br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go to improve English listening skills<br>AND SO ON </p></div></div></div>
+
+<hr>
+<h1 id="Supervisor"><a href="#Supervisor" class="headerlink" title="Supervisor"></a>Supervisor</h1><ul>
+<li><a href="https://me.bit.edu.cn/szdw/jsml/zzgcx/gygcyjs/sssds13/13ddf65bcbdf4f5c83acd440457ee9de.htm"><strong>Sihan Huang</strong></a> associate professor（My doctoral  supervisor） <br></li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>Baigang Du</strong></a> associate professor（My master’s supervisor） <br></li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>Jun Guo</strong></a> associate professor（My associate master’s supervisor）</li>
+</ul>
+<hr>
+<h1 id="Awards"><a href="#Awards" class="headerlink" title="Awards"></a>Awards</h1><!-- 标签形式 -->
+<div class="note info">
+            <ul><li><font color="blue">2023. 11</font> “Huawei Cup” The 20th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Research on Optimization of Evaluation Plans for Large scale Innovation Competitions</li></ul>
+          </div>
+
+<div class="note info">
+            <ul><li><font color="blue">2023. 06</font> Outstanding graduate of Wuhan University of Technology — <strong>Personal Honor</strong></li></ul>
+          </div>
+
+<div class="note info">
+            <ul><li><font color="blue">2022. 12</font> “Huawei Cup” The 19th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Scheduling optimization problem for automotive manufacturing painting-final assembly cache sequencing zone</li></ul>
+          </div>
+
+<div class="note info">
+            <ul><li><font color="blue">2022. 06</font> The 12th Wuhan University of Technology Post-graduate Mathematical Contest  — <strong>First Prize</strong><br> Modeling topic: Research on resource-constrained vehicle routing problem</li></ul>
+          </div>
+
+<div class="note info">
+            <ul><li><font color="blue">2021. 12</font> “Huawei Cup” The 18th China Post-granduate Mathematical Contest — <strong>Third Prize</strong><br>Modeling topic: Airline crew optimization scheduling problem</li></ul>
+          </div>
+
+<div class="note info">
+            <ul><li><font color="blue">2021. 01</font> “Cloud Talk New Technology” Popular Science Contest— <strong>Third Prize</strong><br> Entry: OpenCV-based smart power plant inspection trolley</li></ul>
+          </div>
+
+
+<hr>
+<h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h3 id="Fund"><a href="#Fund" class="headerlink" title="Fund"></a>Fund</h3><div class="note warning">
+            <ol><li>Independent Innovation Foundation of Wuhan University of Technology —— Postgraduate Personal Exploration Project :<br>Research on Integrated  Production and Distribution Scheduling with Flexible Batching and Soft Time Windows<br><font color="blue">2022. 01-2022. 12</font>（<strong>Project Principals</strong>）</li></ol>
+          </div>
+
+<div class="note warning">
+            <ol start="2"><li>National Natural Science Foundation of China (Youth Fund) ：<br>A game method of supply and demand allocation of complex product system manufacturing services for social collaboration<br><font color="blue">2018. 01-2020. 12 </font>（<strong>Project Participants</strong>）</li></ol>
+          </div>
+
+<h3 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h3><div class="note warning">
+            <h4 id="—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）"><a href="#—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）" class="headerlink" title="— 2021. 07-2022. 07 Tuoxing Zhiwang Technology Co., Ltd.  Wuhan （Java Back End Development）"></a>— 2021. 07-2022. 07 <a href="http://www.tonshinet.com/">Tuoxing Zhiwang Technology Co., Ltd.  Wuhan</a> （Java Back End Development）</h4><ol><li><p><font color="blue">2021. 07-2021. 12 </font> Development of Wind Plant Operation and Maintenance Application Platform</p></li><li><p><font color="blue">2022. 01-2022. 07 </font> Tangshan Sinoma Heavy Machinery PMS Improvement Project<br>  -Development of External Supplier Price Comparison Management Platform</p></li></ol>
+          </div>
+
+
+<p><a href="https://clustrmaps.com/site/1bqdf" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=lPGunm_IA1w4rADFSr_XZ_r1KQCj0GoM-18qXvbMs1E&amp;co=ffffff&amp;ct=555555"></a></p>
+</div></font>]]></content>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -155,123 +267,11 @@ table th:nth-of-type(2) {
           </div>
 
 <div class="note warning">
-            <h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol><li><strong>Huang, M.</strong>, Du, B. G., Guo, J*, Huang,S. H., Li, Y, B.. (2023). Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times <em>IEEE Transactions on Fuzzy Systems</em>, Under Review .<br><a href="link"> (Paper) </a> <strong><code>PDF</code></strong> ; <a href="../zip/KDCEA-Code.zip"> (KDCEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-Dateset.zip">(IPSVRP-STW&amp;FTT Dateset)</a> <strong><code>.zip</code></strong><br><em>Note: The paper link will be updated after the paper is published</em></li></ol>
+            <h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol><li><strong>Huang, M.</strong>, Huang,S. H., Du, B. G., Guo, J*, Li, Y, B.. (2023). Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times <em>IEEE Transactions on Fuzzy Systems</em>, Under Review .<br><a href="link"> (Paper) </a> <strong><code>PDF</code></strong> ; <a href="../zip/KDCEA-Code.zip"> (KDCEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-Dateset.zip">(IPSVRP-STW&amp;FTT Dateset)</a> <strong><code>.zip</code></strong><br><em>Note: The paper link will be updated after the paper is published</em></li></ol>
           </div>
 <div class="note warning">
             <h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
           </div>]]></content>
-  </entry>
-  <entry>
-    <title>Welcome To My Academic Homepage</title>
-    <url>/index.html</url>
-    <content><![CDATA[<h1 id="News-boom"><a href="#News-boom" class="headerlink" title="News(:boom:)"></a>News(<span class="github-emoji"><span>💥</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>)</h1><div class="note danger">
-            <ul><li><font color="blue">2023. 11</font> “Huawei Cup” The 20th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Research on Optimization of Evaluation Plans for Large scale Innovation Competitions</li></ul>
-          </div>
-
-<div class="note danger">
-            <ul><li><font color="blue">2023. 10</font> — My paper has been published by CTA（chinese）.<br><font size="3"><strong>Paper cite</strong>: Huang, M., Du, B. G*., Guo, J., Li, Y.B., 2023. Integrated production and distribution scheduling optimization considering soft time windows and fuzzy travel times. Control Theory &amp; Applications, 40(x): 1–10. DOI: 10.7641/CTA.2023.20920 （EI index，IF:2.781）<br><a href="../pdf/%E8%80%83%E8%99%91%E8%BD%AF%E6%97%B6%E9%97%B4%E7%AA%97%E9%99%90%E5%88%B6%E5%92%8C%E6%A8%A1%E7%B3%8A%E6%97%85%E9%80%94%E6%97%B6%E9%97%B4%E7%9A%84%E7%94%9F%E4%BA%A7%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90%E8%B0%83%E5%BA%A6%E4%BC%98%E5%8C%96_%E9%BB%84%E9%93%AD.pdf"> (Paper) </a> <strong><code>(PDF)</code></strong><a href="../zip/NSGA-II-AVNS-Code.zip"> (Code) </a> <strong><code>(Matlab)</code></strong><a href="../zip/Fuzzy-IPDS-Dateset.zip"> (Dateset) </a> <strong><code>(.zip)</code></strong></font></li></ul>
-          </div>
-
-<div class="note danger">
-            <ul><li><font color="blue">2023. 07</font> — My paper has been published by COR.<br><font size="3"><strong>Paper cite</strong>: Huang, M., Du, B. G., Guo, J*., 2023. A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with batch manufacturing and soft time windows. Computers &amp; Operations Research, 159, 106346. <a href="https://doi.org/10.1016/j.cor.2023.106346">https://doi.org/10.1016/j.cor.2023.106346</a> （SCI Q1 , IF 4.6, ABS-3）<br><a href="../pdf/A%20hybrid%20collaborative%20framework%20for%20integrated%20production%20scheduling%20and%20vehicle%20routing%20problem%20with%20batch%20manufacturing%20and%20soft%20time%20windows.pdf"> (Paper) </a> <strong><code>(PDF)</code></strong></font></li></ul>
-          </div>
-
-<div class="note danger">
-            <ul><li><font color="blue">2023. 06</font> — Outstanding graduate of Wuhan University of Technology</li></ul>
-          </div>
-
-<div class="note danger">
-            <ul><li><font color="blue">2023. 06</font> — My master’s thesis was finished and passed.<br><font size="3" color="black"><strong>Master’s thesis cite</strong>: Huang, M. 2023. Research on integrated production and distribution scheduling for fast moving consumer goods manufacturing enterprise. Wuhan University of Technology.<a href="../pdf/(Thesis)%20%E5%BF%AB%E9%80%9F%E6%B6%88%E8%B4%B9%E5%93%81%E5%88%B6%E9%80%A0%E4%BC%81%E4%B8%9A%E7%94%9F%E4%BA%A7-%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90%E8%B0%83%E5%BA%A6%E7%A0%94%E7%A9%B6.pdf"> (Paper) </a> <strong><code>PDF</code></strong>;</font></li></ul><font size="3" color="black">
-          </font></div><font size="3" color="black">
-
-<hr>
-<h1 id="Biography"><a href="#Biography" class="headerlink" title="Biography"></a>Biography</h1><p>Ming Huang was born in Xingtai, Hebei Province, China in 1999. Currently, I am pursuing a doctoral degree in Mechanical Engineering at Beijing Institute of Technology.</p>
-<p>If you have any further questions, please feel free to contact me.<br>My E-mail（ <span class="github-emoji"><span>✉</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> ）： <a href="mailto:huangming@bit.edu.cn">huangming@bit.edu.cn</a>.(or <a href="mailto:huangming98@163.com">huangming98@163.com</a>)<br>Address：School of Mechanical Engineering, Beijing Institute of Technology, Beijing  100081, China </p>
-<!-- 让表格居中显示的风格 -->
-<style>
-.center 
-{
-  display: table;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-table th:first-of-type {
-    width: 420pt;
-}
-table th:nth-of-type(2) {
-    width: 640pt;
-}
-</style>
-
-<div class="center">
-
-<table>
-<thead>
-<tr>
-<th align="left"><span class="github-emoji"><span>🔍</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Interests</th>
-<th align="left"><span class="github-emoji"><span>🎓</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Education</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><li><strong>Digital Twin Driven</strong></li><li><strong>Reconfiguration Decision and Optimization</strong></li><li><strong>Human-Robot Collaboration Optimization</strong></li><li>Integrated Production and Distribution Scheduling</li><li> Complex System Modeling and Optimization </li><li>Multi-objective Optimization</li></td>
-<td align="left"><li><strong>2023. 09 - 2027. 07 D.Eng in Mechanical Engineering– Beijing Institute of Technology</strong></li><li>2020. 09 - 2023. 07 M.Eng. in Industrial Engineering– Wuhan University of Technology</li><li>2016. 09 - 2020. 07 B.Eng. in Quality Management Engineering– He Bei University </li><li>2013. 09 - 2016. 07 Student in the first senior high school of Xingtai City, Hebei</li></td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<div class="tabs" id="yearlist"><ul class="nav-tabs"><li class="tab"><a href="#yearlist-1">2023 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li><li class="tab active"><a href="#yearlist-2">2024 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li></ul><div class="tab-content"><div class="tab-pane" id="yearlist-1"><p><strong>2023 To Do list <span class="github-emoji"><span>🎯</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong><br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Going to pass the PhD application examination<br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Getting a Master’s Degree:<br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Acceptance of three papers or more（Progress: 2/3）<br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go to improve English listening skills<br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> To control the weight between 55-60kg, a strong body is the basis of scientific research.<br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go save up money because maybe try hair transplants to fight hair loss.<br><em><strong>Words I Wanted To Say：There are many things worth doing in one’s life, and the most significant is to do it right now.<span class="github-emoji"><span>🏃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong></em></p></div><div class="tab-pane active" id="yearlist-2"><p><strong>2024 To Do list <span class="github-emoji"><span>🎯</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong><br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Acceptance of three papers or more（Progress: 0/3）<br><span class="github-emoji"><span>🔲</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go to improve English listening skills<br>AND SO ON </p></div></div></div>
-
-<hr>
-<h1 id="Supervisor"><a href="#Supervisor" class="headerlink" title="Supervisor"></a>Supervisor</h1><ul>
-<li><a href="https://me.bit.edu.cn/szdw/jsml/zzgcx/gygcyjs/sssds13/13ddf65bcbdf4f5c83acd440457ee9de.htm"><strong>Sihan Huang</strong></a> associate professor（My doctoral  supervisor） <br></li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>Baigang Du</strong></a> associate professor（My master’s supervisor） <br></li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>Jun Guo</strong></a> associate professor（My associate master’s supervisor）</li>
-</ul>
-<hr>
-<h1 id="Awards"><a href="#Awards" class="headerlink" title="Awards"></a>Awards</h1><!-- 标签形式 -->
-<div class="note info">
-            <ul><li><font color="blue">2023. 11</font> “Huawei Cup” The 20th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Research on Optimization of Evaluation Plans for Large scale Innovation Competitions</li></ul>
-          </div>
-
-<div class="note info">
-            <ul><li><font color="blue">2023. 06</font> Outstanding graduate of Wuhan University of Technology — <strong>Personal Honor</strong></li></ul>
-          </div>
-
-<div class="note info">
-            <ul><li><font color="blue">2022. 12</font> “Huawei Cup” The 19th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Scheduling optimization problem for automotive manufacturing painting-final assembly cache sequencing zone</li></ul>
-          </div>
-
-<div class="note info">
-            <ul><li><font color="blue">2022. 06</font> The 12th Wuhan University of Technology Post-graduate Mathematical Contest  — <strong>First Prize</strong><br> Modeling topic: Research on resource-constrained vehicle routing problem</li></ul>
-          </div>
-
-<div class="note info">
-            <ul><li><font color="blue">2021. 12</font> “Huawei Cup” The 18th China Post-granduate Mathematical Contest — <strong>Third Prize</strong><br>Modeling topic: Airline crew optimization scheduling problem</li></ul>
-          </div>
-
-<div class="note info">
-            <ul><li><font color="blue">2021. 01</font> “Cloud Talk New Technology” Popular Science Contest— <strong>Third Prize</strong><br> Entry: OpenCV-based smart power plant inspection trolley</li></ul>
-          </div>
-
-
-<hr>
-<h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h3 id="Fund"><a href="#Fund" class="headerlink" title="Fund"></a>Fund</h3><div class="note warning">
-            <ol><li>Independent Innovation Foundation of Wuhan University of Technology —— Postgraduate Personal Exploration Project :<br>Research on Integrated  Production and Distribution Scheduling with Flexible Batching and Soft Time Windows<br><font color="blue">2022. 01-2022. 12</font>（<strong>Project Principals</strong>）</li></ol>
-          </div>
-
-<div class="note warning">
-            <ol start="2"><li>National Natural Science Foundation of China (Youth Fund) ：<br>A game method of supply and demand allocation of complex product system manufacturing services for social collaboration<br><font color="blue">2018. 01-2020. 12 </font>（<strong>Project Participants</strong>）</li></ol>
-          </div>
-
-<h3 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h3><div class="note warning">
-            <h4 id="—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）"><a href="#—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）" class="headerlink" title="— 2021. 07-2022. 07 Tuoxing Zhiwang Technology Co., Ltd.  Wuhan （Java Back End Development）"></a>— 2021. 07-2022. 07 <a href="http://www.tonshinet.com/">Tuoxing Zhiwang Technology Co., Ltd.  Wuhan</a> （Java Back End Development）</h4><ol><li><p><font color="blue">2021. 07-2021. 12 </font> Development of Wind Plant Operation and Maintenance Application Platform</p></li><li><p><font color="blue">2022. 01-2022. 07 </font> Tangshan Sinoma Heavy Machinery PMS Improvement Project<br>  -Development of External Supplier Price Comparison Management Platform</p></li></ol>
-          </div>
-
-
-<p><a href="https://clustrmaps.com/site/1bqdf" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=lPGunm_IA1w4rADFSr_XZ_r1KQCj0GoM-18qXvbMs1E&amp;co=ffffff&amp;ct=555555"></a></p>
-</div></font>]]></content>
   </entry>
   <entry>
     <title>Scholars Link</title>
