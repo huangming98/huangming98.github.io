@@ -431,10 +431,11 @@ table th:nth-of-type(2) {
 
 <script src="/js/switch_language.js"></script>
       </div>
-
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25713016&auto=1&height=66"></iframe>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
+
 
 
       </div>
@@ -453,11 +454,33 @@ table th:nth-of-type(2) {
   
    
 </div>
-  <div class="powered-by">Do not be afraid of making mistakes, only of missing opportunities.
+  <div class="powered-by"><p style="color:rgb(0,0,255,0.8);font-size:1.2em;font-weight:bold;font-family:Arial">Do not be afraid of making mistakes, only of missing opportunities!</p>
   </div>
 
 <!-- Insert clustrmaps.com -->
 <!-- <a target="_blank" rel="noopener" href='https://clustrmaps.com/site/1bqbj' ><img src='//clustrmaps.com/map_v2.png?cl=555555&w=350&t=m&d=b6-cOzsyxmN07VPEXlJO1PaWKRLFhE6feh1y5oiN1Hw&co=f5f5f5&ct=555555'/></a> -->
+
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/01/2023 10:00:00"); //此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "<br />This website has been running quietly for  "+dnum+" days ";
+        document.getElementById("times").innerHTML = hnum + " hours " + mnum + " minutes " + snum + " seconds.";
+    } 
+setInterval("createtime()",250);
+</script>
+
 
 
         
