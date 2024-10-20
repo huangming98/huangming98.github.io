@@ -38,33 +38,39 @@
     <title>如何优雅的使用 Word 进行论文书写（初级版）</title>
     <url>/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/</url>
     <content><![CDATA[<h1 id="1-多级标题的设置"><a href="#1-多级标题的设置" class="headerlink" title="1. 多级标题的设置"></a>1. 多级标题的设置</h1><blockquote>
-<p>&amp;emsp;&amp;emsp; 构建一个视觉舒服且直观的大纲列表对于开始论文的书写显得格外的重要。而word默认给出的标题样式模板对于书写论文来说太疏松了。本节主要介绍如何自定义一套适合自己的word标题模板。<br>&amp;emsp;&amp;emsp;如果对各级标题进行逐个格式化，并为其手动添加序号（如1.1 |第1.1章|第一章 等）就显得不够优雅。有没有一种方式能让我们就像书写markdown一样更加的丝滑那？</p>
+<p>构建一个视觉舒服且直观的大纲列表对于开始论文的书写显得格外的重要。而word默认给出的标题样式模板对于书写论文来说太疏松了。本节主要介绍如何自定义一套适合自己的word标题模板。<br>如果对各级标题进行逐个格式化，并为其手动添加序号（如1.1 |第1.1章|第一章 等）就显得不够优雅。有没有一种方式能让我们就像书写markdown一样更加的丝滑那？</p>
 </blockquote>
-<p>&amp;emsp;&amp;emsp;首先，我们新建一个word 对 <code>开始</code>→<code>样式</code>中的我们所预想的格式、字体大小、段落间距等进行预设。<br><strong>主要涉及正文以及标题、1，2，3级标题</strong></p>
-<div align="center"><img src="../img/23.12 wordtips/titletype.jpg" width="80%" height="50%"></div>
+<p>首先，我们新建一个word 对 <code>开始</code>→<code>样式</code>中的我们所预想的格式、字体大小、段落间距等进行预设。<br><strong>主要涉及正文以及标题、1，2，3级标题</strong></p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/titletype.jpg" width="80%" height="50%"></div>
 
 
 <p><strong>注意</strong> :记着更改各级标题时,每个都要勾选基于该模板的新文档，这样下次新建 word 时直接使用已经更改好的模板即可。</p>
 <p><strong>然后就是为各级标题添加序号</strong></p>
-<p>&amp;emsp;&amp;emsp;进入：<code>开始</code>→<code>多级序号</code>→<code>定义新的多级列表</code> 按需求进行设置即可:</p>
-<div align="center"><img src="../img/23.12 wordtips/title.NO.jpg" width="80%" height="50%"></div>
+<p>进入：<code>开始</code>→<code>多级序号</code>→<code>定义新的多级列表</code> 按需求进行设置即可:</p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/title.NO.jpg" width="80%" height="50%"></div>
 
 <p><strong>注意</strong> ：为各级标题添加了序号后，实际是把标题样式进行了更新，所以完成编号后需要再次为每个标题进行勾选基于该模板的新文档，不需要改动别的什么直接按  <code>确定</code> 即可，这样下次新建 word 时直接使用已经更改好的带编号的模板了。</p>
 <hr>
-<h1 id="2-图、表的插入与索引"><a href="#2-图、表的插入与索引" class="headerlink" title="2.图、表的插入与索引"></a>2.图、表的插入与索引</h1><h2 id="2-1-图的题注插入"><a href="#2-1-图的题注插入" class="headerlink" title="2.1 图的题注插入"></a>2.1 图的题注插入</h2><p><em><strong>这一步的前提是 你的标题编号是按上述形式插入的,而非手动写的。这样 word 才能识别你的编号从而插入题注里</strong></em><br>&amp;emsp;&amp;emsp;插入图片后  一般选用嵌入式（默认） 右键后选自 <code>插入题注</code> 比如我们想要 <code>图 1.1</code> 新建标签 <code>图</code> 选择编号的格式。示例如下：</p>
-<div align="center"><img src="../img/23.12 wordtips/Fig.jpg" width="60%" height="50%"></div>
+<h1 id="2-图、表的插入与索引"><a href="#2-图、表的插入与索引" class="headerlink" title="2.图、表的插入与索引"></a>2.图、表的插入与索引</h1><h2 id="2-1-图的题注插入"><a href="#2-1-图的题注插入" class="headerlink" title="2.1 图的题注插入"></a>2.1 图的题注插入</h2><p><em><strong>这一步的前提是 你的标题编号是按上述形式插入的,而非手动写的。这样 word 才能识别你的编号从而插入题注里</strong></em><br>插入图片后  一般选用嵌入式（默认） 右键后选自 <code>插入题注</code> 比如我们想要 <code>图 1.1</code> 新建标签 <code>图</code> 选择编号的格式。示例如下：</p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/Fig.jpg  " width="60%" height="50%"></div>
 
-<p>&amp;emsp;&amp;emsp;设置好后  在为接下来的插入的图进行题注时 word 会自动识别其应该是<strong>图5还是图6</strong>。无需你在考虑图几，你仅需要输入图的名字即可。</p>
-<h2 id="2-2-三线表的插入"><a href="#2-2-三线表的插入" class="headerlink" title="2.2 三线表的插入"></a>2.2 三线表的插入</h2><p>&amp;emsp;&amp;emsp;首选插入一个表 然后再 <code>表格样式里选择新建表格样式</code>然后进行如下操作 </p>
-<div align="center"><img src="../img/23.12 wordtips/table.jpg" width="60%" height="50%"></div>
+<p>设置好后  在为接下来的插入的图进行题注时 word 会自动识别其应该是<strong>图5还是图6</strong>。无需你在考虑图几，你仅需要输入图的名字即可。</p>
+<h2 id="2-2-三线表的插入"><a href="#2-2-三线表的插入" class="headerlink" title="2.2 三线表的插入"></a>2.2 三线表的插入</h2><p>首选插入一个表 然后再 <code>表格样式里选择新建表格样式</code>然后进行如下操作 </p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/table.jpg" width="60%" height="50%"></div>
 
 <p><strong>注意：</strong> <em>记着要勾选基于该模板的新文档，这样下次新建时直接使用已经更改好的三线表了。<br>如果更改后发现没有找到 保存并退出 word 然后重新打开即可看到三线表出现在表格样式里。同样的方法进行表的题注的插入</em></p>
-<h2 id="2-3-正文中索引图、表"><a href="#2-3-正文中索引图、表" class="headerlink" title="2.3 正文中索引图、表"></a>2.3 正文中索引图、表</h2><p> &amp;emsp;&amp;emsp;选择要插入的位置，点击功能栏 <code>插入下的交叉引用</code> 可进行如图操作<br> </p><div align="center">&lt;img src=”../img/23.12 wordtips/index.jpg”width=”60%” height=”50%” &gt;</div><p></p>
+<h2 id="2-3-正文中索引图、表"><a href="#2-3-正文中索引图、表" class="headerlink" title="2.3 正文中索引图、表"></a>2.3 正文中索引图、表</h2><p>选择要插入的位置，点击功能栏 <code>插入下的交叉引用</code> 可进行如图操作</p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/index.jpg" width="60%" height="50%"></div>
+ 
 <p> <strong>注：</strong> <em>当我们插入新图后，图的序号发生改变但是插入正文中的索引未变 ，不要慌 此时我能只需要更新插入引用的域即可 全选后按F9 更新全文的域</em></p>
 <hr>
-<h1 id="3-MathType-的编号、索引"><a href="#3-MathType-的编号、索引" class="headerlink" title="3. MathType 的编号、索引"></a>3. MathType 的编号、索引</h1><p>  &amp;emsp;&amp;emsp;目前仅可以逐项公式的编号，即点击 <code>MathType下的右编号</code>在弹出的编辑器里输入公式 会自动的公式居中以及右侧编号。(目前还没有找到为已存在的公式进行编号的方法)</p>
-<p>   &amp;emsp;&amp;emsp;编号的格式可以在 <code>插入编号--格式化</code>里进行更改，选用带章节不带章节的格式以及采用何种连字符等<br>  &amp;emsp;&amp;emsp;正文索引是也较为方便 点击 <code>插入引用后双击公式编号即可</code>  当你删除公式时编号会自动的更新。</p>
-<p>  &amp;emsp;&amp;emsp;公式的批量大小设置 在编辑器对公式的大小进行定义后<br>  </p><div align="center">&lt;img src=”../img/23.12 wordtips/mathtypesize.jpg”width=”70%” height=”50%” &gt;</div><br>  <div align="center">&lt;img src=”../img/23.12 wordtips/mathtypesize2.jpg”width=”70%” height=”50%” &gt;</div><p></p>
+<h1 id="3-MathType-的编号、索引"><a href="#3-MathType-的编号、索引" class="headerlink" title="3. MathType 的编号、索引"></a>3. MathType 的编号、索引</h1><p>目前仅可以逐项公式的编号，即点击 <code>MathType下的右编号</code>在弹出的编辑器里输入公式 会自动的公式居中以及右侧编号。(目前还没有找到为已存在的公式进行编号的方法)</p>
+<p>编号的格式可以在 <code>插入编号--格式化</code>里进行更改，选用带章节不带章节的格式以及采用何种连字符等<br>正文索引是也较为方便 点击 <code>插入引用后双击公式编号即可</code>  当你删除公式时编号会自动的更新。</p>
+<p>公式的批量大小设置 在编辑器对公式的大小进行定义后</p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/mathtypesize.jpg" width="70%" height="50%"></div>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/mathtypesize2.jpg" width="70%" height="50%"></div>
+  
+
 <h1 id="4-EndNote-的使用（中英文献混排）"><a href="#4-EndNote-的使用（中英文献混排）" class="headerlink" title="4. EndNote 的使用（中英文献混排）"></a>4. EndNote 的使用（中英文献混排）</h1><ol>
 <li><p>去除endnotes 中的域 （不让其跳转，使之固定以便修改参考文献格式）<br>去除word中因使用mendeley或endnote等文献管理软件而产生的域代码。<br>%CTRL+A 全选文章；<br>%CTRL+6 去除全文域代码。</p>
 </li>
@@ -360,27 +366,6 @@ table th:nth-of-type(2) {
 ]]></content>
   </entry>
   <entry>
-    <title>Academic Publications</title>
-    <url>/publications/index.html</url>
-    <content><![CDATA[<div class="note success">
-            <h3 id="Master’s-Thesis"><a href="#Master’s-Thesis" class="headerlink" title="Master’s Thesis"></a>Master’s Thesis</h3><ol><li><strong>Huang, M.</strong>, 2023. Research on integrated production and distribution scheduling for fast moving consumer goods manufacturing enterprise. Wuhan University of Technology.<a href="../pdf/(Thesis)%20%E5%BF%AB%E9%80%9F%E6%B6%88%E8%B4%B9%E5%93%81%E5%88%B6%E9%80%A0%E4%BC%81%E4%B8%9A%E7%94%9F%E4%BA%A7-%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90%E8%B0%83%E5%BA%A6%E7%A0%94%E7%A9%B6.pdf"> (Master’s Thesis) </a> <strong><code>PDF</code></strong>;</li></ol>
-          </div>
-
-
-
-<div class="note success">
-            <h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><ol><li><p><strong>M. Huang</strong>, S. Huang, B. Du*, J. Guo and Y. Li. Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times. <em>IEEE Transactions on Fuzzy Systems</em>, 2024, doi: 10.1109/TFUZZ.2024.3388003.（SCI Q1 , IF 11.9, TOP）<br><a href="https://ieeexplore.ieee.org/document/10497842"> (Paper) </a> <strong><code>HTML</code></strong> ; <a href="../zip/KDCEA-Code.zip"> (KDCEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-Dateset.zip">(IPSVRP-STW&amp;FTT Dateset)</a> <strong><code>.zip</code></strong>;<a href="../zip/IPSVRP-STW-FTT-AMPL.zip"> (AMPL) </a> <strong><code>.mod</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-CASE.zip">(CASE)</a> <strong><code>.zip</code></strong></p></li><li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with batch manufacturing and soft time windows. <em>Computers &amp; Operations Research</em>, 2023, 159, 106346. <a href="https://doi.org/10.1016/j.cor.2023.106346">https://doi.org/10.1016/j.cor.2023.106346</a> .（SCI Q1 , IF 4.6, ABS-3）<br><a href="https://www.sciencedirect.com/science/article/pii/S0305054823002101"> (Paper) </a> <strong><code>HTML</code></strong>; <a href="link"> (HCF-IMOEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-BM-STW-Dateset.zip">(IPSVRP-BM&amp;STW Dateset)</a> <strong><code>.zip</code></strong></p></li><li><p><strong>Huang, M.</strong>, Du, B. G*., Guo, J, Li, Y, B. Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Control Theory and Applications(chinese)</em>, 2023, 40(x): 1–10. DOI: 10.7641/CTA.2023.20920.（EI index，IF:2.781）<br><a href="https://kns.cnki.net/kcms2/article/abstract?v=xNq_RSSxttstktCq-VWRIQS1e6fIAq26YV2DyMFsCVB9NtbxKqFgDZtEE5MiKN1dG5PLmIItcZsrbA9y-tAUQMMLpbYZJEJr4NENoL1ughgxkkSL6gjYdqp7OcHpgSim7TjKF6gvjYE=&amp;uniplatform=NZKPT&amp;language=CHS"> (Paper) </a><strong><code>HTML</code></strong> ; <a href="../zip/NSGA-II-AVNS-Code.zip"> (NSGA-II-AVNS) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/Fuzzy-IPDS-Dateset.zip">(Fuzzy-IPDS Dateset)</a> <strong><code>.zip</code></strong></p></li></ol>
-          </div>
-
-<div class="note warning">
-            <h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
-          </div>
-
-<div class="note warning">
-            <h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
-          </div>]]></content>
-  </entry>
-  <entry>
     <title>Datasets and Algorithm Codes</title>
     <url>/resources/index.html</url>
     <content><![CDATA[<h1 id="Datesets"><a href="#Datesets" class="headerlink" title="Datesets"></a>Datesets</h1><h4 id="1-Integrated-Production-and-Distribution-Scheduling-Problem-IPDS"><a href="#1-Integrated-Production-and-Distribution-Scheduling-Problem-IPDS" class="headerlink" title="1. Integrated Production and Distribution Scheduling Problem(IPDS)"></a>1. Integrated Production and Distribution Scheduling Problem(IPDS)</h4><p><font color="#428BCA" size="5"><strong>Original Intention</strong></font>:<br>IPDS involves the optimization of production scheduling and distribution scheduling. Individually, production scheduling or distribution scheduling has been studied for a long time and has rich benchmark datasets and excellent solution algorithms. <strong>However, there is a paucity of benchmark datasets in IPDS studies.</strong> Due to the complexity and specificity of the problem, most studies have adopted randomly generated (or partially randomly generated) datasets for computational experiments, but few studies have published their test datasets for use and validation by other researchers. In order to provide a uniform benchmark for evaluating and measuring the performance of algorithms for the same and similar studies, we publish the used datasets and algorithms to facilitate the computational experiments of other researchers.</p>
@@ -417,5 +402,26 @@ table th:nth-of-type(2) {
             <ol start="3"><li><a href="../zip/KDCEA-Code.zip"> KDCEA </a> <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br><a href="https://ieeexplore.ieee.org/document/10497842">This paper</a> <strong><code>HTML</code></strong> proposing this algorithm</li></ol>
           </div>
 <h2 id="做真正有价值的研究"><a href="#做真正有价值的研究" class="headerlink" title="做真正有价值的研究"></a>做真正有价值的研究</h2>]]></content>
+  </entry>
+  <entry>
+    <title>Academic Publications</title>
+    <url>/publications/index.html</url>
+    <content><![CDATA[<div class="note success">
+            <h3 id="Master’s-Thesis"><a href="#Master’s-Thesis" class="headerlink" title="Master’s Thesis"></a>Master’s Thesis</h3><ol><li><strong>Huang, M.</strong>, 2023. Research on integrated production and distribution scheduling for fast moving consumer goods manufacturing enterprise. Wuhan University of Technology.<a href="../pdf/(Thesis)%20%E5%BF%AB%E9%80%9F%E6%B6%88%E8%B4%B9%E5%93%81%E5%88%B6%E9%80%A0%E4%BC%81%E4%B8%9A%E7%94%9F%E4%BA%A7-%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90%E8%B0%83%E5%BA%A6%E7%A0%94%E7%A9%B6.pdf"> (Master’s Thesis) </a> <strong><code>PDF</code></strong>;</li></ol>
+          </div>
+
+
+
+<div class="note success">
+            <h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><ol><li><p><strong>M. Huang</strong>, S. Huang, B. Du*, J. Guo and Y. Li. Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times. <em>IEEE Transactions on Fuzzy Systems</em>, 2024, doi: 10.1109/TFUZZ.2024.3388003.（SCI Q1 , IF 11.9, TOP）<br><a href="https://ieeexplore.ieee.org/document/10497842"> (Paper) </a> <strong><code>HTML</code></strong> ; <a href="../zip/KDCEA-Code.zip"> (KDCEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-Dateset.zip">(IPSVRP-STW&amp;FTT Dateset)</a> <strong><code>.zip</code></strong>;<a href="../zip/IPSVRP-STW-FTT-AMPL.zip"> (AMPL) </a> <strong><code>.mod</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-CASE.zip">(CASE)</a> <strong><code>.zip</code></strong></p></li><li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J*. A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with batch manufacturing and soft time windows. <em>Computers &amp; Operations Research</em>, 2023, 159, 106346. <a href="https://doi.org/10.1016/j.cor.2023.106346">https://doi.org/10.1016/j.cor.2023.106346</a> .（SCI Q1 , IF 4.6, ABS-3）<br><a href="https://www.sciencedirect.com/science/article/pii/S0305054823002101"> (Paper) </a> <strong><code>HTML</code></strong>; <a href="link"> (HCF-IMOEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-BM-STW-Dateset.zip">(IPSVRP-BM&amp;STW Dateset)</a> <strong><code>.zip</code></strong></p></li><li><p><strong>Huang, M.</strong>, Du, B. G*., Guo, J, Li, Y, B. Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. <em>Control Theory and Applications(chinese)</em>, 2023, 40(x): 1–10. DOI: 10.7641/CTA.2023.20920.（EI index，IF:2.781）<br><a href="https://kns.cnki.net/kcms2/article/abstract?v=xNq_RSSxttstktCq-VWRIQS1e6fIAq26YV2DyMFsCVB9NtbxKqFgDZtEE5MiKN1dG5PLmIItcZsrbA9y-tAUQMMLpbYZJEJr4NENoL1ughgxkkSL6gjYdqp7OcHpgSim7TjKF6gvjYE=&amp;uniplatform=NZKPT&amp;language=CHS"> (Paper) </a><strong><code>HTML</code></strong> ; <a href="../zip/NSGA-II-AVNS-Code.zip"> (NSGA-II-AVNS) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/Fuzzy-IPDS-Dateset.zip">(Fuzzy-IPDS Dateset)</a> <strong><code>.zip</code></strong></p></li></ol>
+          </div>
+
+<div class="note warning">
+            <h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
+          </div>
+
+<div class="note warning">
+            <h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
+          </div>]]></content>
   </entry>
 </search>
