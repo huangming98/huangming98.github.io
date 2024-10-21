@@ -294,6 +294,22 @@ table th:nth-of-type(2) {
 </div>]]></content>
   </entry>
   <entry>
+    <title>Academic Publications</title>
+    <url>/publications/index.html</url>
+    <content><![CDATA[<div class="note success">
+            <h3 id="Master’s-Thesis"><a href="#Master’s-Thesis" class="headerlink" title="Master’s Thesis"></a>Master’s Thesis</h3><ol><li><strong>Huang, M.</strong>, 2023. Research on integrated production and distribution scheduling for fast moving consumer goods manufacturing enterprise. Wuhan University of Technology.<a href="../pdf/Thesis-快速消费品制造企业生产-配送集成调度研究.pdf"> (Master’s Thesis) </a> <strong><code>PDF</code></strong>;</li></ol>
+          </div>
+<div class="note success">
+            <h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><ol><li><p><strong>M. Huang</strong>, S. Huang, B. Du<em>, J. Guo and Y. Li. Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times. </em>IEEE Transactions on Fuzzy Systems<em>, 2024, doi: 10.1109/TFUZZ.2024.3388003.（SCI Q1 , IF 11.9, TOP）<br><a href="https://ieeexplore.ieee.org/document/10497842"> (Paper) </a> <strong><code>HTML</code></strong> ; <a href="../zip/KDCEA-Code.zip"> (KDCEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-Dateset.zip">(IPSVRP-STW&amp;FTT Dateset)</a> <strong><code>.zip</code></strong>;<a href="../zip/IPSVRP-STW-FTT-AMPL.zip"> (AMPL) </a> <strong><code>.mod</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-CASE.zip">(CASE)</a> <em>*<code>.zip</code></em></em></p></li><li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J<em>. A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with batch manufacturing and soft time windows. </em>Computers &amp; Operations Research<em>, 2023, 159, 106346. <a href="https://doi.org/10.1016/j.cor.2023.106346">https://doi.org/10.1016/j.cor.2023.106346</a> .（SCI Q1 , IF 4.6, ABS-3）<br><a href="https://www.sciencedirect.com/science/article/pii/S0305054823002101"> (Paper) </a> <strong><code>HTML</code></strong>; <a href="link"> (HCF-IMOEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-BM-STW-Dateset.zip">(IPSVRP-BM&amp;STW Dateset)</a> <em>*<code>.zip</code></em></em></p></li><li><p><strong>Huang, M.</strong>, Du, B. G<em>., Guo, J, Li, Y, B. Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. </em>Control Theory and Applications(chinese)<em>, 2023, 40(x): 1–10. DOI: 10.7641/CTA.2023.20920.（EI index，IF:2.781）<br><a href="https://kns.cnki.net/kcms2/article/abstract?v=xNq_RSSxttstktCq-VWRIQS1e6fIAq26YV2DyMFsCVB9NtbxKqFgDZtEE5MiKN1dG5PLmIItcZsrbA9y-tAUQMMLpbYZJEJr4NENoL1ughgxkkSL6gjYdqp7OcHpgSim7TjKF6gvjYE=&amp;uniplatform=NZKPT&amp;language=CHS"> (Paper) </a><strong><code>HTML</code></strong> ; <a href="../zip/NSGA-II-AVNS-Code.zip"> (NSGA-II-AVNS) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/Fuzzy-IPDS-Dateset.zip">(Fuzzy-IPDS Dateset)</a> <em>*<code>.zip</code></em></em></p></li></ol>
+          </div>
+<div class="note warning">
+            <h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
+          </div>
+<div class="note warning">
+            <h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
+          </div>]]></content>
+  </entry>
+  <entry>
     <title>Scholars Link</title>
     <url>/link/index.html</url>
     <content><![CDATA[<h3 id="Smart-Manufacturing-Operations-Research"><a href="#Smart-Manufacturing-Operations-Research" class="headerlink" title="Smart Manufacturing &amp; Operations Research"></a><p align="center"><font face="TIME NEW ROMANS" size="5" color="black">Smart Manufacturing &amp; Operations Research</font></p></h3><h5 id="Digital-Twin-amp-Human-Centric-Smart-Manufacturing"><a href="#Digital-Twin-amp-Human-Centric-Smart-Manufacturing" class="headerlink" title="Digital Twin &amp; Human Centric Smart Manufacturing"></a>Digital Twin &amp; Human Centric Smart Manufacturing</h5><ul>
@@ -331,22 +347,6 @@ table th:nth-of-type(2) {
 <li><a href="https://github.com/dengfaheng"><strong>Faheng Deng</strong></a> (Vehicle routing problem <a href="https://github.com/dengfaheng">VRP，TSP</a> <code>java</code>)</li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Academic Publications</title>
-    <url>/publications/index.html</url>
-    <content><![CDATA[<div class="note success">
-            <h3 id="Master’s-Thesis"><a href="#Master’s-Thesis" class="headerlink" title="Master’s Thesis"></a>Master’s Thesis</h3><ol><li><strong>Huang, M.</strong>, 2023. Research on integrated production and distribution scheduling for fast moving consumer goods manufacturing enterprise. Wuhan University of Technology.<a href="../pdf/Thesis-快速消费品制造企业生产-配送集成调度研究.pdf"> (Master’s Thesis) </a> <strong><code>PDF</code></strong>;</li></ol>
-          </div>
-<div class="note success">
-            <h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><ol><li><p><strong>M. Huang</strong>, S. Huang, B. Du<em>, J. Guo and Y. Li. Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times. </em>IEEE Transactions on Fuzzy Systems<em>, 2024, doi: 10.1109/TFUZZ.2024.3388003.（SCI Q1 , IF 11.9, TOP）<br><a href="https://ieeexplore.ieee.org/document/10497842"> (Paper) </a> <strong><code>HTML</code></strong> ; <a href="../zip/KDCEA-Code.zip"> (KDCEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-Dateset.zip">(IPSVRP-STW&amp;FTT Dateset)</a> <strong><code>.zip</code></strong>;<a href="../zip/IPSVRP-STW-FTT-AMPL.zip"> (AMPL) </a> <strong><code>.mod</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-CASE.zip">(CASE)</a> <em>*<code>.zip</code></em></em></p></li><li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J<em>. A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with batch manufacturing and soft time windows. </em>Computers &amp; Operations Research<em>, 2023, 159, 106346. <a href="https://doi.org/10.1016/j.cor.2023.106346">https://doi.org/10.1016/j.cor.2023.106346</a> .（SCI Q1 , IF 4.6, ABS-3）<br><a href="https://www.sciencedirect.com/science/article/pii/S0305054823002101"> (Paper) </a> <strong><code>HTML</code></strong>; <a href="link"> (HCF-IMOEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-BM-STW-Dateset.zip">(IPSVRP-BM&amp;STW Dateset)</a> <em>*<code>.zip</code></em></em></p></li><li><p><strong>Huang, M.</strong>, Du, B. G<em>., Guo, J, Li, Y, B. Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. </em>Control Theory and Applications(chinese)<em>, 2023, 40(x): 1–10. DOI: 10.7641/CTA.2023.20920.（EI index，IF:2.781）<br><a href="https://kns.cnki.net/kcms2/article/abstract?v=xNq_RSSxttstktCq-VWRIQS1e6fIAq26YV2DyMFsCVB9NtbxKqFgDZtEE5MiKN1dG5PLmIItcZsrbA9y-tAUQMMLpbYZJEJr4NENoL1ughgxkkSL6gjYdqp7OcHpgSim7TjKF6gvjYE=&amp;uniplatform=NZKPT&amp;language=CHS"> (Paper) </a><strong><code>HTML</code></strong> ; <a href="../zip/NSGA-II-AVNS-Code.zip"> (NSGA-II-AVNS) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/Fuzzy-IPDS-Dateset.zip">(Fuzzy-IPDS Dateset)</a> <em>*<code>.zip</code></em></em></p></li></ol>
-          </div>
-<div class="note warning">
-            <h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
-          </div>
-<div class="note warning">
-            <h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
-          </div>]]></content>
   </entry>
   <entry>
     <title>Datasets and Algorithm Codes</title>
