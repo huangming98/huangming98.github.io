@@ -246,14 +246,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>3k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>5 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -270,30 +270,42 @@
 <p>根据问题特征我们对如下数据集进行简要描述：</p>
 <ul>
 <li>生产调度：(作业车间调度、流水车间调度（流水线、置换、混流）、分布式车间调度、柔性调度、模糊调度、动态调度 等)</li>
-<li>配送调度：(运输问题、车辆路径问题（容量限制、时间窗约束、多行程等））<br>我们所提出的数据集所应用的模型涉及：<br><strong>流水线生产 &amp; 车辆路径问题（考虑容量限制、时间窗约束、多行程）&amp;模糊旅途时间</strong></li>
+<li>配送调度：(运输问题、车辆路径问题（容量限制、时间窗约束、多行程等））<br>我们所提出的数据集所应用的模型涉及：<br><strong>流水线生产 &amp; 车辆路径问题（考虑容量限制、时间窗约束、多行程）&amp;模糊旅途时间</strong> </li>
 </ul>
-</blockquote>
 <hr>
+</blockquote>
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var _prevOnload = window.onload;</span><br><span class="line"></span><br><span class="line">window.onload = function () {</span><br><span class="line">    var switchLang = document.getElementsByClassName("menu-item menu-item-switch-to-chinese")[0];</span><br><span class="line">    switchLang.onclick = function () {</span><br><span class="line">        var href = window.location.href;</span><br><span class="line">        var includesKeywords = href.includes("/homepage/") || href.includes("/home/")|| href.includes("/publications/") || href.includes("/resources/")|| href.includes("/link/")|| href.includes("/archives/")|| href.includes("/Switch to Chinese/");</span><br><span class="line">        if (includesKeywords) {</span><br><span class="line">            window.location.href = href.replace('.cn/', '.cn/cn/');</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line">        else {</span><br><span class="line">            window.location.href = "https://www.huangm.cn/cn";</span><br><span class="line">        }</span><br><span class="line">        if (typeof (_prevOnload) === 'function') {</span><br><span class="line">            _prevOnload();</span><br><span class="line">        }</span><br><span class="line">        return false;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="1-1-配送集成ADSAS1-1"><a href="#1-1-配送集成ADSAS1-1" class="headerlink" title="1.1 配送集成ADSAS1"></a>1.1 配送集成ADSAS1</h2><p>$$<br>\begin{equation}<br> \textcolor{red} {w_{k+1}=w_k-a_k \tilde{g}\left(w_k, \eta_k\right) ,k=1,2,3,\dots}<br>\end{equation}<br>$$</p>
-<h3 id="1-1-配送集成ADSAS1-2"><a href="#1-1-配送集成ADSAS1-2" class="headerlink" title="1.1 配送集成ADSAS1"></a>1.1 配送集成ADSAS1</h3><p>This simple example can illustrate why the RM algorithm converges.</p>
+<h2 id="1-1-配送集成ADSAS1-1"><a href="#1-1-配送集成ADSAS1-1" class="headerlink" title="1.1 配送集成ADSAS1"></a>1.1 配送集成ADSAS1</h2><script type="math/tex; mode=display">
+\begin{equation}
+ \textcolor{red} {w_{k+1}=w_k-a_k \tilde{g}\left(w_k, \eta_k\right) ,k=1,2,3,\dots}
+\end{equation}</script><h3 id="1-1-配送集成ADSAS1-2"><a href="#1-1-配送集成ADSAS1-2" class="headerlink" title="1.1 配送集成ADSAS1"></a>1.1 配送集成ADSAS1</h3><p>This simple example can illustrate why the RM algorithm converges.</p>
 <h3 id="1-4配送集成"><a href="#1-4配送集成" class="headerlink" title="1.4配送集成"></a>1.4配送集成</h3><ul>
-<li>When $w_k&gt;w^*$, we have $g\left(w_k\right)&gt;0$. Then, $w_{k+1}=w_k-a_k g\left(w_k\right)&lt;w_k$. If $a_k g\left(w_k\right)$ is sufficiently small, we have $w^*&lt;w_{k+1}&lt;w_k$. As a result, $w_{k+1}$ is closer to $w^*$ than $w_k$.</li>
-<li>When $w_k&lt;w^*$, we have $g\left(w_k\right)&lt;0$. Then, $w_{k+1}=w_k-a_k g\left(w_k\right)&gt;w_k$. If $\left|a_k g\left(w_k\right)\right|$ is sufficiently small, we have $w^*&gt;w_{k+1}&gt;w_k$. As a result, $w_{k+1}$ is closer to $w^*$ than $w_k$.</li>
+<li>When $w_k&gt;w^<em>$, we have $g\left(w_k\right)&gt;0$. Then, $w_{k+1}=w_k-a_k g\left(w_k\right)&lt;w_k$. If $a_k g\left(w_k\right)$ is sufficiently small, we have $w^</em>&lt;w_{k+1}&lt;w_k$. As a result, $w_{k+1}$ is closer to $w^*$ than $w_k$.</li>
+<li>When $w_k<w^*$, we="" have="" $g\left(w_k\right)<0$.="" then,="" $w_{k+1}="w_k-a_k" g\left(w_k\right)="">w_k$. If $\left|a_k g\left(w_k\right)\right|$ is sufficiently small, we have $w^<em>&gt;w_{k+1}&gt;w_k$. As a result, $w_{k+1}$ is closer to $w^</em>$ than $w_k$.</w^*$,></li>
 </ul>
-<p>$$<br>\begin{aligned}<br>\tilde{g}(w, \eta) &amp; = w-x \<br>&amp; =w-x+\mathbb{E}[X] -\mathbb{E}[X] \<br>&amp; =(w-\mathbb{E}[X]) + (\mathbb{E}[X]-x)\<br>&amp; =g(w)+\eta<br>\end{aligned}<br>$$</p>
-<p>$$<br>\begin{equation}<br>w_{k+1} = w_k-\alpha_k \textcolor{blue} {\nabla_w f\left(w_k, x_k\right)}, \end{equation}<br>$$<br>where $x_k$ is the sample collected at time step $k$. It relies on stochastic samples ${x_k}$</p>
+<script type="math/tex; mode=display">
+\begin{aligned} 
+\tilde{g}(w, \eta) & = w-x \\ 
+& =w-x+\mathbb{E}[X] -\mathbb{E}[X] \\
+& =(w-\mathbb{E}[X]) + (\mathbb{E}[X]-x)\\
+& =g(w)+\eta
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{equation}
+w_{k+1} = w_k-\alpha_k \textcolor{blue} {\nabla_w f\left(w_k, x_k\right)}, \end{equation}</script><p>where $x_k$ is the sample collected at time step $k$. It relies on stochastic samples ${x_k}$</p>
 <ol>
 <li><p>Compared to the gradient descent algorithm: Replace the true gradient $\mathbb{E}\left[\nabla_w f\left(w_k, X\right)\right]$ by the stochastic gradient $\nabla_w f\left(w_k, x_k\right)$. </p>
 </li>
 <li><p>Compared to the batch gradient descent method: let $n=1$.</p>
 </li>
-<li><p><strong>From GD to SGD</strong>: The stochastic gradient $\nabla_w f\left(w_k, x_k\right)$ can be viewed as a noisy measurement of the true gradient $\mathbb{E}\left[\nabla_w f(w, X)\right]$:</p>
+<li><p><strong>From GD to SGD</strong>: The stochastic gradient $\nabla_w f\left(w_k, x_k\right)$ can be viewed as a noisy measurement of the true gradient $\mathbb{E}\left[\nabla_w f(w, X)\right]$: </p>
 </li>
 </ol>
-<p>$$<br>\nabla_w f\left(w_k, x_k\right)=\mathbb{E}\left[\nabla_w f(w, X)\right]+\underbrace{\nabla_w f\left(w_k, x_k\right)-\mathbb{E}\left[\nabla_w f(w, X)\right]}_\eta .<br>$$</p>
-<p>$$<br>\begin{aligned}<br>\mathbb{E}(\eta) &amp; =\mathbb{E}(\nabla_w f\left(w_k, x_k\right)-\mathbb{E}\left[\nabla_w f(w, X)\right])\<br>&amp; =\mathbb{E}_{x_k}[\nabla_w f\left(w_k, x_k\right)]-\mathbb{E}_X\left[\nabla_w f(w, X)\right]=0<br>\end{aligned}<br>$$</p>
-<hr>
+<script type="math/tex; mode=display">
+\nabla_w f\left(w_k, x_k\right)=\mathbb{E}\left[\nabla_w f(w, X)\right]+\underbrace{\nabla_w f\left(w_k, x_k\right)-\mathbb{E}\left[\nabla_w f(w, X)\right]}_\eta .</script><script type="math/tex; mode=display">
+\begin{aligned} 
+\mathbb{E}(\eta) & =\mathbb{E}(\nabla_w f\left(w_k, x_k\right)-\mathbb{E}\left[\nabla_w f(w, X)\right])\\
+& =\mathbb{E}_{x_k}[\nabla_w f\left(w_k, x_k\right)]-\mathbb{E}_X\left[\nabla_w f(w, X)\right]=0
+\end{aligned}</script><hr>
 
     </div>
 
@@ -405,7 +417,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E9%85%8D%E9%80%81-121TTT"><span class="nav-number">1.</span> <span class="nav-text">1 配送 121TTT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90ADSAS1"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 配送集成ADSAS1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90ADSAS1-1"><span class="nav-number">1.2.</span> <span class="nav-text">1.1 配送集成ADSAS1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90ADSAS1-2"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.1 配送集成ADSAS1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.4配送集成</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E9%85%8D%E9%80%81-121TTT"><span class="nav-text">1 配送 121TTT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90ADSAS1"><span class="nav-text">1.1 配送集成ADSAS1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90ADSAS1-1"><span class="nav-text">1.1 配送集成ADSAS1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90ADSAS1-2"><span class="nav-text">1.1 配送集成ADSAS1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E9%85%8D%E9%80%81%E9%9B%86%E6%88%90"><span class="nav-text">1.4配送集成</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
