@@ -20,30 +20,40 @@
     var CONFIG = {"hostname":"www.huangm.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","Muse | Mist":180,"width":250,"display":"always","padding":20,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":"ture","lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Let’s do something extraordinary together.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ming Huang&#39;s Homepage">
-<meta property="og:url" content="https://www.huangm.cn/homepage/index.html">
+  <meta name="description" content="PYTHON 基础1. python 流程格式1.1 变量赋值、运算与字符串表示、处理、判断12345678910name1 &#x3D; name2 &#x3D; name3 &#x3D; &#39;文件系统&#39;name1, name2, name3 &#x3D; &quot;文件&quot;, &quot;系统&quot;, &quot;管理&quot;name &#x3D; &quot;&quot;&quot; nihaoa&quot;&quot;&quot;##变量多行用 &quot;&quot;&quot;.....&quot;&quot;&quot; 变量运算表|  运算   |             描述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Basic Notes">
+<meta property="og:url" content="https://www.huangm.cn/2024/07/13/Python-Basic-Notes/index.html">
 <meta property="og:site_name" content="Ming Huang&#39;s Homepage">
-<meta property="og:description" content="Let’s do something extraordinary together.">
+<meta property="og:description" content="PYTHON 基础1. python 流程格式1.1 变量赋值、运算与字符串表示、处理、判断12345678910name1 &#x3D; name2 &#x3D; name3 &#x3D; &#39;文件系统&#39;name1, name2, name3 &#x3D; &quot;文件&quot;, &quot;系统&quot;, &quot;管理&quot;name &#x3D; &quot;&quot;&quot; nihaoa&quot;&quot;&quot;##变量多行用 &quot;&quot;&quot;.....&quot;&quot;&quot; 变量运算表|  运算   |             描述">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8">
+<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8">
+<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8">
+<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/2b55.png?v8">
+<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8">
+<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8">
+<meta property="og:image" content="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8">
+<meta property="article:published_time" content="2024-07-13T11:05:11.000Z">
+<meta property="article:modified_time" content="2024-10-25T11:07:10.000Z">
 <meta property="article:author" content="Ming Huang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8">
 
-<link rel="canonical" href="https://www.huangm.cn/homepage/">
+<link rel="canonical" href="https://www.huangm.cn/2024/07/13/Python-Basic-Notes/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Ming Huang's Homepage</title>
+  <title>Python Basic Notes | Ming Huang's Homepage</title>
   
 
 
@@ -191,9 +201,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -209,10 +220,9 @@
       <meta itemprop="name" content="Ming Huang's Homepage">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/07/13/Python-Basic-Notes/" class="post-title-link" itemprop="url">Python Basic Notes</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Python Basic Notes
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -231,7 +241,14 @@
                 <time title="Modified: 2024-10-25 19:07:10" itemprop="dateModified" datetime="2024-10-25T19:07:10+08:00">2024-10-25</time>
               </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="Symbols count in article">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -256,7 +273,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="PYTHON-基础"><a href="#PYTHON-基础" class="headerlink" title="PYTHON 基础"></a>PYTHON 基础</h1><h2 id="1-python-流程格式"><a href="#1-python-流程格式" class="headerlink" title="1. python 流程格式"></a>1. python 流程格式</h2><h3 id="1-1-变量赋值、运算与字符串表示、处理、判断"><a href="#1-1-变量赋值、运算与字符串表示、处理、判断" class="headerlink" title="1.1 变量赋值、运算与字符串表示、处理、判断"></a>1.1 变量赋值、运算与字符串表示、处理、判断</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">name1 = name2 = name3 = <span class="string">'文件系统'</span></span><br><span class="line">name1, name2, name3 = <span class="string">"文件"</span>, <span class="string">"系统"</span>, <span class="string">"管理"</span></span><br><span class="line">name = <span class="string">""" </span></span><br><span class="line"><span class="string">ni</span></span><br><span class="line"><span class="string">hao</span></span><br><span class="line"><span class="string">a</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##变量多行用 """....."""</span></span><br></pre></td></tr></tbody></table></figure>
+        <h1 id="PYTHON-基础"><a href="#PYTHON-基础" class="headerlink" title="PYTHON 基础"></a>PYTHON 基础</h1><h2 id="1-python-流程格式"><a href="#1-python-流程格式" class="headerlink" title="1. python 流程格式"></a>1. python 流程格式</h2><h3 id="1-1-变量赋值、运算与字符串表示、处理、判断"><a href="#1-1-变量赋值、运算与字符串表示、处理、判断" class="headerlink" title="1.1 变量赋值、运算与字符串表示、处理、判断"></a>1.1 变量赋值、运算与字符串表示、处理、判断</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">name1 = name2 = name3 = <span class="string">'文件系统'</span></span><br><span class="line">name1, name2, name3 = <span class="string">"文件"</span>, <span class="string">"系统"</span>, <span class="string">"管理"</span></span><br><span class="line">name = <span class="string">""" </span></span><br><span class="line"><span class="string">ni</span></span><br><span class="line"><span class="string">hao</span></span><br><span class="line"><span class="string">a</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##变量多行用 """....."""</span></span><br></pre></td></tr></tbody></table></figure>
 <p><strong>变量运算表</strong><br>|  运算   |             描述             |<br>| :——-: | :—————————————: |<br>| + - <em> / | 加减乘除 (+可用于连接string) |<br>|    %    |      取模（102%100=2）       |<br>|   <em>*    |       幂次方（2</em></em>3=8）       |<br>|   //    |      取除数（20//3=6）       |</p>
 <p><strong>字符串输出表</strong></p>
 <div class="table-container">
@@ -717,800 +734,64 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/pyecharts/pyecharts-gallery">pyechart图库</a></li>
 </ul>
 
-      
     </div>
 
     
     
     
+
+<div> 
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>Article:</span>Python Basic Notes</a></p>
+  <p><span>Author:</span>Ming Huang</a></p>
+  <p><span>Release time：</span>2024-07-13   19:05:11</p>
+  <p><span>Updat time:</span>2024-10-25   19:07:10</p>
+  <p><span>Original link:</span><a href="/2024/07/13/Python-Basic-Notes/" title="Python Basic Notes">https://www.huangm.cn/2024/07/13/Python-Basic-Notes/</a>
+    <span class="copy-path"  title="Click to copy the article link"><i class="fa fa-clipboard" data-clipboard-text="https://www.huangm.cn/2024/07/13/Python-Basic-Notes/"  aria-label="Copy successful!"></i></span>
+  </p>
+  <p><span>license agreement:</span><i class="fa fa-creative-commons" /></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"> (CC BY-NC-ND 4.0)</a> Please keep the original link and author when reprinting.</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",
+          text: 'Copy successful',
+          html: false,
+          timer: 500,
+          showConfirmButton: false
+        });
+      });
+    }));
+</script>
+ </div>
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.huangm.cn/2024/05/25/Practical-English-Writing-Course-Notes/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/pic.png">
-      <meta itemprop="name" content="Ming Huang">
-      <meta itemprop="description" content="Let’s do something extraordinary together.">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ming Huang's Homepage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/05/25/Practical-English-Writing-Course-Notes/" class="post-title-link" itemprop="url">Practical English Writing Course Notes</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2024-05-25 13:59:10" itemprop="dateCreated datePublished" datetime="2024-05-25T13:59:10+08:00">2024-05-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-25 19:03:32" itemprop="dateModified" datetime="2024-10-25T19:03:32+08:00">2024-10-25</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>19k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>34 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1-write-base"><a href="#1-write-base" class="headerlink" title="1. write base"></a>1. write base</h2><h3 id="1-1-Paragraph-analysis-and-write"><a href="#1-1-Paragraph-analysis-and-write" class="headerlink" title="1.1 Paragraph analysis and write:"></a>1.1 Paragraph analysis and write:</h3><p><strong>Topic sentence</strong>:<br>Purpose:to tell readers the main idea of the paragraph(what will be discussed); Components:topic(the general subject) + controlling idea(the specific aspect of the subject it focuses on).</p>
-<p><strong>Supporting sentences</strong>: to develop the main idea; through details, facts, examples, reasons, etc. <em>unity of ideas</em>: no irrelevant sentences &amp; connectors.</p>
-<p><strong>Concluding sentence</strong>: to bring the paragraph to an end restatement, summary, &amp; result <em>signal:</em> finally, thus, therefore, etc.More general than the supporting sentences.<br><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-23-16-59-19.png" alt=""></p>
-<h3 id="1-2-Process-Essay-analysis-and-write"><a href="#1-2-Process-Essay-analysis-and-write" class="headerlink" title="1.2 Process Essay  analysis and write:"></a>1.2 Process Essay  analysis and write:</h3><p><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-23-18-56-49.png" alt=""><br><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-23-18-56-36.png" alt=""></p>
-<p><strong>Introduction</strong></p>
-<ul>
-<li>to introduce the topic</li>
-<li>to give readers the background information </li>
-<li>to <strong>catch</strong> readers’ interest</li>
-</ul>
-<p><strong>concluding paragraph</strong></p>
-<ul>
-<li><strong>Summarize</strong> the main points.</li>
-<li><strong>Restate</strong> the thesis statement to emphasize the main idea.</li>
-<li>Add some <strong>comments</strong>: making a predication, giving advice, or showing results of the situation/topic.</li>
-<li>Do not add new information.</li>
-<li>Do not review only some of the information in your essay.</li>
-</ul>
-<h2 id="2-sentence-skills"><a href="#2-sentence-skills" class="headerlink" title="2. sentence skills"></a>2. sentence skills</h2><h3 id="2-1-Basic-sentence-skills"><a href="#2-1-Basic-sentence-skills" class="headerlink" title="2.1 Basic sentence skills"></a>2.1 Basic sentence skills</h3><p><strong>Run-ons</strong> (标点符号不能连接两个句子，不规范，连词可以)<br>[<span class="github-emoji"><span>❌</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>]The bus stopped suddenly，I spilled coffee all over my skirt.<br>[<span class="github-emoji"><span>✅</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>]The bus stopped suddenly, <strong>and</strong> I spilled coffee all over my skirt.  </p>
-<p><strong>Subject-Verb agreement</strong> (主谓一致和就近原则)</p>
-<ol>
-<li>An old chair with broken legs (<strong>has</strong>, have) sat in our basement for years. </li>
-<li>There (<strong>is</strong>, are)  a pen, two books and many pencils on the desk.</li>
-<li>Not only my teachers but also my wife (encourage, <strong>encourages</strong>) me to work hard in college. </li>
-<li>Neither of those websites (<strong>is</strong>,  are) credible.</li>
-</ol>
-<p><strong>Pronoun agreement and reference</strong></p>
-<ol>
-<li>Alicia showed me <strong>her</strong> antique wedding band. </li>
-<li>Students enrolled in the art class must provide <strong>their</strong> own tools.</li>
-<li>Kia is really a shy person, but she keeps <strong>it</strong> hidden. (refer her shyness<br>)</li>
-</ol>
-<p><strong>Misplaced modifiers:</strong> Words that do not describe what the  writer intended them to describe due to awkward placement(place words as close as possible to what they describe)<br>[<span class="github-emoji"><span>❌</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>]David  couldn’t  drive to work in his small sports car with a broken leg.<br>[<span class="github-emoji"><span>✅</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>]With a broken leg, David couldn’t drive to work in his small sports car.</p>
-<h3 id="2-2-Combining-Sentences-with-Coordinating-Conjunctions"><a href="#2-2-Combining-Sentences-with-Coordinating-Conjunctions" class="headerlink" title="2.2 Combining Sentences with Coordinating Conjunctions"></a>2.2 Combining Sentences with Coordinating Conjunctions</h3><p><u>Clause 1</u>, <em>conjunction</em> <u>clause 2</u></p>
-<p><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-23-17-27-03.png" alt=""></p>
-<h3 id="2-3-Combining-Sentences-with-Transitions"><a href="#2-3-Combining-Sentences-with-Transitions" class="headerlink" title="2.3 Combining Sentences with Transitions"></a>2.3 Combining Sentences with Transitions</h3><p><strong>Linking transitions</strong> are words or expressions that connect independent (main) clauses together.<br><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-23-18-37-40.png" alt=""><br>eg:These people can communicate well through body language <strong>;  in addition,</strong> they have a good sense of balance and hand-eye coordination. </p>
-<p><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-23-18-39-44.png" alt=""></p>
-<p><strong>Do not use a SEMICOLON if you do not have a complete clause after the linking transition.</strong><br>[<span class="github-emoji"><span>❌</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>]Many people use a mother’s or grandmother’s cure for a cold;  for example, chicken soup. </p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">sig</th>
-<th style="text-align:center">english</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">,</td>
-<td style="text-align:center">comma</td>
-</tr>
-<tr>
-<td style="text-align:center">.</td>
-<td style="text-align:center">full stop/ period</td>
-</tr>
-<tr>
-<td style="text-align:center">:</td>
-<td style="text-align:center">colon</td>
-</tr>
-<tr>
-<td style="text-align:center">;</td>
-<td style="text-align:center">semi-colon</td>
-</tr>
-<tr>
-<td style="text-align:center">!</td>
-<td style="text-align:center">exclamation mark</td>
-</tr>
-<tr>
-<td style="text-align:center">“  ”</td>
-<td style="text-align:center">quotation mark</td>
-</tr>
-<tr>
-<td style="text-align:center">X’s</td>
-<td style="text-align:center">apostrophe</td>
-</tr>
-<tr>
-<td style="text-align:center">?</td>
-<td style="text-align:center">question mark</td>
-</tr>
-<tr>
-<td style="text-align:center">w-w</td>
-<td style="text-align:center">hyphen/ splash</td>
-</tr>
-<tr>
-<td style="text-align:center">(  )</td>
-<td style="text-align:center">parenthesis/ bracket</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="2-4-Combining-clauses-with-subordinating-conjunctions"><a href="#2-4-Combining-clauses-with-subordinating-conjunctions" class="headerlink" title="2.4 Combining clauses with subordinating conjunctions"></a>2.4 Combining clauses with subordinating conjunctions</h3><p><strong>As soon as</strong> he said that <strong>,</strong> Rosa stood up.<br>Peter almost <em>knocked</em> me down <strong>before</strong> he <em>saw</em> me.<br>| Subordinator |           Meaning            |                                 Example                                 |<br>| :—————: | :—————————————: | :——————————————————————————————————-: |<br>|    After     |          later than          |       He travelled to England <strong>after</strong> he wrote his first book.        |<br>|    Before    |         earlier than         |           Peter almost knocked me down <strong>before</strong> he saw me.            |<br>|    Until     |       up to that time        |                  Let’s wait <strong>until</strong> the rain stops.                   |<br>|    Since     |        from that time        |   I have been practicing yoga <strong>since</strong> I took a yoga course in 2020.   |<br>|    While     |       during that time       |             My father fell asleep <strong>while</strong> he was reading.             |<br>|     When     |     at/during that time      |           <strong>When</strong> he came in, I was listening to the radio.            |<br>|   Whenever   | at any time that/ every time |     You can take a short relaxation break <strong>whenever</strong> you need it.     |<br>|      As      |      immediately after       | <strong>As</strong> the president spoke, the people in the audience listened to him. |<br>|  As soon as  |                              |          The atmosphere changed <strong>as soon as</strong> Mary walked in.          |</p>
-<h3 id="2-5-A-summary-of-connectors"><a href="#2-5-A-summary-of-connectors" class="headerlink" title="2.5 A summary of connectors"></a>2.5 A summary of connectors</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">title</th>
-<th style="text-align:center">Connectors indicating additional information</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Coordinating conjunction</td>
-<td style="text-align:center">and</td>
-</tr>
-<tr>
-<td style="text-align:center">Transition</td>
-<td style="text-align:center">in addition, additionally, furthermore, moreover, also, besides</td>
-</tr>
-<tr>
-<td style="text-align:center">Correlative conjunctions</td>
-<td style="text-align:center">not only…but also</td>
-</tr>
-<tr>
-<td style="text-align:center">Prepositional phrases</td>
-<td style="text-align:center">in addition to, along with, as well as, besides, apart from</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>eg1: High-level positions are stressful at times <strong>; furthermore,   (.Furthermore,)</strong> they can be harmful to your health.<br>eg2: <strong>Along with</strong> being stressful at times, high-level positions can also be harmful to your health. </p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">title</th>
-<th style="text-align:center">Connectors indicating sequence, time, and order</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Transition</td>
-<td style="text-align:center">first, second, next, to start/ begin with, at the outset, at the commencement, in the first/second place, at this point, meanwhile, in the meantime, subsequently, later, then, ultimately, finally, lastly</td>
-</tr>
-<tr>
-<td style="text-align:center">Subordinating conjunction</td>
-<td style="text-align:center">before, after, until, since, while, when, whenever, as, as soon as</td>
-</tr>
-<tr>
-<td style="text-align:center">Prepositional phrase</td>
-<td style="text-align:center">in, at, on, for, during, within, from, prior to, previous to, before, after</td>
-</tr>
-<tr>
-<td style="text-align:center">Prepositional phrases</td>
-<td style="text-align:center">in addition to, along with, as well as, besides, apart from</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">title</th>
-<th style="text-align:center">Connectors indicating cause and effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Coordinating conjunction</td>
-<td style="text-align:center">for, so</td>
-</tr>
-<tr>
-<td style="text-align:center">Transition</td>
-<td style="text-align:center">therefore, hence, as a result, consequently, accordingly</td>
-</tr>
-<tr>
-<td style="text-align:center">Subordinating conjunction</td>
-<td style="text-align:center">because, as, since, if (result of the condition)</td>
-</tr>
-<tr>
-<td style="text-align:center">Prepositional phrases</td>
-<td style="text-align:center">due to, because of, as a result of, owing to, on account of, for the sake of, for the purpose of, in the wake of, be the reason for, be responsible for</td>
-</tr>
-<tr>
-<td style="text-align:center">Verbal/Noun/Adverb phrase</td>
-<td style="text-align:center">contribute to, result from, cause, lead to, result in, thereby(adv)</td>
-</tr>
-<tr>
-<td style="text-align:center">-ing clauses of result</td>
-<td style="text-align:center">The carcinogenic substances are extracted from the soil, leaving the soil uncontaminated.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>eg1: We increased our prices, <strong>for</strong> the cost of materials rose sharply last year.<br>eg2: The cost of materials rose sharply last year. <strong>Accordingly,</strong> we were forced to increase our prices.<br>eg3: Many animals lost their habitats <strong>due to</strong> the wildfires.<br>eg4: Environmental education <strong>contributes to</strong> people’s increasing green thinking in China.<br>eg5: Regular exercise strengthens the heart, <strong>thereby</strong> reducing the risk of heart attack.<br>eg6: The carcinogenic substances (致癌物) are extracted from the soil <strong>; hence,</strong> the soil is left uncontaminated (未被污染的).<br>eg7: The carcinogenic substances are extracted from the soil <strong>, leaving</strong> the soil uncontaminated.</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">title</th>
-<th style="text-align:center">Connectors indicating comparison and contrast</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Coordinating conjunction</td>
-<td style="text-align:center">and (comparison/similarity) but, yet (contrast/difference)</td>
-</tr>
-<tr>
-<td style="text-align:center">Transition</td>
-<td style="text-align:center">similarly, likewise, also, too however, nevertheless, in contrast, on the contrary, conversely</td>
-</tr>
-<tr>
-<td style="text-align:center">Subordinating conjunction</td>
-<td style="text-align:center">as, while, whereas,although</td>
-</tr>
-<tr>
-<td style="text-align:center">Prepositional/noun/verb phrases</td>
-<td style="text-align:center">like, alike, similar to, the same as, similarity, share… in common, unlike, dissimilar to, differ, different from (in), difference, notwithstanding,  despite, in spite of, instead</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>eg1. Most men tend to feel comfortable with “public” speaking, <strong>while/whereas</strong> most women enjoy “private” speaking.<br>eg2. Many environmental problems result from air pollutants <strong>, such as</strong> sulphur dioxide and carbon dioxide.</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">title</th>
-<th style="text-align:center">Connectors indicating exemplification</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Transition</td>
-<td style="text-align:center">for example, for instance</td>
-</tr>
-<tr>
-<td style="text-align:center">Prepositional/verb phrase/other</td>
-<td style="text-align:center">such as, like, a prime/good example of, take… for example one case in point is that…</td>
-</tr>
-<tr>
-<td style="text-align:center">Correlative conjunctions</td>
-<td style="text-align:center">not only…but also</td>
-</tr>
-<tr>
-<td style="text-align:center">Prepositional phrases</td>
-<td style="text-align:center">in addition to, along with, as well as, besides, apart from</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">title</th>
-<th style="text-align:center">Connectors indicating summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Transition</td>
-<td style="text-align:center">in summary, in short, in a nutshell, in a word, in simple terms</td>
-</tr>
-<tr>
-<td style="text-align:center">Prepositional/ noun/verb phrases</td>
-<td style="text-align:center">to sum up, to make a long story short, to put it in a nutshell, to put it crudely, summarize</td>
-</tr>
-<tr>
-<td style="text-align:center">Correlative conjunctions</td>
-<td style="text-align:center">not only…but also</td>
-</tr>
-<tr>
-<td style="text-align:center">Prepositional phrases</td>
-<td style="text-align:center">in addition to, along with, as well as, besides, apart from</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="3-the-typical-structure-of-a-research-paper"><a href="#3-the-typical-structure-of-a-research-paper" class="headerlink" title="3 the typical structure of a research paper"></a>3 the typical structure of a research paper</h2><p><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-24-14-43-36.png" alt=""></p>
-<h3 id="3-1-Title"><a href="#3-1-Title" class="headerlink" title="3.1 Title"></a>3.1 Title</h3><p>All words in the title should be chosen with great care!<br>“the fewest possible words that adequately describe the contents of the paper”  (Gastel &amp; Day, 2016, p.41)</p>
-<p><strong>Functions of Title</strong><br>(1) Generalize the research paper<br>(2) Attract appropriate readers<br>(3) Facilitate the retrieval<br><strong>Brief （简洁）</strong><br>11-15 words now being the most common length.</p>
-<p><strong>Accurate (准确)</strong><br>Accurate, clear, and exact<br>Without any misunderstandings<br>Grammatically accurate (word order)</p>
-<p><strong>Distinctive (区别性)</strong><br>Be specific and distinctive to distinguish it from other treatments of the general subjects.<br>The research design identification is essential. </p>
-<h3 id="3-1-Abstract"><a href="#3-1-Abstract" class="headerlink" title="3.1 Abstract"></a>3.1 Abstract</h3><p><strong>Abstracts are highly promotional and designed to “hook the reader”.</strong></p>
-<ol>
-<li>summarize the important parts of the article (100-250 words)</li>
-<li>arouse readers’ interest in reading the article</li>
-<li>make journal editors want  to read and publish the article help readers remember key points from your paper</li>
-<li>be accurate, nonevaluative, coherent and  readable (APA, 2010)</li>
-</ol>
-<p><strong>Five questions to answer in Abstract</strong> </p>
-<ol>
-<li>What is the <em>background</em> of the study in the research field? What <em>motivated</em> you to do this study? <strong>(Introduction:background and motivated)</strong> </li>
-<li>What is the purpose of the study? What are the research questions?  <strong>(Purpose and significance)</strong></li>
-<li>How were the data collected and analyzed? <strong>(Method:key skill\Method\idea\application)</strong></li>
-<li>What were the results or major findings? <strong>(Result:Present main findings/results )</strong></li>
-<li>What conclusion have you drawn? What is the <em>contribution</em> of the study to the existing body of knowledge? <strong>(Conclusion:gap/impact/solution/expand knowledge/inspire)</strong></li>
-</ol>
-<p><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-24-15-08-26.png" alt="summary"></p>
-<h3 id="3-2-Introduction"><a href="#3-2-Introduction" class="headerlink" title="3.2 Introduction"></a>3.2 Introduction</h3><h4 id="3-2-1-Introduction-structure"><a href="#3-2-1-Introduction-structure" class="headerlink" title="3.2.1 Introduction structure"></a>3.2.1 Introduction structure</h4><p><strong>Move 1: Establishing a territory</strong></p>
-<ul>
-<li>Step 1. Claiming centrality </li>
-<li>Step 2. Topic generalizations of increasing specificity</li>
-<li>Step 3. Reviewing items of previous literature </li>
-</ul>
-<p><strong>Move 2: Establishing a niche</strong></p>
-<ul>
-<li>Step 1A. Indicating a gap</li>
-<li>Step 1B. Adding to what is known </li>
-<li>Step 2.  Presenting positive justification (Optional) </li>
-</ul>
-<p><strong>Move 3: Presenting the present work</strong> </p>
-<ul>
-<li>Step 1. Announcing present research descriptively and/or purposively</li>
-<li>Step 2. Presenting research questions or hypothesis (optional)</li>
-<li>Step 3. Definitional clarifications (optional)</li>
-<li>Step 4. Summarizing methods (optional)</li>
-<li>Step 5. Announcing principle outcomes (Possible in some fields)</li>
-<li>Step 6. Stating the value of the present research (Possible in some fields)</li>
-<li>Step 7. Outlining the structure of the paper (Possible in some fields)</li>
-</ul>
-<h4 id="3-2-2-Claiming-centrality-Establishing-significance"><a href="#3-2-2-Claiming-centrality-Establishing-significance" class="headerlink" title="3.2.2 Claiming centrality/Establishing significance"></a>3.2.2 Claiming centrality/Establishing significance</h4><p><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-24-15-21-05.png" alt=""></p>
-<h4 id="3-2-3-Indicating-a-gap"><a href="#3-2-3-Indicating-a-gap" class="headerlink" title="3.2.3 Indicating a gap"></a>3.2.3 Indicating a gap</h4><ol>
-<li><strong>However</strong>, research evaluating creeping bentgrass reflectance under water stress and varying nitrogen rates for correlation with turf quality …<strong>has not been documented</strong>. </li>
-<li><strong>Nonetheless</strong>, data to assess the feasibility of extractive reserves are <strong>limited. Few studies</strong> of rainforest extraction have presented a quantitative ecological framework…  </li>
-<li><strong>While</strong> this body of research has enriched our knowledge about peer interaction in peer feedback, <strong>scant attention has been paid to</strong> the specific strategies EFL students use during peer feedback to cope with the linguistic and cognitive challenges that arise during the peer interaction. </li>
-<li>Furthermore, <strong>little is known about</strong> the boundary conditions of the relationship between economic strain and social cohesion, especially the role that….</li>
-<li><strong>Few researchers have addressed the problem</strong> of… </li>
-<li><strong>There remains a need for an efficient method</strong> that can… </li>
-<li>The high absorbance makes this <strong>an impractical option</strong> in cases…</li>
-<li><strong>Nonetheless</strong>, these methods <strong>do not sufficiently</strong> address …</li>
-<li>These can be <strong>time-consuming and technically difficult</strong> to perform.</li>
-<li><strong>Although</strong> this approach improves performance, it results in <strong>an unacceptable</strong> number of…</li>
-<li>One <strong>primary problem</strong> with … is that…</li>
-<li><strong>Notwithstanding</strong> the merits and proliferation of chatbots, their incorporation into writing classrooms <strong>remains insufficient</strong>.</li>
-<li><strong>Nevertheless, there is a notable scarcity of research dedicated to investigating how</strong> students effectively compose text with chatbots.<br><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-24-15-31-27.png" alt=""></li>
-</ol>
-<h4 id="3-2-4-Presenting-the-present-work"><a href="#3-2-4-Presenting-the-present-work" class="headerlink" title="3.2.4 Presenting the present work"></a>3.2.4 Presenting the present work</h4><p><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-24-15-32-50.png" alt=""></p>
-<h3 id="3-3-Review-of-the-literature"><a href="#3-3-Review-of-the-literature" class="headerlink" title="3.3 Review of the literature"></a>3.3 Review of the literature</h3><p>A literature review <strong>summarizes, interprets, and critically evaluates</strong> significant literature published on a specific topic.  </p>
-<h4 id="3-3-1-Why-Literature-Review-matters"><a href="#3-3-1-Why-Literature-Review-matters" class="headerlink" title="3.3.1 Why Literature Review matters?"></a>3.3.1 Why Literature Review matters?</h4><ol>
-<li><strong>Demonstrate</strong> your knowledge of the topic and scholarly context </li>
-<li>Show <strong>respect to “giants”</strong> in your field</li>
-<li>Develop a theoretical <strong>framework and methodology</strong> for your research</li>
-<li><strong>Position yourself</strong> in relation to other researchers and theorists </li>
-<li><strong>Situate</strong> your work within the social and disciplinary context</li>
-<li>Prepare and <strong>justify the research questions or hypotheses</strong> of your study</li>
-<li>Show how your research addresses <strong>a gap or contributes</strong> to a debate</li>
-<li>Add <strong>authority</strong> to the present study  (by “quoting” from the authorities to support your study)</li>
-</ol>
-<h4 id="3-3-2-What-features-good-Literature-Review"><a href="#3-3-2-What-features-good-Literature-Review" class="headerlink" title="3.3.2 What features good Literature Review?"></a>3.3.2 What features good Literature Review?</h4><ol>
-<li><strong>A coherent argument</strong> </li>
-<li><strong>A critical evaluation</strong> of what has been done: summarising the findings of related studies and establishing gaps or weaknesses in the present knowledge to pave the way for new knowledge claims (Thompson, 2009)</li>
-<li>The overall rhetorical organisation tends to follow the CARS model (Swales, 1990) of Introduction</li>
-<li>A <em>separate</em> section/chapter or being <em>integrated</em> into Introduction<h4 id="3-3-3-The-processes-of-conducting-Literature-Review"><a href="#3-3-3-The-processes-of-conducting-Literature-Review" class="headerlink" title="3.3.3 The processes of conducting Literature Review"></a>3.3.3 The processes of conducting Literature Review</h4>Step 1. Clearly define topic &amp; research questions<br>Step 2. Search for literature using key words and reference lists<br>Step 3. Select and evaluate literature<br>Step 4. Analyze and summarize the literature<br>Step 5. Identify themes, debates, and gaps<br>Step 6. Outline your literature review’s structure</li>
-</ol>
-<ul>
-<li>Chronological: trace the development of the topic over time; avoid simply listing and summarizing sources in order</li>
-<li>Thematic: use subsections to address different aspects of the topic</li>
-<li>Methodological: compare the results and conclusions that emerge from different approaches</li>
-<li>Theoretical: argue for the relevance of a specific theoretical approach; create a framework for your research</li>
-</ul>
-<p>Step 7. Write your literature review</p>
-<h3 id="3-4-Methodology"><a href="#3-4-Methodology" class="headerlink" title="3.4 Methodology"></a>3.4 Methodology</h3><h4 id="3-4-1-Purposes-of-Methodology"><a href="#3-4-1-Purposes-of-Methodology" class="headerlink" title="3.4.1 Purposes of Methodology"></a>3.4.1 Purposes of Methodology</h4><p>To present <strong>a clear and detailed description</strong> of how an experiment or an investigation was done<br>To provide careful instructions so that the process of your experiment or investigation can be easily <strong>visualized and replicated</strong> (Cotos et al., 2017)<br>To provide the information the reader needs to <strong>judge the study’s validity</strong> (Cargill &amp; O’Connor, 2009) </p>
-<h4 id="3-4-2-Components-of-Methodology"><a href="#3-4-2-Components-of-Methodology" class="headerlink" title="3.4.2 Components of Methodology"></a>3.4.2 Components of Methodology</h4><p><strong>1.Generalization/ Introduction</strong><br>Gives an overview of the entire section<br>Provides necessary background information<br>Introduces the principal activity<br>Identifies &amp; justifies the methodological approach</p>
-<p><strong>2. Methods/Procedures</strong><br>Rules of thumb for describing the methods/procedures<br>If the method has been published, provide the reference.<br>If the method is well-established, just mention its name.<br>If a new method is introduced, try to provide the detailed information precisely and concisely.<br>Questions of HOW and HOW MUCH should be answered precisely to make the procedures clear and replicable </p>
-<p><strong>3. Data Analysis</strong><br>This part deals with the procedures of analyzing the data collected in the previous section and verify its validity. </p>
-<p>For some discipline/journals, data analysis is integrated into the Results section. </p>
-<h3 id="3-5-Results"><a href="#3-5-Results" class="headerlink" title="3.5 Results"></a>3.5 Results</h3><p><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-24-15-56-11.png" alt=""></p>
-<h4 id="3-5-1-Why-do-we-need-to-write-Results-in-text"><a href="#3-5-1-Why-do-we-need-to-write-Results-in-text" class="headerlink" title="3.5.1 Why do we need to write Results in text?"></a>3.5.1 Why do we need to write Results in text?</h4><ul>
-<li><strong>To highlight our interesting and significant results</strong> </li>
-<li>To talk about the results as <strong>a solution</strong> to the problems raised in Introduction</li>
-<li><strong>Numbers don’t speak for themselves!</strong> We should tell the readers what these numbers mean.   </li>
-</ul>
-<h4 id="3-5-2-Example-REVIEW-COMMENT"><a href="#3-5-2-Example-REVIEW-COMMENT" class="headerlink" title="3.5.2 Example:REVIEW COMMENT"></a>3.5.2 Example:REVIEW COMMENT</h4><p>COMMENT1: At times this paper reads like a thesis. The authors seem to have included all their results, with the consequence that I am not sure which findings are significant and which are not. However, I also suspect that some contradictory findings have not been included. So although I generally recommend brevity, this should not include leaving out key findings that do not support the authors’ line of logic.</p>
-<p>COMMENT2: Rather than highlighting the results that are significant or relevant, the authors have merely repeated in the text everything that they have put in their figures and tables, which seem to include every piece of data that the authors have elaborated in the last three years. This makes for very tedious reading. Moreover, I felt that I was not given the tools to understand for myself the significance of their data.</p>
-<h4 id="3-5-3-A-model-to-structure-Results-section"><a href="#3-5-3-A-model-to-structure-Results-section" class="headerlink" title="3.5.3 A model to structure Results section"></a>3.5.3 A model to structure Results section</h4><p>Move 1.  Stating the preparatory information<br>1) Revisiting  the research aim/ existing research<br>2) Revisiting/expanding methodology<br>3) General overview of results </p>
-<p>Move 2. Announcing results<br>1) Invitation to view results<br>2) Specify key results in detail, with or without explanations</p>
-<p>Move 3.  Commenting on results<br>1) Compare results with other research<br>2) Compare results with model predictions<br>3) Problems with results<br>4) Possible implications of results </p>
-<p><strong>Move 1. example sentence</strong></p>
-<ul>
-<li>The results are divided into two parts as follows: </li>
-<li>It is apparent that in all/most/the majority of cases…</li>
-<li>Using the method described above, we obtained …</li>
-<li>Levels of weight loss were similar in all cases.</li>
-<li>In general, coefficients for months close to the mean flowering data were negative.</li>
-</ul>
-<p><strong>Move 2. example sentence</strong><br>Invitation to review results </p>
-<ul>
-<li>The stress data in Fig. 18 indicate/demonstrate/ display/ reveal/suggest a more reasonable relationship.</li>
-<li>Figure 3 illustrates/reports/presents/shows the findings of the spatial time activity modelling.</li>
-<li>The results are summarised in Table 4.</li>
-<li>The rate constants shown in Table 1 demonstrate that the reactivity is much greater at neutral pH.</li>
-<li>As shown/detailed/listed/illustrated in Figure 1, … </li>
-</ul>
-<p>Presenting specific/key results in detail</p>
-<ul>
-<li>… accelerate/change/decline/decrease/ drop/ expand/ fall/ increase..</li>
-<li>is/are/was/were constant/ different/equal/ higher/ identical/ lower/ unchanged/ uniform/ unaffected.. </li>
-<li>It eventually levelled off at a terminal velocity of 300 m/s. </li>
-<li>It can be observed from Fig. 2 that there was only a very small enhancement when H2O2 was present.</li>
-<li>Comparing Figs. 4 and 5, it is obvious that a significant improvement was obtained in the majority of cases.</li>
-</ul>
-<p><strong>Move 3. example sentence</strong><br>Comparison with other results </p>
-<ul>
-<li>The SFS results obtained here are in exceptionally good agreement with existing FE results.</li>
-<li>Our concordance scores strongly confirm previous predictions.</li>
-<li>The numerical model tends to give predictions that are parallel to the experimental data from corresponding tests.</li>
-<li>This is consistent with results obtained in [1]. </li>
-<li>verify/ validate/ support/ reinforce/ refute/ match/ extend/ expand/ be unlike/ be inconsistent with/ disprove/ contrary to…</li>
-</ul>
-<p>Stating problems with results </p>
-<ul>
-<li>The correlation between the two methods was somewhat less in the case of a central concentrated point load.</li>
-<li>It should, however, be noted that in FE methods, the degree of mesh refinement may affect the results.</li>
-<li>Minimise the problem: despite this/ negligible/slightly… </li>
-<li>It is difficult to simulate the behaviour of the joints realistically.</li>
-<li>Suggest reasons for the problem: unavailable/ possible source of error/ not examined in this study… </li>
-</ul>
-<h4 id="3-5-4-example-sentence"><a href="#3-5-4-example-sentence" class="headerlink" title="3.5.4 example sentence"></a>3.5.4 example sentence</h4><p><strong>The data don’t speak for themselves! The vocabulary we use to describe the data will influence how readers interpret our results.</strong><br>nearly<br>extremely (high/low)<br>practically<br>fewer (than)<br>significant<br>under<br>close (to)<br>considerable<br>barely<br>at least<br>a great deal (of)<br>far (above/below)<br>as few as 45<br>only<br>even (higher/lower)<br><img src="/2024/05/25/Practical-English-Writing-Course-Notes/2024-05-24-16-11-31.png" alt=""></p>
-<p><strong>Statements of negative results</strong> </p>
-<ol>
-<li><strong>No significant difference</strong> between the two groups was evident.</li>
-<li><strong>None of</strong> these differences were <strong>statistically significant</strong>.</li>
-<li><strong>No evidence was found</strong> for non-linear associations between X and Y.<br>Only <strong>trace amounts</strong> of X were detected in …</li>
-<li><strong>There was no evidence that</strong> X has an influence on …</li>
-<li>Overall, X <strong>did not affect</strong> males and females differently in these measures.</li>
-<li><strong>There was no observed difference in</strong> the number of…</li>
-</ol>
-<p><strong>Statements of positive results</strong></p>
-<ol>
-<li><strong>Strong evidence</strong> of X was found when …</li>
-<li>This result is <strong>significant</strong> at the p = 0.05 level.</li>
-<li>A <strong>positive correlation</strong> was found between X and Y.</li>
-<li>There was a <strong>significant positive correlation</strong> between …</li>
-<li>The difference between the X and Y groups was <strong>significant</strong>.</li>
-<li>There was <strong>a significant difference</strong> between the two conditions …</li>
-</ol>
-<p><strong>highlight findings</strong></p>
-<ol>
-<li>This result is <strong>somewhat counterintuitive</strong>.</li>
-<li>The <strong>more surprising correlation</strong> is with the …</li>
-<li>The <strong>most surprising aspect</strong> of the data is in the …</li>
-<li>The correlation between X and Y is <strong>interesting</strong> because …</li>
-<li>The most <strong>striking</strong> result to emerge from the data is that …</li>
-<li><strong>Interestingly,</strong> there were also differences in the ratios of …</li>
-<li><strong>The single most striking observation to</strong> emerge from the data comparison was …</li>
-</ol>
-<h3 id="3-6-Discussion-and-Conclusion"><a href="#3-6-Discussion-and-Conclusion" class="headerlink" title="3.6 Discussion and Conclusion"></a>3.6 Discussion and Conclusion</h3><p>(Discussion)To interpret and describe <strong>the significance of your findings</strong> in light of what was already known about the research problem being investigated<br>To explain any <strong>new understanding or fresh insights</strong> about the problem after you’ve taken the findings into consideration<br>To explain how your study has <strong>moved the reader‘s understanding of the research problem forward</strong> from where you left them at the end of introduction/Literature Review</p>
-<p>(Conclusion)To <strong>summarize</strong> the research<br>To <strong>elaborate</strong> the well-reasoned argument<br>To emphasize the <strong>significance</strong> by elaborating on the applications, implications, and/or future work<br>To move readers from the world of your paper back to their own world (Rosen et al., 1999)</p>
-<h4 id="3-6-1-Example-REVIEW-COMMENT"><a href="#3-6-1-Example-REVIEW-COMMENT" class="headerlink" title="3.6.1 Example:REVIEW COMMENT"></a>3.6.1 Example:REVIEW COMMENT</h4><p>The Discussion fails to relate the findings and observations to other relevant studies, and there appears to be no discussion on the implications and limitations of these findings.</p>
-<p>In my work as a reviewer, I often have difficulty in understanding how significant the authors feel their work is, and why their findings add value. This is because authors are not explicit enough – they don’t signal to<br>me (and the reader) that they are about to say, or are now saying, something important. The result is that their achievement may be hidden in the middle of a nondescript sentence in a nondescript paragraph … and no one will notice it.</p>
-<h4 id="3-6-2-A-tentative-model-for-Discussion-A-summary"><a href="#3-6-2-A-tentative-model-for-Discussion-A-summary" class="headerlink" title="3.6.2 A tentative model for Discussion: A summary"></a>3.6.2 A tentative model for Discussion: A summary</h4><p>Move 1: Background information: review of research purposes/theory/ methodology</p>
-<ul>
-<li>Revisiting previous research </li>
-<li>Revisiting previous sections</li>
-</ul>
-<p>Move 2: Reporting /summarizing results: integration of specific results</p>
-<ul>
-<li>Summarizing/revisiting key results</li>
-</ul>
-<p>Move 3: Explaining and evaluating results: establishing meaning &amp; significance</p>
-<ul>
-<li>Interpretation of/ Explanation for results</li>
-<li>Comparisons with existing research</li>
-<li>Achievement or contribution  </li>
-<li>Implications/applications </li>
-<li>Limitations </li>
-<li>Future work</li>
-</ul>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/05/25/Practical-English-Writing-Course-Notes/" rel="prev" title="Practical English Writing Course Notes">
+      <i class="fa fa-chevron-left"></i> Practical English Writing Course Notes
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.huangm.cn/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/pic.png">
-      <meta itemprop="name" content="Ming Huang">
-      <meta itemprop="description" content="Let’s do something extraordinary together.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ming Huang's Homepage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/" class="post-title-link" itemprop="url">如何优雅的使用 Word 进行论文书写（初级版）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-12-03 21:06:06" itemprop="dateCreated datePublished" datetime="2023-12-03T21:06:06+08:00">2023-12-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-20 21:47:36" itemprop="dateModified" datetime="2024-10-20T21:47:36+08:00">2024-10-20</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-多级标题的设置"><a href="#1-多级标题的设置" class="headerlink" title="1. 多级标题的设置"></a>1. 多级标题的设置</h1><blockquote>
-<p>构建一个视觉舒服且直观的大纲列表对于开始论文的书写显得格外的重要。而word默认给出的标题样式模板对于书写论文来说太疏松了。本节主要介绍如何自定义一套适合自己的word标题模板。<br>如果对各级标题进行逐个格式化，并为其手动添加序号（如1.1 |第1.1章|第一章 等）就显得不够优雅。有没有一种方式能让我们就像书写markdown一样更加的丝滑那？</p>
-</blockquote>
-<p>首先，我们新建一个word 对 <code>开始</code>→<code>样式</code>中的我们所预想的格式、字体大小、段落间距等进行预设。<br><strong>主要涉及正文以及标题、1，2，3级标题</strong></p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/titletype.jpg" width="80%" height="50%"></div>
-
-
-<p><strong>注意</strong> :记着更改各级标题时,每个都要勾选基于该模板的新文档，这样下次新建 word 时直接使用已经更改好的模板即可。</p>
-<p><strong>然后就是为各级标题添加序号</strong></p>
-<p>进入：<code>开始</code>→<code>多级序号</code>→<code>定义新的多级列表</code> 按需求进行设置即可:</p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/title.NO.jpg" width="80%" height="50%"></div>
-
-<p><strong>注意</strong> ：为各级标题添加了序号后，实际是把标题样式进行了更新，所以完成编号后需要再次为每个标题进行勾选基于该模板的新文档，不需要改动别的什么直接按  <code>确定</code> 即可，这样下次新建 word 时直接使用已经更改好的带编号的模板了。</p>
-<hr>
-<h1 id="2-图、表的插入与索引"><a href="#2-图、表的插入与索引" class="headerlink" title="2.图、表的插入与索引"></a>2.图、表的插入与索引</h1><h2 id="2-1-图的题注插入"><a href="#2-1-图的题注插入" class="headerlink" title="2.1 图的题注插入"></a>2.1 图的题注插入</h2><p><strong><em>这一步的前提是 你的标题编号是按上述形式插入的,而非手动写的。这样 word 才能识别你的编号从而插入题注里</em></strong><br>插入图片后  一般选用嵌入式（默认） 右键后选自 <code>插入题注</code> 比如我们想要 <code>图 1.1</code> 新建标签 <code>图</code> 选择编号的格式。示例如下：</p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/Fig.jpg  " width="60%" height="50%"></div>
-
-<p>设置好后  在为接下来的插入的图进行题注时 word 会自动识别其应该是<strong>图5还是图6</strong>。无需你在考虑图几，你仅需要输入图的名字即可。</p>
-<h2 id="2-2-三线表的插入"><a href="#2-2-三线表的插入" class="headerlink" title="2.2 三线表的插入"></a>2.2 三线表的插入</h2><p>首选插入一个表 然后再 <code>表格样式里选择新建表格样式</code>然后进行如下操作 </p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/table.jpg" width="60%" height="50%"></div>
-
-<p><strong>注意：</strong> <em>记着要勾选基于该模板的新文档，这样下次新建时直接使用已经更改好的三线表了。<br>如果更改后发现没有找到 保存并退出 word 然后重新打开即可看到三线表出现在表格样式里。同样的方法进行表的题注的插入</em></p>
-<h2 id="2-3-正文中索引图、表"><a href="#2-3-正文中索引图、表" class="headerlink" title="2.3 正文中索引图、表"></a>2.3 正文中索引图、表</h2><p>选择要插入的位置，点击功能栏 <code>插入下的交叉引用</code> 可进行如图操作</p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/index.jpg" width="60%" height="50%"></div>
-
-<p> <strong>注：</strong> <em>当我们插入新图后，图的序号发生改变但是插入正文中的索引未变 ，不要慌 此时我能只需要更新插入引用的域即可 全选后按F9 更新全文的域</em></p>
-<hr>
-<h1 id="3-MathType-的编号、索引"><a href="#3-MathType-的编号、索引" class="headerlink" title="3. MathType 的编号、索引"></a>3. MathType 的编号、索引</h1><p>目前仅可以逐项公式的编号，即点击 <code>MathType下的右编号</code>在弹出的编辑器里输入公式 会自动的公式居中以及右侧编号。(目前还没有找到为已存在的公式进行编号的方法)</p>
-<p>编号的格式可以在 <code>插入编号--格式化</code>里进行更改，选用带章节不带章节的格式以及采用何种连字符等<br>正文索引是也较为方便 点击 <code>插入引用后双击公式编号即可</code>  当你删除公式时编号会自动的更新。</p>
-<p>公式的批量大小设置 在编辑器对公式的大小进行定义后</p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/mathtypesize.jpg" width="70%" height="50%"></div>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/mathtypesize2.jpg" width="70%" height="50%"></div>
-
-
-<h1 id="4-EndNote-的使用（中英文献混排）"><a href="#4-EndNote-的使用（中英文献混排）" class="headerlink" title="4. EndNote 的使用（中英文献混排）"></a>4. EndNote 的使用（中英文献混排）</h1><ol>
-<li><p>去除endnotes 中的域 （不让其跳转，使之固定以便修改参考文献格式）<br>去除word中因使用mendeley或endnote等文献管理软件而产生的域代码。<br>%CTRL+A 全选文章；<br>%CTRL+6 去除全文域代码。</p>
-</li>
-<li><p>使用：CTRL+SHIFT+F9（Fn+F9）：去除选中的单个域代码，注不能跨页，有时候多选时也可能不生效，所以当参考文献留一篇索引版  ，然后边选中边去除域，去除完毕后 复制一份参考文献，然后更新参考目录  应为空才算去除完全，把刚刚复制的粘贴上，修改格式。</p>
-</li>
-</ol>
-<p><strong>注意:</strong> 中途不能更新参考目录  ，如果更新了会将未去除域的参考文献索引重新编排。</p>
-<p><strong>参考源</strong><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1E5411K7By/?spm_id_from=333.788&amp;vd_source=49b8bd33ca1c49c048c6fc297b7c91d2">1.优雅搞定Word论文排版—b站视频</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rr4y1T71y?spm_id_from=333.999.0.0&amp;vd_source=49b8bd33ca1c49c048c6fc297b7c91d2">2.EndNote中英文文献混排格式设置—b站视频</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.huangm.cn/2022/09/16/blog1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/pic.png">
-      <meta itemprop="name" content="Ming Huang">
-      <meta itemprop="description" content="Let’s do something extraordinary together.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ming Huang's Homepage">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/16/blog1/" class="post-title-link" itemprop="url">集成调度数据集</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-09-16 23:53:42" itemprop="dateCreated datePublished" datetime="2022-09-16T23:53:42+08:00">2022-09-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-10-20 19:38:28" itemprop="dateModified" datetime="2024-10-20T19:38:28+08:00">2024-10-20</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-配送-121TTT"><a href="#1-配送-121TTT" class="headerlink" title="1 配送 121TTT"></a>1 配送 121TTT</h1><h2 id="1-1-配送集成ADSAS1"><a href="#1-1-配送集成ADSAS1" class="headerlink" title="1.1 配送集成ADSAS1"></a>1.1 配送集成ADSAS1</h2><p> 简介：生产与配送集成调度是近些年来热门的研究领域。大多数学者认为 <a target="_blank" rel="noopener" href="https://sci-hub.wf/10.1287/opre.28.6.1436">(Potts, 1980)</a>是该领域的开篇之作。随着该领域专家学者的不断拓展和深入，集成调度的相关研究得到了空前的发展。各方面的理论和方法也不断被提出，可参照综述文献 <a target="_blank" rel="noopener" href="https://sci-hub.wf/10.1287/opre.1080.0688">(Chen, 2010)</a>,<a target="_blank" rel="noopener" href="https://sci-hub.wf/10.1016/j.cie.2016.12.010">(Moons et al., 2017)</a>, <a target="_blank" rel="noopener" href="https://sci-hub.wf/10.1080/00207543.2020.1762019">(Kumar et al., 2020)</a>进行系统的梳理。</p>
-<blockquote>
-<p>根据问题特征我们对如下数据集进行简要描述：</p>
-<ul>
-<li>生产调度：(作业车间调度、流水车间调度（流水线、置换、混流）、分布式车间调度、柔性调度、模糊调度、动态调度 等)</li>
-<li>配送调度：(运输问题、车辆路径问题（容量限制、时间窗约束、多行程等））<br>我们所提出的数据集所应用的模型涉及：<br><strong>流水线生产 &amp; 车辆路径问题（考虑容量限制、时间窗约束、多行程）&amp;模糊旅途时间</strong> </li>
-</ul>
-<hr>
-</blockquote>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var _prevOnload = window.onload;</span><br><span class="line"></span><br><span class="line">window.onload = function () {</span><br><span class="line">    var switchLang = document.getElementsByClassName("menu-item menu-item-switch-to-chinese")[0];</span><br><span class="line">    switchLang.onclick = function () {</span><br><span class="line">        var href = window.location.href;</span><br><span class="line">        var includesKeywords = href.includes("/homepage/") || href.includes("/home/")|| href.includes("/publications/") || href.includes("/resources/")|| href.includes("/link/")|| href.includes("/archives/")|| href.includes("/Switch to Chinese/");</span><br><span class="line">        if (includesKeywords) {</span><br><span class="line">            window.location.href = href.replace('.cn/', '.cn/cn/');</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line">        else {</span><br><span class="line">            window.location.href = "https://www.huangm.cn/cn";</span><br><span class="line">        }</span><br><span class="line">        if (typeof (_prevOnload) === 'function') {</span><br><span class="line">            _prevOnload();</span><br><span class="line">        }</span><br><span class="line">        return false;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="1-1-配送集成ADSAS1-1"><a href="#1-1-配送集成ADSAS1-1" class="headerlink" title="1.1 配送集成ADSAS1"></a>1.1 配送集成ADSAS1</h2><script type="math/tex; mode=display">
-\begin{equation}
- \textcolor{red} {w_{k+1}=w_k-a_k \tilde{g}\left(w_k, \eta_k\right) ,k=1,2,3,\dots}
-\end{equation}</script><h3 id="1-1-配送集成ADSAS1-2"><a href="#1-1-配送集成ADSAS1-2" class="headerlink" title="1.1 配送集成ADSAS1"></a>1.1 配送集成ADSAS1</h3><p>This simple example can illustrate why the RM algorithm converges.</p>
-<h3 id="1-4配送集成"><a href="#1-4配送集成" class="headerlink" title="1.4配送集成"></a>1.4配送集成</h3><ul>
-<li>When $w_k&gt;w^<em>$, we have $g\left(w_k\right)&gt;0$. Then, $w_{k+1}=w_k-a_k g\left(w_k\right)&lt;w_k$. If $a_k g\left(w_k\right)$ is sufficiently small, we have $w^</em>&lt;w_{k+1}&lt;w_k$. As a result, $w_{k+1}$ is closer to $w^*$ than $w_k$.</li>
-<li>When $w_k<w^*$, we="" have="" $g\left(w_k\right)<0$.="" then,="" $w_{k+1}="w_k-a_k" g\left(w_k\right)="">w_k$. If $\left|a_k g\left(w_k\right)\right|$ is sufficiently small, we have $w^<em>&gt;w_{k+1}&gt;w_k$. As a result, $w_{k+1}$ is closer to $w^</em>$ than $w_k$.</w^*$,></li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{aligned} 
-\tilde{g}(w, \eta) & = w-x \\ 
-& =w-x+\mathbb{E}[X] -\mathbb{E}[X] \\
-& =(w-\mathbb{E}[X]) + (\mathbb{E}[X]-x)\\
-& =g(w)+\eta
-\end{aligned}</script><script type="math/tex; mode=display">
-\begin{equation}
-w_{k+1} = w_k-\alpha_k \textcolor{blue} {\nabla_w f\left(w_k, x_k\right)}, \end{equation}</script><p>where $x_k$ is the sample collected at time step $k$. It relies on stochastic samples ${x_k}$</p>
-<ol>
-<li><p>Compared to the gradient descent algorithm: Replace the true gradient $\mathbb{E}\left[\nabla_w f\left(w_k, X\right)\right]$ by the stochastic gradient $\nabla_w f\left(w_k, x_k\right)$. </p>
-</li>
-<li><p>Compared to the batch gradient descent method: let $n=1$.</p>
-</li>
-<li><p><strong>From GD to SGD</strong>: The stochastic gradient $\nabla_w f\left(w_k, x_k\right)$ can be viewed as a noisy measurement of the true gradient $\mathbb{E}\left[\nabla_w f(w, X)\right]$: </p>
-</li>
-</ol>
-<script type="math/tex; mode=display">
-\nabla_w f\left(w_k, x_k\right)=\mathbb{E}\left[\nabla_w f(w, X)\right]+\underbrace{\nabla_w f\left(w_k, x_k\right)-\mathbb{E}\left[\nabla_w f(w, X)\right]}_\eta .</script><script type="math/tex; mode=display">
-\begin{aligned} 
-\mathbb{E}(\eta) & =\mathbb{E}(\nabla_w f\left(w_k, x_k\right)-\mathbb{E}\left[\nabla_w f(w, X)\right])\\
-& =\mathbb{E}_{x_k}[\nabla_w f\left(w_k, x_k\right)]-\mathbb{E}_X\left[\nabla_w f(w, X)\right]=0
-\end{aligned}</script><hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -1563,6 +844,7 @@ w_{k+1} = w_k-\alpha_k \textcolor{blue} {\nabla_w f\left(w_k, x_k\right)}, \end{
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PYTHON-%E5%9F%BA%E7%A1%80"><span class="nav-text">PYTHON 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-python-%E6%B5%81%E7%A8%8B%E6%A0%BC%E5%BC%8F"><span class="nav-text">1. python 流程格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC%E3%80%81%E8%BF%90%E7%AE%97%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A8%E7%A4%BA%E3%80%81%E5%A4%84%E7%90%86%E3%80%81%E5%88%A4%E6%96%AD"><span class="nav-text">1.1 变量赋值、运算与字符串表示、处理、判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E3%80%81%E5%BE%AA%E7%8E%AF%E3%80%81%E8%B7%B3%E5%87%BA%E8%B7%B3%E8%BF%87%EF%BC%88if-for-while-break-continue%EF%BC%89"><span class="nav-text">1.2 条件判断、循环、跳出跳过（if&#x2F;for&#x2F;while&#x2F;break&#x2F;continue）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">1.3 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1-List%E5%88%97%E8%A1%A8%E3%80%81Dict%E5%AD%97%E5%85%B8%E3%80%81Tuple%E5%85%83%E7%BB%84%E3%80%81Set%E9%9B%86%E5%90%88"><span class="nav-text">1.3.1 List列表、Dict字典、Tuple元组、Set集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-2-arrly%E6%95%B0%E7%BB%84-%E2%80%94%E2%80%94-Numpy%E5%BA%93"><span class="nav-text">1.3.2 arrly数组 —— Numpy库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-3-arrly%E8%A1%A8-%E2%80%94%E2%80%94-Panda%E5%BA%93"><span class="nav-text">1.3.3 arrly表  —— Panda库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0%E7%9A%84%E5%A6%99%E7%94%A8"><span class="nav-text">1.4 一些函数的妙用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1enumerate-%E8%87%AA%E5%8A%A8%E5%8A%A0-index"><span class="nav-text">1.4.1enumerate 自动加 index</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2-Zip-%E5%90%8C%E6%97%B6%E8%BF%AD%E4%BB%A3"><span class="nav-text">1.4.2 Zip 同时迭代</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-3-reverse-amp-reversed-%E7%BF%BB%E8%BD%AC%E5%88%97%E8%A1%A8"><span class="nav-text">1.4.3 reverse &amp; reversed 翻转列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-4-Deep-Copy-amp-Shallow-Copy-%E5%A4%8D%E5%88%B6%E8%A6%81%E7%82%B9"><span class="nav-text">1.4.4 Deep Copy &amp; Shallow Copy 复制要点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">123456789101112131415161718192021222324252627#存放的数值、字符时相当于Deep Copyl &#x3D; [1,2,3]_l &#x3D; l.copy()_l[0] &#x3D; -1print(_l)print(l)#&gt; [-1, 2, 3]#&gt; [1, 2, 3]#存放的列表时  .copy只是浅拷贝Shallow Copyl &#x3D; [[1],[2],3]_l &#x3D; l.copy()_l[0][0] &#x3D; -1print(_l)print(l)#&gt; [[-1], [2], 3]#&gt; [[-1], [2], 3]#存放的列表时  如何深拷贝哪？from copy import deepcopyl &#x3D; [[1],[2],3]_l &#x3D; deepcopy(l)_l[0][0] &#x3D; -1print(_l)print(l)#&gt; [[-1], [2], 3]#&gt; [[1], [2], 3]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-python-%E6%A1%86%E6%9E%B6%E6%A0%BC%E5%BC%8F"><span class="nav-text">2. python 框架格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%87%BD%E6%95%B0-Function-%E2%80%94-%E7%B1%BB-Class-%E2%80%94-%E6%A8%A1%E5%9D%97-Module"><span class="nav-text">2.1 函数(Function) — 类 (Class) — 模块 (Module)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-try-except-raise-%E4%B8%8E-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95-Unittest"><span class="nav-text">2.2 异常处理(try-except\raise) 与 单元测试 (Unittest)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E7%94%9F%E6%88%90%E5%99%A8%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-text">2.3 生成器与装饰器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E5%B7%A5%E7%A8%8B%E9%97%AE%E9%A2%98%E7%BC%96%E7%A8%8B%E6%80%9D%E8%B7%AF"><span class="nav-text">2.4 工程问题编程思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-python-%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="nav-text">3. python 文件数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99"><span class="nav-text">3.1文件数据读写</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-%E5%9F%BA%E7%A1%80%E8%AF%BB%E5%86%99"><span class="nav-text">3.1.1 基础读写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-Numpy%E5%BA%93%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99"><span class="nav-text">3.1.2 Numpy库中的数据读写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-3-Panda%E5%BA%93%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99"><span class="nav-text">3.1.3 Panda库中的数据读写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86%EF%BC%88OS%E5%BA%93%EF%BC%89"><span class="nav-text">3.2文件目录管理（OS库）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D-%E6%9C%AA%E5%AE%8C%E6%88%90"><span class="nav-text">3.3正则表达式匹配(未完成)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3%E5%BA%8F%E5%88%97%E5%8C%96%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%EF%BC%88Json-and-Pickle%EF%BC%89"><span class="nav-text">3.3序列化数据传输（Json and Pickle）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-%E7%9B%B8%E5%85%B3%E8%BF%9E%E6%8E%A5"><span class="nav-text">python 相关连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-python%E5%9F%BA%E7%A1%80"><span class="nav-text">1. python基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-python100%E5%A4%A9"><span class="nav-text">2. python100天</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">3.虚拟环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-requirements"><span class="nav-text">4. requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-mmdetetion"><span class="nav-text">5. mmdetetion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E6%95%99%E7%A8%8B"><span class="nav-text">5.1 教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E6%B5%8B%E8%AF%95%E7%A8%8B%E5%BA%8F%E7%94%A8%E6%97%B6"><span class="nav-text">5.2 测试程序用时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83"><span class="nav-text">5.3 分布式训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E8%AE%AD%E7%BB%83"><span class="nav-text">5.4 训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-%E6%B5%8B%E7%AE%97%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0%E9%87%8F%E5%92%8C%E8%AE%A1%E7%AE%97%E9%87%8F"><span class="nav-text">5.5 测算模型参数量和计算量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-%E6%8C%87%E5%AE%9AGPU%E8%BF%90%E8%A1%8C"><span class="nav-text">5.6 指定GPU运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-7-Git"><span class="nav-text">5.7. Git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-OpenCV%E6%95%99%E7%A8%8B"><span class="nav-text">6. OpenCV教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-pyechart"><span class="nav-text">7. pyechart</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1725,59 +1007,6 @@ setInterval("createtime()",250);
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
