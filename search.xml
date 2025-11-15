@@ -513,54 +513,6 @@ w_{k+1} = w_k-\alpha_k \textcolor{blue} {\nabla_w f\left(w_k, x_k\right)}, \end{
 ]]></content>
   </entry>
   <entry>
-    <title>如何优雅的使用 Word 进行论文书写（初级版）</title>
-    <url>/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="1-多级标题的设置"><a href="#1-多级标题的设置" class="headerlink" title="1. 多级标题的设置"></a>1. 多级标题的设置</h1><blockquote>
-<p>构建一个视觉舒服且直观的大纲列表对于开始论文的书写显得格外的重要。而word默认给出的标题样式模板对于书写论文来说太疏松了。本节主要介绍如何自定义一套适合自己的word标题模板。<br>如果对各级标题进行逐个格式化，并为其手动添加序号（如1.1 |第1.1章|第一章 等）就显得不够优雅。有没有一种方式能让我们就像书写markdown一样更加的丝滑那？</p>
-</blockquote>
-<p>首先，我们新建一个word 对 <code>开始</code>→<code>样式</code>中的我们所预想的格式、字体大小、段落间距等进行预设。<br><strong>主要涉及正文以及标题、1，2，3级标题</strong></p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/titletype.jpg" width="80%" height="50%"></div>
-
-
-<p><strong>注意</strong> :记着更改各级标题时,每个都要勾选基于该模板的新文档，这样下次新建 word 时直接使用已经更改好的模板即可。</p>
-<p><strong>然后就是为各级标题添加序号</strong></p>
-<p>进入：<code>开始</code>→<code>多级序号</code>→<code>定义新的多级列表</code> 按需求进行设置即可:</p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/title.NO.jpg" width="80%" height="50%"></div>
-
-<p><strong>注意</strong> ：为各级标题添加了序号后，实际是把标题样式进行了更新，所以完成编号后需要再次为每个标题进行勾选基于该模板的新文档，不需要改动别的什么直接按  <code>确定</code> 即可，这样下次新建 word 时直接使用已经更改好的带编号的模板了。</p>
-<hr>
-<h1 id="2-图、表的插入与索引"><a href="#2-图、表的插入与索引" class="headerlink" title="2.图、表的插入与索引"></a>2.图、表的插入与索引</h1><h2 id="2-1-图的题注插入"><a href="#2-1-图的题注插入" class="headerlink" title="2.1 图的题注插入"></a>2.1 图的题注插入</h2><p><strong><em>这一步的前提是 你的标题编号是按上述形式插入的,而非手动写的。这样 word 才能识别你的编号从而插入题注里</em></strong><br>插入图片后  一般选用嵌入式（默认） 右键后选自 <code>插入题注</code> 比如我们想要 <code>图 1.1</code> 新建标签 <code>图</code> 选择编号的格式。示例如下：</p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/Fig.jpg  " width="60%" height="50%"></div>
-
-<p>设置好后  在为接下来的插入的图进行题注时 word 会自动识别其应该是<strong>图5还是图6</strong>。无需你在考虑图几，你仅需要输入图的名字即可。</p>
-<h2 id="2-2-三线表的插入"><a href="#2-2-三线表的插入" class="headerlink" title="2.2 三线表的插入"></a>2.2 三线表的插入</h2><p>首选插入一个表 然后再 <code>表格样式里选择新建表格样式</code>然后进行如下操作 </p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/table.jpg" width="60%" height="50%"></div>
-
-<p><strong>注意：</strong> <em>记着要勾选基于该模板的新文档，这样下次新建时直接使用已经更改好的三线表了。<br>如果更改后发现没有找到 保存并退出 word 然后重新打开即可看到三线表出现在表格样式里。同样的方法进行表的题注的插入</em></p>
-<h2 id="2-3-正文中索引图、表"><a href="#2-3-正文中索引图、表" class="headerlink" title="2.3 正文中索引图、表"></a>2.3 正文中索引图、表</h2><p>选择要插入的位置，点击功能栏 <code>插入下的交叉引用</code> 可进行如图操作</p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/index.jpg" width="60%" height="50%"></div>
-
-<p> <strong>注：</strong> <em>当我们插入新图后，图的序号发生改变但是插入正文中的索引未变 ，不要慌 此时我能只需要更新插入引用的域即可 全选后按F9 更新全文的域</em></p>
-<hr>
-<h1 id="3-MathType-的编号、索引"><a href="#3-MathType-的编号、索引" class="headerlink" title="3. MathType 的编号、索引"></a>3. MathType 的编号、索引</h1><p>目前仅可以逐项公式的编号，即点击 <code>MathType下的右编号</code>在弹出的编辑器里输入公式 会自动的公式居中以及右侧编号。(目前还没有找到为已存在的公式进行编号的方法)</p>
-<p>编号的格式可以在 <code>插入编号--格式化</code>里进行更改，选用带章节不带章节的格式以及采用何种连字符等<br>正文索引是也较为方便 点击 <code>插入引用后双击公式编号即可</code>  当你删除公式时编号会自动的更新。</p>
-<p>公式的批量大小设置 在编辑器对公式的大小进行定义后</p>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/mathtypesize.jpg" width="70%" height="50%"></div>
-<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/mathtypesize2.jpg" width="70%" height="50%"></div>
-
-
-<h1 id="4-EndNote-的使用（中英文献混排）"><a href="#4-EndNote-的使用（中英文献混排）" class="headerlink" title="4. EndNote 的使用（中英文献混排）"></a>4. EndNote 的使用（中英文献混排）</h1><ol>
-<li><p>去除endnotes 中的域 （不让其跳转，使之固定以便修改参考文献格式）<br>去除word中因使用mendeley或endnote等文献管理软件而产生的域代码。<br>%CTRL+A 全选文章；<br>%CTRL+6 去除全文域代码。</p>
-</li>
-<li><p>使用：CTRL+SHIFT+F9（Fn+F9）：去除选中的单个域代码，注不能跨页，有时候多选时也可能不生效，所以当参考文献留一篇索引版  ，然后边选中边去除域，去除完毕后 复制一份参考文献，然后更新参考目录  应为空才算去除完全，把刚刚复制的粘贴上，修改格式。</p>
-</li>
-</ol>
-<p><strong>注意:</strong> 中途不能更新参考目录  ，如果更新了会将未去除域的参考文献索引重新编排。</p>
-<p><strong>参考源</strong><br><a href="https://www.bilibili.com/video/BV1E5411K7By/?spm_id_from=333.788&amp;vd_source=49b8bd33ca1c49c048c6fc297b7c91d2">1.优雅搞定Word论文排版—b站视频</a></p>
-<p><a href="https://www.bilibili.com/video/BV1rr4y1T71y?spm_id_from=333.999.0.0&amp;vd_source=49b8bd33ca1c49c048c6fc297b7c91d2">2.EndNote中英文文献混排格式设置—b站视频</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Python Basic Notes</title>
     <url>/2024/07/13/Python-Basic-Notes/</url>
     <content><![CDATA[<h1 id="PYTHON-基础"><a href="#PYTHON-基础" class="headerlink" title="PYTHON 基础"></a>PYTHON 基础</h1><h2 id="1-python-流程格式"><a href="#1-python-流程格式" class="headerlink" title="1. python 流程格式"></a>1. python 流程格式</h2><h3 id="1-1-变量赋值、运算与字符串表示、处理、判断"><a href="#1-1-变量赋值、运算与字符串表示、处理、判断" class="headerlink" title="1.1 变量赋值、运算与字符串表示、处理、判断"></a>1.1 变量赋值、运算与字符串表示、处理、判断</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">name1 = name2 = name3 = <span class="string">'文件系统'</span></span><br><span class="line">name1, name2, name3 = <span class="string">"文件"</span>, <span class="string">"系统"</span>, <span class="string">"管理"</span></span><br><span class="line">name = <span class="string">""" </span></span><br><span class="line"><span class="string">ni</span></span><br><span class="line"><span class="string">hao</span></span><br><span class="line"><span class="string">a</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##变量多行用 """....."""</span></span><br></pre></td></tr></tbody></table></figure>
@@ -1026,254 +978,52 @@ w_{k+1} = w_k-\alpha_k \textcolor{blue} {\nabla_w f\left(w_k, x_k\right)}, \end{
 ]]></content>
   </entry>
   <entry>
-    <title>Welcome To My Academic Homepage</title>
-    <url>/index.html</url>
-    <content><![CDATA[<h1 id="News-boom"><a href="#News-boom" class="headerlink" title="News(:boom:)"></a>News(<span class="github-emoji"><span>💥</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>)</h1><div class="note danger">
-            <font color="#8B0000" style="font-weight: bold; font-size: 16pt; text-align: center;"> Seeking Joint PhD Supervision, Postdoctoral Opportunities, and International Collaboration （Released on November 2025）</font><p>I am a PhD candidate in intelligent manufacturing and robotics, with <strong>research expertise</strong> in:<br>(1) Human–robot collaboration (perception–decision–execution–learning closed loop);<br>(2) Management, control, and optimization of complex manufacturing systems;<br>(3) Robot cluster control and decision-making.<br>My <strong>technical skill set</strong> includes:<br>(1) Deep reinforcement learning, evolutionary computation, and swarm intelligence algorithms;<br>(2) Applications of large language models (LLMs) in intelligent manufacturing and robotics;<br>(3) Mathematical modeling,  linearization, and the use of commercial solvers.<br><strong>My expected graduation date is June 2027, and I am actively seeking:</strong></p><p>-1. <font color="blue" style="font-weight: bold;"><strong>One-Year Joint PhD / Visiting Research Opportunity (via CSC Funding)</strong></font><br>I will apply for the China Scholarship Council (CSC) program to undertake a one-year joint PhD/visiting research placement at a leading university or research institute.</p><p>-2. <font color="blue" style="font-weight: bold;"><strong>Postdoctoral Position After Graduation (Starting August 2027)</strong></font><br>I am seeking postdoctoral positions in Europe, the United States, Singapore, or other regions with strong research programs in robotics, artificial intelligence, and advanced manufacturing.</p><p>-3. <font color="blue" style="font-weight: bold;"><strong>International Collaborative Research &amp; Publication Partnerships</strong></font><br>I welcome opportunities for joint publications, collaborative research projects, and long-term academic cooperation.</p><p><strong>If my research background aligns with your interests, I would be pleased to connect.</strong> <font color="blue" style="font-weight: bold;"><strong>My email: huangming@bit.edu.cn</strong></font></p>
-          </div>
-<hr>
-<h1 id="Biography"><a href="#Biography" class="headerlink" title="Biography"></a>Biography</h1><p>Ming Huang was born in Xingtai, Hebei Province, China in 1999. Currently, I am pursuing a doctoral degree in Mechanical Engineering at Beijing Institute of Technology.</p>
-<p>If you have any further questions, please feel free to contact me.<br>My E-mail（ <span class="github-emoji"><span>✉</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> ）： huangming @bit.edu.cn.<br>Address：School of Mechanical Engineering, Beijing Institute of Technology, Beijing  100081, China </p>
-<!-- 让表格居中显示的风格 -->
-<style>
-.center 
-{
-  display: table;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-table th:first-of-type {
-    width: 420pt;
-}
-table th:nth-of-type(2) {
-    width: 640pt;
-}
-</style>
+    <title>如何优雅的使用 Word 进行论文书写（初级版）</title>
+    <url>/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="1-多级标题的设置"><a href="#1-多级标题的设置" class="headerlink" title="1. 多级标题的设置"></a>1. 多级标题的设置</h1><blockquote>
+<p>构建一个视觉舒服且直观的大纲列表对于开始论文的书写显得格外的重要。而word默认给出的标题样式模板对于书写论文来说太疏松了。本节主要介绍如何自定义一套适合自己的word标题模板。<br>如果对各级标题进行逐个格式化，并为其手动添加序号（如1.1 |第1.1章|第一章 等）就显得不够优雅。有没有一种方式能让我们就像书写markdown一样更加的丝滑那？</p>
+</blockquote>
+<p>首先，我们新建一个word 对 <code>开始</code>→<code>样式</code>中的我们所预想的格式、字体大小、段落间距等进行预设。<br><strong>主要涉及正文以及标题、1，2，3级标题</strong></p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/titletype.jpg" width="80%" height="50%"></div>
 
-<div class="center">
 
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left"><span class="github-emoji"><span>🔍</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Interests</th>
-<th style="text-align:left"><span class="github-emoji"><span>🎓</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Education</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><li><b>Deep reinforcement learning, Evolutionary computing，LLM</b></li><li> <b>Robotic swarm scheduling</b> </li><li><b>Human-Robot Collaboration Optimization</b></li><li>Multi-stage integrated scheduling</li><li>Complex System Modeling and Optimization</li><li>Dynamic multi-objective optimization</li></td>
-<td style="text-align:left"><li><b>2023. 09 - 2027. 07 D.Eng in Mechanical Engineering-- Beijing Institute of Technology</b></li><li>2020. 09 - 2023. 07 M.Eng. in Industrial Engineering-- Wuhan University of Technology</li><li>2016. 09 - 2020. 07 B.Eng. in Quality Management Engineering-- He Bei University </li><li>2013. 09 - 2016. 07 Student in the first senior high school of Xingtai City, Hebei</li></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabs" id="yearlist"><ul class="nav-tabs"><li class="tab"><a href="#yearlist-1">2023 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li><li class="tab active"><a href="#yearlist-2">2024 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li></ul><div class="tab-content"><div class="tab-pane" id="yearlist-1"><p><strong>2023 To Do list <span class="github-emoji"><span>🎯</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong><br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Going to pass the PhD application examination<br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Getting a Master’s Degree:<br><span class="github-emoji"><span>➖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Acceptance of three papers or more（Progress: 2/3）<br><span class="github-emoji"><span>✖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2716.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go to improve English listening skills<br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> To control the weight between 55-60kg, a strong body is the basis of scientific research.<br><span class="github-emoji"><span>➖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go save up money because maybe try hair transplants to fight hair loss.<br><strong><em>Words I Wanted To Say：There are many things worth doing in one’s life, and the most significant is to do it right now.<span class="github-emoji"><span>🏃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></em></strong></p></div><div class="tab-pane active" id="yearlist-2"><!--**2024 To Do list :dart:**
-:black_square_button: Acceptance of three papers or more :memo:（Progress: 1/3）
-:black_square_button: Read three literary novels :books:（Progress: 0/3）
-:black_square_button: Improvement of English listening and communication skills :earth_americas: 
-:black_square_button: Keep your weight between 55-60kg, and don't let abdominal muscles disappear! :muscle:
-:black_square_button: Time into 25 minutes for a 5k run :running:
-:black_square_button: To save 30,000 yuan and become financially independent. :moneybag:
-***Words I Wanted To Say：The goal of life should not be success and fame, but rather to live your life the way you want.:low_brightness:***--></div></div></div>
-<hr>
-<h1 id="Supervisor"><a href="#Supervisor" class="headerlink" title="Supervisor"></a>Supervisor</h1><ul>
-<li><a href="https://me.bit.edu.cn/szdw/jsml/zzgcx/gygcyjs/sssds13/13ddf65bcbdf4f5c83acd440457ee9de.htm"><strong>Sihan Huang</strong></a> associate professor（My doctoral  supervisor）<br><br></li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>Baigang Du</strong></a> associate professor（My master’s supervisor）<br><br></li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>Jun Guo</strong></a> associate professor（My associate master’s supervisor）</li>
-</ul>
-<hr>
-<h1 id="Awards"><a href="#Awards" class="headerlink" title="Awards"></a>Awards</h1><!-- 标签形式 -->
-<div class="note info">
-            <ul><li><font color="blue">2025. 11</font> The 3rd Human-Centric Smart Manufacturing Academic Conference — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Optimization of Ultra High Flexibility Robotic Manufacturing System with Human Robot Collaboration: A Multi-Objective Multi-Agent Deep Reinforcement Learning </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2025. 11</font> Outstanding Student for the 2024-2025  Year at Beijing Institute of Technology — <strong>Personal Honor</strong> </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2024. 12</font> 2024 World Intelligent Manufacturing Conference – Human-Centered Smart Manufacturing Session &amp; The 2rd Human-Centric Smart Manufacturing Academic Conference — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Autonomous Collaboration Strategies for Mobile Operations in Robot Clusters. </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2024. 11</font> Outstanding Student for the 2023-2024  Year at Beijing Institute of Technology — <strong>Personal Honor</strong> </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2023. 11</font> “Huawei Cup” The 20th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Research on Optimization of Evaluation Plans for Large scale Innovation Competitions </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2023. 06</font> Outstanding graduate of Wuhan University of Technology — <strong>Personal Honor</strong> </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2022. 12</font> “Huawei Cup” The 19th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Scheduling optimization problem for automotive manufacturing painting-final assembly cache sequencing zone </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2022. 06</font> The 12th Wuhan University of Technology Post-graduate Mathematical Contest  — <strong>First Prize</strong><br>Modeling topic: Research on resource-constrained vehicle routing problem </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2021. 12</font> “Huawei Cup” The 18th China Post-granduate Mathematical Contest — <strong>Third Prize</strong><br>Modeling topic: Airline crew optimization scheduling problem </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2021. 01</font> “Cloud Talk New Technology” Popular Science Contest— <strong>Third Prize</strong><br>Entry: OpenCV-based smart power plant inspection trolley </li></ul>
-          </div>
-<hr>
-<h1 id="Journal-Reviewer"><a href="#Journal-Reviewer" class="headerlink" title="Journal Reviewer"></a>Journal Reviewer</h1><p>IEEE Transactions on Systems Man Cybernetics-Systems (SCI, IF=8.7).<br>Journal of King Saud University Science (SCI, IF=3.6)<br>International Journal of Intelligent Robotics and Applications(SCI, IF=2.0)</p>
-<hr>
-<h1 id="Conference-presentation"><a href="#Conference-presentation" class="headerlink" title="Conference presentation"></a>Conference presentation</h1><div class="note success">
-            <p>-1. <font color="blue">(2025. 11)</font> The 3rd Human-Centric Smart Manufacturing Academic Conference, Beijing, China. — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Optimization of Ultra High Flexibility Robotic Manufacturing System with Human Robot Collaboration: A Multi-Objective Multi-Agent Deep Reinforcement Learning</p>
-          </div>
-<div class="note success">
-            <p>-2. <font color="blue">(2025. 07)</font>.  2025 Annual Conference of the Industrial Big Data and Intelligent Systems Division of the Chinese Mechanical Engineering Society &amp; The 8th Academic Conference on Big Data-Driven Intelligent Manufacturing, Yichang, China. <strong>(Forum Presentation)</strong><br>Presentation topic: A Normalized Tchebycheff Aggregation-Based Multi-Objective Deep Reinforcement Learning for Dynamic Scheduling of Robotic Manufacturing Systems.</p>
-          </div>
-<div class="note success">
-            <p>-3. <font color="blue">(2025. 05)</font>. Frontier Forum on Digital Twin Technologies and Application Models &amp; The 19th Session (2025 Issue 3) of the “Strive for Excellence” PhD Student Workshop by the China Graphics Society, Yichang, China. <strong>(Invited Presentation at the Graduate Forum)</strong><br>Presentation topic: Digital Twin-driven Multi-objective Deep Reinforcement Learning for Dynamic and Flexible Island Assembly Line Scheduling.</p>
-          </div>
-<div class="note success">
-            <p>-4. <font color="blue">(2024. 12)</font>. 2024 World Intelligent Manufacturing Conference – Human-Centered Smart Manufacturing Session &amp; The 2rd Human-Centric Smart Manufacturing Academic Conference, Nanjing, China. <strong>(Outstanding Presentation Award)</strong> <a href="../zip"> (Poster) </a> <strong><code>PDF</code></strong><br>Presentation topic: Autonomous Collaboration Strategies for Mobile Operations in Robot Clusters.</p>
-          </div>
-<div class="note success">
-            <p>-5. <font color="blue">(2024. 12)</font>.. 2024 National Doctoral Forum on Industrial Engineering &amp; the 772nd Tsinghua University Doctoral Academic Forum, Beijing, China. <strong>(Forum Presentation)</strong><br>Presentation topic: Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times.</p>
-          </div>
-<hr>
-<h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h3 id="Fund"><a href="#Fund" class="headerlink" title="Fund"></a>Fund</h3><div class="note warning">
-            <ol><li><p>The National Key Research and Development Program of China :<br>Research on Cyber-Physical Fusion Modeling Technology for Control System Equipment Targeting Multiple Optimization Objectives in Flexible Manufacturing <font color="blue">2024. 12-2027. 11</font>（Project Participants）</p></li><li><p>The National Natural Science Foundation of China  (Youth Fund) :<br>Research on Adaptive Reconfiguration Optimization Theory for Smart Manufacturing Systems with Multiple Uncertain Disturbances <font color="blue">2025. 01-2027. 12</font>（Project Participants）</p></li><li><p>Beijing Natural Science Foundation under Grant :<br>Key Technologies and System Applications of Digital Twin Workshop for 3C Intelligent Manufacturing <font color="blue">2024. 07-2027. 12</font>（Project Participants）</p></li><li><p>The National Key Research and Development Program of China:<br>Research on Key Technologies for Dynamic Reconfiguration and XXXX of Production Lines <font color="blue">2022. 12-2024. 10</font>（Project Participants）</p></li><li><p>Independent Innovation Foundation of Wuhan University of Technology —— Postgraduate Personal Exploration Project :<br>Research on Integrated  Production and Distribution Scheduling with Flexible Batching and Soft Time Windows <font color="blue">2022. 01-2022. 12</font>（<strong>Project Principals</strong>）</p></li><li><p>National Natural Science Foundation of China (Youth Fund) ：<br>A game method of supply and demand allocation of complex product system manufacturing services for social collaboration <font color="blue">2018. 01-2020. 12 </font>（Project Participants）</p></li></ol>
-          </div>
-<h3 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h3><div class="note warning">
-            <h4 id="—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）"><a href="#—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）" class="headerlink" title="— 2021. 07-2022. 07 Tuoxing Zhiwang Technology Co., Ltd.  Wuhan （Java Back End Development）"></a>— 2021. 07-2022. 07 <a href="http://www.tonshinet.com/">Tuoxing Zhiwang Technology Co., Ltd.  Wuhan</a> （Java Back End Development）</h4><ol><li><p><font color="blue">2021. 07-2021. 12 </font> Development of Wind Plant Operation and Maintenance Application Platform</p></li><li><p><font color="blue">2022. 01-2022. 07 </font> Tangshan Sinoma Heavy Machinery PMS Improvement Project<br>-Development of External Supplier Price Comparison Management Platform </p></li></ol>
-          </div>
-<p><a href="https://clustrmaps.com/site/1bqdf" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=lPGunm_IA1w4rADFSr_XZ_r1KQCj0GoM-18qXvbMs1E&amp;co=ffffff&amp;ct=555555"></a></p>
-</div>]]></content>
-  </entry>
-  <entry>
-    <title>Welcome To My Academic Homepage</title>
-    <url>/index.html</url>
-    <content><![CDATA[<h1 id="News-boom"><a href="#News-boom" class="headerlink" title="News(:boom:)"></a>News(<span class="github-emoji"><span>💥</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>)</h1><div class="note danger">
-            <font color="#8B0000" style="font-weight: bold; font-size: 16pt; text-align: center;"> Seeking Joint PhD Supervision, Postdoctoral Opportunities, and International Collaboration （Released on November 2025）</font><p>I am a PhD candidate in intelligent manufacturing and robotics, with <strong>research expertise</strong> in:<br>(1) Human–robot collaboration (perception–decision–execution–learning closed loop);<br>(2) Management, control, and optimization of complex manufacturing systems;<br>(3) Robot cluster control and decision-making.<br>My <strong>technical skill set</strong> includes:<br>(1) Deep reinforcement learning, evolutionary computation, and swarm intelligence algorithms;<br>(2) Applications of large language models (LLMs) in intelligent manufacturing and robotics;<br>(3) Mathematical modeling,  linearization, and the use of commercial solvers.<br><strong>My expected graduation date is June 2027, and I am actively seeking:</strong></p><p>-1. <font color="blue" style="font-weight: bold;"><strong>One-Year Joint PhD / Visiting Research Opportunity (via CSC Funding)</strong></font><br>I will apply for the China Scholarship Council (CSC) program to undertake a one-year joint PhD/visiting research placement at a leading university or research institute.</p><p>-2. <font color="blue" style="font-weight: bold;"><strong>Postdoctoral Position After Graduation (Starting August 2027)</strong></font><br>I am seeking postdoctoral positions in Europe, the United States, Singapore, or other regions with strong research programs in robotics, artificial intelligence, and advanced manufacturing.</p><p>-3. <font color="blue" style="font-weight: bold;"><strong>International Collaborative Research &amp; Publication Partnerships</strong></font><br>I welcome opportunities for joint publications, collaborative research projects, and long-term academic cooperation.</p><p><strong>If my research background aligns with your interests, I would be pleased to connect.</strong> <font color="blue" style="font-weight: bold;"><strong>My email: huangming@bit.edu.cn</strong></font></p>
-          </div>
-<hr>
-<h1 id="Biography"><a href="#Biography" class="headerlink" title="Biography"></a>Biography</h1><p>Ming Huang was born in Xingtai, Hebei Province, China in 1999. Currently, I am pursuing a doctoral degree in Mechanical Engineering at Beijing Institute of Technology.</p>
-<p>If you have any further questions, please feel free to contact me.<br>My E-mail（ <span class="github-emoji"><span>✉</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> ）： huangming @bit.edu.cn.<br>Address：School of Mechanical Engineering, Beijing Institute of Technology, Beijing  100081, China </p>
-<!-- 让表格居中显示的风格 -->
-<style>
-.center 
-{
-  display: table;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-table th:first-of-type {
-    width: 420pt;
-}
-table th:nth-of-type(2) {
-    width: 640pt;
-}
-</style>
+<p><strong>注意</strong> :记着更改各级标题时,每个都要勾选基于该模板的新文档，这样下次新建 word 时直接使用已经更改好的模板即可。</p>
+<p><strong>然后就是为各级标题添加序号</strong></p>
+<p>进入：<code>开始</code>→<code>多级序号</code>→<code>定义新的多级列表</code> 按需求进行设置即可:</p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/title.NO.jpg" width="80%" height="50%"></div>
 
-<div class="center">
+<p><strong>注意</strong> ：为各级标题添加了序号后，实际是把标题样式进行了更新，所以完成编号后需要再次为每个标题进行勾选基于该模板的新文档，不需要改动别的什么直接按  <code>确定</code> 即可，这样下次新建 word 时直接使用已经更改好的带编号的模板了。</p>
+<hr>
+<h1 id="2-图、表的插入与索引"><a href="#2-图、表的插入与索引" class="headerlink" title="2.图、表的插入与索引"></a>2.图、表的插入与索引</h1><h2 id="2-1-图的题注插入"><a href="#2-1-图的题注插入" class="headerlink" title="2.1 图的题注插入"></a>2.1 图的题注插入</h2><p><strong><em>这一步的前提是 你的标题编号是按上述形式插入的,而非手动写的。这样 word 才能识别你的编号从而插入题注里</em></strong><br>插入图片后  一般选用嵌入式（默认） 右键后选自 <code>插入题注</code> 比如我们想要 <code>图 1.1</code> 新建标签 <code>图</code> 选择编号的格式。示例如下：</p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/Fig.jpg  " width="60%" height="50%"></div>
 
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left"><span class="github-emoji"><span>🔍</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Interests</th>
-<th style="text-align:left"><span class="github-emoji"><span>🎓</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Education</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><li><b>Deep reinforcement learning, Evolutionary computing，LLM</b></li><li> <b>Robotic swarm scheduling</b> </li><li><b>Human-Robot Collaboration Optimization</b></li><li>Multi-stage integrated scheduling</li><li>Complex System Modeling and Optimization</li><li>Dynamic multi-objective optimization</li></td>
-<td style="text-align:left"><li><b>2023. 09 - 2027. 07 D.Eng in Mechanical Engineering-- Beijing Institute of Technology</b></li><li>2020. 09 - 2023. 07 M.Eng. in Industrial Engineering-- Wuhan University of Technology</li><li>2016. 09 - 2020. 07 B.Eng. in Quality Management Engineering-- He Bei University </li><li>2013. 09 - 2016. 07 Student in the first senior high school of Xingtai City, Hebei</li></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabs" id="yearlist"><ul class="nav-tabs"><li class="tab"><a href="#yearlist-1">2023 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li><li class="tab active"><a href="#yearlist-2">2024 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li></ul><div class="tab-content"><div class="tab-pane" id="yearlist-1"><p><strong>2023 To Do list <span class="github-emoji"><span>🎯</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong><br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Going to pass the PhD application examination<br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Getting a Master’s Degree:<br><span class="github-emoji"><span>➖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Acceptance of three papers or more（Progress: 2/3）<br><span class="github-emoji"><span>✖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2716.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go to improve English listening skills<br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> To control the weight between 55-60kg, a strong body is the basis of scientific research.<br><span class="github-emoji"><span>➖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go save up money because maybe try hair transplants to fight hair loss.<br><strong><em>Words I Wanted To Say：There are many things worth doing in one’s life, and the most significant is to do it right now.<span class="github-emoji"><span>🏃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></em></strong></p></div><div class="tab-pane active" id="yearlist-2"><!--**2024 To Do list :dart:**
-:black_square_button: Acceptance of three papers or more :memo:（Progress: 1/3）
-:black_square_button: Read three literary novels :books:（Progress: 0/3）
-:black_square_button: Improvement of English listening and communication skills :earth_americas: 
-:black_square_button: Keep your weight between 55-60kg, and don't let abdominal muscles disappear! :muscle:
-:black_square_button: Time into 25 minutes for a 5k run :running:
-:black_square_button: To save 30,000 yuan and become financially independent. :moneybag:
-***Words I Wanted To Say：The goal of life should not be success and fame, but rather to live your life the way you want.:low_brightness:***--></div></div></div>
+<p>设置好后  在为接下来的插入的图进行题注时 word 会自动识别其应该是<strong>图5还是图6</strong>。无需你在考虑图几，你仅需要输入图的名字即可。</p>
+<h2 id="2-2-三线表的插入"><a href="#2-2-三线表的插入" class="headerlink" title="2.2 三线表的插入"></a>2.2 三线表的插入</h2><p>首选插入一个表 然后再 <code>表格样式里选择新建表格样式</code>然后进行如下操作 </p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/table.jpg" width="60%" height="50%"></div>
+
+<p><strong>注意：</strong> <em>记着要勾选基于该模板的新文档，这样下次新建时直接使用已经更改好的三线表了。<br>如果更改后发现没有找到 保存并退出 word 然后重新打开即可看到三线表出现在表格样式里。同样的方法进行表的题注的插入</em></p>
+<h2 id="2-3-正文中索引图、表"><a href="#2-3-正文中索引图、表" class="headerlink" title="2.3 正文中索引图、表"></a>2.3 正文中索引图、表</h2><p>选择要插入的位置，点击功能栏 <code>插入下的交叉引用</code> 可进行如图操作</p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/index.jpg" width="60%" height="50%"></div>
+
+<p> <strong>注：</strong> <em>当我们插入新图后，图的序号发生改变但是插入正文中的索引未变 ，不要慌 此时我能只需要更新插入引用的域即可 全选后按F9 更新全文的域</em></p>
 <hr>
-<h1 id="Supervisor"><a href="#Supervisor" class="headerlink" title="Supervisor"></a>Supervisor</h1><ul>
-<li><a href="https://me.bit.edu.cn/szdw/jsml/zzgcx/gygcyjs/sssds13/13ddf65bcbdf4f5c83acd440457ee9de.htm"><strong>Sihan Huang</strong></a> associate professor（My doctoral  supervisor）<br><br></li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>Baigang Du</strong></a> associate professor（My master’s supervisor）<br><br></li>
-<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>Jun Guo</strong></a> associate professor（My associate master’s supervisor）</li>
-</ul>
-<hr>
-<h1 id="Awards"><a href="#Awards" class="headerlink" title="Awards"></a>Awards</h1><!-- 标签形式 -->
-<div class="note info">
-            <ul><li><font color="blue">2025. 11</font> The 3rd Human-Centric Smart Manufacturing Academic Conference — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Optimization of Ultra High Flexibility Robotic Manufacturing System with Human Robot Collaboration: A Multi-Objective Multi-Agent Deep Reinforcement Learning </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2025. 11</font> Outstanding Student for the 2024-2025  Year at Beijing Institute of Technology — <strong>Personal Honor</strong> </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2024. 12</font> 2024 World Intelligent Manufacturing Conference – Human-Centered Smart Manufacturing Session &amp; The 2rd Human-Centric Smart Manufacturing Academic Conference — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Autonomous Collaboration Strategies for Mobile Operations in Robot Clusters. </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2024. 11</font> Outstanding Student for the 2023-2024  Year at Beijing Institute of Technology — <strong>Personal Honor</strong> </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2023. 11</font> “Huawei Cup” The 20th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Research on Optimization of Evaluation Plans for Large scale Innovation Competitions </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2023. 06</font> Outstanding graduate of Wuhan University of Technology — <strong>Personal Honor</strong> </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2022. 12</font> “Huawei Cup” The 19th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Scheduling optimization problem for automotive manufacturing painting-final assembly cache sequencing zone </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2022. 06</font> The 12th Wuhan University of Technology Post-graduate Mathematical Contest  — <strong>First Prize</strong><br>Modeling topic: Research on resource-constrained vehicle routing problem </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2021. 12</font> “Huawei Cup” The 18th China Post-granduate Mathematical Contest — <strong>Third Prize</strong><br>Modeling topic: Airline crew optimization scheduling problem </li></ul>
-          </div>
-<div class="note info">
-            <ul><li><font color="blue">2021. 01</font> “Cloud Talk New Technology” Popular Science Contest— <strong>Third Prize</strong><br>Entry: OpenCV-based smart power plant inspection trolley </li></ul>
-          </div>
-<hr>
-<h1 id="Journal-Reviewer"><a href="#Journal-Reviewer" class="headerlink" title="Journal Reviewer"></a>Journal Reviewer</h1><p>IEEE Transactions on Systems Man Cybernetics-Systems (SCI, IF=8.7).<br>Journal of King Saud University Science (SCI, IF=3.6)<br>International Journal of Intelligent Robotics and Applications(SCI, IF=2.0)</p>
-<hr>
-<h1 id="Conference-presentation"><a href="#Conference-presentation" class="headerlink" title="Conference presentation"></a>Conference presentation</h1><div class="note success">
-            <p>-1. <font color="blue">(2025. 11)</font> The 3rd Human-Centric Smart Manufacturing Academic Conference, Beijing, China. — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Optimization of Ultra High Flexibility Robotic Manufacturing System with Human Robot Collaboration: A Multi-Objective Multi-Agent Deep Reinforcement Learning</p>
-          </div>
-<div class="note success">
-            <p>-2. <font color="blue">(2025. 07)</font>.  2025 Annual Conference of the Industrial Big Data and Intelligent Systems Division of the Chinese Mechanical Engineering Society &amp; The 8th Academic Conference on Big Data-Driven Intelligent Manufacturing, Yichang, China. <strong>(Forum Presentation)</strong><br>Presentation topic: A Normalized Tchebycheff Aggregation-Based Multi-Objective Deep Reinforcement Learning for Dynamic Scheduling of Robotic Manufacturing Systems.</p>
-          </div>
-<div class="note success">
-            <p>-3. <font color="blue">(2025. 05)</font>. Frontier Forum on Digital Twin Technologies and Application Models &amp; The 19th Session (2025 Issue 3) of the “Strive for Excellence” PhD Student Workshop by the China Graphics Society, Yichang, China. <strong>(Invited Presentation at the Graduate Forum)</strong><br>Presentation topic: Digital Twin-driven Multi-objective Deep Reinforcement Learning for Dynamic and Flexible Island Assembly Line Scheduling.</p>
-          </div>
-<div class="note success">
-            <p>-4. <font color="blue">(2024. 12)</font>. 2024 World Intelligent Manufacturing Conference – Human-Centered Smart Manufacturing Session &amp; The 2rd Human-Centric Smart Manufacturing Academic Conference, Nanjing, China. <strong>(Outstanding Presentation Award)</strong> <a href="../zip"> (Poster) </a> <strong><code>PDF</code></strong><br>Presentation topic: Autonomous Collaboration Strategies for Mobile Operations in Robot Clusters.</p>
-          </div>
-<div class="note success">
-            <p>-5. <font color="blue">(2024. 12)</font>.. 2024 National Doctoral Forum on Industrial Engineering &amp; the 772nd Tsinghua University Doctoral Academic Forum, Beijing, China. <strong>(Forum Presentation)</strong><br>Presentation topic: Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times.</p>
-          </div>
-<hr>
-<h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h3 id="Fund"><a href="#Fund" class="headerlink" title="Fund"></a>Fund</h3><div class="note warning">
-            <ol><li><p>The National Key Research and Development Program of China :<br>Research on Cyber-Physical Fusion Modeling Technology for Control System Equipment Targeting Multiple Optimization Objectives in Flexible Manufacturing <font color="blue">2024. 12-2027. 11</font>（Project Participants）</p></li><li><p>The National Natural Science Foundation of China  (Youth Fund) :<br>Research on Adaptive Reconfiguration Optimization Theory for Smart Manufacturing Systems with Multiple Uncertain Disturbances <font color="blue">2025. 01-2027. 12</font>（Project Participants）</p></li><li><p>Beijing Natural Science Foundation under Grant :<br>Key Technologies and System Applications of Digital Twin Workshop for 3C Intelligent Manufacturing <font color="blue">2024. 07-2027. 12</font>（Project Participants）</p></li><li><p>The National Key Research and Development Program of China:<br>Research on Key Technologies for Dynamic Reconfiguration and XXXX of Production Lines <font color="blue">2022. 12-2024. 10</font>（Project Participants）</p></li><li><p>Independent Innovation Foundation of Wuhan University of Technology —— Postgraduate Personal Exploration Project :<br>Research on Integrated  Production and Distribution Scheduling with Flexible Batching and Soft Time Windows <font color="blue">2022. 01-2022. 12</font>（<strong>Project Principals</strong>）</p></li><li><p>National Natural Science Foundation of China (Youth Fund) ：<br>A game method of supply and demand allocation of complex product system manufacturing services for social collaboration <font color="blue">2018. 01-2020. 12 </font>（Project Participants）</p></li></ol>
-          </div>
-<h3 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h3><div class="note warning">
-            <h4 id="—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）"><a href="#—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）" class="headerlink" title="— 2021. 07-2022. 07 Tuoxing Zhiwang Technology Co., Ltd.  Wuhan （Java Back End Development）"></a>— 2021. 07-2022. 07 <a href="http://www.tonshinet.com/">Tuoxing Zhiwang Technology Co., Ltd.  Wuhan</a> （Java Back End Development）</h4><ol><li><p><font color="blue">2021. 07-2021. 12 </font> Development of Wind Plant Operation and Maintenance Application Platform</p></li><li><p><font color="blue">2022. 01-2022. 07 </font> Tangshan Sinoma Heavy Machinery PMS Improvement Project<br>-Development of External Supplier Price Comparison Management Platform </p></li></ol>
-          </div>
-<p><a href="https://clustrmaps.com/site/1bqdf" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=lPGunm_IA1w4rADFSr_XZ_r1KQCj0GoM-18qXvbMs1E&amp;co=ffffff&amp;ct=555555"></a></p>
-</div>]]></content>
-  </entry>
-  <entry>
-    <title>Academic Publications</title>
-    <url>/publications/index.html</url>
-    <content><![CDATA[<div class="note success">
-            <h3 id="Master’s-Thesis"><a href="#Master’s-Thesis" class="headerlink" title="Master’s Thesis"></a>Master’s Thesis</h3><ol><li><strong>Huang, M.</strong>, 2023. Research on integrated production and distribution scheduling for fast moving consumer goods manufacturing enterprise. Wuhan University of Technology.<a href="../pdf/Thesis-快速消费品制造企业生产-配送集成调度研究.pdf"> (Master’s Thesis) </a> <strong><code>PDF</code></strong>;</li></ol>
-          </div>
-<div class="note success">
-            <h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><ol><li><p><strong>M. Huang</strong>, S. Huang, B. Du<em>, J. Guo and Y. Li. Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times. </em>IEEE Transactions on Fuzzy Systems<em>, 2024, doi: 10.1109/TFUZZ.2024.3388003.（SCI Q1 , IF 11.9, TOP）<br><a href="https://ieeexplore.ieee.org/document/10497842"> (Paper) </a> <strong><code>HTML</code></strong> ; <a href="../zip/KDCEA-Code.zip"> (KDCEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-Dateset.zip">(IPSVRP-STW&amp;FTT Dateset)</a> <strong><code>.zip</code></strong>;<a href="../zip/IPSVRP-STW-FTT-AMPL.zip"> (AMPL) </a> <strong><code>.mod</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-CASE.zip">(CASE)</a> <em>*<code>.zip</code></em></em></p></li><li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J<em>. A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with batch manufacturing and soft time windows. </em>Computers &amp; Operations Research<em>, 2023, 159, 106346. <a href="https://doi.org/10.1016/j.cor.2023.106346">https://doi.org/10.1016/j.cor.2023.106346</a> .（SCI Q1 , IF 4.6, ABS-3）<br><a href="https://www.sciencedirect.com/science/article/pii/S0305054823002101"> (Paper) </a> <strong><code>HTML</code></strong>; <a href="link"> (HCF-IMOEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-BM-STW-Dateset.zip">(IPSVRP-BM&amp;STW Dateset)</a> <em>*<code>.zip</code></em></em></p></li><li><p><strong>Huang, M.</strong>, Du, B. G<em>., Guo, J, Li, Y, B. Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. </em>Control Theory and Applications(chinese)<em>, 2023, 40(x): 1–10. DOI: 10.7641/CTA.2023.20920.（EI index，IF:2.781）<br><a href="https://kns.cnki.net/kcms2/article/abstract?v=xNq_RSSxttstktCq-VWRIQS1e6fIAq26YV2DyMFsCVB9NtbxKqFgDZtEE5MiKN1dG5PLmIItcZsrbA9y-tAUQMMLpbYZJEJr4NENoL1ughgxkkSL6gjYdqp7OcHpgSim7TjKF6gvjYE=&amp;uniplatform=NZKPT&amp;language=CHS"> (Paper) </a><strong><code>HTML</code></strong> ; <a href="../zip/NSGA-II-AVNS-Code.zip"> (NSGA-II-AVNS) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/Fuzzy-IPDS-Dateset.zip">(Fuzzy-IPDS Dateset)</a> <em>*<code>.zip</code></em></em></p></li></ol><!--  1. **Ming Huang**, Sihan Huang*, Jianpeng Chen, Wei Dong, Baicun Wang, Bing Ruan, Yunpeng Gao, Guoxin Wang, Yan Yan. Dynamic scheduling optimization of island assembly lines under uncertain disturbances by multi-objective deep reinforcement learning *JOURNAL OF MECHANICAL ENGINEERING(chinese)*  （EI index，IF:）--><p>JOURNAL OF MECHANICAL ENGINEERING(chinese)<a href="https://kns.cnki.net/kcms2/article/abstract?v=sTAINAsmd8-D4oLYcJmyoLGK9gexKDP_iRPM8GsNJpuWU8ZEjxX863J2C0K68YqR2ipstFRNvj00VT0Vdp1SpKfH5UK9eMZuwJQkfgk90Ufkv4BDiEzf5jq1mut1MjG333KGXiViqqcihzrMzmnf7C6iGbcnFSyrJDpgK1iNu1ihnQvS7GiDAg==&amp;uniplatform=NZKPT&amp;language=CHS"> (Paper) </a><strong><code>HTML</code></strong> ; <a href=""> (MO-D3QN) </a> <strong><code>python code</code></strong> ; <a href="../zip/IAS-Dataset.zip">(IAS Dateset)</a> <strong><code>.zip</code></strong></p>
-          </div>
-<div class="note warning">
-            <h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol><li><strong>Ming Huang</strong>, Sihan Huang<em>, Bing Ruan, Wei Dong, Jianpeng Chen, Baicun Wang, Baigang Du, Guoxin Wang, Yan Yan, Lihui Wang. A normalized Tchebycheff aggregation based multi-objective deep reinforcement learning for dynamic flexible island assembly system scheduling.<br><a href=""> (Paper) </a><strong><code>HTML</code></strong> ; <a href=""> (NT-D3QN) </a> <strong><code>python code</code></strong> ; <a href="../zip/DFIASSP-Dataset.zip">(DFIASSP-Dataset)</a> <strong><code>.zip</code></strong> ; <a href="../zip/DFIASSP-Case.zip">(DFIASSP-Case)</a> <strong><code>.zip</code></strong>;<a href="../zip/DFIASSP-AMPL.zip"> (AMPL) </a> <em>*<code>.mod</code></em></em> </li></ol>
-          </div>
-<div class="note warning">
-            <h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
-          </div>]]></content>
+<h1 id="3-MathType-的编号、索引"><a href="#3-MathType-的编号、索引" class="headerlink" title="3. MathType 的编号、索引"></a>3. MathType 的编号、索引</h1><p>目前仅可以逐项公式的编号，即点击 <code>MathType下的右编号</code>在弹出的编辑器里输入公式 会自动的公式居中以及右侧编号。(目前还没有找到为已存在的公式进行编号的方法)</p>
+<p>编号的格式可以在 <code>插入编号--格式化</code>里进行更改，选用带章节不带章节的格式以及采用何种连字符等<br>正文索引是也较为方便 点击 <code>插入引用后双击公式编号即可</code>  当你删除公式时编号会自动的更新。</p>
+<p>公式的批量大小设置 在编辑器对公式的大小进行定义后</p>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/mathtypesize.jpg" width="70%" height="50%"></div>
+<div align="center"><img src="/2023/12/03/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E4%BD%BF%E7%94%A8-Word-%E8%BF%9B%E8%A1%8C%E8%AE%BA%E6%96%87%E4%B9%A6%E5%86%99%EF%BC%88%E5%88%9D%E7%BA%A7%E7%89%88%EF%BC%89/mathtypesize2.jpg" width="70%" height="50%"></div>
+
+
+<h1 id="4-EndNote-的使用（中英文献混排）"><a href="#4-EndNote-的使用（中英文献混排）" class="headerlink" title="4. EndNote 的使用（中英文献混排）"></a>4. EndNote 的使用（中英文献混排）</h1><ol>
+<li><p>去除endnotes 中的域 （不让其跳转，使之固定以便修改参考文献格式）<br>去除word中因使用mendeley或endnote等文献管理软件而产生的域代码。<br>%CTRL+A 全选文章；<br>%CTRL+6 去除全文域代码。</p>
+</li>
+<li><p>使用：CTRL+SHIFT+F9（Fn+F9）：去除选中的单个域代码，注不能跨页，有时候多选时也可能不生效，所以当参考文献留一篇索引版  ，然后边选中边去除域，去除完毕后 复制一份参考文献，然后更新参考目录  应为空才算去除完全，把刚刚复制的粘贴上，修改格式。</p>
+</li>
+</ol>
+<p><strong>注意:</strong> 中途不能更新参考目录  ，如果更新了会将未去除域的参考文献索引重新编排。</p>
+<p><strong>参考源</strong><br><a href="https://www.bilibili.com/video/BV1E5411K7By/?spm_id_from=333.788&amp;vd_source=49b8bd33ca1c49c048c6fc297b7c91d2">1.优雅搞定Word论文排版—b站视频</a></p>
+<p><a href="https://www.bilibili.com/video/BV1rr4y1T71y?spm_id_from=333.999.0.0&amp;vd_source=49b8bd33ca1c49c048c6fc297b7c91d2">2.EndNote中英文文献混排格式设置—b站视频</a></p>
+]]></content>
   </entry>
   <entry>
     <title>about</title>
@@ -1290,38 +1040,238 @@ table th:nth-of-type(2) {
 ]]></content>
   </entry>
   <entry>
-    <title>Datasets and Algorithm Codes</title>
-    <url>/resources/index.html</url>
-    <content><![CDATA[<h1 id="Datesets"><a href="#Datesets" class="headerlink" title="Datesets"></a>Datesets</h1><h4 id="1-Integrated-Production-and-Distribution-Scheduling-Problem-IPDS"><a href="#1-Integrated-Production-and-Distribution-Scheduling-Problem-IPDS" class="headerlink" title="1. Integrated Production and Distribution Scheduling Problem(IPDS)"></a>1. Integrated Production and Distribution Scheduling Problem(IPDS)</h4><p><font color="#428BCA" size="5"><strong>Original Intention</strong></font>:<br>IPDS involves the optimization of production scheduling and distribution scheduling. Individually, production scheduling or distribution scheduling has been studied for a long time and has rich benchmark datasets and excellent solution algorithms. <strong>However, there is a paucity of benchmark datasets in IPDS studies.</strong> Due to the complexity and specificity of the problem, most studies have adopted randomly generated (or partially randomly generated) datasets for computational experiments, but few studies have published their test datasets for use and validation by other researchers. In order to provide a uniform benchmark for evaluating and measuring the performance of algorithms for the same and similar studies, we publish the used datasets and algorithms to facilitate the computational experiments of other researchers.</p>
-<div class="note info">
-            <ul><li><strong>IPSVRP-BM&amp;STW Dateset（<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>（Beat Production Lines &amp; Vehicle Routing Problem with Soft Time Window and Heterogeneous vehicles）<br>DataSet：<a href="../zip/IPSVRP-BM-STW-Dateset.zip">IPSVRP-BM&amp;STW Dateset</a><br><a href="../pdf/A%20hybrid%20collaborative%20framework%20for%20integrated%20production%20scheduling%20and%20vehicle%20routing%20problem%20with%20batch%20manufacturing%20and%20soft%20time%20windows.pdf">The paper</a> proposing this dataset<br><a href="link">A blog</a> introducing the formation process of this dataset</li></ul>
+    <title>Welcome To My Academic Homepage</title>
+    <url>/index.html</url>
+    <content><![CDATA[<h1 id="News-boom"><a href="#News-boom" class="headerlink" title="News(:boom:)"></a>News(<span class="github-emoji"><span>💥</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>)</h1><div class="note danger">
+            <font color="#8B0000" style="font-weight: bold; font-size: 16pt; text-align: center;"> Seeking Joint PhD Supervision, Postdoctoral Opportunities, and International Collaboration （Released on November 2025）</font><p>I am a PhD candidate in intelligent manufacturing and robotics, with <strong>research expertise</strong> in:<br>(1) Human–robot collaboration (perception–decision–execution–learning closed loop);<br>(2) Management, control, and optimization of complex manufacturing systems;<br>(3) Robot cluster control and decision-making.<br>My <strong>technical skill set</strong> includes:<br>(1) Deep reinforcement learning, evolutionary computation, and swarm intelligence algorithms;<br>(2) Applications of large language models (LLMs) in intelligent manufacturing and robotics;<br>(3) Mathematical modeling,  linearization, and the use of commercial solvers.<br><strong>My expected graduation date is June 2027, and I am actively seeking:</strong></p><p>-1. <font color="blue" style="font-weight: bold;"><strong>One-Year Joint PhD / Visiting Research Opportunity (via CSC Funding)</strong></font><br>I will apply for the China Scholarship Council (CSC) program to undertake a one-year joint PhD/visiting research placement at a leading university or research institute.</p><p>-2. <font color="blue" style="font-weight: bold;"><strong>Postdoctoral Position After Graduation (Starting August 2027)</strong></font><br>I am seeking postdoctoral positions in Europe, the United States, Singapore, or other regions with strong research programs in robotics, artificial intelligence, and advanced manufacturing.</p><p>-3. <font color="blue" style="font-weight: bold;"><strong>International Collaborative Research &amp; Publication Partnerships</strong></font><br>I welcome opportunities for joint publications, collaborative research projects, and long-term academic cooperation.</p><p><strong>If my research background aligns with your interests, I would be pleased to connect.</strong> <font color="blue" style="font-weight: bold;"><strong>My email: huangming@bit.edu.cn</strong></font></p>
           </div>
-<div class="note info">
-            <ul><li><strong>Fuzzy-IPDS Dateset（<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>（Beat Production Lines &amp; Vehicle Routing Problem with Soft Time Window and Heterogeneous vehicles &amp; Fuzzy Travel time）<br>DataSet：<a href="../zip/Fuzzy-IPDS-Dateset.zip">Fuzzy-IPDS Dateset</a><br><a href="link">The paper</a> proposing this dataset<br><a href="link">A blog</a> introducing the formation process of this dataset</li></ul>
-          </div>
-<div class="note info">
-            <ul><li><strong>IPSVRP-STW&amp;FTT Dateset（<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>（Beat Production Lines &amp; Soft Time Window &amp; A limited number of Muti-trip Heterogeneous &amp; Fuzzy Travel time）<br>DataSet：<a href="../zip/IPSVRP-STW-FTT-Dateset.zip">IPSVRP-STW&amp;FTT Dateset</a><br><a href="link">The paper</a> proposing this dataset<br><a href="link">A blog</a> introducing the formation process of this dataset</li></ul>
-          </div>
-<h4 id="2-Datasets-of-other-researchers"><a href="#2-Datasets-of-other-researchers" class="headerlink" title="2. Datasets of other researchers"></a>2. Datasets of other researchers</h4><ul>
-<li><p>VRPTW Datesets: <strong><a href="https://www.sintef.no/projectweb/top/vrptw/">Solomon-Benchmark</a></strong></p>
-</li>
-<li><p>VRP Datesets: <strong><a href="https://neo.lcc.uma.es/vrp/vrp-instances/">Vrp-Instances</a></strong></p>
-</li>
-<li><p>Test datasets based on problem instances: <strong><a href="http://people.brunel.ac.uk/~mastjjb/jeb/info.html">OR-Library by J E Beasley</a></strong></p>
-</li>
+<hr>
+<h1 id="Biography"><a href="#Biography" class="headerlink" title="Biography"></a>Biography</h1><p>Ming Huang was born in Xingtai, Hebei Province, China in 1999. Currently, I am pursuing a doctoral degree in Mechanical Engineering at Beijing Institute of Technology.</p>
+<p>If you have any further questions, please feel free to contact me.<br>My E-mail（ <span class="github-emoji"><span>✉</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> ）： huangming @bit.edu.cn.<br>Address：School of Mechanical Engineering, Beijing Institute of Technology, Beijing  100081, China </p>
+<!-- 让表格居中显示的风格 -->
+<style>
+.center 
+{
+  display: table;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+table th:first-of-type {
+    width: 420pt;
+}
+table th:nth-of-type(2) {
+    width: 640pt;
+}
+</style>
+
+<div class="center">
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><span class="github-emoji"><span>🔍</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Interests</th>
+<th style="text-align:left"><span class="github-emoji"><span>🎓</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Education</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><li><b>Deep reinforcement learning, Evolutionary computing，LLM</b></li><li> <b>Robotic swarm scheduling</b> </li><li><b>Human-Robot Collaboration Optimization</b></li><li>Multi-stage integrated scheduling</li><li>Complex System Modeling and Optimization</li><li>Dynamic multi-objective optimization</li></td>
+<td style="text-align:left"><li><b>2023. 09 - 2027. 07 D.Eng in Mechanical Engineering-- Beijing Institute of Technology</b></li><li>2020. 09 - 2023. 07 M.Eng. in Industrial Engineering-- Wuhan University of Technology</li><li>2016. 09 - 2020. 07 B.Eng. in Quality Management Engineering-- He Bei University </li><li>2013. 09 - 2016. 07 Student in the first senior high school of Xingtai City, Hebei</li></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabs" id="yearlist"><ul class="nav-tabs"><li class="tab"><a href="#yearlist-1">2023 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li><li class="tab active"><a href="#yearlist-2">2024 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li></ul><div class="tab-content"><div class="tab-pane" id="yearlist-1"><p><strong>2023 To Do list <span class="github-emoji"><span>🎯</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong><br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Going to pass the PhD application examination<br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Getting a Master’s Degree:<br><span class="github-emoji"><span>➖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Acceptance of three papers or more（Progress: 2/3）<br><span class="github-emoji"><span>✖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2716.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go to improve English listening skills<br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> To control the weight between 55-60kg, a strong body is the basis of scientific research.<br><span class="github-emoji"><span>➖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go save up money because maybe try hair transplants to fight hair loss.<br><strong><em>Words I Wanted To Say：There are many things worth doing in one’s life, and the most significant is to do it right now.<span class="github-emoji"><span>🏃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></em></strong></p></div><div class="tab-pane active" id="yearlist-2"><!--**2024 To Do list :dart:**
+:black_square_button: Acceptance of three papers or more :memo:（Progress: 1/3）
+:black_square_button: Read three literary novels :books:（Progress: 0/3）
+:black_square_button: Improvement of English listening and communication skills :earth_americas: 
+:black_square_button: Keep your weight between 55-60kg, and don't let abdominal muscles disappear! :muscle:
+:black_square_button: Time into 25 minutes for a 5k run :running:
+:black_square_button: To save 30,000 yuan and become financially independent. :moneybag:
+***Words I Wanted To Say：The goal of life should not be success and fame, but rather to live your life the way you want.:low_brightness:***--></div></div></div>
+<hr>
+<h1 id="Supervisor"><a href="#Supervisor" class="headerlink" title="Supervisor"></a>Supervisor</h1><ul>
+<li><a href="https://me.bit.edu.cn/szdw/jsml/zzgcx/gygcyjs/sssds13/13ddf65bcbdf4f5c83acd440457ee9de.htm"><strong>Sihan Huang</strong></a> associate professor（My doctoral  supervisor）<br><br></li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>Baigang Du</strong></a> associate professor（My master’s supervisor）<br><br></li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>Jun Guo</strong></a> associate professor（My associate master’s supervisor）</li>
 </ul>
 <hr>
-<h1 id="Algorithm-Code"><a href="#Algorithm-Code" class="headerlink" title="Algorithm Code"></a>Algorithm Code</h1><div class="note info">
-            <ol><li><a href="link"> HCF-IMOEA </a> <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br><a href="https://www.sciencedirect.com/science/article/pii/S0305054823002101">This paper</a> <strong><code>HTML</code></strong> proposing this algorithm</li></ol>
+<h1 id="Awards"><a href="#Awards" class="headerlink" title="Awards"></a>Awards</h1><!-- 标签形式 -->
+<div class="note info">
+            <ul><li><font color="blue">2025. 11</font> The 3rd Human-Centric Smart Manufacturing Academic Conference — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Optimization of Ultra High Flexibility Robotic Manufacturing System with Human Robot Collaboration: A Multi-Objective Multi-Agent Deep Reinforcement Learning </li></ul>
           </div>
 <div class="note info">
-            <ol><li><a href="../zip/NSGA-II-AVNS-Code.zip"> NSGA-II-AVNS </a> <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br><a href="https://kns.cnki.net/kcms2/article/abstract?v=xNq_RSSxttstktCq-VWRIQS1e6fIAq26YV2DyMFsCVB9NtbxKqFgDZtEE5MiKN1dG5PLmIItcZsrbA9y-tAUQMMLpbYZJEJr4NENoL1ughgxkkSL6gjYdqp7OcHpgSim7TjKF6gvjYE=&amp;uniplatform=NZKPT&amp;language=CHS">This paper</a><strong><code>HTML</code></strong> proposing this algorithm</li></ol>
+            <ul><li><font color="blue">2025. 11</font> Outstanding Student for the 2024-2025  Year at Beijing Institute of Technology — <strong>Personal Honor</strong> </li></ul>
           </div>
 <div class="note info">
-            <ol><li><a href="../zip/KDCEA-Code.zip"> KDCEA </a> <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br><a href="https://ieeexplore.ieee.org/document/10497842">This paper</a> <strong><code>HTML</code></strong> proposing this algorithm</li></ol>
+            <ul><li><font color="blue">2024. 12</font> 2024 World Intelligent Manufacturing Conference – Human-Centered Smart Manufacturing Session &amp; The 2rd Human-Centric Smart Manufacturing Academic Conference — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Autonomous Collaboration Strategies for Mobile Operations in Robot Clusters. </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2024. 11</font> Outstanding Student for the 2023-2024  Year at Beijing Institute of Technology — <strong>Personal Honor</strong> </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2023. 11</font> “Huawei Cup” The 20th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Research on Optimization of Evaluation Plans for Large scale Innovation Competitions </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2023. 06</font> Outstanding graduate of Wuhan University of Technology — <strong>Personal Honor</strong> </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2022. 12</font> “Huawei Cup” The 19th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Scheduling optimization problem for automotive manufacturing painting-final assembly cache sequencing zone </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2022. 06</font> The 12th Wuhan University of Technology Post-graduate Mathematical Contest  — <strong>First Prize</strong><br>Modeling topic: Research on resource-constrained vehicle routing problem </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2021. 12</font> “Huawei Cup” The 18th China Post-granduate Mathematical Contest — <strong>Third Prize</strong><br>Modeling topic: Airline crew optimization scheduling problem </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2021. 01</font> “Cloud Talk New Technology” Popular Science Contest— <strong>Third Prize</strong><br>Entry: OpenCV-based smart power plant inspection trolley </li></ul>
           </div>
 <hr>
-]]></content>
+<h1 id="Journal-Reviewer"><a href="#Journal-Reviewer" class="headerlink" title="Journal Reviewer"></a>Journal Reviewer</h1><p>IEEE Transactions on Systems Man Cybernetics-Systems (SCI, IF=8.7).<br>Journal of King Saud University Science (SCI, IF=3.6)<br>International Journal of Intelligent Robotics and Applications(SCI, IF=2.0)</p>
+<hr>
+<h1 id="Conference-presentation"><a href="#Conference-presentation" class="headerlink" title="Conference presentation"></a>Conference presentation</h1><div class="note success">
+            <p>-1. <font color="blue">(2025. 11)</font> The 3rd Human-Centric Smart Manufacturing Academic Conference, Beijing, China. — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Optimization of Ultra High Flexibility Robotic Manufacturing System with Human Robot Collaboration: A Multi-Objective Multi-Agent Deep Reinforcement Learning</p>
+          </div>
+<div class="note success">
+            <p>-2. <font color="blue">(2025. 07)</font>.  2025 Annual Conference of the Industrial Big Data and Intelligent Systems Division of the Chinese Mechanical Engineering Society &amp; The 8th Academic Conference on Big Data-Driven Intelligent Manufacturing, Yichang, China. <strong>(Forum Presentation)</strong><br>Presentation topic: A Normalized Tchebycheff Aggregation-Based Multi-Objective Deep Reinforcement Learning for Dynamic Scheduling of Robotic Manufacturing Systems.</p>
+          </div>
+<div class="note success">
+            <p>-3. <font color="blue">(2025. 05)</font>. Frontier Forum on Digital Twin Technologies and Application Models &amp; The 19th Session (2025 Issue 3) of the “Strive for Excellence” PhD Student Workshop by the China Graphics Society, Yichang, China. <strong>(Invited Presentation at the Graduate Forum)</strong><br>Presentation topic: Digital Twin-driven Multi-objective Deep Reinforcement Learning for Dynamic and Flexible Island Assembly Line Scheduling.</p>
+          </div>
+<div class="note success">
+            <p>-4. <font color="blue">(2024. 12)</font>. 2024 World Intelligent Manufacturing Conference – Human-Centered Smart Manufacturing Session &amp; The 2rd Human-Centric Smart Manufacturing Academic Conference, Nanjing, China. <strong>(Outstanding Presentation Award)</strong> <a href="../zip"> (Poster) </a> <strong><code>PDF</code></strong><br>Presentation topic: Autonomous Collaboration Strategies for Mobile Operations in Robot Clusters.</p>
+          </div>
+<div class="note success">
+            <p>-5. <font color="blue">(2024. 12)</font>.. 2024 National Doctoral Forum on Industrial Engineering &amp; the 772nd Tsinghua University Doctoral Academic Forum, Beijing, China. <strong>(Forum Presentation)</strong><br>Presentation topic: Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times.</p>
+          </div>
+<hr>
+<h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h3 id="Fund"><a href="#Fund" class="headerlink" title="Fund"></a>Fund</h3><div class="note warning">
+            <ol><li><p><font color="blue">2024. 12-2027. 11</font> The National Key Research and Development Program of China :<br>Research on Cyber-Physical Fusion Modeling Technology for Control System Equipment Targeting Multiple Optimization Objectives in Flexible Manufacturing （Project Participants）</p></li><li><p><font color="blue">2025. 01-2027. 12</font> The National Natural Science Foundation of China  (Youth Fund) :<br>Research on Adaptive Reconfiguration Optimization Theory for Smart Manufacturing Systems with Multiple Uncertain Disturbances （Project Participants）</p></li><li><p><font color="blue">2024. 07-2027. 12</font> Beijing Natural Science Foundation under Grant :<br>Key Technologies and System Applications of Digital Twin Workshop for 3C Intelligent Manufacturing （Project Participants）</p></li><li><p><font color="blue">2022. 12-2024. 10</font> The National Key Research and Development Program of China:<br>Research on Key Technologies for Dynamic Reconfiguration and XXXX of Production Lines （Project Participants）</p></li><li><p><font color="blue">2022. 01-2022. 12</font> Independent Innovation Foundation of Wuhan University of Technology —— Postgraduate Personal Exploration Project :<br>Research on Integrated  Production and Distribution Scheduling with Flexible Batching and Soft Time Windows （<strong>Project Principals</strong>）</p></li><li><p><font color="blue">2018. 01-2020. 12 </font> National Natural Science Foundation of China (Youth Fund) ：<br>A game method of supply and demand allocation of complex product system manufacturing services for social collaboration （Project Participants）</p></li></ol>
+          </div>
+<h3 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h3><div class="note warning">
+            <h4 id="—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）"><a href="#—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）" class="headerlink" title="— 2021. 07-2022. 07 Tuoxing Zhiwang Technology Co., Ltd.  Wuhan （Java Back End Development）"></a>— 2021. 07-2022. 07 <a href="http://www.tonshinet.com/">Tuoxing Zhiwang Technology Co., Ltd.  Wuhan</a> （Java Back End Development）</h4><ol><li><p><font color="blue">2021. 07-2021. 12 </font> Development of Wind Plant Operation and Maintenance Application Platform</p></li><li><p><font color="blue">2022. 01-2022. 07 </font> Tangshan Sinoma Heavy Machinery PMS Improvement Project<br>-Development of External Supplier Price Comparison Management Platform </p></li></ol>
+          </div>
+<p><a href="https://clustrmaps.com/site/1bqdf" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=lPGunm_IA1w4rADFSr_XZ_r1KQCj0GoM-18qXvbMs1E&amp;co=ffffff&amp;ct=555555"></a></p>
+</div>]]></content>
+  </entry>
+  <entry>
+    <title>Welcome To My Academic Homepage</title>
+    <url>/index.html</url>
+    <content><![CDATA[<h1 id="News-boom"><a href="#News-boom" class="headerlink" title="News(:boom:)"></a>News(<span class="github-emoji"><span>💥</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>)</h1><div class="note danger">
+            <font color="#8B0000" style="font-weight: bold; font-size: 16pt; text-align: center;"> Seeking Joint PhD Supervision, Postdoctoral Opportunities, and International Collaboration （Released on November 2025）</font><p>I am a PhD candidate in intelligent manufacturing and robotics, with <strong>research expertise</strong> in:<br>(1) Human–robot collaboration (perception–decision–execution–learning closed loop);<br>(2) Management, control, and optimization of complex manufacturing systems;<br>(3) Robot cluster control and decision-making.<br>My <strong>technical skill set</strong> includes:<br>(1) Deep reinforcement learning, evolutionary computation, and swarm intelligence algorithms;<br>(2) Applications of large language models (LLMs) in intelligent manufacturing and robotics;<br>(3) Mathematical modeling,  linearization, and the use of commercial solvers.<br><strong>My expected graduation date is June 2027, and I am actively seeking:</strong></p><p>-1. <font color="blue" style="font-weight: bold;"><strong>One-Year Joint PhD / Visiting Research Opportunity (via CSC Funding)</strong></font><br>I will apply for the China Scholarship Council (CSC) program to undertake a one-year joint PhD/visiting research placement at a leading university or research institute.</p><p>-2. <font color="blue" style="font-weight: bold;"><strong>Postdoctoral Position After Graduation (Starting August 2027)</strong></font><br>I am seeking postdoctoral positions in Europe, the United States, Singapore, or other regions with strong research programs in robotics, artificial intelligence, and advanced manufacturing.</p><p>-3. <font color="blue" style="font-weight: bold;"><strong>International Collaborative Research &amp; Publication Partnerships</strong></font><br>I welcome opportunities for joint publications, collaborative research projects, and long-term academic cooperation.</p><p><strong>If my research background aligns with your interests, I would be pleased to connect.</strong> <font color="blue" style="font-weight: bold;"><strong>My email: huangming@bit.edu.cn</strong></font></p>
+          </div>
+<hr>
+<h1 id="Biography"><a href="#Biography" class="headerlink" title="Biography"></a>Biography</h1><p>Ming Huang was born in Xingtai, Hebei Province, China in 1999. Currently, I am pursuing a doctoral degree in Mechanical Engineering at Beijing Institute of Technology.</p>
+<p>If you have any further questions, please feel free to contact me.<br>My E-mail（ <span class="github-emoji"><span>✉</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> ）： huangming @bit.edu.cn.<br>Address：School of Mechanical Engineering, Beijing Institute of Technology, Beijing  100081, China </p>
+<!-- 让表格居中显示的风格 -->
+<style>
+.center 
+{
+  display: table;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+table th:first-of-type {
+    width: 420pt;
+}
+table th:nth-of-type(2) {
+    width: 640pt;
+}
+</style>
+
+<div class="center">
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><span class="github-emoji"><span>🔍</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Interests</th>
+<th style="text-align:left"><span class="github-emoji"><span>🎓</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>   Education</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><li><b>Deep reinforcement learning, Evolutionary computing，LLM</b></li><li> <b>Robotic swarm scheduling</b> </li><li><b>Human-Robot Collaboration Optimization</b></li><li>Multi-stage integrated scheduling</li><li>Complex System Modeling and Optimization</li><li>Dynamic multi-objective optimization</li></td>
+<td style="text-align:left"><li><b>2023. 09 - 2027. 07 D.Eng in Mechanical Engineering-- Beijing Institute of Technology</b></li><li>2020. 09 - 2023. 07 M.Eng. in Industrial Engineering-- Wuhan University of Technology</li><li>2016. 09 - 2020. 07 B.Eng. in Quality Management Engineering-- He Bei University </li><li>2013. 09 - 2016. 07 Student in the first senior high school of Xingtai City, Hebei</li></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabs" id="yearlist"><ul class="nav-tabs"><li class="tab"><a href="#yearlist-1">2023 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li><li class="tab active"><a href="#yearlist-2">2024 YearList <span class="github-emoji"><span>📋</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></a></li></ul><div class="tab-content"><div class="tab-pane" id="yearlist-1"><p><strong>2023 To Do list <span class="github-emoji"><span>🎯</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></strong><br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Going to pass the PhD application examination<br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Getting a Master’s Degree:<br><span class="github-emoji"><span>➖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Acceptance of three papers or more（Progress: 2/3）<br><span class="github-emoji"><span>✖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2716.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go to improve English listening skills<br><span class="github-emoji"><span>✔</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> To control the weight between 55-60kg, a strong body is the basis of scientific research.<br><span class="github-emoji"><span>➖</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> Go save up money because maybe try hair transplants to fight hair loss.<br><strong><em>Words I Wanted To Say：There are many things worth doing in one’s life, and the most significant is to do it right now.<span class="github-emoji"><span>🏃</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></em></strong></p></div><div class="tab-pane active" id="yearlist-2"><!--**2024 To Do list :dart:**
+:black_square_button: Acceptance of three papers or more :memo:（Progress: 1/3）
+:black_square_button: Read three literary novels :books:（Progress: 0/3）
+:black_square_button: Improvement of English listening and communication skills :earth_americas: 
+:black_square_button: Keep your weight between 55-60kg, and don't let abdominal muscles disappear! :muscle:
+:black_square_button: Time into 25 minutes for a 5k run :running:
+:black_square_button: To save 30,000 yuan and become financially independent. :moneybag:
+***Words I Wanted To Say：The goal of life should not be success and fame, but rather to live your life the way you want.:low_brightness:***--></div></div></div>
+<hr>
+<h1 id="Supervisor"><a href="#Supervisor" class="headerlink" title="Supervisor"></a>Supervisor</h1><ul>
+<li><a href="https://me.bit.edu.cn/szdw/jsml/zzgcx/gygcyjs/sssds13/13ddf65bcbdf4f5c83acd440457ee9de.htm"><strong>Sihan Huang</strong></a> associate professor（My doctoral  supervisor）<br><br></li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201901/t20190103_351115.shtml"><strong>Baigang Du</strong></a> associate professor（My master’s supervisor）<br><br></li>
+<li><a href="http://smee.whut.edu.cn/rsgz/szdw/201510/t20151014_200361.shtml"><strong>Jun Guo</strong></a> associate professor（My associate master’s supervisor）</li>
+</ul>
+<hr>
+<h1 id="Awards"><a href="#Awards" class="headerlink" title="Awards"></a>Awards</h1><!-- 标签形式 -->
+<div class="note info">
+            <ul><li><font color="blue">2025. 11</font> The 3rd Human-Centric Smart Manufacturing Academic Conference — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Optimization of Ultra High Flexibility Robotic Manufacturing System with Human Robot Collaboration: A Multi-Objective Multi-Agent Deep Reinforcement Learning </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2025. 11</font> Outstanding Student for the 2024-2025  Year at Beijing Institute of Technology — <strong>Personal Honor</strong> </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2024. 12</font> 2024 World Intelligent Manufacturing Conference – Human-Centered Smart Manufacturing Session &amp; The 2rd Human-Centric Smart Manufacturing Academic Conference — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Autonomous Collaboration Strategies for Mobile Operations in Robot Clusters. </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2024. 11</font> Outstanding Student for the 2023-2024  Year at Beijing Institute of Technology — <strong>Personal Honor</strong> </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2023. 11</font> “Huawei Cup” The 20th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Research on Optimization of Evaluation Plans for Large scale Innovation Competitions </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2023. 06</font> Outstanding graduate of Wuhan University of Technology — <strong>Personal Honor</strong> </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2022. 12</font> “Huawei Cup” The 19th China Post-granduate Mathematical Contest — <strong>Second Prize</strong><br>Modeling topic: Scheduling optimization problem for automotive manufacturing painting-final assembly cache sequencing zone </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2022. 06</font> The 12th Wuhan University of Technology Post-graduate Mathematical Contest  — <strong>First Prize</strong><br>Modeling topic: Research on resource-constrained vehicle routing problem </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2021. 12</font> “Huawei Cup” The 18th China Post-granduate Mathematical Contest — <strong>Third Prize</strong><br>Modeling topic: Airline crew optimization scheduling problem </li></ul>
+          </div>
+<div class="note info">
+            <ul><li><font color="blue">2021. 01</font> “Cloud Talk New Technology” Popular Science Contest— <strong>Third Prize</strong><br>Entry: OpenCV-based smart power plant inspection trolley </li></ul>
+          </div>
+<hr>
+<h1 id="Journal-Reviewer"><a href="#Journal-Reviewer" class="headerlink" title="Journal Reviewer"></a>Journal Reviewer</h1><p>IEEE Transactions on Systems Man Cybernetics-Systems (SCI, IF=8.7).<br>Journal of King Saud University Science (SCI, IF=3.6)<br>International Journal of Intelligent Robotics and Applications(SCI, IF=2.0)</p>
+<hr>
+<h1 id="Conference-presentation"><a href="#Conference-presentation" class="headerlink" title="Conference presentation"></a>Conference presentation</h1><div class="note success">
+            <p>-1. <font color="blue">(2025. 11)</font> The 3rd Human-Centric Smart Manufacturing Academic Conference, Beijing, China. — <strong>Outstanding Presentation Award</strong><br>Presentation topic: Optimization of Ultra High Flexibility Robotic Manufacturing System with Human Robot Collaboration: A Multi-Objective Multi-Agent Deep Reinforcement Learning</p>
+          </div>
+<div class="note success">
+            <p>-2. <font color="blue">(2025. 07)</font>.  2025 Annual Conference of the Industrial Big Data and Intelligent Systems Division of the Chinese Mechanical Engineering Society &amp; The 8th Academic Conference on Big Data-Driven Intelligent Manufacturing, Yichang, China. <strong>(Forum Presentation)</strong><br>Presentation topic: A Normalized Tchebycheff Aggregation-Based Multi-Objective Deep Reinforcement Learning for Dynamic Scheduling of Robotic Manufacturing Systems.</p>
+          </div>
+<div class="note success">
+            <p>-3. <font color="blue">(2025. 05)</font>. Frontier Forum on Digital Twin Technologies and Application Models &amp; The 19th Session (2025 Issue 3) of the “Strive for Excellence” PhD Student Workshop by the China Graphics Society, Yichang, China. <strong>(Invited Presentation at the Graduate Forum)</strong><br>Presentation topic: Digital Twin-driven Multi-objective Deep Reinforcement Learning for Dynamic and Flexible Island Assembly Line Scheduling.</p>
+          </div>
+<div class="note success">
+            <p>-4. <font color="blue">(2024. 12)</font>. 2024 World Intelligent Manufacturing Conference – Human-Centered Smart Manufacturing Session &amp; The 2rd Human-Centric Smart Manufacturing Academic Conference, Nanjing, China. <strong>(Outstanding Presentation Award)</strong> <a href="../zip"> (Poster) </a> <strong><code>PDF</code></strong><br>Presentation topic: Autonomous Collaboration Strategies for Mobile Operations in Robot Clusters.</p>
+          </div>
+<div class="note success">
+            <p>-5. <font color="blue">(2024. 12)</font>.. 2024 National Doctoral Forum on Industrial Engineering &amp; the 772nd Tsinghua University Doctoral Academic Forum, Beijing, China. <strong>(Forum Presentation)</strong><br>Presentation topic: Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times.</p>
+          </div>
+<hr>
+<h1 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h1><h3 id="Fund"><a href="#Fund" class="headerlink" title="Fund"></a>Fund</h3><div class="note warning">
+            <ol><li><p><font color="blue">2024. 12-2027. 11</font> The National Key Research and Development Program of China :<br>Research on Cyber-Physical Fusion Modeling Technology for Control System Equipment Targeting Multiple Optimization Objectives in Flexible Manufacturing （Project Participants）</p></li><li><p><font color="blue">2025. 01-2027. 12</font> The National Natural Science Foundation of China  (Youth Fund) :<br>Research on Adaptive Reconfiguration Optimization Theory for Smart Manufacturing Systems with Multiple Uncertain Disturbances （Project Participants）</p></li><li><p><font color="blue">2024. 07-2027. 12</font> Beijing Natural Science Foundation under Grant :<br>Key Technologies and System Applications of Digital Twin Workshop for 3C Intelligent Manufacturing （Project Participants）</p></li><li><p><font color="blue">2022. 12-2024. 10</font> The National Key Research and Development Program of China:<br>Research on Key Technologies for Dynamic Reconfiguration and XXXX of Production Lines （Project Participants）</p></li><li><p><font color="blue">2022. 01-2022. 12</font> Independent Innovation Foundation of Wuhan University of Technology —— Postgraduate Personal Exploration Project :<br>Research on Integrated  Production and Distribution Scheduling with Flexible Batching and Soft Time Windows （<strong>Project Principals</strong>）</p></li><li><p><font color="blue">2018. 01-2020. 12 </font> National Natural Science Foundation of China (Youth Fund) ：<br>A game method of supply and demand allocation of complex product system manufacturing services for social collaboration （Project Participants）</p></li></ol>
+          </div>
+<h3 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h3><div class="note warning">
+            <h4 id="—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）"><a href="#—-2021-07-2022-07-Tuoxing-Zhiwang-Technology-Co-Ltd-Wuhan-（Java-Back-End-Development）" class="headerlink" title="— 2021. 07-2022. 07 Tuoxing Zhiwang Technology Co., Ltd.  Wuhan （Java Back End Development）"></a>— 2021. 07-2022. 07 <a href="http://www.tonshinet.com/">Tuoxing Zhiwang Technology Co., Ltd.  Wuhan</a> （Java Back End Development）</h4><ol><li><p><font color="blue">2021. 07-2021. 12 </font> Development of Wind Plant Operation and Maintenance Application Platform</p></li><li><p><font color="blue">2022. 01-2022. 07 </font> Tangshan Sinoma Heavy Machinery PMS Improvement Project<br>-Development of External Supplier Price Comparison Management Platform </p></li></ol>
+          </div>
+<p><a href="https://clustrmaps.com/site/1bqdf" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=555555&amp;w=500&amp;t=m&amp;d=lPGunm_IA1w4rADFSr_XZ_r1KQCj0GoM-18qXvbMs1E&amp;co=ffffff&amp;ct=555555"></a></p>
+</div>]]></content>
   </entry>
   <entry>
     <title>Scholars Link</title>
@@ -1360,6 +1310,56 @@ table th:nth-of-type(2) {
 <li><a href="https://cuglirui.github.io/index.html"><strong>Rui Li</strong></a> (Flexible job shop scheduling <a href="https://cuglirui.github.io/downloads.htm">FJSP</a> <code>matlab</code>)</li>
 <li><a href="https://github.com/dengfaheng"><strong>Faheng Deng</strong></a> (Vehicle routing problem <a href="https://github.com/dengfaheng">VRP，TSP</a> <code>java</code>)</li>
 </ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>Academic Publications</title>
+    <url>/publications/index.html</url>
+    <content><![CDATA[<div class="note success">
+            <h3 id="Master’s-Thesis"><a href="#Master’s-Thesis" class="headerlink" title="Master’s Thesis"></a>Master’s Thesis</h3><ol><li><strong>Huang, M.</strong>, 2023. Research on integrated production and distribution scheduling for fast moving consumer goods manufacturing enterprise. Wuhan University of Technology.<a href="../pdf/Thesis-快速消费品制造企业生产-配送集成调度研究.pdf"> (Master’s Thesis) </a> <strong><code>PDF</code></strong>;</li></ol>
+          </div>
+<div class="note success">
+            <h3 id="Published-papers"><a href="#Published-papers" class="headerlink" title="Published papers"></a>Published papers</h3><ol><li><p><strong>M. Huang</strong>, S. Huang, B. Du<em>, J. Guo and Y. Li. Fuzzy Superposition Operation and Knowledge-driven Co-evolutionary Algorithm for Integrated Production Scheduling and Vehicle Routing Problem with Soft Time Windows and Fuzzy Travel Times. </em>IEEE Transactions on Fuzzy Systems<em>, 2024, doi: 10.1109/TFUZZ.2024.3388003.（SCI Q1 , IF 11.9, TOP）<br><a href="https://ieeexplore.ieee.org/document/10497842"> (Paper) </a> <strong><code>HTML</code></strong> ; <a href="../zip/KDCEA-Code.zip"> (KDCEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-Dateset.zip">(IPSVRP-STW&amp;FTT Dateset)</a> <strong><code>.zip</code></strong>;<a href="../zip/IPSVRP-STW-FTT-AMPL.zip"> (AMPL) </a> <strong><code>.mod</code></strong> ; <a href="../zip/IPSVRP-STW-FTT-CASE.zip">(CASE)</a> <em>*<code>.zip</code></em></em></p></li><li><p><strong>Huang, M.</strong>, Du, B. G., Guo, J<em>. A hybrid collaborative framework for integrated production scheduling and vehicle routing problem with batch manufacturing and soft time windows. </em>Computers &amp; Operations Research<em>, 2023, 159, 106346. <a href="https://doi.org/10.1016/j.cor.2023.106346">https://doi.org/10.1016/j.cor.2023.106346</a> .（SCI Q1 , IF 4.6, ABS-3）<br><a href="https://www.sciencedirect.com/science/article/pii/S0305054823002101"> (Paper) </a> <strong><code>HTML</code></strong>; <a href="link"> (HCF-IMOEA) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/IPSVRP-BM-STW-Dateset.zip">(IPSVRP-BM&amp;STW Dateset)</a> <em>*<code>.zip</code></em></em></p></li><li><p><strong>Huang, M.</strong>, Du, B. G<em>., Guo, J, Li, Y, B. Integrated  production and distribution scheduling optimization of considering soft time windows and fuzzy travel times. </em>Control Theory and Applications(chinese)<em>, 2023, 40(x): 1–10. DOI: 10.7641/CTA.2023.20920.（EI index，IF:2.781）<br><a href="https://kns.cnki.net/kcms2/article/abstract?v=xNq_RSSxttstktCq-VWRIQS1e6fIAq26YV2DyMFsCVB9NtbxKqFgDZtEE5MiKN1dG5PLmIItcZsrbA9y-tAUQMMLpbYZJEJr4NENoL1ughgxkkSL6gjYdqp7OcHpgSim7TjKF6gvjYE=&amp;uniplatform=NZKPT&amp;language=CHS"> (Paper) </a><strong><code>HTML</code></strong> ; <a href="../zip/NSGA-II-AVNS-Code.zip"> (NSGA-II-AVNS) </a> <strong><code>Matlab code</code></strong> ; <a href="../zip/Fuzzy-IPDS-Dateset.zip">(Fuzzy-IPDS Dateset)</a> <em>*<code>.zip</code></em></em></p></li></ol><!--  1. **Ming Huang**, Sihan Huang*, Jianpeng Chen, Wei Dong, Baicun Wang, Bing Ruan, Yunpeng Gao, Guoxin Wang, Yan Yan. Dynamic scheduling optimization of island assembly lines under uncertain disturbances by multi-objective deep reinforcement learning *JOURNAL OF MECHANICAL ENGINEERING(chinese)*  （EI index，IF:）--><p>JOURNAL OF MECHANICAL ENGINEERING(chinese)<a href="https://kns.cnki.net/kcms2/article/abstract?v=sTAINAsmd8-D4oLYcJmyoLGK9gexKDP_iRPM8GsNJpuWU8ZEjxX863J2C0K68YqR2ipstFRNvj00VT0Vdp1SpKfH5UK9eMZuwJQkfgk90Ufkv4BDiEzf5jq1mut1MjG333KGXiViqqcihzrMzmnf7C6iGbcnFSyrJDpgK1iNu1ihnQvS7GiDAg==&amp;uniplatform=NZKPT&amp;language=CHS"> (Paper) </a><strong><code>HTML</code></strong> ; <a href=""> (MO-D3QN) </a> <strong><code>python code</code></strong> ; <a href="../zip/IAS-Dataset.zip">(IAS Dateset)</a> <strong><code>.zip</code></strong></p>
+          </div>
+<div class="note warning">
+            <h3 id="Working-papers"><a href="#Working-papers" class="headerlink" title="Working papers"></a>Working papers</h3><ol><li><strong>Ming Huang</strong>, Sihan Huang<em>, Bing Ruan, Wei Dong, Jianpeng Chen, Baicun Wang, Baigang Du, Guoxin Wang, Yan Yan, Lihui Wang. A normalized Tchebycheff aggregation based multi-objective deep reinforcement learning for dynamic flexible island assembly system scheduling.<br><a href=""> (Paper) </a><strong><code>HTML</code></strong> ; <a href=""> (NT-D3QN) </a> <strong><code>python code</code></strong> ; <a href="../zip/DFIASSP-Dataset.zip">(DFIASSP-Dataset)</a> <strong><code>.zip</code></strong> ; <a href="../zip/DFIASSP-Case.zip">(DFIASSP-Case)</a> <strong><code>.zip</code></strong>;<a href="../zip/DFIASSP-AMPL.zip"> (AMPL) </a> <em>*<code>.mod</code></em></em> </li></ol>
+          </div>
+<div class="note warning">
+            <h3 id="Conference-papers"><a href="#Conference-papers" class="headerlink" title="Conference papers"></a>Conference papers</h3><p align="left"><font face="黑体" size="5" color="blue"></font></p><li><font face="黑体" size="5" color="blue">None </font></li><p></p>
+          </div>]]></content>
+  </entry>
+  <entry>
+    <title>Datasets and Algorithm Codes</title>
+    <url>/resources/index.html</url>
+    <content><![CDATA[<h1 id="Datesets"><a href="#Datesets" class="headerlink" title="Datesets"></a>Datesets</h1><h4 id="1-Integrated-Production-and-Distribution-Scheduling-Problem-IPDS"><a href="#1-Integrated-Production-and-Distribution-Scheduling-Problem-IPDS" class="headerlink" title="1. Integrated Production and Distribution Scheduling Problem(IPDS)"></a>1. Integrated Production and Distribution Scheduling Problem(IPDS)</h4><p><font color="#428BCA" size="5"><strong>Original Intention</strong></font>:<br>IPDS involves the optimization of production scheduling and distribution scheduling. Individually, production scheduling or distribution scheduling has been studied for a long time and has rich benchmark datasets and excellent solution algorithms. <strong>However, there is a paucity of benchmark datasets in IPDS studies.</strong> Due to the complexity and specificity of the problem, most studies have adopted randomly generated (or partially randomly generated) datasets for computational experiments, but few studies have published their test datasets for use and validation by other researchers. In order to provide a uniform benchmark for evaluating and measuring the performance of algorithms for the same and similar studies, we publish the used datasets and algorithms to facilitate the computational experiments of other researchers.</p>
+<div class="note info">
+            <ul><li><strong>IPSVRP-BM&amp;STW Dateset（<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>（Beat Production Lines &amp; Vehicle Routing Problem with Soft Time Window and Heterogeneous vehicles）<br>DataSet：<a href="../zip/IPSVRP-BM-STW-Dateset.zip">IPSVRP-BM&amp;STW Dateset</a><br><a href="../pdf/A%20hybrid%20collaborative%20framework%20for%20integrated%20production%20scheduling%20and%20vehicle%20routing%20problem%20with%20batch%20manufacturing%20and%20soft%20time%20windows.pdf">The paper</a> proposing this dataset<br><a href="link">A blog</a> introducing the formation process of this dataset</li></ul>
+          </div>
+<div class="note info">
+            <ul><li><strong>Fuzzy-IPDS Dateset（<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>（Beat Production Lines &amp; Vehicle Routing Problem with Soft Time Window and Heterogeneous vehicles &amp; Fuzzy Travel time）<br>DataSet：<a href="../zip/Fuzzy-IPDS-Dateset.zip">Fuzzy-IPDS Dateset</a><br><a href="link">The paper</a> proposing this dataset<br><a href="link">A blog</a> introducing the formation process of this dataset</li></ul>
+          </div>
+<div class="note info">
+            <ul><li><strong>IPSVRP-STW&amp;FTT Dateset（<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）</strong><br>（Beat Production Lines &amp; Soft Time Window &amp; A limited number of Muti-trip Heterogeneous &amp; Fuzzy Travel time）<br>DataSet：<a href="../zip/IPSVRP-STW-FTT-Dateset.zip">IPSVRP-STW&amp;FTT Dateset</a><br><a href="link">The paper</a> proposing this dataset<br><a href="link">A blog</a> introducing the formation process of this dataset</li></ul>
+          </div>
+<h4 id="2-Datasets-of-other-researchers"><a href="#2-Datasets-of-other-researchers" class="headerlink" title="2. Datasets of other researchers"></a>2. Datasets of other researchers</h4><ul>
+<li><p>VRPTW Datesets: <strong><a href="https://www.sintef.no/projectweb/top/vrptw/">Solomon-Benchmark</a></strong></p>
+</li>
+<li><p>VRP Datesets: <strong><a href="https://neo.lcc.uma.es/vrp/vrp-instances/">Vrp-Instances</a></strong></p>
+</li>
+<li><p>Test datasets based on problem instances: <strong><a href="http://people.brunel.ac.uk/~mastjjb/jeb/info.html">OR-Library by J E Beasley</a></strong></p>
+</li>
+</ul>
+<hr>
+<h1 id="Algorithm-Code"><a href="#Algorithm-Code" class="headerlink" title="Algorithm Code"></a>Algorithm Code</h1><div class="note info">
+            <ol><li><a href="link"> HCF-IMOEA </a> <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br><a href="https://www.sciencedirect.com/science/article/pii/S0305054823002101">This paper</a> <strong><code>HTML</code></strong> proposing this algorithm</li></ol>
+          </div>
+<div class="note info">
+            <ol><li><a href="../zip/NSGA-II-AVNS-Code.zip"> NSGA-II-AVNS </a> <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br><a href="https://kns.cnki.net/kcms2/article/abstract?v=xNq_RSSxttstktCq-VWRIQS1e6fIAq26YV2DyMFsCVB9NtbxKqFgDZtEE5MiKN1dG5PLmIItcZsrbA9y-tAUQMMLpbYZJEJr4NENoL1ughgxkkSL6gjYdqp7OcHpgSim7TjKF6gvjYE=&amp;uniplatform=NZKPT&amp;language=CHS">This paper</a><strong><code>HTML</code></strong> proposing this algorithm</li></ol>
+          </div>
+<div class="note info">
+            <ol><li><a href="../zip/KDCEA-Code.zip"> KDCEA </a> <strong><code>Matlab code</code></strong> （<span class="github-emoji"><span>🌟</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>）<br><a href="https://ieeexplore.ieee.org/document/10497842">This paper</a> <strong><code>HTML</code></strong> proposing this algorithm</li></ol>
+          </div>
+<hr>
 ]]></content>
   </entry>
 </search>
