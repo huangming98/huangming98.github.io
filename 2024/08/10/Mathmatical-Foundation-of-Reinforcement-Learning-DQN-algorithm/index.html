@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto:300,300italic,400,400italic,700,700italic|JetBrains Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.huangm.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","Muse | Mist":180,"width":250,"display":"always","padding":20,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":"ture","lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Learning Notes for the Course of &quot;Mathematical Foundation of Reinforcement Learning&quot;（8）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mathematical Foundation of Reinforcement Learning-DQN algorithm">
+<meta property="og:url" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/index.html">
+<meta property="og:site_name" content="Ming Huang&#39;s Homepage">
+<meta property="og:description" content="Learning Notes for the Course of &quot;Mathematical Foundation of Reinforcement Learning&quot;（8）">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-29-21-57-50.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-30-22-35-21.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-13-51-34.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-14-20-06.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-18-47-55.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-19-05-15.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-20-02-32.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-20-05-59.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-20-12-19.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-20-13-16.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-23-30-17.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-23-34-00.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-23-34-20.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-23-37-51.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-23-38-00.png">
+<meta property="article:published_time" content="2024-08-10T12:53:36.000Z">
+<meta property="article:modified_time" content="2024-10-23T05:57:00.000Z">
+<meta property="article:author" content="Ming Huang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-29-21-57-50.png">
+
+<link rel="canonical" href="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Mathematical Foundation of Reinforcement Learning-DQN algorithm | Ming Huang's Homepage</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Ming Huang's Homepage</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/home" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-publications">
+
+    <a href="/publications/" rel="section"><i class="fa fa-book fa-fw"></i>Publications</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="fa fa-cloud fa-fw"></i>Resources</a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>Scholars Link</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Blog</a>
+
+  </li>
+        <li class="menu-item menu-item-switch-to-chinese">
+
+    <a href="https://www.huangm.cn/cn/" rel="section"><i class="fa fa-language fa-fw"></i>Switch to Chinese</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/pic.png">
+      <meta itemprop="name" content="Ming Huang">
+      <meta itemprop="description" content="Let’s do something extraordinary together.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ming Huang's Homepage">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mathematical Foundation of Reinforcement Learning-DQN algorithm
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-08-10 20:53:36" itemprop="dateCreated datePublished" datetime="2024-08-10T20:53:36+08:00">2024-08-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-10-23 13:57:00" itemprop="dateModified" datetime="2024-10-23T13:57:00+08:00">2024-10-23</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>34k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1:02</span>
+            </span>
+            <div class="post-description">Learning Notes for the Course of "Mathematical Foundation of Reinforcement Learning"（8）</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[toc] </p>
+<p>Sources:</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/MathFoundationRL/Book-Mathmatical-Foundation-of-Reinforcement-Learning"><em>Shiyu Zhao</em>. 《Mathematical Foundation of Reinforcement Learning》Chapter 8</a>.</li>
+<li><a target="_blank" rel="noopener" href="https://spinningup.openai.com/en/latest/spinningup/rl_intro.html#">OpenAI Spinning Up</a></li>
+</ol>
+<h2 id="8-Value-Function-Approximation"><a href="#8-Value-Function-Approximation" class="headerlink" title="8  Value Function Approximation"></a>8  Value Function Approximation</h2><p>we continue to study temporal-difference learning algorithms. However, a different method is used to represent state/action values. The tabular method(Q-learning) is straight forward to understand, but it is <strong>inefficient for handling large state or action spaces.</strong> To solve this problem, this chapter introduces the function approximation method, which has become <strong>the standard way to represent values.</strong> It is also where <u>artificial neural networks are incorporated into reinforcement learning as function approximates</u>. The idea of function approximation can also be extended from representing values to representing policies, as introduced in Chapter 9.</p>
+<h3 id="8-1-Value-representation-From-table-to-function"><a href="#8-1-Value-representation-From-table-to-function" class="headerlink" title="8.1 Value representation: From table to function"></a>8.1 Value representation: From table to function</h3><p><strong>The tabular method</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">state</th>
+<th style="text-align:center">$s_1$</th>
+<th style="text-align:center">$s_2$</th>
+<th style="text-align:center">…</th>
+<th style="text-align:center">$s_n$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Estimated value</td>
+<td style="text-align:center">$\hat{v}(s_1)$</td>
+<td style="text-align:center">$\hat{v}(s_2)$</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">$\hat{v}(s_1)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Q-learning</th>
+<th style="text-align:center">$a_1$</th>
+<th style="text-align:center">$a_2$</th>
+<th style="text-align:center">…</th>
+<th style="text-align:center">$a_m$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$s_1$</td>
+<td style="text-align:center">$q_(s_1,a_1)$</td>
+<td style="text-align:center">$q_(s_1,a_2)$</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">$q_(s_1,a_m)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$s_2$</td>
+<td style="text-align:center">$q_(s_2,a_1)$</td>
+<td style="text-align:center">$q_(s_2,a_2)$</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">$q_(s_2,a_m)$</td>
+</tr>
+<tr>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">$s_n$</td>
+<td style="text-align:center">$q_(s_n,a_1)$</td>
+<td style="text-align:center">$q_(s_n,a_2)$</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">$q_(s_n,a_m)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>The function approximation method</strong> (for example approximated by a straight line)</p>
+<script type="math/tex; mode=display">
+\hat{v}(s,w) = as+b=\underbrace{[s,1]}_{\phi^T(s)}\underbrace{\begin{bmatrix} a  \\ b  \\ \end{bmatrix}}_{w}= \phi^T(s)w.
+\tag{8.1}</script><p>Here, $\hat{v}(s,w)$ is a function for approximating $v_{\pi}(s)$. It is determined jointly by the state $s$ and the <strong>parameter vector</strong> $w \in \mathbb{R}^2$. $\hat{v}(s,w)$ is sometimes written as $\hat{v}_w(s)$. Here, $\phi(s)\in \mathbb{R}^2$ is called the <strong>feature vector</strong> of $s$.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">tabular method</th>
+<th style="text-align:left">function approximation</th>
+<th style="text-align:left">compared anlysis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>retrieve a value</strong>: directly read the corresponding entry in the table.</td>
+<td style="text-align:left"><strong>retrieve a value</strong>: input the state index s into the function and calculate the function value</td>
+<td style="text-align:left">The function approximation method enhances <strong>storage efficiency</strong> by sacrificing accuracy.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>update a value</strong>: directly rewrite the corresponding entry in the table.</td>
+<td style="text-align:left"><strong>update a value</strong> : update $w$ to change the values indirectly.</td>
+<td style="text-align:left">the function approximation method has another merit: its <strong>generalization ability</strong> is stronger than that of the tabular method.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>efficient:</strong> The function approximation method is only need to store a lower dimensional parameter vector $w$. however, not free. It comes with a cost: the state values may not be accurately represented by the function.</p>
+<p><strong>generalization ability:</strong>  When using the tabular method, we can update<br> a value if the corresponding state is visited in an episode. The values of the states that have not been visited cannot be updated. However, when using the function approximation method, we need to update $w$ to update the value of a state. The update of $w$ also affects the values of some other states even though these states have not been visited. Therefore, the experience sample for one state can generalize to help estimate the values of some other states. The above analysis is illustrated in blow Figure.<br><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-29-21-57-50.png" alt=""></p>
+<p>We can use more complex functions that have stronger approximation abilities than straight lines. For example, consider a second-order polynomial:</p>
+<script type="math/tex; mode=display">
+\hat{v}(s,w) = as^2+bs+c=\underbrace{[s^2,s,1]}_{\phi^T(s)}\underbrace{\begin{bmatrix} a  \\ b  \\ c  \\ \end{bmatrix}}_{w}= \phi^T(s)w.
+\tag{8.2}</script><p>Note that $\hat{v}(s,w)$ in either (1) or (2) is linear in $w$ (though it may be nonlinear in $s$). This type of method is called <strong>linear function approximation</strong>, which is the simplest function approximation method. To realize linear function approximation, <strong>The basis is to select an appropriate feature vector $\phi(s)$</strong>.  It requires prior knowledge of the given task: the better we understand the task, the better the feature vectors we can select. However, such prior knowledge is usually unknown in practice. <strong>If we do not have any prior knowledge,a popular solution is to use artificial neural networks as nonlinear function approximations.</strong></p>
+<p> <strong>The chapter’s key is how to find the optimal parameter vector $w$.</strong>. If we know $v_{\pi}(s_i)$(the real value), this is a <strong>least-squares problem</strong>. The optimal parameter can be obtained by optimizing the following objective function:</p>
+<script type="math/tex; mode=display">
+J_1 =\sum_{i=1}^n(\hat{v}(s_i,w)-v_{\pi}(s_i))^2=\sum_{i=1}^n(\phi^T(s_i)w-v_{\pi}(s_i))^2</script><h3 id="8-2-TD-learning-of-state-values-based-on-function-approximation"><a href="#8-2-TD-learning-of-state-values-based-on-function-approximation" class="headerlink" title="8.2 TD learning of state values based on function approximation"></a>8.2 TD learning of state values based on function approximation</h3><p>how to integrate the function approximation method into TD learning to estimate the state values(the based TD algorithm) of a given policy.This algorithm will be extended to learn action values (sarsa) and optimal policies (Q-learning) in Section 8.3. Therefore,this section is the foundation of section 8.3.</p>
+<p><em>Key core of this chapter：</em><u>**How to find the optimal parameter vector $w$?</u> == <u>How to update the state/action value?**</u><br>The function approximation method is formulated as an optimization problem.<br>(1) The objective function of this problem is introduced in Section 8.2.1 <strong>(the loss function)</strong>.<br>(2) The TD learning algorithm for optimizing this objective function is introduced in Section 8.2.2. <strong>(the optimal algorithm:SGD and TD learning algorithm)</strong><br>(3) There are two ways to formulate value function $\hat{v}(s,w)$/$\hat{q}(s,a,w)$ <strong>(formulate affine model)</strong>. </p>
+<ul>
+<li>3.1) TD-Linear: use a linear function,we need to select appropriate feature vectors. (Section 8.2.3: the based TD algorithm; section 8.3: sarsa\Q-learning); </li>
+<li>3.2) Artificial neural network as a nonlinear function approximate (Section 8.4: DQN).</li>
+</ul>
+<h4 id="8-2-1-Objective-function"><a href="#8-2-1-Objective-function" class="headerlink" title="8.2.1 Objective function"></a>8.2.1 Objective function</h4><p>The problem to be solved is to find an <em>optimal</em> $w$ so that $\hat{v}(s,w)$ can best approximate $v_{\pi}(s)$ for every s. In particular, the objective function is </p>
+<script type="math/tex; mode=display">
+J(w) =\mathbf{E}[(v_{\pi}(S)-\hat{v}(S,w))^2]
+\tag{8.3}</script><p>While $S$ is a random variable, what is its probability distribution? There are several ways to define the probability distribution of $S$:</p>
+<p>(1) The first way is to use a <strong>uniform distribution</strong>：(setting the probability of each state to $1/n$.)</p>
+<script type="math/tex; mode=display">
+J(w) =\mathbf{E}[(v_{\pi}(S)-\hat{v}(S,w))^2]= \frac{1}{n} \sum_{s \in S}(v_{\pi}(s)-\hat{v}(s,w))^2</script><p>which is the average value of the approximation errors of all the states. However, this way does not consider the real dynamics of the Markov process under the given policy. <u>Since some states may be rarely visited by a policy, it may be <em>unreasonable</em> to treat all the states as equally important.</u></p>
+<p>(2) The second way is to use the <strong>stationary distribution</strong>：(setting the probability of each state to the frequency of agent access to the state.)</p>
+<p>The stationary distribution describes <strong>the long-term behavior of a Markov decision process.</strong> More specifically, after the agent executes a given policy for a sufficiently long period, the probability of the agent being located at any state can be described by this stationary distribution.</p>
+<script type="math/tex; mode=display">
+J(w) =\mathbf{E}[(v_{\pi}(S)-\hat{v}(S,w))^2]= \sum_{s \in S}d_{\pi}(s)(v_{\pi}(s)-\hat{v}(s,w))^2</script><p>which $d_{\pi}(s)$ denote the stationary distribution of the Markov process under policy $\pi$. $\sum_{s \in S}d_{\pi}(s)=1$.</p>
+<p>it was assumed that the number of states was finite in the above equation. When the state space is continuous, we can replace the summations with integrals.</p>
+<p>It is notable that the value of $d_{\pi}(s)$ is nontrivial to obtain because it requires knowing the state transition probability matrix $P_{\pi}$. Fortunately, we do not need to calculate the specific value of $d_{\pi}(s)$ to minimize this objective function as shown in the next subsection. <u><strong>I.e. When optimizing based on gradient descent, the experience samples are collected by the behavior strategy, which inherently have the meaning of $d_{\pi}(s)$.</strong></u></p>
+<blockquote>
+<p><strong>Conditions for the uniqueness of stationary distributions.</strong><br>A general class of Markov processes that have unique stationary(or limiting)distributions is <em>irreducible</em>(or <em>regular</em>) Markov processes.<br>— A Markov process is called <em>irreducible</em> if all of its states communicate with each other.<br>— A Markov process is called <em>regular</em> if there exists $k &gt;=1$ such that $[P_{\pi}]_{ij}^k&gt;0$ for all $i,j$. States $j$ is said to be accessible from state $s_i$ if there exists a finite integer $k$ so that $[P_{\pi}]_{ij}^k&gt;0$</p>
+<p> <strong>Policies that may lead to unique stationary distributions.</strong><br>Once the policy is given, a Markov decision process becomes a Markov process, whose long-term behavior is jointly determined by the given policy and the system model. Then,an important question is what kind of policies can lead to regular Markov processes? In general,the answer is <strong>exploratory policies such as $\epsilon$-greedy policies</strong>. I.e.,since all the states communicate,there sulting Markov process is irreducible. Second, since every state can transition to itself, there resulting Markov process is regular.<br>— <strong>application</strong> —<br><em>There  are two methods to calculate the stationary distributions.</em><br>— (1) The theoretical value of $d_{\pi}$ can be calculated by the state transition probability matrix $P_{\pi}$.<br>— (2) The second method is to estimated $d_{\pi}$ numerically. we start from an arbitrary initial state and generate a sufficiently long episode by following the given policy. we select $s_1$ as the starting state and run 1000 steps by following the policy. The proportion of the visits of each state during the process is shown in the below Figure(<em> represent the theoretical value of $d_{\pi}(s_i)$). <em>*It can be seen that the proportions converge to the theoretical value of $d_{\pi}$ after hundreds of steps.</em></em> It is clear clarify that the experience samples are collected by the behavior strategy, which inherently have the meaning of $d_{\pi}(s)$.<br><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-30-22-35-21.png" alt=""></p>
+</blockquote>
+<h4 id="8-2-2-Optimization-algorithms"><a href="#8-2-2-Optimization-algorithms" class="headerlink" title="8.2.2 Optimization algorithms"></a>8.2.2 Optimization algorithms</h4><p>To minimize the objective function $J(w)$, we can use the gradient descent algorithm:</p>
+<script type="math/tex; mode=display">
+w_{k+1}=w_k - \alpha_{k} \nabla_{w} J(w_k),</script><p>where</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla_{w} J(w_k) &=\nabla_{w} \mathbb{E}[(v_{\pi}(S)-\hat{v}(S,w_k))^2] \\
+& =\mathbb{E}[\nabla_{w}(v_{\pi}(S)-\hat{v}(S,w_k))^2]\\
+& =2\mathbb{E}[\nabla_{w}(v_{\pi}(S)-\hat{v}(S,w_k))(-\nabla_{w}\hat{v}(S,w_k))]\\
+& =-2\mathbb{E}[\nabla_{w}(v_{\pi}(S)-\hat{v}(S,w_k))\nabla_{w}\hat{v}(S,w_k)]
+\end{aligned}</script><p>Therefore, the gradient descent algorithm is</p>
+<script type="math/tex; mode=display">
+w_{k+1}=w_k +2\alpha_{k}\mathbb{E}[(v_{\pi}(S)-\hat{v}(S,w_k))\nabla_{w}\hat{v}(S,w_k)],
+\tag{8.4}</script><p>where the coefficient 2 before $\alpha_{k}$ can be merged into $\alpha_{k}$ without loss of generality. In the spirit of stochastic gradient descent, we can replace the true gradient with a stochastic gradient. Then, becomes</p>
+<script type="math/tex; mode=display">
+w_{t+1}=w_t +\alpha_{t}(v_{\pi}(s_t)-\hat{v}(s_t,w_t))\nabla_{w}\hat{v}(s_t,w_t),
+\tag{8.5}</script><p>where $s_t$ is a sample of $S$ at time $t$. Notably, this equation is not implementable because it requires the true state value $v_{\pi}$ , which is unknown and must be estimated.</p>
+<p>The following two methods can replace $v_{\pi}(s_t)$ with an approximation to make the algorithm implementable.<br>—— Monte Carlo method: Suppose that we have an episode $(s_0,r_1,s_1, r_2<br>\dots )$. Let $g_t$ be the discounted return starting from $s_t$. Then, $g_t$ can be used as an approximation of $v_{\pi} (s_t)$. The algorithm of <em>Monte Carlo learning with function approximation</em> becomes</p>
+<script type="math/tex; mode=display">
+w_{t+1}=w_t +\alpha_{t}(\textcolor{red}{g_t}-\hat{v}(s_t,w_t))\nabla_{w}\hat{v}(s_t,w_t),
+\tag{8.6}</script><p>—— Temporal-difference method: In the spirit of TD learning, $r_{t+1} + \gamma \hat{v}(s_{t+1},w_t)$ can be used as an approximation of $v_{\pi} (s_t)$. The algorithm of <em>TD learning with function approximation</em> becomes</p>
+<script type="math/tex; mode=display">
+w_{t+1}=w_t +\alpha_{t}(\overbrace{\textcolor{red}{\underbrace{r_{t+1} + \gamma \hat{v}(s_{t+1},w_t)}_{TD \ \ target}}-\hat{v}(s_t,w_t)}^{TD \ \ error})\nabla_{w}\hat{v}(s_t,w_t),
+\tag{8.7}</script><p>Understanding the TD learning with function approximation is important for studying the section 8.3. Notably, this equation can only learn the state values of a given policy. It will be extended to algorithms that can learn action values in Sections 8.3.</p>
+<h4 id="8-2-3-TD-Linear-approximates（select-appropriate-feature-vectors）"><a href="#8-2-3-TD-Linear-approximates（select-appropriate-feature-vectors）" class="headerlink" title="8.2.3 TD-Linear approximates（select appropriate feature vectors）"></a>8.2.3 TD-Linear approximates（select appropriate feature vectors）</h4><p>The linear function:</p>
+<script type="math/tex; mode=display">
+\hat{v}(s,w) = \phi^T(s)w.</script><p><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-13-51-34.png" alt=""><br>where $\phi(s) \in \mathbb{R}^m$ is the feature vector of $s$. The lengths of $\phi(s)$ and $w$ are equal to $m$, which is usually much smaller than the number of states. In the linear case, the gradient is $\nabla_{w}\hat{v}(s,w_k)=\phi(s)$.</p>
+<p>This is the algorithm of TD learning with linear function approximation. We call it <strong>TD-Linear</strong> for short.</p>
+<p> The linear case is much better understood in theory than the nonlinear case. However, <u><strong>its approximation ability is limited. It is also nontrivial to select appropriate feature vectors for complex tasks.</strong></u> By contrast, artificial neural networks can approximate values as black-box universal nonlinear approximates, which are more friendly to use.</p>
+<p>The reason is to learn TD-linear that a better understanding of the linear case can help readers better grasp the idea of the function approximation method. More importantly, the linear case is still powerful in the sense that <strong>the tabular method can be viewed as a special linear case</strong>. </p>
+<blockquote>
+<p><strong>Tabular TD learning is a special case of TD-Linear.</strong><br>Consider the following special feature vector for any $s\in S$:</p>
+<script type="math/tex; mode=display">
+\phi(s)=e_s \in \mathbb{R}^n</script><p>where $e_s$ is the vector with the entry corresponding to s equal to 1,and the others as 0. In this case,</p>
+<script type="math/tex; mode=display">
+\hat{v}(s,w) = e_s^Tw = w(s).</script><p>where $w(s)$ is the $s$th entry of $w$.</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+w_{t+1} &=w_t +\alpha_{t}(r_{t+1} + \gamma \hat{v}(s_{t+1},w_t)-\hat{v}(s_t,w_t))\phi(s_t)\\
+&=w_t +\alpha_{t}(r_{t+1} + \gamma w_t(s_{t+1})-w_t(s_t))e_{s_t}\\
+&=w_t +\alpha_{t}(r_{t+1} + \gamma w_t(s_{t+1})-w_t(s_t)),
+\end{aligned}</script><p>which is exactly the tabular TD algorithm.</p>
+</blockquote>
+<p>We next present some examples for demonstrating <em>how to use the TD-Linear algorithm to estimate the state values of a given policy?</em> . In the meantime, we demonstrate <em>how to select feature vectors?</em></p>
+<p>The grid world example is shown in the below Figure 8.6. The given policy takes any action at a state with a probability of 0.2(exploratory). Our goal is to estimate the state values under this policy. There are 25 state values in total. The true state values are shown in Figure 8.6(b). The true state values are visualized as a three-dimensional surface in Figure 8.6(c)<br><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-14-20-06.png" alt=""></p>
+<p>We next show that we can use <strong>fewer than</strong> 25 parameters to approximate these state values. The simulation setup is as follows. Five hundred episodes are generated by the given policy. Each episode has 500 steps and starts from a randomly selected state-action pair following a uniform distribution. In addition, in each simulation trial, the parameter vector $w$ is <strong>randomly initialized</strong> such that each element is drawn from a standard normal distribution with a zero mean and a standard deviation of 1. We set $r_{forbidden} = r_{boundary} = -1, r_{target} = 1$, and $\gamma = 0.9$.</p>
+<p>To implement the TD-Linear algorithm, we need to select the feature vector $\phi(s)$ first. There are different ways to do that as shown below.</p>
+<p><strong>— (1) The first type of feature vector is based on polynomials</strong>. In the grid world example, a state $s$ corresponds to a 2D location. Let $x$ and $y$ denote the column and row indexes of $s$, respectively. To avoid numerical issues, we normalize x and y so that their values are within the interval of $[-1,+1]$. </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\phi(s)=\begin{bmatrix} a  \\ b  \\ \end{bmatrix} \in \mathbb{R}^2,\\
+&\hat{v}(s,w)=\phi^T(s)w=[x,y]\begin{bmatrix} w_1  \\ w_2  \\ \end{bmatrix}=w_1x+w_2y.
+\end{aligned}</script><p>When $w$ is given, $\hat{v}(s,w) = w_1x+w_2y$ represents a 2D plane that passes through the origin. Since the surface of the state values may not pass through the origin, we need to introduce a bias to the 2D plane to better approximate the state values. In this case, the approximated state value is</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\hat{v}(s,w)=\phi^T(s)w=[1,x,y]\begin{bmatrix} w_1\\ w_2  \\ w_3  \\ \end{bmatrix}=w_1+w_2x+w_2y.
+\end{aligned}</script><p>The estimation result when we use the feature vector in $[1,x,y]$ is shown in Figure 8.7(a). Although the estimation error converges as more episodes are used, <em>the error cannot decrease to zero due to the limited approximation ability of a 2D plane.</em><br>To enhance the approximation ability, we can increase the dimension of the feature vector.<br>a quadratic 3D surface: (in Figures 8.7(b))</p>
+<script type="math/tex; mode=display">
+\phi(s)=[1,x,y,x^2,y^2,xy]^T \in \mathbb{R}^6</script><p>a cubic 3D surface: (in Figures 8.7(c))</p>
+<script type="math/tex; mode=display">
+\phi(s)=[1,x,y,x^2,y^2,xy,x^3,y^3,x^2y,xy^2]^T \in \mathbb{R}^{10}</script><p><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-18-47-55.png" alt=""></p>
+<p>As can be seen, the longer the feature vector is, the more accurately the state values can be approximated. <u>However, in all three cases, the estimation error cannot converge to zero because these linear approximates still have limited approximation abilities.</u></p>
+<p><strong>— (2) The others type of feature vector such as Fourier basis and tile coding</strong>. First, the values of $x$ and $y$ of each state are normalized to the interval of $[0,1]$. The resulting feature vector is</p>
+<script type="math/tex; mode=display">
+\phi(s)=\begin{bmatrix} \vdots\\ cos(\pi(c_1x+c_2y))  \\ \vdots  \\ \end{bmatrix} \in \mathbb{R}^{(q+1)^2},</script><p>where $\pi$ denotes the circumference ratio,which is $3.1415\dots$ ,instead of a policy. $c_1$ or $c_2$ can be set as any integers in ${0,1,\dots,q}$,where $q$ is a user-specified integer. As a result, there are $(q+1)^2$ possible values for the pair $(c_1 c_2)$ to take. For example, in the case of $q=1$, the feature vector is</p>
+<script type="math/tex; mode=display">
+\phi(s)=\begin{bmatrix} cos(\pi(0x+0y))\\ cos(\pi(0x+1y))  \\ cos(\pi(1x+0y))  \\cos(\pi(1x+1y))\\ \end{bmatrix}= \begin{bmatrix} 1\\ cos(\pi y)  \\ cos(\pi x)  \\cos(\pi(x+y))\\ \end{bmatrix}\in \mathbb{R}^{4},</script><p>The estimation results obtained when we use the Fourier features with $q=1,2,3$ are shown in Figure 8.8. As can be seen, the higher the dimension of the feature vector is, the more accurately the state values can be approximated.</p>
+<p><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-19-05-15.png" alt=""></p>
+<h4 id="8-2-4-Theoretical-analysis-of-TD-Linear-approximates"><a href="#8-2-4-Theoretical-analysis-of-TD-Linear-approximates" class="headerlink" title="8.2.4 Theoretical analysis of TD-Linear approximates"></a>8.2.4 Theoretical analysis of TD-Linear approximates</h4><p>The algorithm</p>
+<script type="math/tex; mode=display">
+w_{t+1}=w_t +\alpha_{t}(\textcolor{red}{r_{t+1} + \gamma \hat{v}(s_{t+1},w_t)}-\hat{v}(s_t,w_t))\nabla_{w}\hat{v}(s_t,w_t),</script><p>does not minimize the following objective function:</p>
+<script type="math/tex; mode=display">
+J(w) =\mathbb{E}[(v_{\pi}(S)-\hat{v}(S,w))^2]</script><p>Different objective functions:<br><strong>Objective function 1: True value error</strong></p>
+<script type="math/tex; mode=display">
+J_E(w) =\mathbb{E}[(v_{\pi}(S)-\hat{v}(S,w))^2]=||\hat{v}(w)-v_{\pi}||^2_D</script><p><strong>Objective function 2: Bellman error</strong></p>
+<script type="math/tex; mode=display">
+J_E(w) =||\hat{v}(w)-(r_{\pi}+\gamma P_{\pi}\hat{v}(w))||^2_D=||\hat{v}(w)-T_{\pi}(\hat{v}(w))||^2_D</script><p>where $T_{\pi}(x) = r_{\pi} + \gamma P_{\pi}x $</p>
+<p><strong>Objective function 3: Projected Bellman error</strong></p>
+<script type="math/tex; mode=display">
+J_PBE(w) =||\hat{v}(w)-MT_{\pi}(\hat{v}(w))||^2_D</script><p>where $M$ is a projection matrix.<br>The TD-Linear algorithm minimizes the projected Bellman error. we can always find a value of $w$ that can minimize $J_{PBE}(w)$ to zero. Like the TD-Linear algorithm, least-squares TD algorithm (LSTD) aims to minimize the projected Bellman error. But TD algorithm and LSTD  obtain  the estimated value $\hat{v}(w)$ also close the true state value $v_{\pi}$ .   Details can be found in the book.</p>
+<h3 id="8-3-TD-learning-of-action-values-based-on-function-approximation"><a href="#8-3-TD-learning-of-action-values-based-on-function-approximation" class="headerlink" title="8.3 TD learning of action values based on function approximation"></a>8.3 TD learning of action values based on function approximation</h3><p>the present section introduces how to estimate action values. The tabular Sarsa and tabular Q-learning algorithms are extended to the case of value function approximation. Readers will see that the extension is straightforward.</p>
+<h4 id="8-3-1-Sarsa-with-function-approximation"><a href="#8-3-1-Sarsa-with-function-approximation" class="headerlink" title="8.3.1 Sarsa with function approximation"></a>8.3.1 Sarsa with function approximation</h4><p>The Sarsa algorithm with function approximation can be readily by replacing the state values with action values. </p>
+<script type="math/tex; mode=display">
+w_{t+1}=w_t +\alpha_{t}(r_{t+1} + \gamma \textcolor{red}{\hat{q}(s_{t+1},a_{t+1},w_t)}-\textcolor{red}{\hat{q}(s_t,a_t,w_t)})\nabla_{w}\textcolor{red}{\hat{q}(s_t,a_t,w_t)}.
+\tag{8.8}</script><p>When linear functions are used, we have $\hat{q}(s_t,a_t,w_t)=\phi^T(s,a)w$ where $\phi(s,a)$ is a feature vector.<br>The value estimation step in the equation can be combined with a policy improvement step to learn optimal policies. The procedure is summarized in Algorithm 8.2. It is notable that this equation is executed only once before switching to the policy improvement step. This is similar to the tabular Sarsa algorithm.<br>Moreover, the implementation in Algorithm 8.2 aims to solve the task of finding a good path to the target state from a presanctified starting state. As a result, it cannot find the optimal policy for every state. However, if sufficient experience data are available, the implementation process can be easily adapted to find optimal policies for every state.</p>
+<p><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-20-02-32.png" alt=""></p>
+<p>An illustrative example is shown in Figure 8.9. In this example, the task is to find a good policy that can lead the agent to the target when starting from the top-left state. <strong>Both the total reward and the length of each episode gradually converge to steady values.</strong> In this example, the linear feature vector is selected as the Fourier function of order 5. The expression of a Fourier feature vector is given in the above equation.</p>
+<p><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-20-05-59.png" alt=""></p>
+<h4 id="8-3-2-Q-learning-with-function-approximation"><a href="#8-3-2-Q-learning-with-function-approximation" class="headerlink" title="8.3.2 Q-learning with function approximation"></a>8.3.2 Q-learning with function approximation</h4><p>Tabular Q-learning can also be extended to the case of function approximation. The update rule is</p>
+<script type="math/tex; mode=display">
+w_{t+1}=w_t +\alpha_{t}(\textcolor{red}{r_{t+1}+\gamma \max_{a \in \mathbb{A}(s_{t+1})}q_{t}(s_{t+1},a_{t+1},w_t)}-\hat{q}(s_t,a_t,w_t))\nabla_{w}\hat{q}(s_t,a_t,w_t).
+\tag{8.9}</script><p>An on-policy version is given in Algorithm 8.3. An example for demonstrating the on-policy version is shown in Figure 8.10. In this example, the task is to find a good policy that can lead the agent to the target state from the top-left state.</p>
+<p><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-20-12-19.png" alt=""></p>
+<p>As can be seen, Q-learning with linear function approximation can successfully learn an optimal policy. Here, linear Fourier basis functions of order five are used. The off-policy version will be demonstrated when we introduce deep Q-learning in Section 8.4.</p>
+<p><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-20-13-16.png" alt=""></p>
+<p>One may notice in Algorithm 8.2 and Algorithm 8.3 that, <strong>although the values are represented as functions, the policy $\pi(a|s)$ is still represented as a table</strong>. Thus, it still assumes nite numbers of states and actions. In Chapter 9, we will see that t<strong>he policies can be represented as functions</strong> so that continuous state and action spaces can be handled.</p>
+<h3 id="8-4-Deep-Q-learning"><a href="#8-4-Deep-Q-learning" class="headerlink" title="8.4 Deep Q-learning"></a>8.4 Deep Q-learning</h3><p>We can integrate deep neural networks into Q-learning to obtain an approach called <strong>deep Q-learning or deep Q-network (DQN)</strong> <sup><a href="#fn_1" id="reffn_1">1</a></sup>. Deep Q-learning is one of the earliest and most successful deep reinforcement learning algorithms. Notably, the neural networks do not have to be deep. For simple tasks such as our grid world examples, shallow networks with one or two hidden layers may be sufficient.<br>Deep Q-learning can be viewed as an <strong>extension</strong> of the Q-learning algorithm in section 8.3. <u>However, its mathematical formulation and implementation techniques are substantially different and deserve special attention.</u></p>
+<blockquote id="fn_1">
+<sup>1</sup>. V. Mnih, K. Kavukcuoglu, D. Silver, A. A. Rusu, J. Veness, M. G. Bellemare, A. Graves, M. Riedmiller, A. K. Fidjeland, G. Ostrovski, S. Petersen, C. Beattie, A. Sadik, I. Antonoglou, H. King, D. Kumaran, D. Wierstra, S. Legg, and D. Hassabis, Human-level control through deep reinforcement learning, Nature, vol. 518,<a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+</blockquote>
+<p> no. 7540, pp. 529533, 2015.</p>
+<h4 id="8-4-1-Algorithm-description"><a href="#8-4-1-Algorithm-description" class="headerlink" title="8.4.1 Algorithm description"></a>8.4.1 Algorithm description</h4><p>Mathematically, deep Q-learning aims to minimize the following objective function:</p>
+<script type="math/tex; mode=display">
+J=\mathbb{E}\left[\left(R+\gamma \max_{a \in \mathbb{A}(s^{\prime})}q_{t}(S^{\prime},a,w)-\hat{q}(S,A,w)\right)^2\right].
+\tag{8.10}</script><p>where $(S,A,R,S^{\prime})$ are random variables that denote a state, an action, the immediate reward, and the next state, respectively. This objective function can be viewed as the squared Bellman optimality error. </p>
+<p>To minimize the objective function in below equation, we can use the gradient descent algorithm to calculate the gradient of $J$ with respect to $w$. <strong>It is noted that the parameter $w$ appears not only in $\hat{q}(S,A,w)$ but also in $y = R+\gamma \max_{a \in \mathbb{A}(s^{\prime})}q_{t}(S^{\prime},a,w)$.</strong> it is nontrivial to calculate the gradient. For the sake of simplicity, it is assumed that the value of $w$ in $y$ is fixed (for a short period of time) so that the calculation of the gradient becomes much easier. In particular, we introduce two networks: one is a <strong><em>main network</em></strong> representing $\hat{q}(s,a,w)$ and the other is a <strong><em>target network</em></strong> $\hat{q}(s,a,w_T)$. The objective function in this case become</p>
+<script type="math/tex; mode=display">
+J=\mathbb{E}\left[\left(R+\gamma \max_{a \in \mathbb{A}(s^{\prime})}q_{t}(S^{\prime},a,\textcolor{red}{w_T})-\hat{q}(S,A,w)\right)^2\right].</script><p>where $w_T$ is the target networks parameter. When $w_T$ is fixed, the gradient of $J$ is</p>
+<script type="math/tex; mode=display">
+\nabla_wJ=-\mathbb{E}\left[\left(R+\gamma \max_{a \in \mathbb{A}(s^{\prime})}q_{t}(S^{\prime},a,w_T)-\hat{q}(S,A,w)\right)\nabla_w\hat{q}(S,A,w)\right].
+\tag{8.11}</script><p>where some constant coefficients are omitted without loss of generality. <u>The use of this gradient be hidden in the optimizer of  Pytorch environment(the software tools for training neural networks).</u></p>
+<p><strong>The two most important characteristics of DQN:</strong><br><strong>(1) Two networks: a main network and a target network.</strong><br> Let $w$ and $w_T$ denote the parameters of the main and target networks, respectively. They are initially set to the same value.The main network is updated in every iteration. By contrast, the target network is set to be the same as the main network every certain number of iterations to satisfy the assumption that $w_T$ is fixed when calculating the gradient in (11).<br><strong>TD target changes after each update, thereby the entire training process is like chasing a moving target.</strong></p>
+<p>Deep Q-Learning算法解决了tabular<br>Q-Learning算法状态空间过大时造成的维度灾难/存储空间爆炸的问题。DQN算法中引入了深度神经网络来近似Q值函数，通过经验回放和‘目标网络-主网络’的双网络训练方式来提高算法的稳定性和收敛性。</p>
+<ul>
+<li>经验回放：通过从经验池中均匀随机采样构造训练样本批次，来满足常用的MSE损失函数要求的均匀分布假设。（否则采样过程服从‘稳态分布’（stationary  distribution）。）</li>
+<li>目标网络-主网络：通过固定目标网络的参数，减少目标值的波动，提高算法的稳定性。</li>
+</ul>
+<blockquote>
+<p>注：书中讲解此处时，是通过‘max’函数难以求导的问题引出的，我个人认为这是一个较容易理解的方式，但是认为这并不是‘双网络’最大的优势（回想在卷积神经网络中的最大池化操作是如何通过bp求导的呢）。因此，我更倾向于从缓解TD<br>Target中的max操作带来的‘高估’现象来解释引入‘双网络’的必要性。可具体参考以下两博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_51602120/article/details/128883464">(1)</a><br>和<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40206371/article/details/124991007">(2)</a></p>
+</blockquote>
+<p>_Question：目标网络参数与主网络参数‘对齐’的频率对于训练结果有无影响？应该如何设置？过高的对齐频率和过低的对齐频率各有什么不足？_</p>
+<p><strong>(2) experience replay and mini-batch train</strong><br>After we have collected some experience samples, we store them in a dataset called the <strong><em>replay buffer</em></strong>. In particular, let $(s,a,r,s^{\prime})$ be an experience sample and $\mathbf{B} =\lbrace(s,a,r,s^{\prime})\rbrace$ be the replay buffer. Every time we update the main network, we can draw a mini-batch of experience samples from the replay buffer. The draw of samples, or called experience replay, should follow a uniform distribution.<br>(Todo:每次随机选(有放回抽样），还是按照state-action来分类后分层随机抽样;还是说无所谓，收集样本时采用的行为策略只要足够的exploration，随机抽就行?)</p>
+<p><strong>Why is experience replay necessary in deep Q-learning, and why must the replay follow a uniform distribution?</strong><br><u>The state-action samples may not be uniformly distributed in practice since they are generated as a sample sequence according to the behavior policy.If a batch of samples obtained based on the given behavior strategy is directly used for deep learning, the network will learn the preference knowledge(as opposed to generalization knowledge) of this specific batch of samples. Furthermore, it narrows the focus of learning to a specific direction in the entire space, making it difficult to extract generalized knowledge. It is necessary to break the correlation between the samples in the sequence to satisfy the assumption of uniform distribution.</u> To do this, we can use the experience replay and mini-batch train technique by uniformly drawing samples from the replay buffer. This is the mathematical reason why experience replay is necessary and why experience replay must follow a uniform distribution. </p>
+<p><strong>A mini-batch of samples to train a network instead of using a single sample to update the main network ).</strong> This is one notable difference between deep and non-deep reinforcement learning algorithms. When training it with a single sample, each sample and its corresponding gradient will have too much variance, making it difficult to converge the network weights.And the computational efficiency of single sample training is lower than that of mini-bach.<br>In short, a benefit of random sampling is that each experience sample  may be used multiple times, which can increase the data efficiency. This is especially important when we have a limited amount of data.</p>
+<p>The implementation procedure of deep Q-learning is summarized in Algorithm 8.3. This implementation is off-policy. It can also be adapted to become on-policy if needed.<br><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-23-30-17.png" alt=""></p>
+<h4 id="8-4-2-Illustrative-examples"><a href="#8-4-2-Illustrative-examples" class="headerlink" title="8.4.2 Illustrative examples"></a>8.4.2 Illustrative examples</h4><p>This example aims to learn the optimal action values for every state-action pair. Once the optimal action values are obtained, the optimal greedy policy can be obtained immediately.</p>
+<p>A single episode is generated by the behavior policy shown in Figure 8.11(a). This behavior policy is exploratory in the sense that it has the same probability of taking any action at any state. The episode has only 1,000 steps as shown in Figure 8.11(b). Although there are only 1,000 steps, almost all the state action pairs are visited in this episode due to the <strong>strong exploration ability</strong> of the behavior policy. The replay buffer is a set of 1,000 experience samples. The mini-batch size is 100, meaning that we uniformly draw 100 samples from the replay buffer every time we acquire samples.</p>
+<p>The main and target networks have the same structure: a neural network with one hidden layer of 100 neurons (the numbers of layers and neurons can be tuned). The neural network has three inputs and one output. The first two inputs are the normalized row and column indexes of a state. The third input is the normalized action index. Here, normalization means converting a value to the interval of $[0,1]$. The output of the network is the estimated action value. The reason why we design the inputs as the row and column of a state rather than a state index is that <strong><em>we know that a state corresponds to a two-dimensional location in the grid. The more information about the state we use when designing the network, the better the network can perform.</em></strong> Moreover, the neural network can also be designed in other ways. For example, it can have two inputs and five outputs, where the two inputs are the normalized row and column of a state and the outputs are the five estimated action values for the input state.<br><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-23-34-00.png" alt=""><br><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-23-34-20.png" alt=""></p>
+<p>As shown in Figure 8.11(d), the loss function, defined as the average squared TD error of each mini-batch, converges to zero, meaning that the network can fit the training samples well. As shown in Figure 8.11(e), the state value estimation error also converges to zero, indicating that the estimates of the optimal action values become sufficiently accurate. Then, the corresponding greedy policy is optimal. </p>
+<p>This example demonstrates the high efficiency of deep Q-learning. In particular, a short episode of 1,000 steps is sufficient for obtaining an optimal policy here. By contrast, an episode with 100,000 steps is required by tabular Q-learning, as shown in Figure 7.4. <strong>One reason for the high efficiency is that the function approximation method has a strong generalization ability. Another reason is that the experience samples can be repeatedly used.</strong></p>
+<p>We next deliberately challenge the deep Q-learning algorithm by considering a scenario with fewer experience samples. Figure 8.12 shows an example of an episode with merely 100 steps. In this example, although the network can still be well-trained in the sense that the loss function converges to zero, the state estimation error cannot converge to zero. <strong>That means the network can properly fit the given experience samples, but the experience samples are too few to accurately estimate the optimal action values.</strong><br><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-23-37-51.png" alt=""><br><img src="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/2024-05-31-23-38-00.png" alt=""></p>
+<h3 id="8-5-Summary"><a href="#8-5-Summary" class="headerlink" title="8.5 Summary"></a>8.5 Summary</h3><p>This chapter continued introducing TD learning algorithms. However, it switches from the tabular method to the function approximation method. <em>The key to understanding the function approximation method is to know that it is an optimization problem.</em> The simplest objective function is the squared error between the true state values and the estimated values. There are also other objective functions such as the Bellman error and the projected Bellman error. We have shown that the TD-Linear algorithm actually minimizes the projected Bellman error. Several optimization algorithms such as Sarsa and Q-learning with value approximation have been introduced. </p>
+<p>One reason why the value function approximation method is important is that it allows artificial neural networks to be integrated with reinforcement learning. For example, deep Q-learning is one of the most successful deep reinforcement learning algorithms.</p>
+<p>An important concept named stationary distribution is introduced in this chapter. The stationary distribution plays an important role in defining an appropriate objective function in the value function approximation method. It also plays a key role in Chapter 9 when we use functions to approximate policies. An excellent introduction to this topic can be found in <sup><a href="#fn_2" id="reffn_2">2</a></sup> . </p>
+<blockquote id="fn_2">
+<sup>2</sup>. M. Pinsky and S. Karlin, An introduction to stochastic modeling Academic Press, 2010.[Chapter IV]<a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+</blockquote>
+<p>Q: What is the stationary distribution and why is it important?<br>A: The stationary distribution describes the long-term behavior of a Markov decision process. More specifically, after the agent executes a given policy for a sufficiently long period, the probability of the agent visiting a state can be described by this stationary distribution. More information can be found in Box 8.1.</p>
+<p>The reason why this concept emerges in this chapter is that it is necessary for defining a valid objective function. In particular, the objective function involves the probability distribution of the states, which is usually selected as the stationary distribution. The stationary distribution is important not only for the value approximation method but also for the policy gradient method, which will be introduced in Chapter 9.</p>
+<p>Q: What are the advantages and disadvantages of the linear function approximation method?<br>A: Linear function approximation is the simplest case whose theoretical properties can be thoroughly analyzed. However, the approximation ability of this method is limited. It is also nontrivial to select appropriate feature vectors for complex tasks. By contrast, artificial neural networks can be used to approximate values as black-box universal nonlinear approximates, which are more friendly to use. Nevertheless, it is still meaningful to study the linear case to better grasp the idea of the function approximation method. Moreover, the linear case is powerful in the sense that the tabular method can be viewed as a special linear case (Box 8.2).</p>
+<p>Q: Can tabular Q-learning use experience replay?<br>A: Although tabular Q-learning does not require experience replay, it can also use experience relay without encountering problems. That is because Q-learning has no requirements about how the samples are obtained due to its off-policy attribute. One benefit of using experience replay is that the samples can be used repeatedly and hence more efficiently</p>
+<h2 id="Approximation-DQN-Steps"><a href="#Approximation-DQN-Steps" class="headerlink" title="Approximation (DQN Steps)"></a>Approximation (DQN Steps)</h2><h3 id="Replay-buffer"><a href="#Replay-buffer" class="headerlink" title="Replay buffer"></a>Replay buffer</h3><p>Replay buffer (or experience replay in the original paper) is used in DQN to make the samples i.i.d.<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ReplayBuffer</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, capacity</span>):</span><br><span class="line">        self.buffer = deque(maxlen=capacity)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, state, action, reward, next_state, done</span>):</span><br><span class="line">        <span class="comment"># print("State shape:", state.shape)</span></span><br><span class="line">        <span class="comment"># print("Next state shape:", next_state.shape)</span></span><br><span class="line">        </span><br><span class="line">        state      = np.expand_dims(state, <span class="number">0</span>)</span><br><span class="line">        next_state = np.expand_dims(next_state, <span class="number">0</span>)</span><br><span class="line">            </span><br><span class="line">        self.buffer.append((state, action, reward, next_state, done))</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sample</span>(<span class="params">self, batch_size</span>):</span><br><span class="line">        state, action, reward, next_state, done = <span class="built_in">zip</span>(*random.sample(self.buffer, batch_size))</span><br><span class="line">        <span class="keyword">return</span> np.concatenate(state), action, reward, np.concatenate(next_state), done</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.buffer)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="Target-network"><a href="#Target-network" class="headerlink" title="Target network"></a>Target network</h3><p>Firstly, it is possible to build a DQN with a single Q Network and no Target Network. In that case, we do two passes through the Q Network, first to output the Predicted Q value, and then to output the Target Q value.</p>
+<p>But that could create a potential problem. The Q Network’s weights get updated at each time step, which improves the prediction of the Predicted Q value. However, since the network and its weights are the same, it also changes the direction of our predicted Target Q values. They do not remain steady but can fluctuate after each update. This is like chasing a moving target.</p>
+<p>By employing a second network that doesn’t get trained, we ensure that the Target Q values remain stable, at least for a short period. But those Target Q values are also predictions after all and we do want them to improve, so a compromise is made. After a pre-configured number of time-steps, the learned weights from the Q Network are copied over to the Target Network.</p>
+<p>This is like EMA?</p>
+<p><strong>DQN</strong><br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DQN</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, num_inputs, num_actions, device=<span class="string">'cuda'</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(DQN, self).__init__()</span><br><span class="line">        </span><br><span class="line">        self.device = device</span><br><span class="line">        self.num_inputs = num_inputs</span><br><span class="line">        self.num_actions = num_actions</span><br><span class="line">        self.layers = nn.Sequential(</span><br><span class="line">            nn.Linear(num_inputs, <span class="number">128</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.Linear(<span class="number">128</span>, <span class="number">128</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.Linear(<span class="number">128</span>, num_actions)</span><br><span class="line">        ).to(self.device)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="keyword">return</span> self.layers(x)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">act</span>(<span class="params">self, state, epsilon</span>):</span><br><span class="line">        <span class="keyword">if</span> random.random() &gt; epsilon:</span><br><span class="line">            <span class="keyword">with</span> torch.no_grad():  <span class="comment"># Ensures that no gradients are computed, which saves memory and computations</span></span><br><span class="line">                state = torch.FloatTensor(state).unsqueeze(<span class="number">0</span>).to(self.device)  <span class="comment"># Convert state to tensor and add batch dimension</span></span><br><span class="line">                q_value = self.forward(state)  <span class="comment"># Get Q-values for all actions</span></span><br><span class="line">                action = q_value.<span class="built_in">max</span>(<span class="number">1</span>)[<span class="number">1</span>].item()  <span class="comment"># Get the action with the maximum Q-value and convert to integer</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            action = random.randrange(self.num_actions)</span><br><span class="line">        <span class="keyword">return</span> action</span><br></pre></td></tr></tbody></table></figure><br><strong>LOSS</strong><p></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">compute_td_loss</span>(<span class="params">batch_size, replay_buffer, model, gamma, optimizer</span>):</span><br><span class="line">    state, action, reward, next_state, done = replay_buffer.sample(batch_size)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Convert numpy arrays to torch tensors</span></span><br><span class="line">    state = torch.FloatTensor(state).to(model.device)</span><br><span class="line">    next_state = torch.FloatTensor(next_state).to(model.device)</span><br><span class="line">    action = torch.LongTensor(action).to(model.device)</span><br><span class="line">    reward = torch.FloatTensor(reward).to(model.device)</span><br><span class="line">    done = torch.FloatTensor(done).to(model.device)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Compute Q-values for current states</span></span><br><span class="line">    q_values = model(state)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Compute Q-values for next states using no gradient computation to speed up and reduce memory usage</span></span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        next_q_values = model(next_state)</span><br><span class="line">        next_q_value = next_q_values.<span class="built_in">max</span>(<span class="number">1</span>)[<span class="number">0</span>]  <span class="comment"># Get the max Q-value along the action dimension</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calculate the expected Q-values</span></span><br><span class="line">    expected_q_value = reward + gamma * next_q_value * (<span class="number">1</span> - done)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Compute the loss between actual Q values and the expected Q values</span></span><br><span class="line">    q_value = q_values.gather(<span class="number">1</span>, action.unsqueeze(<span class="number">1</span>)).squeeze(<span class="number">1</span>)</span><br><span class="line">    loss = (q_value - expected_q_value.detach()).<span class="built_in">pow</span>(<span class="number">2</span>).mean()  <span class="comment"># Detach expected_q_value to prevent gradients from flowing</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Backpropagation</span></span><br><span class="line">    optimizer.zero_grad()</span><br><span class="line">    loss.backward()</span><br><span class="line">    optimizer.step()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> loss</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Training process</strong><br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">num_frames = <span class="number">10000</span></span><br><span class="line">batch_size = <span class="number">32</span></span><br><span class="line">gamma      = <span class="number">0.99</span></span><br><span class="line"></span><br><span class="line">losses = []</span><br><span class="line">all_rewards = []</span><br><span class="line">episode_reward = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">state, info = env.reset()</span><br><span class="line"><span class="keyword">for</span> frame_idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, num_frames + <span class="number">1</span>):</span><br><span class="line">    epsilon = epsilon_by_frame(frame_idx)</span><br><span class="line">    action = model.act(state, epsilon)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># print(f"Select action: {action}. type: {type(action)}")</span></span><br><span class="line">    next_state, reward, terminated, truncated, info = env.step(action)</span><br><span class="line"> </span><br><span class="line">    </span><br><span class="line">    replay_buffer.push(state, action, reward, next_state, terminated)</span><br><span class="line">    </span><br><span class="line">    state = next_state</span><br><span class="line">    episode_reward += reward</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> terminated:</span><br><span class="line">        state, info = env.reset()</span><br><span class="line">        all_rewards.append(episode_reward)</span><br><span class="line">        episode_reward = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(replay_buffer) &gt; batch_size:</span><br><span class="line">        loss = compute_td_loss(batch_size, replay_buffer, model, gamma, optimizer)</span><br><span class="line">        losses.append(loss.data.item())</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    <span class="keyword">if</span> frame_idx % <span class="number">200</span> == <span class="number">0</span>:</span><br><span class="line">        plot(frame_idx, all_rewards, losses)</span><br></pre></td></tr></tbody></table></figure><p></p>
+
+    </div>
+
+    
+    
+    
+
+<div> 
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>Article:</span>Mathematical Foundation of Reinforcement Learning-DQN algorithm</a></p>
+  <p><span>Author:</span>Ming Huang</a></p>
+  <p><span>Release time：</span>2024-08-10   20:53:36</p>
+  <p><span>Updat time:</span>2024-10-23   13:57:00</p>
+  <p><span>Original link:</span><a href="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/" title="Mathematical Foundation of Reinforcement Learning-DQN algorithm">https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/</a>
+    <span class="copy-path"  title="Click to copy the article link"><i class="fa fa-clipboard" data-clipboard-text="https://www.huangm.cn/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/"  aria-label="Copy successful!"></i></span>
+  </p>
+  <p><span>license agreement:</span><i class="fa fa-creative-commons" /></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"> (CC BY-NC-ND 4.0)</a> Please keep the original link and author when reprinting.</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",
+          text: 'Copy successful',
+          html: false,
+          timer: 500,
+          showConfirmButton: false
+        });
+      });
+    }));
+</script>
+ </div>
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/08/09/Mathmatical-Foundation-of-Reinforcement-Learning-TD-algorithms/" rel="prev" title="Mathematical Foundation of Reinforcement Learning-TD algorithms">
+      <i class="fa fa-chevron-left"></i> Mathematical Foundation of Reinforcement Learning-TD algorithms
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/" rel="next" title="Mathematical Foundation of Reinforcement Learning — REINFORCE and AC algorithms">
+      Mathematical Foundation of Reinforcement Learning — REINFORCE and AC algorithms <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Value-Function-Approximation"><span class="nav-text">8  Value Function Approximation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-Value-representation-From-table-to-function"><span class="nav-text">8.1 Value representation: From table to function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-TD-learning-of-state-values-based-on-function-approximation"><span class="nav-text">8.2 TD learning of state values based on function approximation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-2-1-Objective-function"><span class="nav-text">8.2.1 Objective function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-2-2-Optimization-algorithms"><span class="nav-text">8.2.2 Optimization algorithms</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-2-3-TD-Linear-approximates%EF%BC%88select-appropriate-feature-vectors%EF%BC%89"><span class="nav-text">8.2.3 TD-Linear approximates（select appropriate feature vectors）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-2-4-Theoretical-analysis-of-TD-Linear-approximates"><span class="nav-text">8.2.4 Theoretical analysis of TD-Linear approximates</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-TD-learning-of-action-values-based-on-function-approximation"><span class="nav-text">8.3 TD learning of action values based on function approximation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-3-1-Sarsa-with-function-approximation"><span class="nav-text">8.3.1 Sarsa with function approximation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-3-2-Q-learning-with-function-approximation"><span class="nav-text">8.3.2 Q-learning with function approximation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-4-Deep-Q-learning"><span class="nav-text">8.4 Deep Q-learning</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-4-1-Algorithm-description"><span class="nav-text">8.4.1 Algorithm description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-4-2-Illustrative-examples"><span class="nav-text">8.4.2 Illustrative examples</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-5-Summary"><span class="nav-text">8.5 Summary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Approximation-DQN-Steps"><span class="nav-text">Approximation (DQN Steps)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Replay-buffer"><span class="nav-text">Replay buffer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Target-network"><span class="nav-text">Target network</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ming Huang"
+      src="/images/pic.png">
+  <p class="site-author-name" itemprop="name">Ming Huang</p>
+  <div class="site-description" itemprop="description">Let’s do something extraordinary together.</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://bit.edu.cn/" title="Beijing Institute of Technology → https:&#x2F;&#x2F;bit.edu.cn&#x2F;" rel="noopener" target="_blank"><i class="fa fa-university fa-fw"></i>Beijing Institute of Technology</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://scholar.google.com.hk/citations?user=nDvJ6BUAAAAJ&hl=en/" title="Google Scholar → https:&#x2F;&#x2F;scholar.google.com.hk&#x2F;citations?user&#x3D;nDvJ6BUAAAAJ&amp;hl&#x3D;en&#x2F;" rel="noopener" target="_blank"><i class="fa fa-graduation-cap fa-fw"></i>Google Scholar</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:huangming98@163.com" title="E-Mail → mailto:huangming98@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://orcid.org/0000-0001-9146-4721" title="ORCID → https:&#x2F;&#x2F;orcid.org&#x2F;0000-0001-9146-4721" rel="noopener" target="_blank"><i class="fa fa-id-card fa-fw"></i>ORCID</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/huangming98" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huangming98" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+
+<script src="/js/switch_language.js"></script>
+      </div>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=1941963749&auto=1&height=66"></iframe>
+
+    </div>
+  </aside>
+
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022.09— 
+  <span itemprop="copyrightYear">2025.11</span>
+  
+   
+</div>
+  <div class="powered-by"><p style="color:rgb(0,0,255,0.8);font-size:1.2em;font-weight:bold;font-family:Arial">Do not be afraid of making mistakes, only of missing opportunities!</p>
+  </div>
+
+<!-- Insert clustrmaps.com -->
+<!-- <a target="_blank" rel="noopener" href='https://clustrmaps.com/site/1bqbj' ><img src='//clustrmaps.com/map_v2.png?cl=555555&w=350&t=m&d=b6-cOzsyxmN07VPEXlJO1PaWKRLFhE6feh1y5oiN1Hw&co=f5f5f5&ct=555555'/></a> -->
+
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/01/2023 10:00:00"); //此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "<br />This website is as worthless as hundreds of daily chores, but I still hope it will be helpful to you! <br /> It's been running quietly for  "+dnum+" days ";
+        document.getElementById("times").innerHTML = hnum + " hours " + mnum + " minutes " + snum + " seconds.";
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

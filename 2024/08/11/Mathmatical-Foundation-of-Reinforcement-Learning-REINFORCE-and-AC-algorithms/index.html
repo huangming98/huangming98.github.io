@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto:300,300italic,400,400italic,700,700italic|JetBrains Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.huangm.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","Muse | Mist":180,"width":250,"display":"always","padding":20,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":"ture","lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Learning Notes for the Course of &quot;Mathematical Foundation of Reinforcement Learning&quot;（9-10）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mathematical Foundation of Reinforcement Learning — REINFORCE and AC algorithms">
+<meta property="og:url" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/index.html">
+<meta property="og:site_name" content="Ming Huang&#39;s Homepage">
+<meta property="og:description" content="Learning Notes for the Course of &quot;Mathematical Foundation of Reinforcement Learning&quot;（9-10）">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-05-20-53-42.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-05-22-13-35.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-07-14-31-39.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-07-22-12-16.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-07-23-24-30.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-08-29-10-30-15.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-08-29-12-21-34.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-08-29-22-04-15.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-08-29-22-24-05.png">
+<meta property="article:published_time" content="2024-08-11T01:06:36.000Z">
+<meta property="article:modified_time" content="2024-10-23T05:46:48.000Z">
+<meta property="article:author" content="Ming Huang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-05-20-53-42.png">
+
+<link rel="canonical" href="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Mathematical Foundation of Reinforcement Learning — REINFORCE and AC algorithms | Ming Huang's Homepage</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Ming Huang's Homepage</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/home" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-publications">
+
+    <a href="/publications/" rel="section"><i class="fa fa-book fa-fw"></i>Publications</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="fa fa-cloud fa-fw"></i>Resources</a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>Scholars Link</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Blog</a>
+
+  </li>
+        <li class="menu-item menu-item-switch-to-chinese">
+
+    <a href="https://www.huangm.cn/cn/" rel="section"><i class="fa fa-language fa-fw"></i>Switch to Chinese</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/pic.png">
+      <meta itemprop="name" content="Ming Huang">
+      <meta itemprop="description" content="Let’s do something extraordinary together.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ming Huang's Homepage">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mathematical Foundation of Reinforcement Learning — REINFORCE and AC algorithms
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-08-11 09:06:36" itemprop="dateCreated datePublished" datetime="2024-08-11T09:06:36+08:00">2024-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-10-23 13:46:48" itemprop="dateModified" datetime="2024-10-23T13:46:48+08:00">2024-10-23</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>37k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1:07</span>
+            </span>
+            <div class="post-description">Learning Notes for the Course of "Mathematical Foundation of Reinforcement Learning"（9-10）</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p> [toc] </p>
+<p>Sources:</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/MathFoundationRL/Book-Mathmatical-Foundation-of-Reinforcement-Learning"><em>Shiyu Zhao</em>. 《Mathematical Foundation of Reinforcement Learning》Chapter 9 and 10</a>.</li>
+<li><a target="_blank" rel="noopener" href="https://spinningup.openai.com/en/latest/spinningup/rl_intro.html#">OpenAI Spinning Up</a></li>
+</ol>
+<h2 id="9-Policy-Gradient-Methods"><a href="#9-Policy-Gradient-Methods" class="headerlink" title="9 Policy Gradient Methods"></a>9 Policy Gradient Methods</h2><p>So far in this book, policies have been represented by tables: the action probabilities of all states are stored in a table (e.g., Table 9.1). In this chapter, we show that <strong><em><u>policies can be represented by parameterized functions denoted as $\pi(a|s,\theta)$</u></em></strong>, where $\theta \in \mathbb{R}^m$ is a parameter vector. It can also be written in other forms such as $\pi_{\theta}(a|s)$, $\pi_{\theta}(a,s)$, or $\pi(a,s,\theta)$.<br><img src="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-05-20-53-42.png" alt=""><br>When policies are represented as functions, <strong>optimal policies can be obtained by optimizing certain scalar metrics.</strong> Such a method is called <em>policy gradient</em>.The policy gradient method is a big step forward in this book because it is policy-based. The advantages of the policy gradient method are numerous. For example, it is <strong>more efficient for handling large state/action spaces.</strong> It has <strong>stronger generalization abilities</strong> and hence is more efficient in terms of sample usage.</p>
+<h3 id="9-1-Policy-representation-From-table-to-function"><a href="#9-1-Policy-representation-From-table-to-function" class="headerlink" title="9.1 Policy representation:From table to function"></a>9.1 Policy representation:From table to function</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Difference</th>
+<th style="text-align:center">Tabular case</th>
+<th style="text-align:center">Function representation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">how to define optimal policies?</td>
+<td style="text-align:center">maximize every state value.</td>
+<td style="text-align:center">maximize certain scalar metrics.</td>
+</tr>
+<tr>
+<td style="text-align:center">how to update a policy?</td>
+<td style="text-align:center">directly changing the entries in the table.</td>
+<td style="text-align:center">changing the parameter $\theta$</td>
+</tr>
+<tr>
+<td style="text-align:center">how to retrieve the probability of an action?</td>
+<td style="text-align:center">directly obtained by looking up the table.</td>
+<td style="text-align:center">input $(s,a)$ or $s$ into the function to calculate its probability(e.g.,Table 9.2)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The basic idea of the policy gradient method is summarized below. Suppose that <strong>$J(\theta)$ is a scalar metric.</strong> Optimal policies can be obtained by optimizing this metric via the gradient-based algorithm:</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\theta_{t+1} = \theta_{t}+\alpha \nabla_\theta J(\theta_t),
+\end{equation}</script><p>where $\nabla_\theta J$ is the gradient of $J$ with respect to $\theta$ , $t$ is the time step, and $\alpha$ is the optimization rate.<br>With this basic idea, we will answer the following three questions in the remainder of this chapter.</p>
+<ol>
+<li>What <strong>metrics</strong> should be used? (Section 9.2).</li>
+<li>How to <strong>calculate the gradients</strong> of the metrics? (Section 9.3)</li>
+<li>How to <strong>use experience samples</strong> to calculate the gradients? (Section 9.4)</li>
+</ol>
+<h3 id="9-2-Metrics-for-defining-optimal-policies"><a href="#9-2-Metrics-for-defining-optimal-policies" class="headerlink" title="9.2 Metrics for defining optimal policies"></a>9.2 Metrics for defining optimal policies</h3><p>If a policy is represented by a function, there are two types of metrics for defining optimal policies. One is based on state values and the other is based on immediate rewards.</p>
+<p><strong>Metric 1: Average state value(Average value)</strong></p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\bar{v}_\pi = \sum_{s \in S}d(s)v_{\pi}(s)=\mathbb{E}_{S \sim d}[v_\pi(S)],
+\end{equation}</script><p>where $d(s)$ is the weight of state $s$ (probability distribution).It satisfies $d(s)\geq0$ for any $s \in S$ and $\sum_{s \in S}d(s) = 1$.<br>How to select the distribution $d$ ? There are two cases.</p>
+<ol>
+<li><p>The first and simplest case is that $d$ is <strong>independent</strong> of the policy $\pi$. In this case, we specifically denote $d$ as $d_0$ and $\bar{v}_{\pi}$ as $\bar{v}_{\pi}^0$ to indicate that the distribution is independent of the policy.<br>——- One case is to treat all the states equally important and select $d_0(s) = 1/|S|$. (<strong>random</strong>)<br>——- Another case is when we are <strong>only</strong> interested in a specific state $s_0$  (e.g., the agent always starts from $s_0$). In this case, we can design $d_0(s_0)=1, d_0(s \neq s_0)=0 $.</p>
+</li>
+<li><p>The second case is that $d$ is <strong>dependent</strong> on the policy $\pi$.In this case, it is common to select $d$ as $d_{\pi}$ , which is the <strong>stationary distribution</strong> under $\pi$.<br>The interpretation of selecting $d_{\pi}$ is as follows. The stationary distribution reflects the long-term behavior of a Markov decision process under a given policy. If one state is frequently visited in the long term, it is more important and deserves a higher weight; if a state is rarely visited, then its importance is low and deserves a lower weight.</p>
+</li>
+</ol>
+<p>Suppose that an agent collects rewards $\{R_{t+1}\}_{t=0}^\infty$ by following a given policy $\pi(\theta)$. Readers may often see the following metric in the literature(red and blue):</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+J(\theta) &= \textcolor{red}{\lim_{n \to \infty}\mathbb{E}\left[\sum_{t=0}^n \gamma^t R_{t+1}\right ]} = \textcolor{blue}{\mathbb{E}\left[\sum_{t=0}^\infty \gamma^t R_{t+1}\right]},\\
+&= \sum_{s \in S}d(s)\mathbb{E}\left[ \sum_{t=0}^\infty \gamma^t R_{t+1}|S_0 =s \right]\\
+& = \sum_{s \in S}d(s)v_{\pi}(s)\\
+& = \textcolor{green}{\bar{v}_{\pi}}
+\end{aligned}
+\tag{3}</script><p><strong>Metric 2: Average reward (Average one-step reward)</strong></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\bar{r}_\pi = \sum_{s \in S}d_{\pi}(s)r_{\pi}(s)&=\mathbb{E}_{S \sim d_{\pi}}[r_\pi(S)],\\
+&= \mathbb{E}_{S \sim d_{\pi}}\left[\sum_{a \in A}\pi(a|s,\theta)r(s,a)\right]\\
+&= \mathbb{E}_{S \sim d_{\pi},A \sim \pi(s,\theta)}\left[r(s,A)|s\right]\\
+\end{aligned}
+\tag{4}</script><p>where $d_{\pi}$ is the stationary distribution, $r_{\pi}(s)$ is the expectation of the immediate rewards.</p>
+<p>Suppose that an agent collects rewards $\{R_{t+1}\}_{t=0}^\infty$ by following a given policy $\pi(\theta)$. A common metric that readers may often see in the literature is</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+J(\theta) = \textcolor{red}{\lim_{n \to \infty}\frac{1}{n}\mathbb{E}\left[\sum_{t=0}^{n-1} R_{t+1}\right ]} &= \lim_{n \to \infty}\frac{1}{n}\sum_{s \in S}d(s) \mathbb{E}\left[\sum_{t=0}^{n-1} R_{t+1}|S_0=s \right ]\\
+&= \sum_{s \in S}d(s)\lim_{n \to \infty}\frac{1}{n}\sum_{t=0}^{n-1}\mathbb{E}\left[ R_{t+1}\right |S_0=s_0 ]\\
+&= \sum_{s \in S}d(s)\lim_{n \to \infty}\mathbb{E}\left[ R_{t+1}\right |S_0=s_0 ]\\
+&= \sum_{s \in S}d(s)\sum_{s \in S}d_{\pi}(s)r_{\pi}(s)\\
+&= \sum_{s \in S}d_{\pi}(s)\bar{r}_{\pi}\\
+& = \textcolor{green}{\bar{r}_{\pi}}
+\end{aligned}
+\tag{5}</script><p>Up to now, we have introduced two types of metrics: $\bar{v}_{\pi}$ and $\bar{r}_{\pi}$ . Each metric has several different but equivalent expressions. They are summarized in Table 9.2.<br><img src="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-05-22-13-35.png" alt=""></p>
+<p>All these metrics are functions of $\pi$. Since $\pi$ is parameterized by $\theta$, these metrics are functions of $\theta$. In other words, <strong>different values of $\theta$ can generate different metric values.</strong> Therefore, we can search for the optimal values of $\theta$ to maximize these metrics. This is the basic idea of policy gradient methods.<br>The two metrics $\bar{v}_{\pi}$ and $\bar{r}_{\pi}$ are equivalent in the discounted case where $\gamma&lt; 1$. In particular, it can be shown that</p>
+<script type="math/tex; mode=display">
+\begin{equation}\tag{6}
+\bar{r}_\pi = (1-\gamma)\bar{v}_\pi
+\end{equation}</script><blockquote>
+<p>Note that $\bar{v}_{\pi}(\theta) = d_{\pi}^Tv_{\pi}$ and $\bar{r}_{\pi}(\theta) = d_{\pi}^Tr_{\pi}$ , where $v_{\pi}$ and $r_{\pi}$ satisfy the Bellman equation $v_{\pi} = r_{\pi} + \gamma P_{\pi}v_{\pi}$ . Multiplying $d_{\pi}^T$ on both sides of the Bellman equation yields</p>
+<script type="math/tex; mode=display">
+\bar{v}_\pi = \bar{r}_\pi + \gamma d_{\pi}^TP_{\pi}v_{\pi}=\bar{r}_\pi + \gamma d_{\pi}^Tv_{\pi}=\bar{r}_\pi +\gamma \bar{v}_\pi \text{     (QED)}</script></blockquote>
+<p><strong>The above equation indicates that these two metrics can be simultaneously maximized.</strong></p>
+<h3 id="9-3-Gradients-of-the-metrics"><a href="#9-3-Gradients-of-the-metrics" class="headerlink" title="9.3 Gradients of the metrics"></a>9.3 Gradients of the metrics</h3><p>Given the metrics introduced in the last section, we can use gradient-based methods to maximize them. <strong>we first provide the policy gradient theorem(gradent ascent),and then provide the inference process.</strong><br>Theorem 9.1 (Policy gradient theorem). The gradient of $J(\theta )$ is</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla_{\theta} J(\theta) &=\textcolor{blue}{\sum_{s \in S}\eta(s)\sum_{a \in A}\nabla_{\theta}\pi(a|s,\theta)q_{\pi}(s,a)}\\
+&=\mathbb{E}_{S \sim\eta}\left[ \sum_{a \in A}\nabla_{\theta}\pi(a|S,\theta)q_{\pi}(S,a)\right]\\
+&=\mathbb{E}_{S \sim\eta}\left[ \sum_{a \in A}\pi(a|S,\theta)\nabla_{\theta}\ln\pi(A|S,\theta)q_{\pi}(S,A)\right]\\
+&=\textcolor{red}{\mathbb{E}_{S \sim\eta,A\sim\pi(S,\theta)}\left[ \nabla_{\theta}\ln\pi(A|S,\theta)q_{\pi}(S,A)\right]}\\
+&\approx\textcolor{green}{ \nabla_{\theta}\ln\pi(a|s,\theta)q_{\pi}(s,a)}\text{   (stochastic gradient descent)}
+\end{aligned}
+\tag{7}</script><p>where is $\eta$ a state distribution and $\nabla_{\theta}\pi$ is the gradient of $\pi$ with respect to $\theta$.  $\ln$ is the natural logarithm. <strong>A natural logarithm function is introduced to express the gradient as an expected value $ \nabla_{\theta}\ln A(\theta)=\frac{\nabla_{\theta}A(\theta)}{A(\theta)} $. In this way, we can approximate the true gradient with a stochastic one.</strong> It is notable that $\pi(a|s,\theta)$must be positive for all $(s,a)$ to ensure that $\ln\pi(a|s,\theta)$ is valid.This can be achieved by using <em>softmax functions(Relu functions)</em>:</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\pi(a|s,\theta)=\frac{e^{h(s,a,\theta)}}{\sum_{a'\in A}e^{h(s,a',\theta)}},a \in A
+\end{equation}
+\tag{8}</script><p>Since $\pi(a|s,\theta) &gt; 0$ for all $a$, the parameterized policy is <strong><em>stochastic</em></strong> and hence <strong><em>exploratory</em></strong>.</p>
+<p>Theorem 9.1 is a summary of the results in Theorem 9.2, 9.3,and 9.5. These three theorems address different scenarios involving different metrics and discounted/undiscounted cases, but the gradients in these scenarios all have similar expressions. In particular, $J(\theta)$ could be $\bar{v}_{\pi}^0$, $\bar{v}_{\pi}$, or $\bar{r}_{\pi}$. The equality in Theorem 9.1 may become a strict equality or an approximation. The distribution also varies in different scenarios.</p>
+<ol>
+<li>distinguish different metrics $\bar{v}_{\pi}^0$, $\bar{v}_{\pi}$, or $\bar{r}_{\pi}$</li>
+<li>distinguish the discounted and undiscounted cases.<h4 id="9-3-1-Derivation-of-the-gradients-in-the-discounted-case"><a href="#9-3-1-Derivation-of-the-gradients-in-the-discounted-case" class="headerlink" title="9.3.1 Derivation of the gradients in the discounted case"></a>9.3.1 Derivation of the gradients in the discounted case</h4><strong>Theorem 9.2</strong> (Gradient of $\bar{v}_{\pi}^0$ in the discounted case). In the discounted case where $\gamma \in (0,1)$, the gradient of $\bar{v}_{\pi}^0= d_0^Tv_{\pi}$ is</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla_{\theta} \bar{v}_{\pi}^0 &=\textcolor{blue}{\sum_{s \in S}d_0(s)\sum_{a \in A}\nabla_{\theta}v_{\pi}(s)}\\
+&=\sum_{s \in S}d_0(s)\sum_{s'\in S}Pr_{\pi}(s'|s)\sum_{a \in A}\nabla_{\theta}\pi(a|s',\theta)q_{\pi}(s',a)\\
+&=\sum_{s' \in S}\left(\sum_{s\in S}d_0(s)Pr_{\pi}(s'|s)\right)\sum_{a \in A}\nabla_{\theta}\pi(a|s',\theta)q_{\pi}(s',a)\\
+&=\sum_{s' \in S}\rho_{\pi}(s')\sum_{a \in A}\nabla_{\theta}\pi(a|s',\theta)q_{\pi}(s',a)\\
+&=\sum_{s \in S}\rho_{\pi}(s)\sum_{a \in A}\nabla_{\theta}\pi(a|s,\theta)q_{\pi}(s,a) \text{ (change $s'$ to $s$)}\\
+&=\sum_{s \in S}\rho_{\pi}(s)\sum_{a \in A} \pi(a|s,\theta)\nabla_{\theta}\ln\pi(a|s,\theta)q_{\pi}(s,a) \\
+&=\textcolor{red}{\mathbb{E}_{S \sim\rho_{\pi},A\sim\pi(S,\theta)}\left[ \nabla_{\theta}\ln\pi(A|S,\theta)q_{\pi}(S,A)\right]}\\
+&\approx\textcolor{green}{ \nabla_{\theta}\ln\pi(a|s,\theta)q_{\pi}(s,a)}
+\end{aligned}
+\tag{9}</script><p><strong>Theorem 9.3</strong> (Gradients of $\bar{r}_{\pi}$ and $\bar{v}_{\pi}$ in the discounted case). In the discounted case where $\gamma \in (0,1)$, the gradients of $\bar{r}_{\pi}$ and $\bar{v}_{\pi}$ are</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla_{\theta} \bar{r}_{\pi} &=(1-\gamma)\nabla_{\theta} \bar{v}_{\pi}=(1-\gamma)\nabla_{\theta}\sum_{s \in S}d_{\pi}(s)v_{\pi}(s)\\
+&=(1-\gamma)\left[\sum_{s \in S}\nabla_{\theta}d_{\pi}(s)v_{\pi}(s) +\sum_{s \in S}d_{\pi}(s)\nabla_{\theta}v_{\pi}(s)\right]\\
+&=(1-\gamma)\left[\sum_{s \in S}\nabla_{\theta}d_{\pi}(s)v_{\pi}(s) + \frac{1}{1-\gamma}\sum_{s \in S}d_{\pi}(s)\sum_{a \in A}\nabla_{\theta} \pi(a|s,\theta)q_{\pi}(s,a)\right]\\
+&\approx(1-\gamma)\left[ 0+\frac{1}{1-\gamma}\sum_{s \in S}d_{\pi}(s)\sum_{a \in A}\nabla_{\theta} \pi(a|s,\theta)q_{\pi}(s,a) \text{  (when $\gamma \to 1$) }\right]\\
+&=\sum_{s \in S}d_{\pi}(s)\sum_{a \in A}\nabla_{\theta} \pi(a|s,\theta)q_{\pi}(s,a)\\
+&=\sum_{s \in S}d_{\pi}(s)\sum_{a \in A} \pi(a|s,\theta)\nabla_{\theta}\ln\pi(a|s,\theta)q_{\pi}(s,a) \\
+&=\textcolor{red}{\mathbb{E}_{S \sim d_{\pi},A\sim\pi(S,\theta)}\left[ \nabla_{\theta}\ln\pi(A|S,\theta)q_{\pi}(S,A)\right]}\\
+&\approx\textcolor{green}{ \nabla_{\theta}\ln\pi(a|s,\theta)q_{\pi}(s,a)}
+\end{aligned}
+\tag{10}</script><p>Here, the approximation is more accurate when $\gamma$ is closer to 1.</p>
+<h4 id="9-3-2-Derivation-of-the-gradients-in-the-undiscounted-case"><a href="#9-3-2-Derivation-of-the-gradients-in-the-undiscounted-case" class="headerlink" title="9.3.2 Derivation of the gradients in the undiscounted case"></a>9.3.2 Derivation of the gradients in the undiscounted case</h4><p>the undiscounted case means $ \gamma = 1$. Why we suddenly start considering the undiscounted case,The reasons are as follows. First, for <strong>continuing tasks</strong>, it may be inappropriate to introduce the discount rate and we need to consider the undiscounted case.  Second, While the gradient of $\bar{r}_{\pi}$ in the discounted case is an approximation, we will see that its gradient in <strong>the undiscounted case is more elegant</strong>.<br><strong>Theorem 9.3</strong> (Gradient of $\bar{r}_{\pi}$ in the undiscounted case). In the undiscounted case, the gradient of the average reward $\bar{r}_{\pi}$ is</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla_{\theta} \bar{r}_{\pi} &= \sum_{s \in S}d_{\pi}(s)\sum_{a \in A}\nabla_{\theta} \pi(a|s,\theta)q_{\pi}(s,a) \\
+&=\sum_{s \in S}d_{\pi}(s)\sum_{a \in A} \pi(a|s,\theta)\nabla_{\theta}\ln\pi(a|s,\theta)q_{\pi}(s,a) \\
+&=\textcolor{red}{\mathbb{E}_{S \sim d_{\pi},A\sim\pi(S,\theta)}\left[ \nabla_{\theta}\ln\pi(A|S,\theta)q_{\pi}(S,A)\right]}\\
+&\approx\textcolor{green}{ \nabla_{\theta}\ln\pi(a|s,\theta)q_{\pi}(s,a)}
+\end{aligned}
+\tag{11}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>metric</th>
+<th>derivative of the metric</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>general case$J(\theta)$</td>
+<td>$ \nabla_{\theta}J(\theta)=\sum \eta(s)\sum\nabla_{\theta}\pi(a\</td>
+<td>s,\theta)q_{\pi}(s,a)=E(\nabla ln \pi(a\</td>
+<td>s,\theta)q_{\pi}(s,a)) $</td>
+</tr>
+<tr>
+<td>$\bar v_{\pi}^0=d_0^Tv_{\pi}$</td>
+<td>$ \nabla_{\theta} \bar v_{\pi}^0=\sum d_0(s^{‘})[(I-\gamma P_{\pi})^{-1}]_{s’s}\sum \pi(a\</td>
+<td>s,\theta)\nabla_{\theta}ln{\pi}(a\</td>
+<td>s,\theta)q_{\pi}(s,a) $</td>
+</tr>
+<tr>
+<td>$\bar v_{\pi}=d_{\pi}^T \bar v_{\pi}$</td>
+<td>$ \nabla_{\theta} \bar v_{\pi}=(1-\gamma)^{-1} \sum d_{\pi}(s)\sum \nabla_{\theta}\pi (a\</td>
+<td>s,\theta)q_{\pi}(s,a) $</td>
+</tr>
+<tr>
+<td>$\bar r_{\pi}=d_{\pi}^T \bar r_{\pi}$</td>
+<td>$ \nabla_{\theta} \bar r_{\pi}= (1-\gamma) \nabla_{\theta} \bar v_{\pi} $</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="9-4-Monte-Carlo-policy-gradient-REINFORCE"><a href="#9-4-Monte-Carlo-policy-gradient-REINFORCE" class="headerlink" title="9.4 Monte Carlo policy gradient (REINFORCE)"></a>9.4 Monte Carlo policy gradient (REINFORCE)</h3><p>The gradient-ascent algorithm for maximizing $J(\theta)$ is</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\theta_{t+1} &=\theta_t +\alpha \nabla_{\theta}J(\theta_t)\\
+&=\theta_t +\alpha \mathbb{E}\left[ \nabla_{\theta}\ln\pi(A|S,\theta_t)q_{\pi}(S,A)\right]\\
+&\approx \theta_t +\alpha\textcolor{green}{ \nabla_{\theta}\ln\pi(a_t|s_t,\theta_t)q_{t}(s_t,a_t)} \text{ (stochastic gradient)}
+\end{aligned}
+\tag{12}</script><p>where $q_t(s_t, a_t)$ is an approximation of $q_{\pi}(s_t, a_t)$. If $qt(st at)$ is obtained by Monte Carlo estimation, the algorithm is called <strong>REINFORCE</strong> <sup><a href="#fn_1" id="reffn_1">1</a></sup> or Monte Carlo policy gradient, which is one of earliest and simplest policy gradient algorithms.<br>REINFORCE is important since many other policy gradient algorithms can be obtained by extending it.<br>We next examine the interpretation of (11) more closely. Since $\nabla_{\theta}\ln\pi(a_t|s_t,\theta_t)=\frac{\nabla_{\theta}\pi(a_t|s_t,\theta_t)}{\pi(a_t|s_t,\theta_t)}$ , we can rewrite (11) as</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\theta_{t+1} &=\theta_t +\alpha \left( \frac{q_t(s_t,a_t)}{\pi(a_t|s_t,\theta_t)} \right)\nabla_{\theta}\pi(a_t|s_t,\theta_t)\\
+&=\theta_t +\alpha \beta_t \nabla_{\theta}\pi(a_t|s_t,\theta_t)
+\end{aligned}
+\tag{13}</script><p>Two important interpretations can be seen from this equation.</p>
+<ol>
+<li><p>If $\beta_t \geq 0$,the probability of choosing $(s_t,a_t)$ is enhanced. $\pi(a_t|s_t,\theta_{t+1})\geq \pi(a_t|s_t,\theta_{t})$, The greater $\beta_t$ is, the stronger the enhancement is.<br>If $\beta_t \leq 0$,the probability of choosing $(s_t,a_t)$ decreases. $\pi(a_t|s_t,\theta_{t+1})\leq \pi(a_t|s_t,\theta_{t})$.</p>
+</li>
+<li><p>The algorithm can strike a balance between exploration and exploitation.<br>$\beta_t$ is proportional to $q_t(s_t,a_t)$. If the action value of $(s_t,a_t)$ is large, then $\theta_{t+1}$ is change to make $\pi(a_t|s_t,\theta_t)$ enhance so that the probability of selecting at $a_t$ increases. Therefore, the algorithm attempts to <strong>exploit actions with greater values</strong>.<br>$\beta_t$ is inversely proportional to $\pi(a_t|s_t,\theta_t)$ when $q_t(s_t,a_t)&gt;0$. As a result, if the probability of selecting $a_t$ is small, then $\beta_t$ is enhanced so that $\theta_{t+1}$ make the probability of selecting $a_t$ increases ($\pi(a_t|s_t,\theta_t)$). Therefore, the algorithm attempts to <strong>explore actions with low probabilities.</strong></p>
+</li>
+</ol>
+<p>Moreover, since (12) uses samples to approximate the true gradient, it is important to understand how the samples should be obtained.</p>
+<ol>
+<li><p>How to sample $S$? $S$ in the true gradient $\mathbb{E}[\nabla_\theta \ln\pi(A|S, \theta_t)q_{\pi}(S,A)]$ should obey the distribution $\eta$ which is either the stationary distribution $d_{\pi}$ or the discounted total probability distribution $\rho_{\pi}$ in (9). Either $d_{\pi}$ or $\rho_{\pi}$ represents the long-term behavior exhibited under $\pi$.</p>
+</li>
+<li><p>How to sample $A$? $A$ in $\mathbb{E}[\nabla_\theta \ln\pi(A|S, \theta_t)q_{\pi}(S,A)]$ should obey the distribution of $\pi(A|S,\theta)$. The ideal way to sample $A$ is to select at following $\pi(a|s_t, \theta_t)$. Therefore,<strong> the policy gradient algorithm is on-policy.</strong></p>
+</li>
+</ol>
+<p>Unfortunately, the ideal ways for sampling $S$ and $A$ are not strictly followed in practice due to their low efficiency of sample usage.A more sample-efficient implementation of (12) is given in Algorithm 9.1. In this implementation, an episode is first generated by following $\pi(\theta)$. Then, $\theta$ is updated multiple times using every experience sample in the episode.<br><img src="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-07-14-31-39.png" alt="">(图片有笔误，计算动作值时从后往前计算$t=T-1,T-2,…,1,0$)</p>
+<p><sup><a href="#fn_1" id="reffn_1">1</a></sup>:R. J. Williams, Simple statistical gradient-following algorithms for connectionist reinforcement learning, Machine Learning, vol. 8, no. 3, pp. 229256, 1992.</p>
+<h3 id="9-5-Summary"><a href="#9-5-Summary" class="headerlink" title="9.5 Summary"></a>9.5 Summary</h3><p>This chapter introduced the policy gradient method, which is the foundation of many modern reinforcement learning algorithms. Policy gradient methods are <strong><em>policy-based</em></strong>.The basic idea of the policy gradient method is simple. That is to select an appropriate scalar metric and then optimize it via a gradient-ascent algorithm.<br>The most complicated part of the policy gradient method is the derivation of the gradients of the metrics. That is because we have to distinguish various scenarios with different metrics and discounted/undiscounted cases. Fortunately, the expressions of the gradients in different scenarios are similar.Hence, we summarized the expressions in Theorem 9.1, which is the most important theoretical result in this chapter.<br>The policy gradient algorithm in (12) must be properly understood since it is the foundation of many advanced policy gradient algorithms. In the next chapter, this algorithm will be extended to another important policy gradient method called actor-critic.</p>
+<h2 id="10-Actor-Critic-Methods"><a href="#10-Actor-Critic-Methods" class="headerlink" title="10 Actor-Critic Methods"></a>10 Actor-Critic Methods</h2><p>“actor-critic” refers to a structure that incorporates both policy-based and value-based methods. An <strong><em>actor</em></strong> refers to a policy update step. The reason that it is called an actor is that the actions are taken by following the policy. Here, an <strong><em>critic</em></strong> refers to a value update step. It is called a critic because it criticizes the actor by evaluating its corresponding values. In addition, actor-critic methods are still policy gradient algorithms.</p>
+<h3 id="10-1-The-simplest-actor-critic-algorithm-QAC"><a href="#10-1-The-simplest-actor-critic-algorithm-QAC" class="headerlink" title="10.1 The simplest actor-critic algorithm (QAC)"></a>10.1 The simplest actor-critic algorithm (QAC)</h3><p>The optimal algorithm used by <strong>QAC</strong> is the same as Section 9.4 Monte Carlo policy gradient (<strong>REINFORCE</strong>)<br>The gradient-ascent algorithm for maximizing $J(\theta)$ is</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\theta_{t+1} &=\theta_t +\alpha \nabla_{\theta}J(\theta_t)\\
+&=\theta_t +\alpha \mathbb{E}_{S \sim \eta,A \sim \pi}\left[ \nabla_{\theta}\ln\pi(A|S,\theta_t)q_{\pi}(S,A)\right]\\
+&\approx \theta_t +\alpha\textcolor{green}{ \nabla_{\theta}\ln\pi(a_t|s_t,\theta_t)q_{t}(s_t,a_t)} \text{ (stochastic gradient)}
+\end{aligned}
+\tag{10.2}</script><p>On the one hand, it is a <strong>policy-based algorithm</strong> since it directly updates the policy parameter ($\theta$). On the other hand, this equation requires knowing $q_t(s_t, a_t)$, which is an estimate of the action value $q_t(s_t, a_t)$. As a result, another <strong>value-based algorithm</strong> is required to generate $q_t(s_t, a_t)$ (used Monte Carlo learning and temporal-difference (TD) learning).</p>
+<ol>
+<li>If $q_t(s_t, a_t)$ is estimated by Monte Carlo learning, the corresponding algorithm is called <em>REINFORCE</em> or <em>Monte Carlo policy gradient</em>.</li>
+<li>If $q_t(s_t, a_t)$ is estimated by TD learning, the corresponding algorithms are usually called <em>actor-critic.</em> <u><strong>Therefore, actor-critic methods can be obtained by incorporating TD-based value estimation into policy gradient methods.</strong> </u></li>
+</ol>
+<p>The procedure of the simplest actor-critic algorithm is summarized in Algorithm 10.1.This actor-citric algorithm is sometimes called Q actor-critic (QAC). Although it is simple, QAC reveals the core idea of actor-critic methods.<br><img src="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-07-22-12-16.png" alt=""></p>
+<h3 id="10-2-Advantage-actor-critic-A2C"><a href="#10-2-Advantage-actor-critic-A2C" class="headerlink" title="10.2 Advantage actor-critic (A2C)"></a>10.2 Advantage actor-critic (A2C)</h3><p>The core idea of A2C is to introduce a baseline to reduce estimation variance.<br>A2C算法可以看作是传统PG算法的一种扩展，引入了value-based方法。当我们采用一个函数来近似动作值并利用TD算法（随机梯度下降）来拟合该函数时，该方法被称为<em>QAC算法</em>。</p>
+<blockquote>
+<p>在实际应用中，REINFORCE和QAC由于估计的方差较大，因此效果并不好。A2C算法通过在’动作值‘的估计中引入偏置量来降低<strong>SGD</strong>中对于梯度估计的方差，<strong>近似最优</strong>偏置量为状态值$v_{\pi}(s_t)$</p>
+</blockquote>
+<h4 id="10-2-1-Baseline-invariance"><a href="#10-2-1-Baseline-invariance" class="headerlink" title="10.2.1 Baseline invariance"></a>10.2.1 Baseline invariance</h4><p><u><strong>One interesting property of the policy gradient is that it is invariant to an additional baseline.</strong> </u></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathbb{E}_{S \sim \eta,A \sim \pi}\left[ \nabla_{\theta}\ln\pi(A|S,\theta_t)q_{\pi}(S,A)\right]=\mathbb{E}_{S \sim \eta,A \sim \pi}\left[ \nabla_{\theta}\ln\pi(A|S,\theta_t)(q_{\pi}(S,A)-b(S))\right]
+\end{aligned}
+\tag{10.3}</script><p>where the additional baseline $b(S)$ is a scalar function of $S$. Note:The bias of $b(S)$ should only be related to the environment, because if it is related to the interaction strategy $\pi$, $b(S)$ will change with the change of strategy.</p>
+<blockquote>
+<p>Equation (10.3) holds if and only if:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathbb{E}_{S \sim \eta,A \sim \pi}\left[ \nabla_{\theta}\ln\pi(A|S,\theta_t)b(S)\right]&=\sum_{s\in S}\eta(s)\sum_{a\in A}\pi(a|s,\theta_t)\nabla_{\theta}\ln\pi(a|s,\theta_t)b(s)\\
+&=\sum_{s\in S}\eta(s)\sum_{a\in A}\nabla_{\theta}\pi(a|s,\theta_t)b(s)\\
+&=\sum_{s\in S}\eta(s)b(s)\sum_{a\in A}\nabla_{\theta}\pi(a|s,\theta_t)\\
+&=\sum_{s\in S}\eta(s)b(s)\nabla_{\theta}\sum_{a\in A}\pi(a|s,\theta_t)\\
+&=\sum_{s\in S}\eta(s)b(s)\nabla_{\theta}1=0
+\end{aligned}</script></blockquote>
+<p><strong>why is the baseline useful?</strong><br><u>The baseline is useful because it can reduce the approximation variance when we use samples to approximate the true gradient.</u></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+X(S,A)=\nabla_{\theta}\ln\pi(A|S,\theta_t)[q_{\pi}(S,A)-b(S))]
+\end{aligned}
+\tag{10.4}</script><p>We need to use a stochastic sample $x(s,a)$ to approximate $E[X(S,A)]$, According to equation 10.1, $E[X(S,A)]$ is invariant to the baseline, but the variance $var(X)$ is not. <strong>Our goal is to design a good baseline to minimize $var(X)$.</strong> In the algorithms of REINFORCE and QAC, we set $b=0$, which is not guaranteed to be a good baseline.<br>In fact, the optimal baseline that minimizes $var(X)$ is (proof by BOX10.1)</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+b^{*}(s)=\frac{\mathbb{E}_{A \sim \pi}\left[ ||\nabla_{\theta}\ln\pi(A|s,\theta_t)||^2q_{\pi}(s, A)\right]}{\mathbb{E}_{A \sim \pi}\left[ ||\nabla_{\theta}\ln\pi(A|s,\theta_t)||^2\right]}, s \in S
+\end{aligned}
+\tag{10.5}</script><p>Although the baseline in(10.5) is optimal, it is too complex to be useful in practice. If the weight $||\nabla_{\theta}\ln\pi(A|s,\theta_t)||^2$ is removed from (10.5), we can obtain a suboptimal<br> baseline that has a concise expression:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+b^{**}(s)=\mathbb{E}_{A \sim \pi}\left[ q_{\pi}(s, A)\right]=v_{\pi}(s), s \in S
+\end{aligned}
+\tag{10.6}</script><p>Interestingly, this suboptimal baseline is the state value.</p>
+<h4 id="10-2-2-Algorithm-description"><a href="#10-2-2-Algorithm-description" class="headerlink" title="10.2.2 Algorithm description"></a>10.2.2 Algorithm description</h4><p>When $b(s) = v_{\pi} (s)$, the gradient-ascent algorithm in (10.1) becomes</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\theta_{t+1} &=\theta_t +\alpha \mathbb{E}_{S \sim \eta,A \sim \pi}\left[ \nabla_{\theta}\ln\pi(A|S,\theta_t)\overbrace{[q_{\pi}(S,A)-v_{\pi}(S)]}^{Advantage  function}\right]\\
+&=\theta_t +\alpha \mathbb{E}_{S \sim \eta,A \sim \pi}\left[ \nabla_{\theta}\ln\pi(A|S,\theta_t)\delta_{\pi}(S,A)\right]\\
+&\approx \textcolor{green}{\theta_t +\alpha \nabla_{\theta}\ln\pi(a_t|s_t,\theta_t)[q_{t}(s_t,a_t)-v_t(s_t)]\text{  ( stochastic version)}}
+\end{aligned}
+\tag{10.7}</script><p>More specifically, note that $v_{\pi}(s) = \sum_{a \in A} \pi(a|s)q_{\pi}(s,a)$ is the mean of the action values. If $\delta_{\pi}(s,a) &gt; 0$, it means that the corresponding action has a greater value than the mean value.</p>
+<p>Here, $q_t(s_t, a_t)$ and $v_t(s_t)$ are approximations of $q_{\pi(\theta_t)}(s_t,a_t)$ and $v_{\pi(\theta_t)}(s_t)$, respectively. The algorithm in (10.7) updates the policy based on <strong>the relative value</strong> of $q_t$ with respect to $v_t$ rather than the absolute value of $q_t$. This is intuitively reasonable because, when we attempt to select an action at a state, we only care about which action has the greatest value relative to the others.<br>If $q_t(s_t, a_t)$ and $v_t(s_t)$ are estimated by Monte Carlo learning, the algorithm in (10.7) is called <strong><em>REINFORCE with a baseline</em></strong>. If $q_t(s_t, a_t)$ and $v_t(s_t)$ are estimated by TD learning, the algorithm is usually called <strong><em>advantage actor-critic (A2C)</em></strong>. The implementation of A2C is summarized in Algorithm 10.2.<br>the advantage function in this implementation is approximated by the TD error:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&q_{t}(s_t,a_t)-v_t(s_t)\approx r_{t+1} + \gamma v_t(s_{t+1})-v_t(s_t)\\
+\text{Because : }  &q_{\pi}(s_t,a_t)-v_{\pi}(s_t)=\mathbb{E}\left[R_{t+1}+\gamma v_{\pi}(S_{t+1}-v_{\pi}(S_{t})| S_t = s_t, A_t = a_t) \right]
+\end{aligned}</script><p>One merit of using the TD error is that we only need to use a single neural network to represent $v_{\pi} (s)$. Otherwise,  we need to maintain two networks to represent $q_{\pi}(s, a)$ and $v_{\pi}(s)$, respectively. The algorithm may also be called TD actor critic. In addition, it is notable that the policy $\pi(\theta_t)$ is stochastic and hence exploratory. Therefore, it can be directly used to generate experience samples without relying on techniques such as $\epsilon$-greedy. There are some variants of A2C such as asynchronous advantage actor-critic (A3C). Interested readers may check <sup><a href="#fn_2" id="reffn_2">2</a></sup><sup><a href="#fn_3" id="reffn_3">3</a></sup>.<br><img src="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-06-07-23-24-30.png" alt=""></p>
+<blockquote id="fn_2">
+<sup>2</sup>. V. Mnih, A. P. Badia, M. Mirza, A. Graves, T. Lillicrap, T. Harley, D. Silver, and K. Kavukcuoglu, Asynchronous methods for deep reinforcement learning, in International Conference on Machine Learning, pp. 19281937, 2016.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. M. Babaeizadeh, I. Frosio, S. Tyree, J. Clemons, and J. Kautz, Reinforcement learning through asynchronous advantage actor-critic on a GPU, arXiv:1611.06256, 2016.<a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
+</blockquote>
+<h3 id="10-3-Off-policy-actor-critic"><a href="#10-3-Off-policy-actor-critic" class="headerlink" title="10.3 Off-policy actor-critic"></a>10.3 Off-policy actor-critic</h3><p>we can employ a technique called importance sampling. It is worth mentioning that the importance sampling technique is not restricted to the field of reinforcement learning. It is a general technique for estimating expected values defined over one probability distribution using some samples drawn from another distribution.</p>
+<p>The advantage of off-policy compared to on-policy is that it can ensure that the converged policy in a stata will not diverge again, and the convergence is guaranteed. However, there will be a loss in exploration, which is inevitable.</p>
+<p>_Question:off-policy actor-critic算法的优点是什么？为什么要提出off-policy算法？<strong>（Hint：强化学习要解决的本质问题是exploration-exploitation）</strong></p>
+<blockquote>
+<p>注：在实践中，由于Off-Policy Actor-Critic算法中actor和critic参数更新的步长中含有</p>
+<script type="math/tex; mode=display">
+\frac{\pi(a_t\|s_t,\theta_t)}{\beta(
+a_t\|s_t)}</script><p>因此当采样策略与优化策略差距过大时（尤其当因此当采样策略与优化策略差距过大时（尤其当$\pi(\theta)与\beta$差异较大时，参数更新公式中的重要性因子会导致梯度爆炸），算法效果不佳（可以考虑PPO对优化目标添加正则项裁切梯度，或考虑DPG避免对动作值进行直接采样）</p>
+</blockquote>
+<h4 id="10-3-1-Importance-sampling"><a href="#10-3-1-Importance-sampling" class="headerlink" title="10.3.1 Importance sampling"></a>10.3.1 Importance sampling</h4><script type="math/tex; mode=display">
+\mathbb{E}_{x \sim p_0}[X]=\sum_{x \in X}p_0(x)x=\sum_{x \in X}p_1(x)\underbrace{\frac{p_0(x)}{p_1(x)} x}_{f(x)}=\mathbb{E}_{x \sim p_1}[f(X)]</script><script type="math/tex; mode=display">
+\mathbb{E}_{x \sim p_0}[X]=\mathbb{E}_{x \sim p_1}[f(X)]\approx \bar{f}=\frac{1}{n}\sum_{i=1}^n f(x_i)p_0(x)x=\frac{1}{n}\sum_{i=1}^n \underbrace{\frac{p_0(x)}{p_1(x)}}_{\text{importance weight}}x_i</script><p>$\frac{p_0(x)}{p_1(x)}$ is called the importance weight(it need be set). When $p_1 = p_0$, the importance weight is 1 and $\bar{f}$ becomes $\bar{x}$. When $p_0(x_i) ≥ p_1(x_i)$, $x_i$ can be sampled more frequently by $p_0$ but less frequently by $p_1$. In this case, the importance weight, which is greater than one, emphasizes the importance of this sample. $p_0$ is target policy, $p_1$ is behaviors policy</p>
+<p><strong>The importance weight can be understood as follows: the samples corresponding to $p_0$ being large but $p_1$being small are more important, while the samples corresponding to $p_0$ being small but $p_1$ being large become less important.</strong></p>
+<h4 id="10-3-2-The-off-policy-policy-gradient-theorem"><a href="#10-3-2-The-off-policy-policy-gradient-theorem" class="headerlink" title="10.3.2 The off-policy policy gradient theorem"></a>10.3.2 The off-policy policy gradient theorem</h4><p>With the importance sampling technique, we are ready to present the off-policy policy gradient theorem. Suppose that $\beta$ is a behavior policy. Our goal is to use the samples generated by $\beta$ to learn a target policy $\pi$ that can maximize the following metric:</p>
+<script type="math/tex; mode=display">
+J(\theta) = \sum_{s \in S}d_{\beta}(s)v_{\pi}(s)=\mathbb{E}_{S \sim d_{\beta}}\left[ v_{\pi}(S)\right]</script><script type="math/tex; mode=display">
+\nabla_{\theta}J(\theta) = \mathbb{E}_{S \sim \rho,A \sim \beta}\left[\underbrace{\frac{\pi(A | S,\theta)}{\beta(A | S)}}_{\text{importance weight}} \nabla_{\theta}\ln\pi(A|S,\theta_t)q_{\pi}(S,A)\right]</script><p><img src="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-08-29-10-30-15.png" alt=""><br>The gradient  is similar to that in the on-policy case in Theorem 9.1, but there are two differences. The first difference is the importance weight. The second difference is that $A ∼ β$ instead of $A ∼ π$.</p>
+<h4 id="10-3-3-Algorithm-description"><a href="#10-3-3-Algorithm-description" class="headerlink" title="10.3.3 Algorithm description"></a>10.3.3 Algorithm description</h4><script type="math/tex; mode=display">
+\nabla_{\theta}J(\theta) = \mathbb{E}_{S \sim \rho,A \sim \beta}\left[\frac{\pi(A | S,\theta)}{\beta(A | S)} \nabla_{\theta}\ln\pi(A|S,\theta_t)(q_{\pi}(S,A)-b(S))\right]</script><p>Because $\mathbb{E}\left[\frac{\pi(A | S,\theta)}{\beta(A | S)} \nabla_{\theta}\ln\pi(A|S,\theta_t)b(S)\right] = 0$ To reduce the estimation variance, we can select the baseline as $b(S) = v_{\pi}(S)$ and obtain</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\theta_{t+1} &=\theta_t +\alpha \mathbb{E}_{S \sim \eta,A \sim \pi}\left[\frac{\pi(A | S,\theta)}{\beta(A | S)}  \nabla_{\theta}\ln\pi(A|S,\theta_t)\overbrace{[q_{\pi}(S,A)-v_{\pi}(S)]}^{Advantage  function}\right]\\
+&=\theta_t +\alpha \mathbb{E}_{S \sim \eta,A \sim \pi}\left[ \frac{\pi(A | S,\theta)}{\beta(A | S)} \nabla_{\theta}\ln\pi(A|S,\theta_t)\delta_{\pi}(S,A)\right]\\
+&\approx \textcolor{green}{\theta_t +\alpha_{\theta} \frac{\pi(a_t|s_t,\theta_{t})}{\beta(a_t|s_t)} \nabla_{\theta}\ln\pi(a_t|s_t,\theta_t)[q_{t}(s_t,a_t)-v_t(s_t)]\text{ ( stochastic version)}}
+\\
+&\approx \textcolor{green}{\theta_t +\alpha_{\theta} \frac{\pi(a_t|s_t,\theta_{t})}{\beta(a_t|s_t)} \nabla_{\theta}\ln\pi(a_t|s_t,\theta_t)[r_{t+1}+\gamma v_t(s_{t+1})-v_t(s_t)]\text{ ( replaced by the TD error)}}
+\end{aligned}
+\tag{10.8}</script><p>Importance weight is included in both the critic and the actor.<br>It must be noted that, in addition to the actor, the critic is also converted from on-policy to off-policy by the importance sampling technique. In fact, importance sampling is a general technique that can be applied to both policy-based and value-based algorithms. Finally, Algorithm 10.3 can be extended in various ways to incorporate more techniques such as eligibility traces <sup><a href="#fn_4" id="reffn_4">4</a></sup>.<br><img src="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-08-29-12-21-34.png" alt=""><br><sup><a href="#fn_4" id="reffn_4">4</a></sup>:T. Degris, M. White, and R. S. Sutton, “Off-policy actor-critic,” arXiv:1205.4839,2012.</p>
+<h3 id="10-4-Deterministic-actor-critic"><a href="#10-4-Deterministic-actor-critic" class="headerlink" title="10.4 Deterministic actor-critic"></a>10.4 Deterministic actor-critic</h3><p>Up to now, the policies used in the policy gradient methods are all stochastic since it is required that $\pi(a|s, \theta) &gt; 0$ for every $(s, a)$. This section shows that deterministic policies can also be used in policy gradient methods. Here, “deterministic” indicates that, for any state, a single action is given a probability of one and all the other actions are given probabilities of zero. <strong>It is important to study the deterministic case since it is naturally off-policy and can effectively handle continuous action spaces and large scale action spaces.</strong></p>
+<p>We have been using $\pi(a|s, \theta)$ to denote a general policy, which can be either stochastic or deterministic. In this section, we use <script type="math/tex">a = \mu(s, \theta)</script> to specifically denote a deterministic policy. Different from $\pi$ which gives the probability of an action, $\mu$ directly gives the action since it is a mapping from $\mathbf{S}$ to $\mathbf{A}$. This deterministic policy can be represented by, for example, a neural network with $s$ as its input, $a$ as its output, and $\theta$ as its parameter. For the sake of simplicity, we often write $\mu(s, \theta)$ as $\mu(s)$ for short.</p>
+<h4 id="10-4-1-The-deterministic-policy-gradient-theorem"><a href="#10-4-1-The-deterministic-policy-gradient-theorem" class="headerlink" title="10.4.1 The deterministic policy gradient theorem"></a>10.4.1 The deterministic policy gradient theorem</h4><p>The policy gradient theorem introduced in the last chapter is only valid for stochastic policies. When we require the policy to be deterministic, a new policy gradient theorem must be derived.</p>
+<p><strong>Theorem 10.2</strong> (Deterministic policy gradient theorem). The gradient of $J(\theta)$ is</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla_{\theta}J(\theta) &=\sum_{s \in S}\eta(s)\nabla_{\theta}\mu(s)(\nabla_{a}q_{\mu}(s,a))|_{a=\mu(s)}\\
+&=\mathbb{E}_{S \sim \eta}\left[ \nabla_{\theta}\mu(S)(\nabla_{a}q_{\mu}(S,a))|_{a=\mu(S)}\right]
+\end{aligned}
+\tag{10.9}</script><p>where $\eta$ is a distribution of the states.<br>Unlike the stochastic case, the gradient in the deterministic case shown in (10.9) does not involve the action random variable $A$ (because $a=\mu(S)$). As a result, when we use samples to approximate the true gradient, it is not required to sample actions. Therefore, the deterministic policy gradient method is <em>off-policy</em>.</p>
+<p><strong>Theorem 10.3</strong> (Deterministic policy gradient theorem in the discounted case). in the discounted case where $γ ∈ (0, 1)$, the gradient of $J(θ)$  is </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla_{\theta}J(\theta) &=\nabla_{\theta}\sum_{s \in S}d_0(s)v_{\mu}(s)\\
+&=\sum_{s \in S}\rho_{\mu}(s)\nabla_{\theta}\mu(s)(\nabla_{a}q_{\mu}(s,a))|_{a=\mu(s)}\\
+&=\mathbb{E}_{S \sim \rho_{\mu}}\left[ \nabla_{\theta}\mu(S)(\nabla_{a}q_{\mu}(S,a))|_{a=\mu(S)}\right]
+\end{aligned}
+\tag{10.10}</script><p><img src="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-08-29-22-04-15.png" alt=""></p>
+<p><strong>Theorem 10.4</strong> (Deterministic policy gradient theorem in the undiscounted case). In the undiscounted case, the gradient of $J(θ)$ is</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\nabla_{\theta}J(\theta) &=\nabla_{\theta}\sum_{s \in S}d_{\mu}(s)v_{\mu}(s)\\
+&=\sum_{s \in S}d_{\mu}(s)\nabla_{\theta}\mu(s)(\nabla_{a}q_{\mu}(s,a))|_{a=\mu(s)}\\
+&=\mathbb{E}_{S \sim d_{\mu}}\left[ \nabla_{\theta}\mu(S)(\nabla_{a}q_{\mu}(S,a))|_{a=\mu(S)}\right]\text{(stochastic gradient-ascent)}
+\end{aligned}
+\tag{10.11}</script><p>where $d_{\mu}$ is the stationary distribution of the states under policy $\mu$.</p>
+<h4 id="10-4-2-Algorithm-description"><a href="#10-4-2-Algorithm-description" class="headerlink" title="10.4.2 Algorithm description"></a>10.4.2 Algorithm description</h4><script type="math/tex; mode=display">
+\begin{aligned}
+\theta_{t+1} &=\theta_{t}+ \alpha_{\theta}\mathbb{E}_{S \sim \eta}[\nabla_{\theta}\mu(S)(\nabla_{a}q_{\mu}(S,a))|_{a=\mu(S)}]\\
+&\approx\theta_{t}+ \alpha_{\theta}\nabla_{\theta}\mu(s_t)(\nabla_{a}q_{\mu}(s_t,a))|_{a=\mu(s_t)}\\
+&=\theta_{t}+ \alpha_{\theta}\nabla_{\theta}q_{\mu}(s_t,\mu(s_t))
+\end{aligned}
+\tag{10.12}</script><p>It should be noted that this algorithm is off-policy since the behavior policy $β$ may be different from $µ$. First, the actor is off-policy. We already explained the reason when presenting Theorem 10.2.<br>Second, the critic is also off-policy. Special attention must be paid to why the critic is off-policy but does not require the importance sampling technique. In particular, the experience sample required by the critic is $(s_t, a_t, r_{t+1}, s_{t+1}, \textcolor{red}{\tilde{a}_{t+1}})$, where $\tilde{a}_{t+1} = µ(s_{t+1})$. The generation of this experience sample involves two policies. The first is the policy for generating $a_t$ at $s_t$, and the second is the policy for generating $\tilde{a}_{t+1}$ at $s_{t+1}$. The first policy that generates $a_t$ is the behavior policy since $a_t$ is used to interact with the environment. The second policy must be $µ$ because it is the policy that the critic aims to evaluate. Hence, $µ$ is the target policy. It should be noted that $\tilde{a}_{t+1}$ is not used to interact with the environment in the next time step. Hence, $µ$ is not the behavior policy. Therefore, the critic is off-policy.</p>
+<p>How to select the function $q(s, a, w)$? The original research work <sup><a href="#fn_5" id="reffn_5">5</a></sup> that proposed the deterministic policy gradient method adopted linear functions: $q(s, a, w) = φT(s, a)w$ where $φ(s, a)$ is the feature vector. It is currently popular to represent $q(s, a, w)$ using neural networks, as suggested in the deep deterministic policy gradient (DDPG) method<sup><a href="#fn_6" id="reffn_6">6</a></sup>.<br>How to select the behavior policy $β$? It can be any exploratory policy. It can also be a stochastic policy obtained by adding noise to $µ$ <sup><a href="#fn_6" id="reffn_6">6</a></sup>. In this case, $µ$ is also the behavior policy and hence this way is an on-policy implementation.</p>
+<blockquote id="fn_5">
+<sup>5</sup>. D. Silver, G. Lever, N. Heess, T. Degris, D. Wierstra, and M. Riedmiller, “Deterministic policy gradient algorithms,” in International Conference on Machine Learning, pp. 387–395, 2014.<a href="#reffn_5" title="Jump back to footnote [5] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. T. P. Lillicrap, J. J. Hunt, A. Pritzel, N. Heess, T. Erez, Y. Tassa, D. Silver, and D. Wierstra, “Continuous control with deep reinforcement learning,” arXiv:1509.02971, 2015.<a href="#reffn_6" title="Jump back to footnote [6] in the text."> ↩</a>
+</blockquote>
+<p><img src="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/2024-08-29-22-24-05.png" alt=""></p>
+<p>DPG算法优点：</p>
+<ul>
+<li>能够处理具有无限元素的动作集合，提高算法的泛化性与训练效率</li>
+<li><p>由于无需直接对动作进行采样，因此是off-policy算法，同时能够避免重要性因子过大导致的梯度爆炸（不恰当的采样策略会导致其与目标策略之间的分布间差异过大）</p>
+<ul>
+<li><p>原因：DPG算法利用梯度上升优化的目标函数表达式为：</p>
+<script type="math/tex; mode=display">
+E(\nabla_{\theta}\mu(S)(\nabla_a q_S,a=\mu(S)))</script><p>可以观察到<strong>真实梯度中并不包含对动作值的采样</strong>（取而代之的是由Actor Net直接输出的动作值估计），因此是off-policy算法</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>Question：DPG在数学意义上解决什么问题？与前述stochastic policy gradient算法的critic求解的数学问题有什么不同？（Hint：观察TD Error）</em></p>
+<blockquote>
+<p>注：考虑到DPG中Actor的输出为动作本身，因此选择gym提供的具有连续动作空间的Pendulum环境进行测试</p>
+<p>思考：</p>
+<ol>
+<li>On-policy和Off-policy分别适用于解决什么类型的任务？为什么？<br><em>答：On-policy适合解决给定起始状态和终点状态之间最优‘路径’一类问题，Off-policy适合求解任意状态的最优策略。这是由于On-policy算法的behavior policy和target policy是同一个，因此无法保证充分地探索每一个‘状态-动作’对；而Off-policy算法的前述两类policy并非同一个，因此可以选择随机性较强的behavior policy（例如均匀随机策略）来充分探索。</em></li>
+<li>Online和Offline算法分别适用于解决什么类型的任务？为什么？<em>答：Online算法适合样本量较少情况下的学习任务，诸多算法都利用了Generalized Policy Iteration的思想，效率较高；Offline算法适合已经拥有大量样本的情况，因为利用模拟仿真的方法（例如，Monte-Carlo）采样效率较低。</em></li>
+</ol>
+</blockquote>
+<h3 id="10-5-Summary"><a href="#10-5-Summary" class="headerlink" title="10.5 Summary"></a>10.5 Summary</h3><p>In this chapter, we introduced actor-critic methods. The contents are summarized as follows.</p>
+<p>Section 10.1 introduced the simplest actor-critic algorithm called QAC. This algorithm is similar to the policy gradient algorithm, REINFORCE, introduced in the last chapter. The only difference is that the q-value estimation in QAC relies on TD learning while REINFORCE relies on Monte Carlo estimation.</p>
+<p>Section 10.2 extended QAC to advantage actor-critic. It was shown that the policy gradient is invariant to any additional baseline. It was then shown that an optimal baseline could help reduce the estimation variance.</p>
+<p>Section 10.3 further extended the advantage actor-critic algorithm to the off-policy case. To do that, we introduced an important technique called importance sampling.</p>
+<p>Finally, while all the previously presented policy gradient algorithms rely on stochastic policies, we showed in Section 10.4 that the policy can be forced to be deterministic. The corresponding gradient was derived, and the deterministic policy gradient algorithm was introduced.</p>
+<p>Policy gradient and actor-critic methods are widely used in modern reinforcement learning. There exist a large number of advanced algorithms in the literature such as SAC <sup><a href="#fn_7" id="reffn_7">7</a></sup> <sup><a href="#fn_8" id="reffn_8">8</a></sup>, TRPO <sup><a href="#fn_9" id="reffn_9">9</a></sup>, PPO <sup><a href="#fn_10" id="reffn_10">10</a></sup>, and TD3 <sup><a href="#fn_11" id="reffn_11">11</a></sup>. In addition, the single-agent case can also be extended to the case of multi-agent reinforcement learning <sup><a href="#fn_12" id="reffn_12">12</a></sup> <sup><a href="#fn_13" id="reffn_13">13</a></sup> <sup><a href="#fn_14" id="reffn_14">14</a></sup> <sup><a href="#fn_15" id="reffn_15">15</a></sup> <sup><a href="#fn_16" id="reffn_16">16</a></sup>. Experience samples can also be used to fit system models to achieve model-based reinforcement learning <sup><a href="#fn_17" id="reffn_17">17</a></sup> <sup><a href="#fn_18" id="reffn_18">18</a></sup> <sup><a href="#fn_19" id="reffn_19">19</a></sup>. Distributional reinforcement learning provides a fundamentally different perspective from the conventional one <sup><a href="#fn_20" id="reffn_20">20</a></sup> <sup><a href="#fn_21" id="reffn_21">21</a></sup>. The relationships between reinforcement learning and control theory have been discussed in <sup><a href="#fn_22" id="reffn_22">22</a></sup> <sup><a href="#fn_23" id="reffn_23">23</a></sup> <sup><a href="#fn_24" id="reffn_24">24</a></sup> <sup><a href="#fn_25" id="reffn_25">25</a></sup> <sup><a href="#fn_26" id="reffn_26">26</a></sup> <sup><a href="#fn_27" id="reffn_27">27</a></sup>. This book is not able to cover all these topics. Hopefully, the foundations laid by this book can help readers better study them in the future.</p>
+<blockquote id="fn_7">
+<sup>7</sup>. T. Haarnoja, A. Zhou, P. Abbeel, and S. Levine, “Soft actor-critic: Off-policy maximum entropy deep reinforcement learning with a stochastic actor,” in International Conference on Machine Learning, pp. 1861–1870, 2018.<a href="#reffn_7" title="Jump back to footnote [7] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_8">
+<sup>8</sup>. T. Haarnoja, A. Zhou, K. Hartikainen, G. Tucker, S. Ha, J. Tan, V. Kumar, H. Zhu, A. Gupta, and P. Abbeel, “Soft actor-critic algorithms and applications,” arXiv:1812.05905, 2018.<a href="#reffn_8" title="Jump back to footnote [8] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_9">
+<sup>9</sup>. J. Schulman, S. Levine, P. Abbeel, M. Jordan, and P. Moritz, “Trust region policy optimization,” in International Conference on Machine Learning, pp. 1889–1897, 2015.<a href="#reffn_9" title="Jump back to footnote [9] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_10">
+<sup>10</sup>. J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, “Proximal policy optimization algorithms,” arXiv:1707.06347, 2017.<a href="#reffn_10" title="Jump back to footnote [10] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_11">
+<sup>11</sup>. S. Fujimoto, H. Hoof, and D. Meger, “Addressing function approximation error in actor-critic methods,” in International Conference on Machine Learning, pp. 1587–1596, 2018.<a href="#reffn_11" title="Jump back to footnote [11] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_12">
+<sup>12</sup>. J. Foerster, G. Farquhar, T. Afouras, N. Nardelli, and S. Whiteson, “Counterfactual multi-agent policy gradients,” in AAAI Conference on Artificial Intelligence,vol. 32, 2018<a href="#reffn_12" title="Jump back to footnote [12] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_13">
+<sup>13</sup>. R. Lowe, Y. I. Wu, A. Tamar, J. Harb, O. Pieter Abbeel, and I. Mordatch, “Multiagent actor-critic for mixed cooperative-competitive environments,” Advances in Neural Information Processing Systems, vol. 30, 2017.<a href="#reffn_13" title="Jump back to footnote [13] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_14">
+<sup>14</sup>. Y. Yang, R. Luo, M. Li, M. Zhou, W. Zhang, and J. Wang, “Mean field multiagent reinforcement learning,” in International Conference on Machine Learning, pp. 5571–5580, 2018.<a href="#reffn_14" title="Jump back to footnote [14] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_15">
+<sup>15</sup>. O. Vinyals, I. Babuschkin, W. M. Czarnecki, M. Mathieu, A. Dudzik, J. Chung, D. H. Choi, R. Powell, T. Ewalds, P. Georgiev, et al., “Grandmaster level in StarCraft II using multi-agent reinforcement learning,” Nature, vol. 575, no. 7782, pp. 350–354, 2019.<a href="#reffn_15" title="Jump back to footnote [15] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_16">
+<sup>16</sup>. Y. Yang and J. Wang, “An overview of multi-agent reinforcement learning from game theoretical perspective,” arXiv:2011.00583, 2020.<a href="#reffn_16" title="Jump back to footnote [16] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_17">
+<sup>17</sup>. F.-M. Luo, T. Xu, H. Lai, X.-H. Chen, W. Zhang, and Y. Yu, “A survey on modelbased reinforcement learning,” arXiv:2206.09328, 2022.<a href="#reffn_17" title="Jump back to footnote [17] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_18">
+<sup>18</sup>. S. Levine and V. Koltun, “Guided policy search,” in International Conference on Machine Learning, pp. 1–9, 2013.<a href="#reffn_18" title="Jump back to footnote [18] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_19">
+<sup>19</sup>. M. Janner, J. Fu, M. Zhang, and S. Levine, “When to trust your model: Modelbased policy optimization,” Advances in Neural Information Processing Systems, vol. 32, 2019<a href="#reffn_19" title="Jump back to footnote [19] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_20">
+<sup>20</sup>. M. G. Bellemare, W. Dabney, and R. Munos, “A distributional perspective on reinforcement learning,” in International Conference on Machine Learning, pp. 449–458, 2017.<a href="#reffn_20" title="Jump back to footnote [20] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_21">
+<sup>21</sup>. M. G. Bellemare, W. Dabney, and M. Rowland, Distributional Reinforcement Learning. MIT Press, 2023<a href="#reffn_21" title="Jump back to footnote [21] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_22">
+<sup>22</sup>. H. Zhang, D. Liu, Y. Luo, and D. Wang, Adaptive dynamic programming for control:algorithms and stability. Springer Science &amp; Business Media, 2012.<a href="#reffn_22" title="Jump back to footnote [22] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_23">
+<sup>23</sup>. F. L. Lewis, D. Vrabie, and K. G. Vamvoudakis, “Reinforcement learning and feedback control: Using natural decision methods to design optimal adaptive controllers,” IEEE Control Systems Magazine, vol. 32, no. 6, pp. 76–105, 2012.<a href="#reffn_23" title="Jump back to footnote [23] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_24">
+<sup>24</sup>. F. L. Lewis and D. Liu, Reinforcement learning and approximate dynamic programming for feedback control. John Wiley&amp;Sons, 2013.<a href="#reffn_24" title="Jump back to footnote [24] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_25">
+<sup>25</sup>. Z.-P. Jiang, T. Bian, and W. Gao, “Learning-based control: A tutorial and some recent results,” Foundations and Trends in Systems and Control, vol. 8, no. 3, pp. 176–284, 2020.<a href="#reffn_25" title="Jump back to footnote [25] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_26">
+<sup>26</sup>. S. Meyn, Control systems and reinforcement learning. Cambridge University Press, 2022.<a href="#reffn_26" title="Jump back to footnote [26] in the text."> ↩</a>
+</blockquote>
+<blockquote id="fn_27">
+<sup>27</sup>. S. E. Li, Reinforcement learning for sequential decision and optimal control. Springer, 2023.<a href="#reffn_27" title="Jump back to footnote [27] in the text."> ↩</a>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+<div> 
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>Article:</span>Mathematical Foundation of Reinforcement Learning — REINFORCE and AC algorithms</a></p>
+  <p><span>Author:</span>Ming Huang</a></p>
+  <p><span>Release time：</span>2024-08-11   09:06:36</p>
+  <p><span>Updat time:</span>2024-10-23   13:46:48</p>
+  <p><span>Original link:</span><a href="/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/" title="Mathematical Foundation of Reinforcement Learning — REINFORCE and AC algorithms">https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/</a>
+    <span class="copy-path"  title="Click to copy the article link"><i class="fa fa-clipboard" data-clipboard-text="https://www.huangm.cn/2024/08/11/Mathmatical-Foundation-of-Reinforcement-Learning-REINFORCE-and-AC-algorithms/"  aria-label="Copy successful!"></i></span>
+  </p>
+  <p><span>license agreement:</span><i class="fa fa-creative-commons" /></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"> (CC BY-NC-ND 4.0)</a> Please keep the original link and author when reprinting.</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",
+          text: 'Copy successful',
+          html: false,
+          timer: 500,
+          showConfirmButton: false
+        });
+      });
+    }));
+</script>
+ </div>
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/08/10/Mathmatical-Foundation-of-Reinforcement-Learning-DQN-algorithm/" rel="prev" title="Mathematical Foundation of Reinforcement Learning-DQN algorithm">
+      <i class="fa fa-chevron-left"></i> Mathematical Foundation of Reinforcement Learning-DQN algorithm
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Policy-Gradient-Methods"><span class="nav-text">9 Policy Gradient Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-Policy-representation-From-table-to-function"><span class="nav-text">9.1 Policy representation:From table to function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-Metrics-for-defining-optimal-policies"><span class="nav-text">9.2 Metrics for defining optimal policies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-Gradients-of-the-metrics"><span class="nav-text">9.3 Gradients of the metrics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3-1-Derivation-of-the-gradients-in-the-discounted-case"><span class="nav-text">9.3.1 Derivation of the gradients in the discounted case</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3-2-Derivation-of-the-gradients-in-the-undiscounted-case"><span class="nav-text">9.3.2 Derivation of the gradients in the undiscounted case</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-Monte-Carlo-policy-gradient-REINFORCE"><span class="nav-text">9.4 Monte Carlo policy gradient (REINFORCE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5-Summary"><span class="nav-text">9.5 Summary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Actor-Critic-Methods"><span class="nav-text">10 Actor-Critic Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-The-simplest-actor-critic-algorithm-QAC"><span class="nav-text">10.1 The simplest actor-critic algorithm (QAC)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-Advantage-actor-critic-A2C"><span class="nav-text">10.2 Advantage actor-critic (A2C)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-1-Baseline-invariance"><span class="nav-text">10.2.1 Baseline invariance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-2-Algorithm-description"><span class="nav-text">10.2.2 Algorithm description</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-3-Off-policy-actor-critic"><span class="nav-text">10.3 Off-policy actor-critic</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-3-1-Importance-sampling"><span class="nav-text">10.3.1 Importance sampling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-3-2-The-off-policy-policy-gradient-theorem"><span class="nav-text">10.3.2 The off-policy policy gradient theorem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-3-3-Algorithm-description"><span class="nav-text">10.3.3 Algorithm description</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-4-Deterministic-actor-critic"><span class="nav-text">10.4 Deterministic actor-critic</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-4-1-The-deterministic-policy-gradient-theorem"><span class="nav-text">10.4.1 The deterministic policy gradient theorem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-4-2-Algorithm-description"><span class="nav-text">10.4.2 Algorithm description</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-5-Summary"><span class="nav-text">10.5 Summary</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ming Huang"
+      src="/images/pic.png">
+  <p class="site-author-name" itemprop="name">Ming Huang</p>
+  <div class="site-description" itemprop="description">Let’s do something extraordinary together.</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://bit.edu.cn/" title="Beijing Institute of Technology → https:&#x2F;&#x2F;bit.edu.cn&#x2F;" rel="noopener" target="_blank"><i class="fa fa-university fa-fw"></i>Beijing Institute of Technology</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://scholar.google.com.hk/citations?user=nDvJ6BUAAAAJ&hl=en/" title="Google Scholar → https:&#x2F;&#x2F;scholar.google.com.hk&#x2F;citations?user&#x3D;nDvJ6BUAAAAJ&amp;hl&#x3D;en&#x2F;" rel="noopener" target="_blank"><i class="fa fa-graduation-cap fa-fw"></i>Google Scholar</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:huangming98@163.com" title="E-Mail → mailto:huangming98@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://orcid.org/0000-0001-9146-4721" title="ORCID → https:&#x2F;&#x2F;orcid.org&#x2F;0000-0001-9146-4721" rel="noopener" target="_blank"><i class="fa fa-id-card fa-fw"></i>ORCID</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/huangming98" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huangming98" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+
+<script src="/js/switch_language.js"></script>
+      </div>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=1941963749&auto=1&height=66"></iframe>
+
+    </div>
+  </aside>
+
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022.09— 
+  <span itemprop="copyrightYear">2025.11</span>
+  
+   
+</div>
+  <div class="powered-by"><p style="color:rgb(0,0,255,0.8);font-size:1.2em;font-weight:bold;font-family:Arial">Do not be afraid of making mistakes, only of missing opportunities!</p>
+  </div>
+
+<!-- Insert clustrmaps.com -->
+<!-- <a target="_blank" rel="noopener" href='https://clustrmaps.com/site/1bqbj' ><img src='//clustrmaps.com/map_v2.png?cl=555555&w=350&t=m&d=b6-cOzsyxmN07VPEXlJO1PaWKRLFhE6feh1y5oiN1Hw&co=f5f5f5&ct=555555'/></a> -->
+
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/01/2023 10:00:00"); //此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "<br />This website is as worthless as hundreds of daily chores, but I still hope it will be helpful to you! <br /> It's been running quietly for  "+dnum+" days ";
+        document.getElementById("times").innerHTML = hnum + " hours " + mnum + " minutes " + snum + " seconds.";
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto:300,300italic,400,400italic,700,700italic|JetBrains Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.huangm.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","Muse | Mist":180,"width":250,"display":"always","padding":20,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":"ture","lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Learning Notes for the Course of &quot;Mathematical Foundation of Reinforcement Learning&quot;（4~5）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mathematical Foundation of Reinforcement Learning - Algorithms (model-based &amp; non-incremental)">
+<meta property="og:url" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/index.html">
+<meta property="og:site_name" content="Ming Huang&#39;s Homepage">
+<meta property="og:description" content="Learning Notes for the Course of &quot;Mathematical Foundation of Reinforcement Learning&quot;（4~5）">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/grid%20world.jpg">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-14-56-27.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-15-30-58.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-15-35-44.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-15-38-37.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-15-40-35.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-15-42-50.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-22-16-46-51.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-14-11-53.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-14-21-24.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-14-43-23.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-14-43-51.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-15-13-25.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-16-20-44.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-16-38-23.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-16-38-43.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-16-53-15.png">
+<meta property="og:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-16-53-33.png">
+<meta property="article:published_time" content="2024-08-08T10:35:00.000Z">
+<meta property="article:modified_time" content="2024-10-23T03:55:18.000Z">
+<meta property="article:author" content="Ming Huang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/grid%20world.jpg">
+
+<link rel="canonical" href="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Mathematical Foundation of Reinforcement Learning - Algorithms (model-based & non-incremental) | Ming Huang's Homepage</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Ming Huang's Homepage</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/home" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-publications">
+
+    <a href="/publications/" rel="section"><i class="fa fa-book fa-fw"></i>Publications</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="fa fa-cloud fa-fw"></i>Resources</a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>Scholars Link</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Blog</a>
+
+  </li>
+        <li class="menu-item menu-item-switch-to-chinese">
+
+    <a href="https://www.huangm.cn/cn/" rel="section"><i class="fa fa-language fa-fw"></i>Switch to Chinese</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/pic.png">
+      <meta itemprop="name" content="Ming Huang">
+      <meta itemprop="description" content="Let’s do something extraordinary together.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ming Huang's Homepage">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mathematical Foundation of Reinforcement Learning - Algorithms (model-based & non-incremental)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-08-08 18:35:00" itemprop="dateCreated datePublished" datetime="2024-08-08T18:35:00+08:00">2024-08-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-10-23 11:55:18" itemprop="dateModified" datetime="2024-10-23T11:55:18+08:00">2024-10-23</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>29k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>53 mins.</span>
+            </span>
+            <div class="post-description">Learning Notes for the Course of "Mathematical Foundation of Reinforcement Learning"（4~5）</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[toc]</p>
+<h2 id="Reference-Sources"><a href="#Reference-Sources" class="headerlink" title="Reference Sources:"></a>Reference Sources:</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/MathFoundationRL/Book-Mathmatical-Foundation-of-Reinforcement-Learning"><em>Shiyu Zhao</em>. 《Mathematical Foundation of Reinforcement Learning》Chapter 4-5</a>.</li>
+<li><a target="_blank" rel="noopener" href="https://spinningup.openai.com/en/latest/spinningup/rl_intro.html#">OpenAI Spinning Up</a></li>
+<li><a target="_blank" rel="noopener" href="https://lyk-love.cn/tags/reinforcement-learning/">Lu yukuan’s notes</a></li>
+</ol>
+<h2 id="4-Value-iteration-and-policy-iteration-dynamic-programming-algorithms"><a href="#4-Value-iteration-and-policy-iteration-dynamic-programming-algorithms" class="headerlink" title="4. Value iteration and policy iteration(dynamic programming algorithms)"></a>4. Value iteration and policy iteration(dynamic programming algorithms)</h2><h3 id="4-1-Value-iteration"><a href="#4-1-Value-iteration" class="headerlink" title="4.1 Value iteration"></a>4.1 Value iteration</h3><div align="center"><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/grid%20world.jpg" width="50%" alt="Figure 1.2: The grid world example is used throughout the book."></div>
+
+
+<p>The value iteration algorithm is <strong>exactly</strong> the algorithm suggested by the contraction mapping theorem for solving the Bellman optimality equation (BOE).</p>
+<p>The BOE Solution algorithm is</p>
+<script type="math/tex; mode=display">
+\begin{equation} 
+v_{k+1}=\max _{\pi \in \Pi}\left(r_\pi+\gamma P_\pi v_k\right), \quad k=0,1,2, \ldots
+\end{equation}</script><p>It is guaranteed  that $v_k$ and $\pi_k$ converge to the optimal state value and an optimal policy as $k \rightarrow \infty$, respectively.</p>
+<p>value iteration is an iterative algorithm. Each iteration has two steps.<br><strong>Step 1</strong>: policy update($v_k$ → $\pi_{k+1}$). This step is to solve</p>
+<script type="math/tex; mode=display">
+\begin{equation} 
+\pi_{k+1}=\arg \max _\pi\left(r_\pi+\gamma P_\pi v_k\right)
+\end{equation}</script><p>where $v_k$ is obtained in the previous iteration.$v_0$ can be random setting.</p>
+<p><strong>Step 2</strong>: value update($v_k$,$\pi_{k+1}$ → $v_{k+1}$). </p>
+<script type="math/tex; mode=display">
+\begin{equation} 
+v_{k+1}=r_{\pi_{k+1}}+\gamma P_{\pi_{k+1}} v_k,
+\end{equation}</script><p>where $v_{k+1}$ will be used in the next iteration.</p>
+<p>The value iteration algorithm introduced above is in a matrix-vector form. It’s useful for understanding the core idea of the algorithm. To implement this algorithm, we need to further examine its elementwise form.</p>
+<hr>
+<p><strong>Step 1</strong>: Policy update(elementwise form)</p>
+<p>The elementwise form of $\pi_{k+1}$ is</p>
+<script type="math/tex; mode=display">
+\pi_{k+1}(s)=\arg \max _\pi \sum_a \pi(a \mid s) \underbrace{\left(\sum_r p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_k\left(s^{\prime}\right)\right)}_{q_k(s, a)}, \quad s \in \mathcal{S}</script><p>The optimal policy solving the above optimization problem is</p>
+<script type="math/tex; mode=display">
+\pi_{k+1}(a \mid s)=\left\{\begin{array}{cc}
+1 & a=a_k^*(s) \\
+0 & a \neq a_k^*(s)
+\end{array}\right.</script><p>where $a_k^<em>(s)=\arg \max _a q_k(a, s).<br>\pi_{k+1}$ is called a <em>*greedy</em></em> policy, since it simply selects the greatest q-value.</p>
+<p><strong>Step 2</strong>: Value update(elementwise form)</p>
+<p>The elementwise form of $v_{k+1}$ is</p>
+<script type="math/tex; mode=display">
+v_{k+1}(s)=\sum_a \pi_{k+1}(a \mid s) \underbrace{\left(\sum_r p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_k\left(s^{\prime}\right)\right)}_{q_k(s, a)}, \quad s \in \mathcal{S}</script><p>Since $\pi_{k+1}$ is greedy, the above equation is simply</p>
+<script type="math/tex; mode=display">
+v_{k+1}(s)=\max _a q_k(a, s)</script><p><u><strong>Procedure summary:</strong></u></p>
+<p><strong>$v_k(s) \rightarrow q_k(s, a) \rightarrow$ new greedy policy $\pi_{k+1}(a \mid s) \rightarrow$ new value $v_{k+1}=\max _a q_k(s, a)$</strong></p>
+<div align="center"><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-14-56-27.png" width="90%" alt="Algorithm 4.1: Value iteration algorithm"></div>
+
+
+<p>Note: Although $v_k$ eventually converges to the optimal state value , it is <strong>not</strong> a state value, it doesn’t ensure to satisfy the Bellman equation($ v_k=r_{\pi_{k+1}}+\gamma P_{\pi_{k+1}} v_k$ or $v_k=r_{\pi_{k}}+\gamma P_{\pi_{k}} v_k$). It is merely an intermediate value generated by the algorithm. In addition, since $v_k$ is not a state value,$q_k$ is not an action value. <strong> $v_k$ can be seen as State value that has not yet converged, which be calculated only once</strong>.</p>
+<h3 id="4-2-Policy-iteration"><a href="#4-2-Policy-iteration" class="headerlink" title="4.2 Policy iteration"></a>4.2 Policy iteration</h3><p>Policy iteration is an iterative algorithm. Each iteration has two steps.</p>
+<p>Given a random initial policy $\pi_0$, in each policy iteration we do</p>
+<ol>
+<li><p><strong>policy evaluation (PE)</strong><br>That is to solve the following Bellman equation:</p>
+<script type="math/tex; mode=display">
+\begin{equation} 
+v_{\pi_k}=r_{\pi_k}+\gamma P_{\pi_k} v_{\pi_k}
+\end{equation}</script><p><strong>$v_{\pi_k}$ is a state value function</strong>. So we need to get the state values for <strong>all states</strong>, not for one specific state, in PE.</p>
+</li>
+<li><p><strong>policy improvement (PI)</strong>:</p>
+<script type="math/tex; mode=display">
+\pi_{k+1}=\arg \max _\pi\left(r_\pi+\gamma P_\pi v_{\pi_k}\right)</script><p>The <em>maximization</em> is componentwise.</p>
+</li>
+</ol>
+<p>The policy iteration algorithm leads to a sequence</p>
+<script type="math/tex; mode=display">
+\pi_0 \stackrel{P E}{\longrightarrow} v_{\pi_0} \stackrel{P I}{\longrightarrow} \pi_1 \stackrel{P E}{\longrightarrow} v_{\pi_1} \stackrel{P I}{\longrightarrow} \pi_2 \stackrel{P E}{\longrightarrow} v_{\pi_2} \stackrel{P I}{\longrightarrow} \ldots \nonumber</script><p>Interestingly, policy iteration is an iterative algorithm with another iterative algorithm  embedded in the policy evaluation step. </p>
+<p>In theory, this embedded iterative algorithm requires an infinite number of steps (that is, $j \rightarrow \infty$ ) to converge to the true state value $v_{\pi_k}$. This is, however, <strong>impossible to realize</strong>. In practice, the iterative process terminates when a certain criterion is satisfied.</p>
+<p><strong>Theorem</strong> (Convergence of policy iteration). The state value sequence $\left\{v_{\pi_k}\right\}_{k=0}^{\infty}$ generated by the policy iteration algorithm <strong>converges</strong> to the optimal state value $v^*$. As a result, the policy sequence $\left\{\pi_k\right\}_{k=0}^{\infty}$ converges to an optimal policy.</p>
+<p><strong>Elementwise form and implementation</strong></p>
+<p><strong>Step 1</strong>: Policy evaluation(elementwise form)<br>The elementwise form is:</p>
+<script type="math/tex; mode=display">
+v_{\pi_k}^{(j+1)}(s)=\sum_a \pi_k(a \mid s)\left(\sum_r p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi_k}^{(j)}\left(s^{\prime}\right)\right), \quad s \in \mathcal{S}, \nonumber</script><p>Stop when $j \rightarrow \infty$ or $j$ is sufficiently large or $\left|v_{\pi_k}^{(j+1)}-v_{\pi_k}^{(j)}\right|$ is sufficiently small.</p>
+<p><strong>Step 2</strong>: Policy improvement(elementwise form)<br>Recalling the solution to do policy improvement with matrix-vector form: $\pi_{k+1}=\arg \max _\pi\left(r_\pi+\gamma P_\pi v_{\pi_k}\right)$</p>
+<p>The elementwise form is:</p>
+<script type="math/tex; mode=display">
+\pi_{k+1}(s)=\arg \max _\pi \sum_a \pi(a \mid s) \underbrace{\left(\sum_r p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi_k}\left(s^{\prime}\right)\right)}_{q_{\pi_k}(s, a)}, \quad s \in \mathcal{S} . \nonumber</script><p>Here, $q_{\pi_k}(s, a)$ is the action value under policy $\pi_k$. Let</p>
+<script type="math/tex; mode=display">
+a_k^*(s)=\arg \max _a q_{\pi_k}(a, s) \nonumber</script><p>Then, the greedy policy is</p>
+<script type="math/tex; mode=display">
+\pi_{k+1}(a \mid s)= \begin{cases}1 & a=a_k^*(s), \\ 0 & a \neq a_k^*(s) .\end{cases} \nonumber</script><p><u><strong>Procedure summary:</strong></u><br><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-15-30-58.png" alt="Algorithm 4.2: Policy iteration algorithm."></p>
+<h3 id="4-3-Truncated-policy-iteration"><a href="#4-3-Truncated-policy-iteration" class="headerlink" title="4.3 Truncated policy iteration"></a>4.3 Truncated policy iteration</h3><p>We will see that the value iteration and policy iteration algorithms are two special cases of the truncated policy iteration algorithm.</p>
+<p>The above steps of the two algorithms can be illustrated as</p>
+<p>Policy iteration: $\pi_0 \xrightarrow{P E} v_{\pi_0} \xrightarrow{P I} \pi_1 \xrightarrow{P E} v_{\pi_1} \xrightarrow{P I} \pi_2 \xrightarrow{P E} v_{\pi_2} \xrightarrow{P I} \ldots$.</p>
+<p>Value iteration: $\quad \quad  \quad  v_0 \xrightarrow{P U} \pi_1^{\prime} \xrightarrow{V U} v_1 \xrightarrow{P U} \pi_2^{\prime} \xrightarrow{V U} v_2 \xrightarrow{P U} \ldots$</p>
+<p>It can be seen that the procedures of the two algorithms are very similar.<br>We examine their value steps more closely to see the difference between the two algorithms. In particular, let both algorithms start from the same initial condition: $v_0=v_{\pi_0}$. </p>
+<p><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-15-35-44.png" alt="Table 4.6: A comparison between the implementation steps of policy iteration and value iteration."></p>
+<p>The procedures of the two algorithms are listed in Table 4.6. </p>
+<ul>
+<li><p>In the first three steps, the two algorithms generate the same results since $v_0=v_{\pi_0}$. <strong>They become different in the fourth step</strong>. </p>
+</li>
+<li><p>During the fourth step, the value iteration algorithm executes $v_1=r_{\pi_1}+\gamma P_{\pi_1} v_0$, which is a <u> one-step calculation </u> , whereas the policy iteration algorithm solves $v_{\pi_1}=r_{\pi_1}+\gamma P_{\pi_1} v_{\pi_1}$, which requires <u> an infinite number of iterations</u>.</p>
+</li>
+</ul>
+<p>If we explicitly write out the iterative process for solving $v_{\pi_1}=r_{\pi_1}+\gamma P_{\pi_1} v_{\pi_1}$ in the fourth step, everything becomes clear. By letting $v_{\pi_1}^{(0)}=v_0$, we have</p>
+<p><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-15-38-37.png" alt="Comparisons"></p>
+<p>The following observations can be obtained from the above process.</p>
+<ul>
+<li>If the iteration is run <em>only once</em>, then $v_{\pi_1}^{(1)}$ is actually $v_1$, as calculated in the value iteration algorithm.</li>
+<li>iteration is run <em>an infinite number of times</em>, then $v_{\pi_1}^{(\infty)}$ is actually $v_{\pi_1}$, as calculated in the policy iteration algorithm.</li>
+<li>If the iteration is run <em>a finite number of times (denoted as $j_{\text {truncate }}$ )</em>, then such an algorithm is called <strong>truncated policy iteration</strong>. It is called truncated because the remaining iterations from $j_{\text {truncate }}$ to $\infty$ are truncated.</li>
+</ul>
+<p><strong>As a result, the value iteration and policy iteration algorithms can be viewed as two extreme cases of the truncated policy iteration algorithm: value iteration terminates at $j_{\text {truncate }}=1$, and policy iteration terminates at $j_{\text {truncate }}=\infty$.</strong> </p>
+<p>It should be noted that, although the above comparison is illustrative, it is based on the condition that $v_{\pi_1}^{(0)}=v_0=v_{\pi_0}$. The two algorithms cannot be directly compared without this condition.</p>
+<p><strong>Truncated policy iteration algorithm</strong></p>
+<p>In a nutshell, the truncated policy iteration algorithm is <strong>the same as the policy iteration algorithm except that it merely runs a finite number of iterations in the policy evaluation step.</strong> </p>
+<p><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-15-40-35.png" alt="Algorithm 4.3: Truncated policy iteration algorithm."></p>
+<p><strong>Lemma: Value Improvement</strong></p>
+<p>Consider the iterative algorithm for solving the policy evaluation step:</p>
+<script type="math/tex; mode=display">
+v_{\pi_k}^{(j+1)}=r_{\pi_k}+\gamma P_{\pi_k} v_{\pi_k}^{(j)}, \quad j=0,1,2, \ldots</script><p>If the initial guess is selected as $v_{\pi_k}^{(0)}=v_{\pi_{k-1}}$, it holds that</p>
+<script type="math/tex; mode=display">
+v_{\pi_k}^{(j+1)} \geq v_{\pi_k}^{(j)}</script><p>for every $j=0,1,2, \ldots$.</p>
+<p><strong>Proof</strong>:<br>First, since $v_{\pi_k}^{(j)}=r_{\pi_k}+\gamma P_{\pi_k} v_{\pi_k}^{(j-1)}$ and $v_{\pi_k}^{(j+1)}=r_{\pi_k}+\gamma P_{\pi_k} v_{\pi_k}^{(j)}$, we have</p>
+<script type="math/tex; mode=display">
+v_{\pi_k}^{(j+1)}-v_{\pi_k}^{(j)}=\gamma P_{\pi_k}\left(v_{\pi_k}^{(j)}-v_{\pi_k}^{(j-1)}\right)=\cdots=\gamma^j P_{\pi_k}^j\left(v_{\pi_k}^{(1)}-v_{\pi_k}^{(0)}\right)</script><p>Second, since $v_{\pi_k}^{(0)}=v_{\pi_{k-1}}$, we have</p>
+<script type="math/tex; mode=display">
+v_{\pi_k}^{(1)}=r_{\pi_k}+\gamma P_{\pi_k} v_{\pi_k}^{(0)}=r_{\pi_k}+\gamma P_{\pi_k} v_{\pi_{k-1}} \geq r_{\pi_{k-1}}+\gamma P_{\pi_{k-1}} v_{\pi_{k-1}}=v_{\pi_{k-1}}=v_{\pi_k}^{(0)},</script><p>where the inequality is due to $\pi_k=\arg \max _\pi\left(r_\pi+\gamma P_\pi v_{\pi_{k-1}}\right)$. Substituting $v_{\pi_k}^{(1)} \geq v_{\pi_k}^{(0)}$ into (4.5) yields $v_{\pi_k}^{(j+1)} \geq v_{\pi_k}^{(j)}$.</p>
+<p><strong>Relationships between the three algorithms</strong></p>
+<div align="center"><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-19-15-42-50.png" width="60%" alt="Figure 4.5: An illustration of the relationships between the value iteration, policy iteration, and truncated policy iteration algorithms."></div>
+
+
+<p>Define $||v_k-v^\ast||$ as the state value error at time $k$. The stop criterion is $||v_k-v^\ast||&lt;0.01$, Truncated policy iteration-$x$.<br><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-22-16-46-51.png" alt="Truncated policy iteration- Example"></p>
+<ul>
+<li>The greater the value of $x$ is, the faster the value estimate converges.</li>
+<li>However, the benefit of increasing $x$ drops quickly when $x$ is large.</li>
+<li>In practice, run a few number of iterations in the policy evaluation step.</li>
+</ul>
+<h3 id="4-4-Summary"><a href="#4-4-Summary" class="headerlink" title="4.4 Summary"></a>4.4 Summary</h3><ul>
+<li><p>1 <strong>Value iteration</strong>: The value iteration algorithm is the same as the algorithm suggested by the contraction mapping theorem for solving the Bellman optimality equation. It can be decomposed into two steps: <strong>policy update and value update.</strong></p>
+</li>
+<li><p>2 <strong>Policy iteration</strong>: The policy iteration algorithm is slightly more complicated than the value iteration algorithm. It also contains two steps: <strong>policy evaluation and policy improvement</strong>.In the policy evaluation step , an iterative algorithm is required to solve the Bellman equation of the current policy.</p>
+</li>
+<li><p>3 <strong>Truncated policy iteration</strong>: The value iteration and policy iteration algorithms can be viewed as <strong>two extreme cases</strong> of the truncated policy iteration algorithm.  The intermediate values generated by the truncated policy iteration algorithm are not state values? Only if we run an infinite number of iterations in the policy evaluation step, can we obtain true state values. If we run a nite number of iterations, we can only obtain approximates of the true state values.</p>
+</li>
+</ul>
+<p>A common property of the three algorithms is that every iteration has two steps. One step is to update the value, and the other step is to update the policy. <strong>The idea of interaction between value and policy updates</strong> widely exists in reinforcement learning algorithms. This idea is also called <strong>generalized policy iteration</strong>.</p>
+<p>Generalized policy iteration is not a specific algorithm. Instead, it refers to the general idea of the interaction between value and policy updates. This idea is rooted in the policy iteration algorithm. Most of the reinforcement learning algorithms introduced in this book fall into the scope of generalized policy iteration.</p>
+<p>Finally, the algorithms introduced in this chapter <strong>require the system model</strong>. Starting in Chapter 5, we will study model-free reinforcement learning algorithms. We will see that the model-free can be obtained by extending the algorithms introduced in this chapter.</p>
+<p>Q: What are model-based and model-free reinforcement learning?<br>A: Although the algorithms introduced in this chapter can find optimal policies, they are usually called <strong>dynamic programming algorithms</strong> rather than reinforcement learning algorithms because they require the system model. Reinforcement learning algorithms can be classified into two categories: model-based and model-free. Here, <strong>model-based does not refer to the requirement of the system model. Instead, model-based reinforcement learning uses data to estimate the system model and uses this model during the learning process.</strong> By contrast, model-free reinforcement learning does not involve model estimation during the learning process.</p>
+<h2 id="5-Monte-Carlo-Methods"><a href="#5-Monte-Carlo-Methods" class="headerlink" title="5 Monte Carlo Methods"></a>5 Monte Carlo Methods</h2><p><em>If we do not have a <strong>model</strong>, we must have some <strong>data</strong>. If we do not have data, we must have a model. If we have neither, then we are not able to find optimal policies.</em> The <strong>data</strong> in reinforcement learning usually refers to <strong>the agent’s interaction experiences with the environment.</strong><br>Model-based reinforcement learning algorithms that need do presume system models.<br>Model-free reinforcement learning algorithms that do not presume system models.</p>
+<h3 id="5-1-Mean-estimation-problem"><a href="#5-1-Mean-estimation-problem" class="headerlink" title="5.1 Mean estimation problem"></a>5.1 Mean estimation problem</h3><p>we start this chapter by introducing the mean estimation problem, where the expected value of a random variable is estimated from some samples. Understanding this problem is crucial for understanding the fundamental idea of <u> learning from data </u>.<br><strong>Why we care about the mean estimation problem? It is simply because state and action values are both defined as the means of returns. Estimating a state or action value is actually a mean estimation problem.</strong></p>
+<p>Consider a random variable $X$ that can take values from a finite set of real numbers denoted as $\mathcal{X}$, suppose that our task is to calculate the mean or expected value of $X$, i.e., $\mathbb{E}[X]$.</p>
+<p>Two approaches can be used to calculate $\mathbb{E}[X]$.</p>
+<p><strong>Model based case</strong></p>
+<p>The first approach is model-based. Here, the model refers to the probability distribution of $X$. If the model is known, then the mean can be directly calculated based on the definition of the expected value:</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[X]=\sum_{x \in \mathcal{X}} p(x) x</script><p><strong>Model free case</strong></p>
+<p>The second approach is model-free. When the probability distribution (i.e., the model) of $X$ is unknown, suppose that we have some samples $\left\{x_1, x_2, \ldots, x_n\right\}$ of $X$. Then, the mean can be approximated as</p>
+<script type="math/tex; mode=display">
+\mathbb{E}[X] \approx \bar{x}=\frac{1}{n} \sum_{j=1}^n x_j .</script><p>When $n$ is small, this approximation may not be accurate. However, as $n$ increases, the approximation becomes increasingly accurate. When $n \rightarrow \infty$, we have $\bar{x} \rightarrow \mathbb{E}[X]$.</p>
+<p>This is guaranteed by the <em>law of large numbers</em>: the average of a large number of samples is close to the expected value.</p>
+<p>It is worth mentioning that the samples used for mean estimation must be <strong>independent and identically distributed(i.i.d. or iid)</strong>. Otherwise, if the sampling values correlate, it may be impossible to correctly estimate the expected value. An extreme case is that all the sampling values are the same as the <em>r</em> st one, whatever the <em>r</em> st one is. In this case, the average of the samples is always equal to the <em>r</em> st sample, no matter how many samples we use.</p>
+<p><strong>Law of large numbers</strong><br>For a random variable $X$, suppose that $\left\{x_i\right\}_{i=1}^n$ are some i.i.d. samples. Let $\bar{x}=$ $\frac{1}{n} \sum_{i=1}^n x_i$ be the average of the samples. Then,</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathbb{E}[\bar{x}] & =\mathbb{E}[X], \\
+\operatorname{var}[\bar{x}] & =\frac{1}{n} \operatorname{var}[X] .
+\end{aligned}</script><p>The above two equations indicate that $\bar{x}$ is an unbiased estimate of $\mathbb{E}[X]$, and its variance decreases to zero as $n$ increases to infinity.<br>The proof is given below.</p>
+<p>First, $\mathbb{E}[\bar{x}]=\mathbb{E}\left[\sum_{i=1}^n x_i / n\right]=\sum_{i=1}^n \mathbb{E}\left[x_i\right] / n=\mathbb{E}[X]$, where the last equability is due to the fact that the samples are identically distributed (that is, $\mathbb{E}\left[x_i\right]=\mathbb{E}[X]$ ).</p>
+<p>Second, $\operatorname{var}(\bar{x})=\operatorname{var}\left[\sum_{i=1}^n x_i / n\right]=\sum_{i=1}^n \operatorname{var}\left[x_i\right] / n^2=(n \cdot \operatorname{var}[X]) / n^2=$ $\operatorname{var}[X] / n$, where the second equality is due to the fact that the samples are independent, and the third equability is a result of the samples being identically distributed (that is, $\operatorname{var}\left[x_i\right]=\operatorname{var}[X]$ ).</p>
+<h3 id="5-2-MC-Basic-The-simplest-MC-based-algorithm"><a href="#5-2-MC-Basic-The-simplest-MC-based-algorithm" class="headerlink" title="5.2 MC Basic: The simplest MC-based algorithm"></a>5.2 MC Basic: The simplest MC-based algorithm</h3><h4 id="5-2-1-introduction"><a href="#5-2-1-introduction" class="headerlink" title="5.2.1 introduction"></a>5.2.1 introduction</h4><p>Recalling that the policy iteration algorithm has two steps in each iteration:</p>
+<ol>
+<li>Policy evaluation(PE): $v_{\pi_k}=r_{\pi_k}+\gamma P_{\pi_k} v_{\pi_k}$.</li>
+<li>Policy improvement(PI): $\pi_{k+1}=\arg \max _\pi\left(r_\pi+\gamma P_\pi v_{\pi_k}\right)$.</li>
+</ol>
+<p>The PE step is calculated through solving the Bellman equation.</p>
+<p>The elementwise form of the (PE,PI) step are:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+v_{\pi_{k}} & =\sum_a \pi(a \mid s)\left[\sum_r p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi_k}\left(s^{\prime}\right)\right] \\
+& =\sum_a \pi(a \mid s) q_{\pi_k}(s, a), \quad s \in \mathcal{S}
+\end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+\pi_{k+1}(s) & =\arg \max _\pi \sum_a \pi(a \mid s)\left[\sum_r p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi_k}\left(s^{\prime}\right)\right] \\
+& =\arg \max _\pi \sum_a \pi(a \mid s) q_{\pi_k}(s, a), \quad s \in \mathcal{S}
+\end{aligned}</script><p><strong>Under the model free case —— The calculated key is $q_{\pi_k}(s, a)$ ! So how can we calculate $q_{\pi_k}(s, a)$?</strong></p>
+<p><strong>Model based case</strong></p>
+<p>The policy iteration algorithm is a model based algorithm, the model (or dynamic) is given.  a MDP is composed of two parts:</p>
+<ol>
+<li>State transition probability: $p\left(s^{\prime} \mid s, a\right)$. </li>
+<li>Reward probability: $p(r \mid s, a)$.</li>
+</ol>
+<p>Thus, we can calculate $q_{\pi_k}(s, a)$ via following equation</p>
+<script type="math/tex; mode=display">
+q_{\pi_k}(s, a)=\sum_r p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi_k}\left(s^{\prime}\right)</script><p>where  $p\left(s^{\prime} \mid s, a\right)$ and  $p(r \mid s, a)$ are given, and every $v_{\pi_k}\left(s^{\prime}\right)$ is calculated in the PE step.</p>
+<p><strong>Model free case</strong></p>
+<p>But what if we don’t know the model, Please recalling the definition of action value.</p>
+<script type="math/tex; mode=display">
+\begin{equation} 
+q_\pi(s, a) \triangleq \mathbb{E}\left[G_t \mid S_t=s, A_t=a\right]
+\end{equation}</script><p>We can  to calculate $q_{\pi_k}(s, a)$ <strong>based on data</strong> (samples or experiences). This is the key idea of MCRL: If we don’t have a model, we estimate one based on data (or experience).</p>
+<p><strong>The procedure of Monte Carlo estimation of action values</strong></p>
+<p>Starting from $(s, a)$, following policy $\pi_k$, generate an episode. The return of this episode is $g(s, a)$. $g(s, a)$ is a sample of $G_t$ in</p>
+<script type="math/tex; mode=display">
+q_{\pi_k}(s, a)=\mathbb{E}\left[G_t \mid S_t=s, A_t=a\right]</script><p>Suppose we have a set of episodes and hence $\left\{g^{(j)}(s, a)\right\}$. Then,</p>
+<script type="math/tex; mode=display">
+\textcolor{red} {q_{\pi_k}(s, a)=\mathbb{E}\left[G_t \mid S_t=s, A_t=a\right] \approx \frac{1}{N} \sum_{i=1}^N g^{(i)}(s, a)}</script><p>The idea of estimate the mean based on data is called Monte Carlo estimation. This is why this method is called “<strong>MC (Monte Carlo)</strong> Basic”.</p>
+<h4 id="5-2-2-The-MC-Basic-algorithm"><a href="#5-2-2-The-MC-Basic-algorithm" class="headerlink" title="5.2.2 The MC Basic algorithm"></a>5.2.2 The MC Basic algorithm</h4><p>The MC Basic algorithm is exactly the same as the policy iteration algorithm except: In policy evaluation (PI), <strong>we don’t solve $v_{\pi_k}(s)$, instead we estimate $q_{\pi_k}(s, a)$ directly</strong>.</p>
+<p>Why we don’t compute $v_{\pi_k}(s)$? Because if we calculate the state value in PE, in PI step we still need to calculate action value. So we can directly calculate action value in PE.</p>
+<p><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-14-11-53.png" alt="Algorithm 5.1: MC Basic (a model-free variant of policy iteration)"></p>
+<p>Since policy iteration is convergent, MC Basic is also convergent when given sufficient samples.However, the MC Basic algorithm is not practical due its <strong>low sample efficiency</strong> (we need to calculate $N$ episodes for every $q_{\pi_k}(s, a)$, it is a large work time ).</p>
+<p><strong>A simple example</strong></p>
+<p>An initial policy is shown in the figure (as you can see, it’s a deterministic policy). Use MC Basic to find the optimal policy. The env setting is: </p>
+<script type="math/tex; mode=display">
+r_{\text {boundary }}=-1, r_{\text {forbidden }}=-1, r_{\text {target }}=1, \gamma=0.9 .</script><div align="center"><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-14-21-24.png" width="50%" alt="Figure 5.3: An example for illustrating the MC Basic algorithm"></div>
+
+<p>Outline: given the current policy $\pi_k$, in each iteration:</p>
+<ol>
+<li>policy evaluation: calculate $q_{\pi_k}(s, a)$. Sicne there’re 9 states and 5 actions. We need to calculate 45 state-action pairs.</li>
+<li>policy improvement: select the greedy action</li>
+</ol>
+<script type="math/tex; mode=display">
+a^*(s)=\arg \max _{a_i} q_{\pi_k}(s, a)</script><p>For each state-action pair, we need to roll out $N$ episodes to estimate the action value. However, since it’s a deterministic policy,  running multiple times would generate the same trajectory. So we only need to rollout  a single episode.</p>
+<p>For space limitation, we only illustrate for the part of action value for $s_1$ in the first iteration.</p>
+<p><strong>Step 1: policy evaluation</strong></p>
+<ol>
+<li>Starting from $\left(s_1, a_1\right)$, the episode is $s_1 \xrightarrow{a_1} s_1 \xrightarrow{a_1} s_1 \xrightarrow{a_1} \ldots$ Hence, the action value is</li>
+</ol>
+<script type="math/tex; mode=display">
+q_{\pi_0}\left(s_1, a_1\right)=-1+\gamma(-1)+\gamma^2(-1)+\ldots</script><ol>
+<li>Starting from $\left(s_1, a_2\right)$, the episode is $s_1 \xrightarrow{a_2} s_2 \xrightarrow{a_3} s_5 \xrightarrow{a_3} \ldots$ Hence, the action value is</li>
+</ol>
+<script type="math/tex; mode=display">
+q_{\pi_0}\left(s_1, a_2\right)=0+\gamma 0+\gamma^2 0+\gamma^3(1)+\gamma^4(1)+\ldots</script><ol>
+<li>Starting from $\left(s_1, a_3\right)$, the episode is $s_1 \xrightarrow{a_3} s_4 \xrightarrow{a_2} s_5 \xrightarrow{a_3} \ldots$ Hence, the action value is</li>
+</ol>
+<script type="math/tex; mode=display">
+q_{\pi_0}\left(s_1, a_3\right)=0+\gamma 0+\gamma^2 0+\gamma^3(1)+\gamma^4(1)+\ldots</script><ol>
+<li>Starting from $\left(s_1, a_4\right)$, the episode is $s_1 \xrightarrow{a_4} s_1 \xrightarrow{a_1} s_1 \xrightarrow{a_1} \ldots$ Hence, the action value is</li>
+</ol>
+<script type="math/tex; mode=display">
+q_{\pi_0}\left(s_1, a_4\right)=-1+\gamma(-1)+\gamma^2(-1)+\ldots</script><ol>
+<li>Starting from $\left(s_1, a_5\right)$, the episode is $s_1 \xrightarrow{a_5} s_1 \xrightarrow{a_1} s_1 \xrightarrow{a_1} \ldots$ Hence, the action value is</li>
+</ol>
+<script type="math/tex; mode=display">
+q_{\pi_0}\left(s_1, a_5\right)=0+\gamma(-1)+\gamma^2(-1)+\ldots</script><p><strong>Step2: policy improvement</strong></p>
+<p>By observing the action values, we see that $q_{\pi_0}\left(s_1, a_2\right)=q_{\pi_0}\left(s_1, a_3\right)$ are the maximum.</p>
+<p>As a result, the policy can be improved as</p>
+<script type="math/tex; mode=display">
+\pi_1\left(a_2 \mid s_1\right)=1 \text { or } \pi_1\left(a_3 \mid s_1\right)=1 \text {. }</script><p>In either way, the new policy for $s_1$ becomes optimal. In this simple example, the initial policy is already optimal for all the states except $s_1$ and $s_3$. Therefore, the policy can become optimal after merely a single iteration. <u>When the policy is nonoptimal for other states, more iterations are needed.</u></p>
+<p><strong>A comprehensive example: Episode length and sparse rewards</strong></p>
+<p>In MC Basic, if the episode length is too short, the algorithm won’t converge. Its convergence comes from the policy iteration algorithm. But if the episode length is too short, each action value won’t be correct, and the premise of the reasoning falls apart.</p>
+<p><strong>So how should we know the right length? Isn’t MC Basic too fragile?</strong></p>
+<p>We can see from the following figures that, the episode length greatly impacts the final optimal policies.</p>
+<p><strong>When the length of each episode is too short, neither the policy nor the value estimate is optimal</strong> (see Figures 5.4(a)-(d)). In the extreme case where the episode length is one, only the states that are adjacent to the target have nonzero values, and all the other states have zero values since each episode is too short to reach the target or get positive rewards (see Figure 5.4(a)). </p>
+<p>As the episode length increases, the policy and value estimates gradually approach the optimal ones (see Fig- ure 5.4(h)).</p>
+<p>While the above analysis suggests that each episode must be sufficiently long, the episodes are not necessarily infinitely long. As shown in Figure 5.4(g), when the length is 30, <strong>the algorithm can find an optimal policy, although the value estimate is not yet optimal.</strong></p>
+<p><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-14-43-23.png" alt="Figure 5.4: a, b, c, d"><br><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-14-43-51.png" alt="Figure 5.4: e, f, g, h"></p>
+<p>The above analysis is related to an important reward design problem, <strong>sparse reward</strong>, which refers to the scenario in which no positive rewards can be obtained unless the target is reached. <u>The sparse reward setting requires long episodes that can reach the target.</u> This requirement is challenging to satisfy when the state space is large. As a result, the sparse reward problem downgrades the learning efficiency.</p>
+<p>One simple technique for solving this problem is to design nonsparse rewards. For instance, in the above grid world example, we can redesign the reward setting so that <strong>the agent can obtain a small positive reward when reaching the states near the target.</strong> In this way, an “attractive field” can be formed around the target so that the agent can find the target more easily<sup><a href="#fn_1" id="reffn_1">1</a></sup>.</p>
+<blockquote id="fn_1">
+<sup>1</sup>. M. Riedmiller, R. Hafner, T. Lampe, M. Neunert, J. Degrave, T. Wiele, V. Mnih, N. Heess, and J. T. Springenberg, Learning by playing solving sparse reward tasks from scratch, in International Conference on Machine Learning, pp. 43444353, 2018.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
+</blockquote>
+<h3 id="5-3-MC-Exploring-Starts"><a href="#5-3-MC-Exploring-Starts" class="headerlink" title="5.3 MC Exploring Starts"></a>5.3 MC Exploring Starts</h3><h4 id="5-3-1-Utilizing-samples-more-efficiently"><a href="#5-3-1-Utilizing-samples-more-efficiently" class="headerlink" title="5.3.1 Utilizing samples more efficiently"></a>5.3.1 Utilizing samples more efficiently</h4><p>$s_1 \xrightarrow{a_2} s_2 \xrightarrow{a_4} s_1 \xrightarrow{a_2} s_2 \xrightarrow{a_3} s_5 \xrightarrow{a_1}\ldots$ </p>
+<p><strong>initial visit</strong>：an episode is only used to estimate the action value of the initial state-action pair that the episode starts from. The initial-visit strategy merely estimates the action value of $(s_1, a_2)$. The MC Basic algorithm utilizes the initial-visit strategy. However, this strategy is not sample-efficient.because the episode also visits many other state-action pairs such as $(s_2, a_4), (s_2, a_3), (s_5, a_1)$, but they are not be used to estimate the corresponding action values.</p>
+<p><strong>subepisode visit</strong>：The trajectory generated after the visit of a state-action pair can be viewed as a new episode.  In this way, the samples in the episode can be utilized more efficiently.</p>
+<p>Moreover, a state-action pair may be visited multiple times in an episode. For example, $(s_1, a_2)$ is visited twice in the below episode. If we only count the first-time visit, this is called a <strong>first-visit</strong> strategy. If we count every visit of a state-action pair, such a strategy is called <strong>every-visit</strong> .<sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
+<blockquote id="fn_2">
+<sup>2</sup>. C. Szepesvari, Algorithms for reinforcement learning. Springer, 2010.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> ↩</a>
+</blockquote>
+<h4 id="5-3-2-Updating-policies-more-efficiently"><a href="#5-3-2-Updating-policies-more-efficiently" class="headerlink" title="5.3.2 Updating policies more efficiently"></a>5.3.2 Updating policies more efficiently</h4><p>The first strategy is, in the policy evaluation step, to collect all the episodes starting from the same state-action pair and then approximate the action value using the average return of these episodes. This strategy is adopted in the MC Basic algorithm. <strong>The drawback of this strategy is that the agent must wait until all the episodes have been collected before the estimate can be updated.</strong></p>
+<p>The second strategy, which can overcome this drawback, is to use the return of a single episode to approximate the corresponding action value. In this way, we can immediately obtain a rough estimate when we receive an episode. Then, <strong>the policy can be improved in an episode-by-episode fashion.(note:this is not step-by-step ,so this is not Temporal-Difference idea)</strong></p>
+<p>Since the return of a single episode cannot accurately approximate the corresponding action value, one may wonder whether the second strategy is good. In fact, this strategy falls into the scope of <strong>generalized policy iteration</strong> introduced in the last chapter. That is, <u>we can still update the policy even if the value estimate is not sufficiently accurate.</u></p>
+<h4 id="5-3-3-Algorithm-description"><a href="#5-3-3-Algorithm-description" class="headerlink" title="5.3.3 Algorithm description"></a>5.3.3 Algorithm description</h4><p>The details of MC Exploring Starts are given in Algorithm 5.2. This algorithm uses the <strong>subepisode visit</strong> and <strong>every-visit strategy</strong>. Interestingly, when calculating the discounted return obtained by starting from each state-action pair, the procedure starts from the ending states and travels back to the starting state. Such techniques can make the algorithm more efficient, but it also makes the algorithm more complex.<br><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-15-13-25.png" alt=""></p>
+<p>It is worth noting that if an action is not well explored, its action value may be inaccurately estimated, and this action may not be selected by the policy even though it is indeed the best action. Both MC Basic and MC Exploring Starts require this condition. <strong>MC Exploring Starts needs to traverse any one $(s, a)$, that is, it needs to start an episode from any one $(s, a)$.</strong></p>
+<p>Exploring starts requires an infinite number of (or sufficiently many) episodes to be generated when starting from every state-action pair. In theory, the exploring starts condition is necessary to find optimal policies. That is, only if every action value is well explored, can we accurately evaluate all the actions and then correctly select the optimal ones.</p>
+<p>However, <u>this condition is difficult to meet in many applications, especially those involving physical interactions with environments.</u> Can we remove the exploring starts requirement? The answer is yes, as shown in the next section.</p>
+<h3 id="5-4-MC-mathbb-epsilon-Greedy-Learning-without-exploring-starts"><a href="#5-4-MC-mathbb-epsilon-Greedy-Learning-without-exploring-starts" class="headerlink" title="5.4 MC $\mathbb{\epsilon}$ -Greedy: Learning without exploring starts"></a>5.4 MC $\mathbb{\epsilon}$ -Greedy: Learning without exploring starts</h3><h4 id="5-4-1-mathbb-epsilon-greedy-policies"><a href="#5-4-1-mathbb-epsilon-greedy-policies" class="headerlink" title="5.4.1 $\mathbb{\epsilon}$-greedy policies"></a>5.4.1 $\mathbb{\epsilon}$-greedy policies</h4><p>The fundamental idea is to make policies soft. <strong>Soft policies</strong> are stochastic, enabling an episode to visit many state-action pairs. In this way, we do not need a large number of episodes starting from every state-action pair.</p>
+<p>One type of common soft policies is $\mathbb{\epsilon}$-greedy policies. An-greedy policy is a stochastic policy that has a higher chance of choosing the greedy action with the greatest action value. and the same nonzero probability of taking any other action.  In particular, suppose that $\mathbb{\epsilon} \in [0,1]$. The corresponding-greedy policy has the following form:</p>
+<script type="math/tex; mode=display">
+\pi_{k+1}(a \mid s)= \begin{cases}1-\frac{\epsilon}{|\mathbb{A}(s)|}(|\mathbb{A}(s)|-1) & \text{for the greedy action} , \\ \frac{\epsilon}{|\mathbb{A}(s)|} & \text{for the other action} |\mathbb{A}(s)|-1 \text{action}.\end{cases} \nonumber</script><ul>
+<li>where $|\mathbb{A}(s)|$ denotes the number of actions associated with $s$.</li>
+<li>When $\epsilon= 0$ ,$\epsilon$-greedy becomes greedy. When $\epsilon$= 1, the probability of taking any action equals $\frac{1}{|\mathbb{A}(s)|}$.</li>
+<li>The probability of taking the greedy action is always greater than that of taking any other action because</li>
+</ul>
+<script type="math/tex; mode=display">
+1-\frac{\epsilon}{|\mathbb{A}(s)|}(|\mathbb{A}(s)|-1)=1-\epsilon+\frac{\epsilon}{|\mathbb{A}(s)|} \geq \frac{\epsilon}{|\mathbb{A}(s)|}</script><p>for any $\mathbb{\epsilon} \in [0,1]$.</p>
+<h4 id="5-4-2-Algorithm-description"><a href="#5-4-2-Algorithm-description" class="headerlink" title="5.4.2 Algorithm description"></a>5.4.2 Algorithm description</h4><p>MC $\mathbb{\epsilon}$-Greedy is a variant of MC Exploring Starts that removes the exploring starts requirement.we only need to change the policy improvement step from greedy to $\mathbb{\epsilon}$-greedy.</p>
+<p><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-16-20-44.png" alt="Algorithm 5.3."></p>
+<p>If greedy policies are replaced by $\epsilon$-greedy policies in the policy improvement step, can we still guarantee to obtain optimal policies?<br>The answer is both yes and no. By yes, we mean that, when given sufficient samples, the algorithm can converge to an $\mathbb{\epsilon}$-greedy policy that is optimal in the set $\mathbb{\Pi}_{\epsilon}$. By no, we mean that the policy is merely optimal among all-greedy policies $\mathbb{\Pi}_{\epsilon}$ but may not be optimal in $\mathbb{\Pi}$. However, if $\mathbb{\epsilon}$ is sufficiently small, the optimal policies in are close to those in $\mathbb{\Pi}$.</p>
+<h4 id="5-4-3-Exploration-and-exploitation-of-mathbb-epsilon-greedy-policies"><a href="#5-4-3-Exploration-and-exploitation-of-mathbb-epsilon-greedy-policies" class="headerlink" title="5.4.3  Exploration and exploitation of $\mathbb{\epsilon}$-greedy policies"></a>5.4.3  Exploration and exploitation of $\mathbb{\epsilon}$-greedy policies</h4><p><em>Exploration and exploitation constitute a fundamental tradeoff in reinforcement learning.</em> Here, exploration means that the policy can possibly take as many actions as <strong>possible</strong>. In this way, all the actions can be visited and evaluated well. Exploitation means that the improved policy should <strong>take the greedy action that has the greatest action value.</strong> However, since the action values obtained at the current moment may not be accurate due to insufficient exploration, we should keep exploring while conducting exploitation to avoid missing optimal actions.<strong>(exploration-exploitation dilemma,EvE )</strong></p>
+<p><strong>$\mathbb{\epsilon}$-greedy policies provide one way to balance exploration and exploitation.</strong>  If we would like to enhance exploitation and optimality, we need to reduce the value of $\mathbb{\epsilon}$. However, if we would like to enhance exploration, we need to increase the value of $\mathbb{\epsilon}$.</p>
+<div align="center"><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-16-38-23.png" width="60%" alt="Figure 5.71"></div>
+
+<div align="center"><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-16-38-43.png" width="60%" alt="Figure 5.72"></div>
+
+<p>Show in Figure 5.7, as the value of increases, the state values of the-greedy policies decrease, indicating that the optimality of these-greedy policies becomes worse. if we want to obtain-greedy policies that are consistent with the optimal greedy ones, the value of should be sufficiently small.</p>
+<div align="center"><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-16-53-15.png" width="80%" alt="Figure 5.81"></div>
+
+<div align="center"><img src="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/2024-04-23-16-53-33.png" width="80%" alt="Figure 5.82"></div>
+
+<p>Show in Figure 5.8, it is clear that the exploration ability of an $\mathbb{\epsilon}$-greedy policy is strong when $\mathbb{\epsilon}$ is large.One useful technique is to initially set to be large to enhance exploration and gradually reduce it to ensure the optimality of the final policy <sup><a href="#fn_3" id="reffn_3">3</a></sup>.</p>
+<blockquote id="fn_3">
+<sup>3</sup>. A. Maroti, RBED: Reward based epsilon decay, arXiv:1910.13701, 2019. <strong>AND</strong>  Human-level control through deep reinforcement learning, Nature, vol. 518, no. 7540, pp. 529533, 2015<a href="#reffn_3" title="Jump back to footnote [3] in the text."> ↩</a>
+</blockquote>
+<h3 id="5-5-Summary"><a href="#5-5-Summary" class="headerlink" title="5.5 Summary"></a>5.5 Summary</h3><ul>
+<li><p><strong>MC Basic</strong>: This is the simplest MC-based reinforcement learning algorithm. This algorithm is obtained by replacing the model-based policy evaluation step in the policy iteration algorithm with a model-free MC-based estimation component. Given <em>sufficient samples</em>, it is guaranteed that this algorithm can converge to optimal policies and optimal state values.</p>
+</li>
+<li><p><strong>MC Exploring Starts</strong>: This algorithm is a variant of MC Basic. It is a variant of MC Basic that adjusts <em>the sample usage strategy</em>.</p>
+</li>
+<li><p><strong>MC-Greedy</strong>: This algorithm is a variant of MC Exploring Starts. Specifically, in the policy improvement step, it searches for the best $\mathbb{\epsilon}$-greedy policies instead of greedy policies. In this way, the exploration ability of the policy is enhanced and hence <em>the condition of exploring starts can be removed</em>.</p>
+</li>
+</ul>
+<p>Finally, <strong>a tradeoff between exploration and exploitation</strong> was introduced by examining the properties of $\mathbb{\epsilon}$-greedy policies.</p>
+
+    </div>
+
+    
+    
+    
+
+<div> 
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>Article:</span>Mathematical Foundation of Reinforcement Learning - Algorithms (model-based & non-incremental)</a></p>
+  <p><span>Author:</span>Ming Huang</a></p>
+  <p><span>Release time：</span>2024-08-08   18:35:00</p>
+  <p><span>Updat time:</span>2024-10-23   11:55:18</p>
+  <p><span>Original link:</span><a href="/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/" title="Mathematical Foundation of Reinforcement Learning - Algorithms (model-based & non-incremental)">https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/</a>
+    <span class="copy-path"  title="Click to copy the article link"><i class="fa fa-clipboard" data-clipboard-text="https://www.huangm.cn/2024/08/08/Mathmatical-Foundation-of-Reinforcement-Learning-Algorithms-model-based-non-incremental/"  aria-label="Copy successful!"></i></span>
+  </p>
+  <p><span>license agreement:</span><i class="fa fa-creative-commons" /></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"> (CC BY-NC-ND 4.0)</a> Please keep the original link and author when reprinting.</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",
+          text: 'Copy successful',
+          html: false,
+          timer: 500,
+          showConfirmButton: false
+        });
+      });
+    }));
+</script>
+ </div>
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/08/06/Mathmatical-Foundation-of-Reinforcement-Learning-Concept-Notes/" rel="prev" title="Mathematical Foundation of Reinforcement Learning-Concept Notes">
+      <i class="fa fa-chevron-left"></i> Mathematical Foundation of Reinforcement Learning-Concept Notes
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/08/09/Mathmatical-Foundation-of-Reinforcement-Learning-TD-algorithms/" rel="next" title="Mathematical Foundation of Reinforcement Learning-TD algorithms">
+      Mathematical Foundation of Reinforcement Learning-TD algorithms <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference-Sources"><span class="nav-text">Reference Sources:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Value-iteration-and-policy-iteration-dynamic-programming-algorithms"><span class="nav-text">4. Value iteration and policy iteration(dynamic programming algorithms)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Value-iteration"><span class="nav-text">4.1 Value iteration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Policy-iteration"><span class="nav-text">4.2 Policy iteration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Truncated-policy-iteration"><span class="nav-text">4.3 Truncated policy iteration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-Summary"><span class="nav-text">4.4 Summary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Monte-Carlo-Methods"><span class="nav-text">5 Monte Carlo Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-Mean-estimation-problem"><span class="nav-text">5.1 Mean estimation problem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-MC-Basic-The-simplest-MC-based-algorithm"><span class="nav-text">5.2 MC Basic: The simplest MC-based algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-1-introduction"><span class="nav-text">5.2.1 introduction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-2-The-MC-Basic-algorithm"><span class="nav-text">5.2.2 The MC Basic algorithm</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-MC-Exploring-Starts"><span class="nav-text">5.3 MC Exploring Starts</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-1-Utilizing-samples-more-efficiently"><span class="nav-text">5.3.1 Utilizing samples more efficiently</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-2-Updating-policies-more-efficiently"><span class="nav-text">5.3.2 Updating policies more efficiently</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-3-Algorithm-description"><span class="nav-text">5.3.3 Algorithm description</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-MC-mathbb-epsilon-Greedy-Learning-without-exploring-starts"><span class="nav-text">5.4 MC $\mathbb{\epsilon}$ -Greedy: Learning without exploring starts</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-1-mathbb-epsilon-greedy-policies"><span class="nav-text">5.4.1 $\mathbb{\epsilon}$-greedy policies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-2-Algorithm-description"><span class="nav-text">5.4.2 Algorithm description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-3-Exploration-and-exploitation-of-mathbb-epsilon-greedy-policies"><span class="nav-text">5.4.3  Exploration and exploitation of $\mathbb{\epsilon}$-greedy policies</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-Summary"><span class="nav-text">5.5 Summary</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ming Huang"
+      src="/images/pic.png">
+  <p class="site-author-name" itemprop="name">Ming Huang</p>
+  <div class="site-description" itemprop="description">Let’s do something extraordinary together.</div>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://bit.edu.cn/" title="Beijing Institute of Technology → https:&#x2F;&#x2F;bit.edu.cn&#x2F;" rel="noopener" target="_blank"><i class="fa fa-university fa-fw"></i>Beijing Institute of Technology</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://scholar.google.com.hk/citations?user=nDvJ6BUAAAAJ&hl=en/" title="Google Scholar → https:&#x2F;&#x2F;scholar.google.com.hk&#x2F;citations?user&#x3D;nDvJ6BUAAAAJ&amp;hl&#x3D;en&#x2F;" rel="noopener" target="_blank"><i class="fa fa-graduation-cap fa-fw"></i>Google Scholar</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:huangming98@163.com" title="E-Mail → mailto:huangming98@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://orcid.org/0000-0001-9146-4721" title="ORCID → https:&#x2F;&#x2F;orcid.org&#x2F;0000-0001-9146-4721" rel="noopener" target="_blank"><i class="fa fa-id-card fa-fw"></i>ORCID</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/huangming98" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huangming98" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+
+<script src="/js/switch_language.js"></script>
+      </div>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=1941963749&auto=1&height=66"></iframe>
+
+    </div>
+  </aside>
+
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022.09— 
+  <span itemprop="copyrightYear">2025.11</span>
+  
+   
+</div>
+  <div class="powered-by"><p style="color:rgb(0,0,255,0.8);font-size:1.2em;font-weight:bold;font-family:Arial">Do not be afraid of making mistakes, only of missing opportunities!</p>
+  </div>
+
+<!-- Insert clustrmaps.com -->
+<!-- <a target="_blank" rel="noopener" href='https://clustrmaps.com/site/1bqbj' ><img src='//clustrmaps.com/map_v2.png?cl=555555&w=350&t=m&d=b6-cOzsyxmN07VPEXlJO1PaWKRLFhE6feh1y5oiN1Hw&co=f5f5f5&ct=555555'/></a> -->
+
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/01/2023 10:00:00"); //此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "<br />This website is as worthless as hundreds of daily chores, but I still hope it will be helpful to you! <br /> It's been running quietly for  "+dnum+" days ";
+        document.getElementById("times").innerHTML = hnum + " hours " + mnum + " minutes " + snum + " seconds.";
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
