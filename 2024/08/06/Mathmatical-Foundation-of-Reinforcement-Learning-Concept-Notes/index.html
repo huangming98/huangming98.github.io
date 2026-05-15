@@ -642,7 +642,7 @@ q_\pi(s, a) \triangleq \mathbb{E}\left[G_t \mid S_t=s, A_t=a\right]
 <script type="math/tex; mode=display">
 \begin{equation} 
 v_\pi(s)=\sum_a \pi(a \mid s) q_\pi(s, a)
-\end{equation}</script><p>Recall the <a href>Bellman equation</a>, that the state value is given by</p>
+\end{equation}</script><p>Recall the <a href="">Bellman equation</a>, that the state value is given by</p>
 <script type="math/tex; mode=display">
 v_\pi(s)=\sum_a \pi(a \mid s)[\underbrace{\sum_r p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_\pi\left(s^{\prime}\right)}_{q_\pi(s, a)}]</script><p>By comparing  and , we have the action-value function as</p>
 <script type="math/tex; mode=display">
@@ -747,7 +747,7 @@ f(x^*)=x^*</script><p><strong>Contraction mapping</strong> (or contractive funct
 <li>Uniqueness: The fixed point $x^*$ is unique.</li>
 <li>Algorithm: Consider a sequence $\left\{x_k\right\}$ where $x_{k+1}=f\left(x_k\right)$, then $x_k \rightarrow x^*$( fixed point) as $k \rightarrow \infty$ for any initial guess $x_0$. Moreover, the convergence rate is exponentially fast.</li>
 </ul>
-<p><a href>-&gt; See the proof</a></p>
+<p><a href="">-&gt; See the proof</a></p>
 <h3 id="3-3-Contraction-property-of-the-BOE"><a href="#3-3-Contraction-property-of-the-BOE" class="headerlink" title="3.3 Contraction property of the BOE"></a>3.3 Contraction property of the BOE</h3><p><strong>Theorem (Contraction Property)</strong>:</p>
 <p>$f(v)$  is a contraction mapping satisfying</p>
 <script type="math/tex; mode=display">
@@ -789,7 +789,7 @@ a^*(s)=\arg \max _a q^*(a, s)</script><p>where $ q^\ast(s, a):=\sum_r p(r \mid s
 <script type="math/tex; mode=display">
 \pi^*(s)=\arg \max _{\pi \in \Pi} \sum_{a \in \mathcal{A}} \pi(a \mid s) \underbrace{\left(\sum_{r \in \mathcal{R}} p(r \mid s, a) r+\gamma \sum_{s^{\prime} \in \mathcal{S}} p\left(s^{\prime} \mid s, a\right) v^*\left(s^{\prime}\right)\right)}_{q^*(s, a)}, \quad s \in \mathcal{S} .</script><p>It is clear that $ \sum_{a \in \mathcal{A}} \pi(a \mid s) q^\ast(s, a) $ is maximized if $ \pi(s) $ selects the action with the greatest $ q^\ast(s, a) $.</p>
 <p>Uniqueness of optimal policies: Although the value of $ v^\ast $ is unique, the optimal policy that corresponds to $ v^\ast $ may not be unique. This can be easily verified by counterexamples. For example, the two policies shown in below Figure are both optimal.<br>Stochasticity of optimal policies: An optimal policy can be either stochastic or deterministic, as demonstrated in below Figure. However, it is certain that there always exists a deterministic optimal policy.</p>
-<p><img src="/2024/08/06/Mathmatical-Foundation-of-Reinforcement-Learning-Concept-Notes/2024-04-18-22-25-49.png" alt></p>
+<p><img src="/2024/08/06/Mathmatical-Foundation-of-Reinforcement-Learning-Concept-Notes/2024-04-18-22-25-49.png" alt=""></p>
 <h3 id="3-7-Factors-that-influence-optimal-policies"><a href="#3-7-Factors-that-influence-optimal-policies" class="headerlink" title="3.7 Factors that influence optimal policies"></a>3.7 Factors that influence optimal policies</h3><script type="math/tex; mode=display">
 \pi^*(s)=\arg \max _{\pi \in \Pi(s)} \sum_{a \in \mathcal{A}} \pi(a \mid s) \left(\sum_{r \in \mathcal{R}} p(r \mid s, a) r+\gamma \sum_{s^{\prime} \in \mathcal{S}} p\left(s^{\prime} \mid s, a\right) v^*\left(s^{\prime}\right)\right), \quad s \in \mathcal{S} .</script><p>The optimal state value and optimal policy are determined by the following parameters: 1) the immediate reward $r$, 2) the discount rate $\gamma$, and 3) the system model<br> $p(s^{\prime} \mid s,a), p(r \mid s,a)$. While the system model is fixed, we next discuss how the optimal policy varies when we change the values of $r$ and $\gamma$.  </p>
 <p><strong>Impact of the discount rate and the reward values</strong></p>
